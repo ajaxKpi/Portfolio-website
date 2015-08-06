@@ -57,8 +57,9 @@ html * {
               .navigation-internal ul li {
                   display: inline-block;
                   list-style-type: none;
-                  padding-left: 3%
-                  }
+                  padding-left: 3%;
+                  margin-top: 15px;
+                                   }
 
 
                 .navigation-internal  a
@@ -68,6 +69,7 @@ html * {
                     font-size: 14px;
                     text-decoration: none;
                     padding-left: 15px;
+
                     top: 10px;
 
 
@@ -80,13 +82,19 @@ html * {
             width: 30%;
 
         }
+            .navigation-external ul {
+                margin-top: 15px;
+            }
             .navigation-external ul li {
                 display: inline;
                 list-style-type: none;
+
+
             }
             .navigation-external li a
             {
                 text-decoration: none;
+
             }
 
 /* ***************************************************************************
@@ -165,6 +173,10 @@ html * {
         text-align: center;
         font-weight: bold;
     }
+    .Tags a {
+        text-align: left;
+        margin-left:15px;
+    }
     .sidebar_instagram img{
         width: 100%;
     }
@@ -172,20 +184,24 @@ html * {
 
 }
 
-.Popular_Story div{
+.sidebar_photo{
 
-    width: 50%;
+    width: 47%;
     display: inline-block;
-    float: left;
+    position: relative;
+
 
 }
 
 .Popular_Story img {
-    width: 90%;
-    position: absolute;
+
+    width: 100%;
     margin: auto;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+}
+footer {
+
 }
