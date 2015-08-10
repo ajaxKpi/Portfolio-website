@@ -1,4 +1,4 @@
-#activepage{
+#active_page{
     color: brown;
 }
 @font-face {
@@ -26,9 +26,10 @@ html * {
 ****************************************************************************/
 .main_header {
     width: 100%;
-    z-index: 99;
+    z-index: 9;
     position: relative;
-   height: 50px;
+    height: 50px;
+
 }
     .navigation {
         height: inherit;
@@ -38,6 +39,7 @@ html * {
         top: 0;
         left: 0;
         margin: 0;
+        border-bottom: solid;
 
     }
 
@@ -49,9 +51,18 @@ html * {
 
            }
                .logo_small{
-                   float: left;
-                   height: 50px
+
+
+                  float: left;
+                  position: relative;
+                  height: 35px;
+
                   }
+               .logo_small img{
+                   position: inherit;
+                   padding-top: 10px;
+
+               }
 
 
               .navigation-internal ul li {
@@ -66,10 +77,9 @@ html * {
                 {
                     color: #2c3c27;
                     text-transform: uppercase;
-                    font-size: 14px;
+                    font-size: 12px;
                     text-decoration: none;
-                    padding-left: 15px;
-
+                    padding-left: 5%;
                     top: 10px;
 
 
@@ -106,10 +116,10 @@ html * {
     position: relative;
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
 }
 .logo_big img {
-
+    position: relative;
 }
 /* ***************************************************************************
 *****************************portfolio Block**********************************
@@ -143,11 +153,10 @@ html * {
     float: right;
     width: 30%;
     position: relative;
-    border-right: solid;
-    border-left: solid;
+
 }
     .Avatar{
-        margin-bottom: 30px;
+        margin-bottom: 15px;
             }
         .Avatar img{
             width: 100%;
@@ -155,6 +164,7 @@ html * {
     .main_sidebar a
     {
         text-decoration: none;
+
     }
     .main_sidebar span
     {
@@ -174,8 +184,10 @@ html * {
         font-weight: bold;
     }
     .Tags a {
+
         text-align: left;
         margin-left:15px;
+        font-size: 10px;
     }
     .sidebar_instagram img{
         width: 100%;
@@ -190,18 +202,36 @@ html * {
     display: inline-block;
     position: relative;
 
-
 }
 
 .Popular_Story img {
 
-    width: 100%;
+    width: 40px;
+    height:40px;
     margin: auto;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
 }
+/* ***************************************************************************
+*****************************Footer Block************************************
+****************************************************************************/
+
 footer {
+    content: " ";
+    clear: both;
+    color: rgba(169, 169, 169, 0.5);
+|}
+
+footer h3{
+    text-align: center;
+    font-size: 8px;
+}
+footer h5{
+    text-align: center;
+    font-size: 6px;
+    padding-right: 10%;
+    padding-left: 10%;
 
 }
