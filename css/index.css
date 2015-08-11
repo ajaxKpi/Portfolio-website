@@ -48,20 +48,19 @@ html * {
            {
                width: 70%;
                float: left;
-
+               display: inline-block;
 
            }
                .logo_small{
-
-
-                  float: left;
+                   float: left;
                   position: relative;
-                  height: 35px;
+
 
                   }
                .logo_small img{
                    position: inherit;
                    padding-top: 10px;
+                   height: 35px;
 
                }
 
@@ -72,8 +71,8 @@ html * {
               .navigation-internal ul li {
                   display: inline-block;
                   list-style-type: none;
-                  padding-left: 7%;
-                  margin-top: 15px;
+                  padding-left: 5%;
+                  margin-top: 17px;
                                    }
 
 
@@ -82,9 +81,11 @@ html * {
                     color: #2c3c27;
                     text-transform: uppercase;
                     font-size: 12px;
+                    font-weight:700;
                     text-decoration: none;
                     padding-left: 5%;
                     top: 10px;
+
 
 
                 }
@@ -174,6 +175,7 @@ html * {
     .main_sidebar span
     {
         color: silver;
+        font-style: italic;
         font-size: 80%;
     }
     .main_sidebar p {
@@ -183,11 +185,22 @@ html * {
         padding-bottom: 20px;
         padding-left: 10px;
     }
+    hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
     .main_sidebar h2{
 
         text-align: center;
         font-weight: bold;
     }
+    .Tags{
+
+
+    }
+
     .Tags a {
 
         text-align: left;
