@@ -119,3 +119,16 @@ html * {
     text-decoration: none;
 
 }
+
+#vk_like, .fb-like, .twitter-share-button{
+    display:inline-block;
+    vertical-align:top;
+}
+
+#vk_like, .twitter-share-button{
+    padding:6px 0 0;
+}
+
+.fb-like{
+    margin-right:30px;
+}
