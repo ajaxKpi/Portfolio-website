@@ -223,7 +223,7 @@ body {
 ****************************************************************************/
 .Main_content{
     float: left;
-    width: 70%;
+    width: 80%;
 }
     .Main_content div{
         height: 200px;
@@ -260,7 +260,8 @@ body {
     display: table-cell;
     visibility: hidden;
 }
-    .Preview_info:hover a{visibility: visible;}
+    .Preview_info:hover a{
+        visibility: visible;}
 
 
 
@@ -274,6 +275,7 @@ body {
     position: relative;
 
 }
+/* --------------------------- about me --------------------------- */
     .Avatar{
         margin-bottom: 15px;
             }
@@ -309,6 +311,8 @@ body {
         text-align: center;
         font-weight: bold;
     }
+
+/* --------------------------- tags --------------------------- */
     .Tags{
 
 
@@ -320,9 +324,34 @@ body {
         margin-left:15px;
         font-size: 10px;
     }
+
+/* --------------------------- instagram widget  --------------------------- */
+.sidebar_inst {
+
+    position: relative;
+    width: 200px;
+    height: 200px;
+   /* background-image: url("/img/ava_inst.jpg"); */
+
+}
+
+.sidebar_inst .inst_item{
+
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: inline-block;
+        z-index: 20;
+        opacity: 0;
+        width: 200px;
+        height: 200px;
+}
     .sidebar_inst img{
         width: 100%;
+
     }
+
+/* --------------------------- popular stories  --------------------------- */
 .Popular_Story{
 
 }
