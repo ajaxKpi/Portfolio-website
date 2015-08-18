@@ -117,7 +117,7 @@ body {
 ****************************************************************************/
 .main_header {
     width: 100%;
-    z-index: 1;
+    z-index: 5;
     position: relative;
     height: 50px;
 
@@ -137,7 +137,7 @@ body {
 
         .navigation-internal
            {
-               width: 70%;
+               width: 80%;
                float: left;
                display: inline-block;
 
@@ -164,6 +164,7 @@ body {
                   list-style-type: none;
                   padding-left: 5%;
                   margin-top: 17px;
+                  width: 15%;
                                    }
 
 
@@ -171,7 +172,7 @@ body {
                 {
                     color: #2c3c27;
                     text-transform: uppercase;
-                    font-size: 12px;
+                    font-size: 14px;
                     font-weight:700;
                     text-decoration: none;
                     padding-left: 5%;
@@ -185,7 +186,7 @@ body {
         {
 
             float: left;
-            width: 30%;
+            width: 20%;
 
         }
             .navigation-external ul {
@@ -224,18 +225,20 @@ body {
 .Main_content{
     float: left;
     width: 80%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
-    .Main_content div{
-        height: 200px;
-        width: 200px;
+ .Preview_poligon, .Preview_info {
+        height: 300px;
+        width: 300px;
         display: inline-block;
         position: relative;
 
     }
 
-    .Main_content img {
-        height:180px ;
-        max-width: 180px;
+    .Preview_photo img, .Preview_info img {
+        height:280px ;
+        max-width: 280px;
         position: absolute;
         margin: auto;
         left: 0;
@@ -277,6 +280,7 @@ body {
 }
 /* --------------------------- about me --------------------------- */
     .Avatar{
+        margin-top:20px;
         margin-bottom: 15px;
             }
         .Avatar img{
@@ -326,7 +330,8 @@ body {
     }
 
 /* --------------------------- instagram widget  --------------------------- */
-.sidebar_inst {
+
+.carusel {
 
     position: relative;
     width: 200px;
@@ -338,11 +343,11 @@ body {
 .sidebar_inst .inst_item{
 
         position: absolute;
-        top: 0px;
-        left: 0px;
-        display: inline-block;
-        z-index: 20;
-        opacity: 0;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 4;
+        opacity: 1;
         width: 200px;
         height: 200px;
 }
@@ -404,20 +409,72 @@ body {
 ****************************************************************************/
 
 footer {
+
     content: " ";
     clear: both;
     color: rgba(169, 169, 169, 0.5);
 |}
 
 footer h3{
+    padding-top: 20px;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
 }
 footer h5{
     text-align: center;
-    font-size: 8px;
+    font-size: 10px;
     padding-right: 10%;
     padding-left: 10%;
     padding-bottom: 20px;
+
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**********************************Single Blog elements************************
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.header_of_motion {
+    margin: auto;
+    text-align: center;
+}
+        .Blog_name {
+
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: bold;}
+
+        .header_of_motion span{
+
+            color: silver;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .header_of_motion a{
+
+            text-decoration: none;
+            color: silver;
+            font-size: 12px;
+        }
+
+
+ .text_overview {
+
+     text-align: justify;
+ }
+.Blog_photo{
+    position: relative;
+    /*  display: inline; */
+       width: 100%;
+}
+.Blog_photo img{
+    width:inherit;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 1000px;
+
+}
+.like_share{
+
+    border:silver solid thin;
 
 }
