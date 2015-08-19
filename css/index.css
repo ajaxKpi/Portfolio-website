@@ -459,10 +459,13 @@ footer h5{
 
      text-align: justify;
  }
+
+ /*********************** list of photo **************************/
 .Blog_photo{
     position: relative;
     /*  display: inline; */
-       width: 100%;
+    width: 1000px;
+    margin-bottom: 15px;
 }
 .Blog_photo img{
     width:inherit;
@@ -470,11 +473,45 @@ footer h5{
     left: 0;
     right: 0;
     bottom: 0;
-    max-width: 1000px;
+
 
 }
+
+
+
+/*********************** like bar **************************/
 .like_share{
 
-    border:silver solid thin;
+    border-top:silver solid ;
+    border-bottom: silver solid ;
+    width: 1000px;
+    text-align: right;
+}
 
+
+
+.Svg_holder {
+    display: inline;
+    position: relative;
+
+}
+.Share_container svg{
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+
+}
+.Share_container path {
+    fill: silver;
+}
+
+/*     Button styles:
+i.fb,span.fb{ color: #3b5998; }
+i.vk,span.vk{ color: #45668e; }
+
+*/
+
+.fb-comments{
+    display: inline-block;
+    text-align: center;;
 }
