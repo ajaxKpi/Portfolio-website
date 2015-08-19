@@ -28,14 +28,13 @@ var autoSlide = setInterval(function() {
       $(items[prevIndex]).fadeOut("3000");
              prevIndex = currentIndex;
 }, 4000);
-
+/*
 Arr_img = getImagesByAlt("Blog_photo");
 console.log(5 + " and " + Arr_img);
 for (one_img in Arr_img){
     ImgHeigt =Arr_img[one_img].height;
     ImgWith =Arr_img[one_img].width;
 
-console.log(ImgWith + "  " + ImgHeigt)
     if (ImgHeigt>ImgWith){
 
         $(".Main_content").find(Arr_img[one_img]).parent().css("width","49%")
@@ -58,3 +57,4 @@ function getImagesByAlt(alt) {
     }
     return images;
 }
+ */

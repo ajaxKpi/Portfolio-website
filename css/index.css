@@ -321,12 +321,20 @@ body {
 
 
     }
+    .Tags li {
+
+        margin-top: 5px;
+    }
+    
 
     .Tags a {
-
+        text-decoration: none;
         text-align: left;
         margin-left:15px;
-        font-size: 10px;
+       
+        font-size: 14px;
+        color:silver;
+        text-transform: uppercase;
     }
 
 /* --------------------------- instagram widget  --------------------------- */
@@ -396,7 +404,7 @@ body {
     vertical-align: middle;
     background: rgba(255, 255, 255, 0.9);
     color: #000;
-    text-transform: uppercase;
+
     font-size: 8px;
     line-height: 20px;
     display: table-cell;
