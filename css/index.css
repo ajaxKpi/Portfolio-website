@@ -16,6 +16,8 @@ html * {
     font-family: HeliosRegular, serif !important;
 
 }
+
+
 /* ***************************************************************************
 *****************************Preloader Block*************************************
 ****************************************************************************/
@@ -113,58 +115,93 @@ body {
 }
 
 /* ***************************************************************************
+*****************************Proceses Block*************************************
+****************************************************************************/
+.navigation-internal a:hover{
+    color: silver;
+}
+
+.navigation-external li:hover path {
+            fill: black;
+}
+.Tags a:hover{
+    color: black;
+    font-weight:bold;
+}
+
+
+
+.Full_site_holder{
+
+
+}
+
+
+.Main_Side{
+    width: 1200px;
+    position: relative;
+    margin: auto;
+
+}
+.logo_small{
+    float: left;
+
+    position: fixed;
+
+}
+.logo_small img{
+    position: inherit;
+    padding-top: 10px;
+    height: 35px;
+
+}
+
+
+/* ***************************************************************************
 *****************************Header Block*************************************
 ****************************************************************************/
 .main_header {
-    width: 100%;
+    margin: auto;
     z-index: 5;
     position: relative;
+
     height: 50px;
 
 }
     .navigation {
+        width:1200px;
         height: inherit;
         position: fixed;
-        width: 100%;
+
         background-color: #ffffff;
         top: 0;
-        left: 0;
+       
         margin: 0;
-        border-bottom:  thin solid lightgrey;
+
 
 
     }
 
         .navigation-internal
            {
-               width: 80%;
+               width: 83%;
                float: left;
                display: inline-block;
 
            }
-               .logo_small{
-                   float: left;
-                  position: relative;
-
-
-                  }
-               .logo_small img{
-                   position: inherit;
-                   padding-top: 10px;
-                   height: 35px;
-
-               }
 
         .navigation-internal ul
         {
              }
+                .first_el{
+                    padding-left: 10px
+                }
 
               .navigation-internal ul li {
                   display: inline-block;
                   list-style-type: none;
-                  padding-left: 5%;
                   margin-top: 17px;
-                  width: 15%;
+                  padding-right: 96px;
                                    }
 
 
@@ -186,24 +223,37 @@ body {
         {
 
             float: left;
-            width: 20%;
+            width: 17%;
 
         }
             .navigation-external ul {
                 margin-top: 15px;
+                ;
             }
             .navigation-external ul li {
-                display: inline;
+                display: inline-block;
                 list-style-type: none;
-
+                width: 18%;
 
             }
+            .navigation-external svg {
+              width: 25px;
+              height: 25px;
+            }
+            .navigation-external path{ fill: silver}
+
             .navigation-external li a
             {
                 text-decoration: none;
 
             }
-
+.Fixed_line{
+    margin: 0;
+    position: fixed;
+    z-index: 90;
+    width:100%;
+    left: 0;
+}
 /* ***************************************************************************
 *****************************LOGO Block***************************************
 ****************************************************************************/
@@ -222,12 +272,10 @@ body {
 /* ***************************************************************************
 *****************************portfolio Block**********************************
 ****************************************************************************/
+
 .Main_content{
     float: left;
-    width: 80%;
-    padding-left: 5%;
-    padding-right: 5%;
-}
+    width: 1000px;}
  .Preview_poligon, .Preview_info {
         height: 300px;
         width: 300px;
@@ -295,11 +343,11 @@ body {
     {
         color: silver;
         font-style: italic;
-        font-size: 80%;
+        font-size: 10px;
     }
     .main_sidebar p {
 
-        font-size: 80%;
+        font-size: 12px;
         padding-top: 15px;
         padding-bottom: 20px;
         padding-left: 10px;
@@ -331,7 +379,6 @@ body {
         text-decoration: none;
         text-align: left;
         margin-left:15px;
-       
         font-size: 14px;
         color:silver;
         text-transform: uppercase;
@@ -472,15 +519,11 @@ footer h5{
 .Blog_photo{
     position: relative;
     /*  display: inline; */
-    width: 1000px;
+
     margin-bottom: 15px;
 }
-.Blog_photo img{
-    width:inherit;
-    margin: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.Blog_photo img[alt="Blog_photo"]{
+    width:890px;
 
 
 }
