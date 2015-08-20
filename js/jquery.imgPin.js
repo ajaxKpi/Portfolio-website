@@ -15,7 +15,7 @@
     // object – this is to keep from overriding our "defaults" object.
     var defaults = {
       pinImg : 'https://assets.pinterest.com/images/pidgets/pin_it_button.png',
-      position: 1, // Display default header
+      position: 1 // Display default header
     };
     var options = $.extend( {}, defaults, options );
 
