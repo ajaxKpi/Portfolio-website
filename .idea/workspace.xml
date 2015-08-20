@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a774af2e-b68a-4330-bc44-3412e4bcc66a" name="Default" comment="Create HTML file for single blog post. modified TD">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.Technical Design.docx#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Technical Design.docx" afterPath="$PROJECT_DIR$/Technical Design.docx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SingleBlog.html" afterPath="$PROJECT_DIR$/SingleBlog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="0f7c9cea-b943-48eb-a135-62d6a66a94c1" name="Rejected commit: Default" comment="Add reset.css to make browsers compability" />
@@ -33,19 +28,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="28" selection-start="7542" selection-end="7542" vertical-scroll-proportion="-8.666667" vertical-offset="3047" max-vertical-offset="3915">
+            <state line="203" column="8" selection-start="7017" selection-end="7017" vertical-scroll-proportion="0.029953917" vertical-offset="3019" max-vertical-offset="3915">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SingleBlog.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SingleBlog.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SingleBlog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="224" column="0" selection-start="7587" selection-end="7587" vertical-scroll-proportion="0.17050691" vertical-offset="3212" max-vertical-offset="4080">
+            <state line="271" column="44" selection-start="10641" selection-end="10641" vertical-scroll-proportion="-12.416667" vertical-offset="3767" max-vertical-offset="5400">
               <folding />
             </state>
           </provider>
@@ -54,7 +49,7 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="975">
+            <state line="3" column="0" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1320">
               <folding />
             </state>
           </provider>
@@ -72,7 +67,7 @@
       <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="325" column="23" selection-start="7399" selection-end="7399" vertical-scroll-proportion="0.0" vertical-offset="373" max-vertical-offset="7395">
+            <state line="362" column="20" selection-start="8059" selection-end="8059" vertical-scroll-proportion="0.0" vertical-offset="928" max-vertical-offset="7965">
               <folding />
             </state>
           </provider>
@@ -96,10 +91,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/SingleBlog.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/SingleBlog.html" />
       </list>
     </option>
   </component>
@@ -108,9 +103,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="68" />
+    <option name="x" value="808" />
     <option name="y" value="52" />
-    <option name="width" value="927" />
+    <option name="width" value="924" />
     <option name="height" value="1028" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -139,7 +134,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,6 +182,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -240,7 +235,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="68" y="52" width="927" height="1028" extended-state="0" />
+    <frame x="808" y="52" width="924" height="1028" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -248,7 +243,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15318231" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15367965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -597,28 +592,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="325" column="23" selection-start="7399" selection-end="7399" vertical-scroll-proportion="0.0" vertical-offset="373" max-vertical-offset="7395">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="28" selection-start="7542" selection-end="7542" vertical-scroll-proportion="-8.666667" vertical-offset="3047" max-vertical-offset="3915">
+        <state line="362" column="20" selection-start="8059" selection-end="8059" vertical-scroll-proportion="0.0" vertical-offset="928" max-vertical-offset="7965">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
+        <state line="3" column="0" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SingleBlog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="0" selection-start="7587" selection-end="7587" vertical-scroll-proportion="0.17050691" vertical-offset="3212" max-vertical-offset="4080">
+        <state line="271" column="44" selection-start="10641" selection-end="10641" vertical-scroll-proportion="-12.416667" vertical-offset="3767" max-vertical-offset="5400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="203" column="8" selection-start="7017" selection-end="7017" vertical-scroll-proportion="0.029953917" vertical-offset="3019" max-vertical-offset="3915">
           <folding />
         </state>
       </provider>
