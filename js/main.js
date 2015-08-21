@@ -31,14 +31,14 @@ var autoSlide = setInterval(function() {
 
 
 //call pin button on specific location
+if ($(document).find("title").text() ==='Volyanka Photography|Blog'){
 
 $('.Blog_photo img').imgPin(
         {pinImg : 'img/social/pinterestOnImg.png', position: 2
         }
 
     );
-
-
+}
 
 var logo_width = $(".logo_small").width();
 console.log( $(".Main_content").css("margin-left"))
@@ -87,13 +87,42 @@ $("#f197705904").remove();
 
 //use specific layout on single blog
 console.log($(document).find("title").text());
-if ($(document).find("title").text()=='Volyanka Photography|Blog'){
+if ($(document).find("title").text()==='Volyanka Photography|Blog'){
 
     $('.Main_content').css({
         "padding-left": "10px",
-        "padding-right": "63px",
-        "width" :"960px"
+        "padding-right": "100px"
+
 
     });
     //$('.main_sidebar').css("padding-top","60px")
 }
+
+//get active page
+
+        switch($(document).find("title").text())
+        {
+
+            case 'Volyanka Photography|Blog':
+               $('#Blog').css("color", "brown");
+                break;
+            case 'Volyanka Photography|About':
+                $('#About').css("color", "brown");
+                break;
+            case 'Volyanka Photography|Advices':
+                $('#Advices').css("color", "brown");
+                break;
+            case 'Volyanka Photography|Follow':
+                $('#Follow').css("color", "brown");
+                break;
+            case 'Volyanka Photography|Contacts':
+                $('#Contacts').css("color", "brown");
+                break;
+            default:
+                $('#Portfolio').css("color", "brown");
+
+        }
+
+
+
+
