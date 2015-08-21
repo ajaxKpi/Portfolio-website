@@ -86,7 +86,7 @@ $("#f197705904").remove();
 
 
 //use specific layout on single blog
-console.log($(document).find("title").text());
+
 if ($(document).find("title").text()==='Volyanka Photography|Blog'){
 
     $('.Main_content').css({
@@ -124,5 +124,8 @@ if ($(document).find("title").text()==='Volyanka Photography|Blog'){
         }
 
 
-
+jQuery(document).ready(function($) {
+    $('.like').socialButton();
+    $.scrollToButton('hash', 3000);
+});
 
