@@ -161,6 +161,9 @@ padding-left:30px;
 
 }
 
+
+
+
 /* ***************************************************************************
 *****************************main Block*************************************
 ****************************************************************************/
@@ -570,9 +573,8 @@ footer h5{
 /*********************** like bar **************************/
 .like_share{
 
-    border-top:silver solid ;
-    border-bottom: silver solid ;
-    width: 900px;
+
+    width: 890px;
     text-align: right;
 
 }
@@ -586,6 +588,9 @@ footer h5{
     display: inline;
     position: relative;
 
+}
+.Share_container{
+    position: relative;
 }
 .Share_container svg{
     margin: 5px;
@@ -603,6 +608,25 @@ i.fb,span.fb{ color: #3b5998; }
 i.vk,span.vk{ color: #45668e; }
 
 */
+.Share_container table{
+
+    float: right;
+
+}
+.Share_container td{
+    color: silver;
+    display: table-cell;
+    vertical-align: middle;
+
+    font-size: 20px;
+
+}
+.like_share hr{
+    width: inherit;
+    margin: 5px;
+    clear:both;
+    border-width: 2px;
+}
 
 .fb-comments, .fb-comments span, .fb-comments iframe[style] {
     width: 100% !important;
@@ -610,5 +634,5 @@ i.vk,span.vk{ color: #45668e; }
 .comment_wrap{
     width:900px;
 
-
 }
+
