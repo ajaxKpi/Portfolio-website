@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
 
-    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/Calendar.css">
     <link rel="icon" type="image/png" href="img/dummylogo.png" />
     <meta charset="utf-8">
     <!-- share buttons -->
@@ -178,22 +178,16 @@
     </div>
 
 
-
-
-
-
-    <html ng-app="myApp" ng-controller="AppCtrl" lang="en">
     <head>
-        <meta charset="utf-8">
-        <title>Circle</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     </head>
     <body>
-    <div calendar class="calendar" id="calendar"></div>
+    <div id="calendar">
+        <div id="calendar_header"><i class="icon-chevron-left"></i>          <h1></h1><i class="icon-chevron-right"></i>         </div>
+        <div id="calendar_weekdays"></div>
+        <div id="calendar_content"></div>
+    </div>
     </body>
-    </html>
-
-
-
 
 
 

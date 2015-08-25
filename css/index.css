@@ -8,10 +8,21 @@
     font-style: normal;
     font-weight: normal;
 }
+
+@font-face {
+    font-family: "Trebuchet";
+    src: url("../fonts/TrebuchetMS/TrebuchetMS.eot");
+    src: url("../fonts/TrebuchetMS/TrebuchetMS.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/TrebuchetMS/TrebuchetMS.woff") format("woff"),
+    url("../fonts/TrebuchetMS/TrebuchetMS.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
 html * {
     box-sizing: border-box;
     font-size: 100%; !important;
-    font-family: HeliosRegular, serif !important;
+    font-family: Trebuchet, serif !important;
 
 }
 
