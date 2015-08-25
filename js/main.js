@@ -87,7 +87,7 @@ $("#f197705904").remove();
 
 //use specific layout on single blog
 console.log($(document).find("title").text());
-if ($(document).find("title").text()==='Volyanka Photography|Blog'){
+if ($(document).find("title").text()==='Volyanska Photography|Blog'){
 
     $('.Main_content').css({
         "padding-left": "10px",
@@ -103,26 +103,53 @@ if ($(document).find("title").text()==='Volyanka Photography|Blog'){
         switch($(document).find("title").text())
         {
 
-            case 'Volyanka Photography|Blog':
+            case 'Volyanska Photography|Blog':
                $('#Blog').css("color", "brown");
                 break;
-            case 'Volyanka Photography|About':
+            case 'Volyanska Photography|About':
                 $('#About').css("color", "brown");
                 break;
-            case 'Volyanka Photography|Advices':
+            case 'Volyanska Photography|Advices':
                 $('#Advices').css("color", "brown");
                 break;
-            case 'Volyanka Photography|Follow':
+            case 'Volyanska Photography|Follow':
                 $('#Follow').css("color", "brown");
                 break;
-            case 'Volyanka Photography|Contacts':
+            case 'Volyanska Photography|Contacts':
                 $('#Contacts').css("color", "brown");
                 break;
             default:
                 $('#Portfolio').css("color", "brown");
-
         }
+//set text in like_share bar
+if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
+    $('.read_more>a').text("Return to blog...");
+    $(".read_more>a").attr('href', 'FullBlog.html')
+
+}
+else if($('div').hasClass('read_more'))
+{
+    $('.read_more>a').text("Read more...");
+    $('.read_more>a').attr('href', 'SingleBlog.html');
+}
+//convert color on click
+$( "#vk-logo" ).click(function() {
+    $( "#vk-logo  path").css("fill","white")
+    $( "#vk-logo").css("background-color","silver")
+    $( "#count_VK").css("background-color","silver")
+    $( "#count_VK ").css("color","white")
+
+        $( "#count_VK").text( Number($( "#count_VK").text()) +1)
+        console.log(Number($( Number($( "#count_VK").text()) +1)))
 
 
+});
+$( "#fb-logo" ).click(function() {
+    $( "#fb-logo  path").css("fill","white")
+    $( "#fb-logo").css("background-color","silver")
+    $( "#count_FB").css("background-color","silver")
+    $( "#count_FB ").css("color","white")
 
-
+    $( "#count_FB").text( Number($( "#count_FB").text()) +1)
+    console.log(Number($( Number($( "#count_FB").text()) +1)))
+});

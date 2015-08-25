@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Volyanka Photography|Blog</title>
+    <title>Volyanska Photography|Blog</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/media.css">
@@ -17,6 +17,14 @@
 <body>
 <div id="fb-root"></div>
 <script></script>
+
+<div class = "loader-wrapper">
+    <div class="typing-indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
 <section class = "Full_site_holder">
 
 <div class = "Main_Side">
@@ -32,22 +40,22 @@
             <div class="navigation-internal">
                 <ul>
                     <li >
-                        <a id="Portfolio" href="http://Olgavolyanska.com">
+                        <a id="Portfolio" href="index.html">
                             Portfolio
                         </a>
                     </li>
                     <li >
-                        <a id="About" href="http://Olgavolyanska.com/About">
+                        <a id="About" href="about.html">
                             About
                         </a>
                     </li>
                     <li >
-                        <a id="Blog" href="http://Olgavolyanska.com/Blog">
+                        <a id="Blog" href="FullBlog.html">
                             Blog
                         </a>
                     </li>
                     <li >
-                        <a id="Advices" href="http://Olgavolyanska.com/Advices">
+                        <a id="Advices" href="Advices.html">
                             Advices
                         </a>
                     </li >
@@ -57,7 +65,7 @@
                         </a>
                     </li>
                     <li>
-                        <a id="Contacts" href="http://Olgavolyanska.com/Follow">
+                        <a id="Contacts" href="Contacts.html">
                             Contacts
                         </a>
                     </li>
@@ -206,6 +214,20 @@
         дату церемонии ради нашего присутствия в этот день. И мы благодарны судьбе, что все совпало и срослось.
         Что вот такую красивую свадебную съемку имеем теперь в своем портфолио и можем вам показать с большим удовольствием!!!
     </p>
+    <p class ="text_overview">
+        Эта история про девушку волшебной красоты, про ее возлюбленного, прекрасного принца, про их особенный день
+        на таинственном острове, в средиземном море... Таких историй может быть много в нашем блоге, скажете вы.
+        Все красивые, влюбленные, на фоне красивых садов, городов, островов...
+        Но Даша и Андрей по праву занимают отдельное место среди всех историй, отдельное место в наших сердцах!
+        В апреле прошлого года нам пришли от Даши несколько сообщение в WhatsApp...
+        Несколько спутанных сообщений - "Есть ли у нас планы на октябрь? Не собираемся ли мы в Европу? Точнее в Грецию?"
+        И понеслась... переписка, диалоги, поиски, аудиосообщения, фотографии мест и деталей... В итоге не октябрь,
+        а конец сентября. Не Греция, а Мальта, не голубой, а фиолетовый с розовым в оформлении, и много чего еще успело
+        поменяться за пол-года подготовки.
+        Но одно было неизменно - нам доверили снимать эту свадьбу! И мы благодарны Даше и Андрею, за то, что сдвинули
+        дату церемонии ради нашего присутствия в этот день. И мы благодарны судьбе, что все совпало и срослось.
+        Что вот такую красивую свадебную съемку имеем теперь в своем портфолио и можем вам показать с большим удовольствием!!!
+    </p>
     <div class = "Blog_photo">
         <img src="img/preview/3.jpg" alt ="Blog_photo">
     </div>
@@ -239,10 +261,15 @@
         -->
 
         <div class="Share_container">
+            <div class="read_more">
+                <a href ="FullBlog.html">Read more...</a>
+
+            </div>
             <table>
                 <tr>
+
                     <td>Share on:</td>
-                    <td>
+                    <td id = "vk-logo" >
 
                         <a onclick="Share.vkontakte('Olgavolyanska.com','Share on VK','img/vk32.png','DESC')">
                             <div class="Svg_holder">
@@ -260,7 +287,7 @@
                         </a>
                     <td id ="count_VK">2</td>
                     </td>
-                    <td>
+                    <td id = "fb-logo">
 
                         <a onclick="Share.facebook('Olgavolyanska.com','Share on Facebook','img/fb32.png','DESC')">
                             <!-- Created with Inkscape (http://www.inkscape.org/) -->
@@ -283,6 +310,7 @@
                     </td>
                     <td id ="count_FB">2</td>
                 </tr>
+
 
             </table>
 

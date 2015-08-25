@@ -115,7 +115,7 @@ body {
 /* ***************************************************************************
 *****************************Proceses Block*************************************
 ****************************************************************************/
-.navigation-internal a:hover{
+.navigation-internal a:hover {
     color: silver;
     text-decoration: none;
 }
@@ -153,6 +153,8 @@ body {
 .like_share a:hover{
 
     text-decoration: none;
+    color:black;
+
 }
 
 
@@ -160,7 +162,9 @@ body {
 padding-left:30px;
 
 }
-
+.Blog_name:hover{
+    color:silver;
+}
 
 
 
@@ -209,8 +213,6 @@ padding-left:30px;
         top: 0;
        
         margin: 0;
-
-
 
     }
 
@@ -282,7 +284,7 @@ padding-left:30px;
             }
 .Fixed_line{
     margin: 0;
-    height: 2px;
+    border: solid 1px;
     position: fixed;
     color:silver;
     z-index: 90;
@@ -548,11 +550,16 @@ footer h5{
     color: silver;
     font-size: 12px;
 }
-
-
+.header_of_motion+ hr {
+margin-top: 20px;
+margin-bottom: 20px;
+border: 0;
+border-top: 1px solid #eee;
+}
 .text_overview {
 
     text-align: justify;
+
 }
 
 /*********************** list of photo **************************/
@@ -575,11 +582,11 @@ footer h5{
 
 
     width: 890px;
-    text-align: right;
+
+
 
 }
 .like_share a{
-
     text-decoration: none;
 }
 
@@ -590,12 +597,29 @@ footer h5{
 
 }
 .Share_container{
-    position: relative;
+    display: inline;
+}
+
+.Share_container .read_more{
+    display: table-cell;
+    vertical-align: middle;
+    height: 55px;
+    padding-top: 10px;
+    float: left;
+    width:50%;
+    text-align: right;
+
+}
+.read_more a{
+    font-style: italic;
+    font-size: 20px;
+    color: silver;
 }
 .Share_container svg{
     margin: 5px;
     width: 30px;
     height: 30px;
+
 
 
 }
@@ -625,7 +649,9 @@ i.vk,span.vk{ color: #45668e; }
     width: inherit;
     margin: 5px;
     clear:both;
-    border-width: 2px;
+
+    color:silver;
+    border: solid thin;
 }
 
 .fb-comments, .fb-comments span, .fb-comments iframe[style] {
@@ -636,3 +662,39 @@ i.vk,span.vk{ color: #45668e; }
 
 }
 
+.Share_container table{
+
+    border-collapse: separate !important;
+}
+.Share_container td{
+
+}
+#fb-logo,#vk-logo {
+
+    border-bottom: solid silver thin;
+    border-left:solid silver thin;
+    border-top: solid silver thin;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius:2em;
+
+
+}
+
+#count_VK, #count_FB{
+    border-bottom: solid silver thin;
+    border-right: solid silver thin;
+    border-top: solid silver thin;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius:2em;
+    width:30px;
+    text-align: center;
+
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**********************************Full Blog elements************************
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.Blog_name{
+    color:#000000;
+
+}
