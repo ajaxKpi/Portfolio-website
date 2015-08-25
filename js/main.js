@@ -86,8 +86,13 @@ $("#f197705904").remove();
 
 
 //use specific layout on single blog
+<<<<<<< HEAD
 console.log($(document).find("title").text());
 if ($(document).find("title").text()==='Volyanska Photography|Blog'){
+=======
+
+if ($(document).find("title").text()==='Volyanka Photography|Blog'){
+>>>>>>> origin/sanbox
 
     $('.Main_content').css({
         "padding-left": "10px",
@@ -139,9 +144,16 @@ $( "#vk-logo" ).click(function() {
     $( "#count_VK").css("background-color","silver")
     $( "#count_VK ").css("color","white")
 
+<<<<<<< HEAD
         $( "#count_VK").text( Number($( "#count_VK").text()) +1)
         console.log(Number($( Number($( "#count_VK").text()) +1)))
 
+=======
+jQuery(document).ready(function($) {
+    $('.like').socialButton();
+    $.scrollToButton('hash', 3000);
+});
+>>>>>>> origin/sanbox
 
 });
 $( "#fb-logo" ).click(function() {
