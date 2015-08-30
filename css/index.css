@@ -248,8 +248,8 @@ padding-left:30px;
                   display: inline-block;
                   list-style-type: none;
                   margin-top: 17px;
-                  padding-right: 96px;
-                  text-align: center;
+                  width: 16%;
+                  text-align: left;
                                                      }
 
 
@@ -713,4 +713,13 @@ i.vk,span.vk{ color: #45668e; }
 .Blog_name{
     color:#000000;
 
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**********************************Full Blog elements************************
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.contact_info {
+    float: left;
+}
+.contact_info h1{
+    font-size: 14px;
 }

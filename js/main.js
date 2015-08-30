@@ -31,7 +31,7 @@ var autoSlide = setInterval(function() {
 
 
 //call pin button on specific location
-if ($(document).find("title").text() ==='Volyanka Photography|Blog'){
+if ($(document).find("title").text() ==='Volyanska Photography|Blog'){
 
 $('.Blog_photo img').imgPin(
 
@@ -131,7 +131,10 @@ if ($(document).find("title").text()==='Volyanska Photography|Blog'){
 if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
     $('.read_more>a').text("Return to blog...");
     $(".read_more>a").attr('href', 'FullBlog.html')
-
+    //disable link
+   // $(".header_of_motion>a").attr('href',"")
+    // $(".header_of_motion>a").removeClass('a');
+   // $('.header_of_motion>a').unbind('mouseenter mouseleave')
 }
 else if($('div').hasClass('read_more'))
 {
