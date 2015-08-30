@@ -34,7 +34,10 @@ var autoSlide = setInterval(function() {
 if ($(document).find("title").text() ==='Volyanka Photography|Blog'){
 
 $('.Blog_photo img').imgPin(
-        {pinImg : 'img/social/pinterestOnImg.png', position: 2
+
+        {
+            pinImg : 'img/social/pinterestOnImg.png', position: 2
+
         }
 
     );
