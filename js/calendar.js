@@ -363,6 +363,7 @@
         this.draw();
     }
 
+
     window.Calendar = Calendar;
 
     function createElement(tagName, className, innerText) {

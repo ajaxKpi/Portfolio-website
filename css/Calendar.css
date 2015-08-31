@@ -15,11 +15,12 @@ body {
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    width: 100%;
+    width: 400px;
     margin: 0 auto;
     display: block;
     float: left;
     overflow: hidden;
+    margin-top: 30px;
 }
 .calendar .circle {
     width: 24px;
@@ -29,7 +30,7 @@ body {
     border-radius: 50%;
 }
 .calendar .header {
-    height: 50px;
+    height: 46px;
     width: 100%;
     background-color: #428bca;
     color: #fff;
@@ -37,8 +38,8 @@ body {
     position: relative;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    padding-top: 10px;
-    height: 100px;
+    padding-top: 0px;
+    height: 84px;
 }
 .calendar .header .month {
     opacity: 1;
@@ -72,12 +73,12 @@ body {
 .ring-left {
     left: 2em;
     position: absolute;
-    margin-top: -8px;
+    margin-top: -23px;;
 }
 .ring-right {
     right: 2em;
     position: absolute;
-    margin-top: -8px;
+    margin-top: -23px;;
 }
 .ring-left:after,
 .ring-right:after,
@@ -161,7 +162,7 @@ body {
 .day {
     display: inline-block;
     width: 14%;
-    padding: 10px;
+
     text-align: center;
     vertical-align: top;
     cursor: pointer;
@@ -205,8 +206,8 @@ body {
     letter-spacing: .7px;
 }
 .day-number {
-    font-size: 1.5em;
-    letter-spacing: 1.5px;
+    font-size: 1em;
+    letter-spacing: 1px;
 }
 .blue {
     background: #9ccaeb;

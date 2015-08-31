@@ -134,7 +134,11 @@ if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
     //disable link
    // $(".header_of_motion>a").attr('href',"")
     // $(".header_of_motion>a").removeClass('a');
-   // $('.header_of_motion>a').unbind('mouseenter mouseleave')
+   //$('.Blog_name').unbind('mouseenter mouseleave')
+    //$('.header_of_motion>h1').attr('style','')
+    $(".Blog_name").hover(function() {
+        $(this).css("color","black")
+    });
 }
 else if($('div').hasClass('read_more'))
 {
@@ -168,3 +172,12 @@ $( "#fb-logo" ).click(function() {
     $( "#count_FB").text( Number($( "#count_FB").text()) +1)
     console.log(Number($( Number($( "#count_FB").text()) +1)))
 });
+
+// mark busy days in calendar
+
+
+if ($(document).find("title").text()==='Volyanska Photography|Contacts'){
+   // $( ".header").css("background-color","red")
+}
+
+

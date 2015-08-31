@@ -717,9 +717,23 @@ i.vk,span.vk{ color: #45668e; }
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 **********************************Full Blog elements************************
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-.contact_info {
+.calendar{
+    width: 400px;
+
+}   
+.contact_info  {
     float: left;
+    margin-left: 202px;
+    margin-top: 70px;
+
 }
 .contact_info h1{
-    font-size: 14px;
+    font-size: 16px;
 }
+#info_table td{
+    width: 120px;
+    height: 25px;
+}
+#info_table{
+margin-left: 25px;
+margin-top: 20px;}
