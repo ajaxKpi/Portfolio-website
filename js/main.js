@@ -174,10 +174,43 @@ $( "#fb-logo" ).click(function() {
 });
 
 // mark busy days in calendar
+console.log("preready")
+busydays =["5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "26","27"];
+$(document).ready(function() {
+    console.log("ready")
+    if ($(document).find("title").text() === 'Volyanska Photography|Contacts') {
+
+        //replacement based on week started at monday
+        var previus
+        $ (".day-number").each(
+
+             function(){
+                 console.log( $(this).next(".day-number").text())
+                //console.log( $(this).text()+" /"+previus)
+
+              $(this).text(previus)
+                 //this.$ (".day-number").next($ (".day-number").text())
+                 next =  $(this).text()
+             }
+        )
 
 
-if ($(document).find("title").text()==='Volyanska Photography|Contacts'){
-   // $( ".header").css("background-color","red")
-}
 
+
+
+         for(var i=0; i<busydays.length; i++){
+
+
+         $( ".day-number:contains(" +busydays[i]+")").css({
+             "background-color": "red",
+         "color": "white",
+         "border-radius": "20px",
+         "margin-left": "8px",
+         "margin-right": "8px"})
+         }
+
+
+
+    }
+});
 
