@@ -29,7 +29,7 @@
         //Draw Month
         this.drawMonth();
         // Draw Legend
-        //this.drawLegend();
+       // this.drawLegend();
     }
 
     Calendar.prototype.drawHeader = function() {
@@ -43,7 +43,7 @@
             this.title = {
                 month: createElement('div', 'month', this.current.format('MMMM')),
                 year: createElement('div', 'year', this.current.format('YYYY'))
-            }
+            };
 
             var right = createElement('div', 'right');
             right.addEventListener('click', function() {
@@ -326,7 +326,7 @@
     Calendar.prototype.drawWeekDays = function(el) {
         var self = this;
         this.weekDays = createElement('div', 'week-days')
-        var weekdays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+        var weekdays = [ 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
         weekdays.forEach(function(weekday){
             var day = createElement('span', 'day', weekday);
             self.weekDays.appendChild(day);
@@ -363,6 +363,7 @@
         this.draw();
     }
 
+
     window.Calendar = Calendar;
 
     function createElement(tagName, className, innerText) {
@@ -390,14 +391,14 @@ app.directive('calendar', [function(){
         },
         link: function(scope, element, attributes) {
             var data = [{
-                date: new Date(2015, 0, 1),
+                date: new Date(2015, 9,8),
                 events: [{
-                    name: 'smokeloader',
+                    name: 'wedding of Nastya and Sergii',
                     type: 'bot',
-                    color: 'orange'
+                    color: 'red'
                 }]
             }, {
-                date: new Date(2015, 0, 2),
+                date: new Date(2015, 1, 2),
                 events: [{
                     name: 'zeus',
                     type: 'bot',

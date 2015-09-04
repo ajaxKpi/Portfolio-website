@@ -31,10 +31,13 @@ var autoSlide = setInterval(function() {
 
 
 //call pin button on specific location
-if ($(document).find("title").text() ==='Volyanka Photography|Blog'){
+if ($(document).find("title").text() ==='Volyanska Photography|Blog'){
 
 $('.Blog_photo img').imgPin(
-        {pinImg : 'img/social/pinterestOnImg.png', position: 2
+
+        {
+            pinImg : 'img/social/pinterestOnImg.png', position: 2
+
         }
 
     );
@@ -86,13 +89,11 @@ $("#f197705904").remove();
 
 
 //use specific layout on single blog
-<<<<<<< HEAD
-console.log($(document).find("title").text());
-if ($(document).find("title").text()==='Volyanska Photography|Blog'){
-=======
 
-if ($(document).find("title").text()==='Volyanka Photography|Blog'){
->>>>>>> origin/sanbox
+
+
+
+if ($(document).find("title").text()==='Volyanska Photography|Blog'){
 
     $('.Main_content').css({
         "padding-left": "10px",
@@ -130,7 +131,14 @@ if ($(document).find("title").text()==='Volyanka Photography|Blog'){
 if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
     $('.read_more>a').text("Return to blog...");
     $(".read_more>a").attr('href', 'FullBlog.html')
-
+    //disable link
+   // $(".header_of_motion>a").attr('href',"")
+    // $(".header_of_motion>a").removeClass('a');
+   //$('.Blog_name').unbind('mouseenter mouseleave')
+    //$('.header_of_motion>h1').attr('style','')
+    $(".Blog_name").hover(function() {
+        $(this).css("color","black")
+    });
 }
 else if($('div').hasClass('read_more'))
 {
@@ -144,16 +152,15 @@ $( "#vk-logo" ).click(function() {
     $( "#count_VK").css("background-color","silver")
     $( "#count_VK ").css("color","white")
 
-<<<<<<< HEAD
-        $( "#count_VK").text( Number($( "#count_VK").text()) +1)
-        console.log(Number($( Number($( "#count_VK").text()) +1)))
 
-=======
+        $( "#count_VK").text( Number($( "#count_VK").text()) +1)
+
+
+
 jQuery(document).ready(function($) {
     $('.like').socialButton();
     $.scrollToButton('hash', 3000);
 });
->>>>>>> origin/sanbox
 
 });
 $( "#fb-logo" ).click(function() {
@@ -165,3 +172,45 @@ $( "#fb-logo" ).click(function() {
     $( "#count_FB").text( Number($( "#count_FB").text()) +1)
     console.log(Number($( Number($( "#count_FB").text()) +1)))
 });
+
+// mark busy days in calendar
+console.log("preready")
+busydays =["5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "26","27"];
+$(document).ready(function() {
+    console.log("ready")
+    if ($(document).find("title").text() === 'Volyanska Photography|Contacts') {
+
+        //replacement based on week started at monday
+        var previus
+        $ (".day-number").each(
+
+             function(){
+                 console.log( $(this).next(".day-number").text())
+                //console.log( $(this).text()+" /"+previus)
+
+              $(this).text(previus)
+                 //this.$ (".day-number").next($ (".day-number").text())
+                 next =  $(this).text()
+             }
+        )
+
+
+
+
+
+         for(var i=0; i<busydays.length; i++){
+
+
+         $( ".day-number:contains(" +busydays[i]+")").css({
+             "background-color": "red",
+         "color": "white",
+         "border-radius": "20px",
+         "margin-left": "8px",
+         "margin-right": "8px"})
+         }
+
+
+
+    }
+});
+
