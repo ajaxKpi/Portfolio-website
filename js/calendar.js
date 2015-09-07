@@ -110,12 +110,12 @@
     Calendar.prototype.backFill = function() {
         var clone = this.current.clone();
         var dayOfWeek = clone.day();
-
+        console.log(dayOfWeek)
         if (!dayOfWeek) {
-            return;
+            dayOfWeek=7;
         }
 
-        clone.subtract('days', dayOfWeek + 1);
+        clone.subtract('days', dayOfWeek);
 
         for (var i = dayOfWeek; i > 0; i--) {
             this.drawDay(clone.add('days', 1));
@@ -126,18 +126,19 @@
         var clone = this.current.clone().add('months', 1).subtract('days', 1);
         var dayOfWeek = clone.day();
 
-        if (dayOfWeek === 6) {
+        if (clone.day()===0) {
             return;
         }
 
         for (var i = dayOfWeek; i < 6; i++) {
             this.drawDay(clone.add('days', 1));
         }
+        this.drawDay(clone.add('days', 1));
     }
 
     Calendar.prototype.currentMonth = function() {
         var clone = this.current.clone();
-
+        clone.add('days', 1);
         while (clone.month() === this.current.month()) {
             this.drawDay(clone);
             clone.add('days', 1);
@@ -145,7 +146,7 @@
     }
 
     Calendar.prototype.getWeek = function(day) {
-        if (!this.week || day.day() === 0) {
+        if (!this.week || day.day() === 1) {
             this.week = createElement('div', 'week');
             this.month.appendChild(this.week);
         }

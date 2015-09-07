@@ -33,14 +33,7 @@ var autoSlide = setInterval(function() {
 //call pin button on specific location
 if ($(document).find("title").text() ==='Volyanska Photography|Blog'){
 
-$('.Blog_photo img').imgPin(
 
-        {
-            pinImg : 'img/social/pinterestOnImg.png', position: 2
-
-        }
-
-    );
 }
 
 var logo_width = $(".logo_small").width();
@@ -131,7 +124,21 @@ if ($(document).find("title").text()==='Volyanska Photography|Blog'){
 if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
     $('.read_more>a').text("Return to blog...");
     $(".read_more>a").attr('href', 'FullBlog.html')
+
+
+
+
+    $('.Blog_photo img').imgPin(
+
+        {
+            pinImg : 'img/social/pinterestOnImg.png', position: 2
+
+        }
+
+    );
+
     //disable link
+
    // $(".header_of_motion>a").attr('href',"")
     // $(".header_of_motion>a").removeClass('a');
    //$('.Blog_name').unbind('mouseenter mouseleave')
@@ -174,7 +181,9 @@ $( "#fb-logo" ).click(function() {
 });
 
 // mark busy days in calendar
-console.log("preready")
+/*
+
+
 busydays =["5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "26","27"];
 $(document).ready(function() {
     console.log("ready")
@@ -195,9 +204,6 @@ $(document).ready(function() {
         )
 
 
-
-
-
          for(var i=0; i<busydays.length; i++){
 
 
@@ -214,3 +220,4 @@ $(document).ready(function() {
     }
 });
 
+ */

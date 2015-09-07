@@ -14,10 +14,16 @@
     <!-- share buttons -->
     <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?117"></script>
+
+
 </head>
 <body>
 <div id="fb-root"></div>
-<script></script>
+
+<script type="text/javascript">
+    VK.init({apiId: 5058166, onlyWidgets: true});
+</script>
 
 <div class = "loader-wrapper">
     <div class="typing-indicator">
@@ -75,7 +81,7 @@
         <div class = "navigation-external">
             <ul>
                 <li>
-                    <a href="http://vk.com/olgavolyanska">
+                    <a target="_blank" href="https://www.facebook.com/olga.volyanska">
                         <svg
 
                                 xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +102,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.facebook.com/olga.volyanska">
+                    <a target="_blank" href="http://vk.com/olgavolyanska">
                         <svg
 
                                 xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +121,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://instagram.com/olgavolyanska">
+                    <a target="_blank" href="https://instagram.com/olgavolyanska">
                         <svg
 
                                 xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +143,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.pinterest.com/olgavolyanska/">
+                    <a target="_blank" href="https://www.pinterest.com/olgavolyanska/">
                         <svg
 
                                 xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +166,7 @@
                 </li>
 
                 <li>
-                    <a href="http://www.mywed.ru/photographer/view/profile/pollosata/">
+                    <a target="_blank" href="http://www.mywed.ru/photographer/view/profile/pollosata/">
                         <svg
 
                                 xmlns="http://www.w3.org/2000/svg"
@@ -326,6 +332,11 @@
 
     <div class  ="comment_wrap">
         <div class="fb-comments" data-href="http://volyanska.com" data-numposts="5" data-version="v2.3"></div>
+        <div id="vk_comments"></div>
+        <script type="text/javascript">
+            VK.Widgets.Comments("vk_comments", {limit: 5, width: "1000", attach: false});
+
+        </script>
     </div>
 
 
@@ -422,10 +433,12 @@
     <h5>
         Все тексты и фотографии охраняются законом об авторском праве, использование возможно лишь с согласия автора
     </h5>
+
     <script src="js/jquery/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.imgPin.js"></script>
     <script src="js/main.js"></script>
     <script src="js/social.js"></script>
+
 
 </footer>
 </section>
