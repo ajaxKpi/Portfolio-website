@@ -37,72 +37,58 @@
         <div class="logo_big">
             <img src="img/dummylogo.png" alt ="Logo_big">
         </div>
+
+
         <section class="Main_content">
 
+               <?php
+            $mysqli = new mysqli("localhost", "root", "edifier", "mydb");
+
+            /* check connection */
+            if ($mysqli->connect_errno) {
+                echo( "Connect failed: %s\n");
+                exit();
+            }
+            else{
 
 
+                $res = $mysqli->query("SELECT * FROM mydb.Base");
+
+             
+                for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
+                    $res->data_seek($row_no);
+                    $row = $res->fetch_assoc(); ?>
+
+                    <div class="Preview_poligon">
+                        <div class="Preview_photo">
+                            <img class="Preview_3" src= " <?php echo $row['preview']; ?> "alt="logo_img">
+                        </div>
+                        <div class="Preview_info">
+                            <a href=<?php echo "SingleBlog.php?id=" . $row['id']; ?>>
+                                <?php echo $row['name']; ?>
+                                <br>
+                                <?php echo $row['date']; ?>
+                                <br>
+                                <?php echo $row['tag']; ?>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <?php
+	
+                }
 
 
+            }
+            ?>
 
-
-
-             <div class="Preview_poligon">
-                <div class="Preview_photo">
-                    <img class="Preview_3" src="img/preview/3.jpg" alt="logo_img">
-                </div>
-            </div>
-            <div class="Preview_poligon">
-                <div class="Preview_photo">
-                    <img class="Preview_4" src="img/preview/4.jpg" alt="logo_img">
-                </div>
-            </div>
-            <div class="Preview_poligon">
-                <div class="Preview_photo">
-                    <img class="Preview_5" src="img/preview/5.jpg" alt="logo_img">
-                </div>
-            </div>
-            <div class="Preview_poligon">
-                <div class="Preview_photo">
-                    <img class="Preview_6" src="img/preview/6.jpg" alt="logo_img">
-                </div>
-            </div>
-            <div class="Preview_poligon">
-                <div class="Preview_photo">
-                    <img class="Preview_6" src="img/preview/12.jpg" alt="logo_img">
-                </div>
-            </div>
-            <div class="Preview_poligon">
-                <div class="Preview_photo">
-                    <img class="Preview_6" src="img/preview/13.jpg" alt="logo_img">
-                </div>
-            </div>
-            <div class="Preview_poligon">
-                <div class="Preview_photo">
-                    <img class="Preview_6" src="img/preview/9.jpg" alt="logo_img">
-                </div>
-            </div>
-            <div class="Preview_poligon">
-                <div class="Preview_photo">
-                    <img class="Preview_6" src="img/preview/10.jpg" alt="logo_img">
-                </div>
-            </div>
-            <div class="Preview_poligon">
-                <div class="Preview_photo">
-                    <img class="Preview_6" src="img/preview/11.jpg" alt="logo_img">
-                </div>
-            </div>
-            <div class="Preview_poligon">
-                <div class="Preview_photo">
-                    <img class="Preview_6" src="img/preview/14.jpg" alt="logo_img">
-                </div>
-            </div>
 
 
         </section>
-        <?php include 'sidebar.php' ?>
-    </div>
 
 
+    <?php include 'sidebar.php' ?>
     <?php include 'footer.php' ?>
 
 
