@@ -1,7 +1,7 @@
 <aside class ="main_sidebar">
     <div class ="about_me">
         <div class = "Avatar">
-            <a href = http:/Olgavolyanska.com/About>
+            <a href = "About.php">
                 <img src="img/Ava.jpg">
             </a>
         </div>
@@ -10,7 +10,7 @@
         <hr>
 
         <p>Привет!<br><br>
-            Я занимаюсь фото с раннего возраста это мое вдохновение...<a href="http:/Olgavolyanska.com/About"><span>(read more)>></span></a></p>
+            Я занимаюсь фото с раннего возраста это мое вдохновение...<a href="About.php"><span>(read more)>></span></a></p>
 
     </div>
 
@@ -20,19 +20,20 @@
         <hr class ="TagSeparator">
         <ul>
             <li>
-                <a href =http:/Olgavolyanska.com/tag/Wedding>Wedding</a>
+                <a href =FullBlog.php?tag=Wedding>Wedding</a>
             </li>
             <li>
-                <a href =http:/Olgavolyanska.com/tag/Love_story>Love story</a>
+                <a href =FullBlog.php?tag=Love>Love story</a>
             </li>
             <li>
-                <a href =http:/Olgavolyanska.com/tag/Family>Family</a>
+                <a href =FullBlog.php?tag=Family>Family</a>
             </li>
-            <li><a href =http:/Olgavolyanska.com/tag/Inspiration>Inspiration</a></li>
-            <li><a href =http:/Olgavolyanska.com/tag/p>Portrait</a></li>
+            <li><a href =FullBlog.php?tag=Inspiration>Inspiration</a></li>
+            <li><a href = FullBlog.php?tag=Portrait>Portrait</a></li>
         </ul>
     </div>
     <hr class ="InstSeparator">
+
     <div class ="sidebar_inst">
         <h2> Olga's Instagram</h2>
         <hr class ="Popular_StorySeparator">
@@ -64,13 +65,32 @@
         <h2>Popular Stories</h2>
         <hr class ="Popular_StorySeparator">
 
+
+        <?php
+        $mysqli = new mysqli("localhost", "root", "edifier", "mydb");
+
+        /* check connection */
+        if ($mysqli->connect_errno) {
+            echo( "Connect failed: %s\n");
+            exit();
+        }
+        else{
+
+
+        $res = $mysqli->query("SELECT * FROM mydb.Base order by visits asc LIMIT 4");
+
+
+        for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
+        $res->data_seek($row_no);
+        $row = $res->fetch_assoc(); ?>
+
         <div class="sidebar_photo">
-            <img class="Preview_2" src="img/preview/2.jpg" alt="logo_img">
+            <img class="Preview_2" src=" <?=$row['preview']; ?> " alt="logo_img">
             <div class="Popular_info">
-                <a  href="SingleBlog.html">
+                <a href=<?= "SingleBlog.php?id=" . $row['id']; ?>>
 
                     <br>
-                    Name
+                    <?=$row['name']; ?>
                     <br>
 
                 </a>
@@ -78,30 +98,10 @@
             </div>
         </div>
 
-
-        <div class="sidebar_photo">
-            <img class="Preview_3" src="img/preview/3.jpg" alt="logo_img">
-        </div>
-
-
-        <div class="sidebar_photo">
-            <img class="Preview_4" src="img/preview/4.jpg" alt="logo_img">
-        </div>
-
-
-        <div class="sidebar_photo">
-            <img class="Preview_5" src="img/preview/5.jpg" alt="logo_img">
-        </div>
-
-    </div>
+        <?php
+                }
+            }
+        ?>
 
 
 </aside>
-
-<?php
-/**
- * Created by PhpStorm.
- * User: zvorskyi
- * Date: 10.09.2015
- * Time: 15:21
- */

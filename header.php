@@ -2,29 +2,29 @@
 
     <div class ="navigation">
         <div class="logo_small">
-            <a href="http://volyanska.com">
+            <a href="index.php">
                 <img class="logo_small" src="img/dummylogo.png" alt="logo_img">
             </a>
         </div>
         <div class="navigation-internal">
             <ul>
                 <li >
-                    <a id="Portfolio" href="index.html">
+                    <a id="Portfolio" href="index.php">
                         Portfolio
                     </a>
                 </li>
                 <li >
-                    <a id="About" href="about.html">
+                    <a id="About" href="About.php">
                         About
                     </a>
                 </li>
                 <li >
-                    <a id="Blog" href="FullBlog.html">
+                    <a id="Blog" href="FullBlog.php">
                         Blog
                     </a>
                 </li>
                 <li >
-                    <a id="Advices" href="Advices.html">
+                    <a id="Advices" href="FullBlog.php?tag=advices">
                         Advices
                     </a>
                 </li >
@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li>
-                    <a id="Contacts" href="Contacts.html">
+                    <a id="Contacts" href="Contacts.php">
                         Contacts
                     </a>
                 </li>

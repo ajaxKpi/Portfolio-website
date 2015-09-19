@@ -15,6 +15,7 @@
 
 <body>
 
+<!-- Preloader Block -->
 <div class = "loader-wrapper">
     <div class="typing-indicator">
         <span></span>
@@ -22,23 +23,29 @@
         <span></span>
     </div>
 </div>
+
+<!-- Main+Sidebar+Footer Block Full windows size-->
+
 <section class = "Full_site_holder">
 
 
 
-
+    <!-- Main+Sidebar+Footer Block 1000px -->
     <div class = "Main_Side">
+        <!-- Header Block -->
         <nav class ="main_header">
 
             <?php include 'header.php' ?>
 
         </nav>
+
         <hr class ="Fixed_line">
+        <!-- Space for logo -->
         <div class="logo_big">
             <img src="img/dummylogo.png" alt ="Logo_big">
         </div>
 
-
+        <!-- Main(list of portfolio photo) -->
         <section class="Main_content">
 
                <?php
@@ -61,10 +68,10 @@
 
                     <div class="Preview_poligon">
                         <div class="Preview_photo">
-                            <img class="Preview_3" src= " <?php echo $row['preview']; ?> "alt="logo_img">
+                            <img class="Preview_3" src= " <?= $row['preview']; ?> "alt="logo_img">
                         </div>
                         <div class="Preview_info">
-                            <a href=<?php echo "SingleBlog.php?id=" . $row['id']; ?>>
+                            <a href=<?= "SingleBlog.php?id=" . $row['id']; ?>>
                                 <?php echo $row['name']; ?>
                                 <br>
                                 <?php echo $row['date']; ?>
@@ -87,8 +94,9 @@
 
         </section>
 
-
+        <!-- sidebar Block -->
     <?php include 'sidebar.php' ?>
+        <!-- footer Block -->
     <?php include 'footer.php' ?>
 
 

@@ -123,7 +123,7 @@ if ($(document).find("title").text()==='Volyanska Photography|Blog'){
 //set text in like_share bar
 if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
     $('.read_more>a').text("Return to blog...");
-    $(".read_more>a").attr('href', 'FullBlog.html')
+    $(".read_more>a").attr('href', 'FullBlog.php')
 
 
 
@@ -149,8 +149,12 @@ if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
 }
 else if($('div').hasClass('read_more'))
 {
+
+  /*  CurrentId  = window.location.search.substr(1).split("&");
+
     $('.read_more>a').text("Read more...");
-    $('.read_more>a').attr('href', 'SingleBlog.html');
+    $('.read_more>a').attr('href', 'SingleBlog.php&id='+ CurrentId["1"]);
+*/
 }
 //convert color on click
 $( "#vk-logo" ).click(function() {

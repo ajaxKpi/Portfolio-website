@@ -42,7 +42,7 @@
 </nav>
 <hr class ="Fixed_line">
 <div class="logo_big">
-    <a href ="index.html">
+    <a href ="index.php">
         <img src="img/dummylogo.png" alt ="Logo_big">
     </a>
 </div>
@@ -69,7 +69,7 @@ $row = $res->fetch_assoc();}
 <section class="Main_content">
     <div class = "header_of_motion">
         <h1 class="Blog_name"><?= $row['name']?></h1>
-        <span>25 августа | <a href = <?="FullBlog.html?tag=". $row['tag']?> ><?= $row['tag']?>
+        <span><?=$row['date'] ?>  | <a href = <?="FullBlog.php?tag=". $row['tag']?> ><?= $row['tag']?>
                               </a></span>
     </div>
     <hr>
@@ -93,8 +93,6 @@ $row = $res->fetch_assoc();}
 ?>
 
 
-
-
     <!-- Social bar -->
     <section class ="like_share">
         <hr>
@@ -115,7 +113,7 @@ $row = $res->fetch_assoc();}
         <div class="Share_container">
 
             <div class="read_more">
-                <a href ="FullBlog.html">Read more...</a>
+                <a href ="FullBlog.php">Read more...</a>
 
             </div>
             <table>
@@ -192,8 +190,37 @@ $row = $res->fetch_assoc();}
     <?php include 'sidebar.php' ?>
 
 </div>
-<!-- footer -->
+
+    <?php
+    //increment to one more visit
+    $mysqli2 = new mysqli("localhost", "root", "edifier", "mydb");
+    $res = $mysqli2->query("SELECT visits FROM mydb.Base Where id='".$_GET["id"]."'");
+
+
+
+
+    ?>
+
+
+
+    <?php
+
+
+    $visits= $res->fetch_assoc();
+    $visit =(int)$visits['visits'];
+
+    $visit++;
+    $mysqli->query("Update mydb.Base Set visits ='" .$visit."' where id='".$_GET["id"]."'");
+    ?>
+
+
+
+
+    <!-- footer -->
     <?php include 'footer.php' ?>
+
+
 </section>
+
 </body>
 </html>

@@ -169,7 +169,7 @@ body {
 
 .header_of_motion a:hover{
     color: black;
-    font-weight:bold;
+    /*font-weight:bold;*/
     text-decoration: none;
 }
 .like_share a:hover{
@@ -748,3 +748,22 @@ i.vk,span.vk{ color: #45668e; }
 #info_table{
 margin-left: 25px;
 margin-top: 20px;}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**********************************About me elements************************
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.intend{
+    height: 100px;
+    width: 100%;
+    
+}
+.Me_content{
+    position: relative;
+    text-align: justify;
+}
+.Me_content img{
+    margin-right:20px;
+    margin-bottom:20px;
+    float: left;
+    max-width: 300px;
+}
