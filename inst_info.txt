@@ -13,3 +13,6 @@ REDIRECT URI	http://Olgavolyanska.com
 SUPPORT EMAIL	ajax90@ukr.net
 
 https://api.instagram.com/v1/users/17222860/media/recent/?client_id=4f05e65fab334327bcf8299955ed992a
+https://api.instagram.com/v1/users/17222860/media/recent/?client_id=4f05e65fab334327bcf8299955ed992a&count=20
+
+$this->answer = $this->send('https://api.instagram.com/v1/users/'.$this->data['userid'].'/media/recent/?client_id='.$this->config['CLIENT_ID'].'&count='.$this->config['imgCount']);

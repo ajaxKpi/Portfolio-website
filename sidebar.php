@@ -38,23 +38,29 @@
         <h2> Olga's Instagram</h2>
         <hr class ="Popular_StorySeparator">
         <ul class = "carusel">
-            <li class ="inst_item">
-                <a href ="https://instagram.com/p/6b8CKXrLai/">
-                    <img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s320x320/e35/11350707_1616093528658748_1580507982_n.jpg">
-                </a>
-            </li>
-            <li>
-            <li class ="inst_item">
-                <a href ="https://instagram.com/p/6a00WgrLXA/">
-                    <img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s320x320/e35/11850225_924620834245877_248069825_n.jpg">
-                </a>
-            </li>
-            <li>
-            <li class ="inst_item">
-                <a href ="https://instagram.com/p/6aE4T9rLXV/">
-                    <img src="https://scontent.cdninstagram.com/hphotos-xaf1/l/t51.2885-15/s320x320/e35/11428617_540728596090251_1818842379_n.jpg">
-                </a>
-            </li>
+        <?php
+            require_once 'libraries/inwidget/IstaGet.php';
+
+            $inWidget = new inWidget();
+            $inWidget->apiQuery();
+            $LinkImage = $inWidget->data['images'];
+            for ($key=0;  $key<sizeof($LinkImage); $key++)
+            {?>
+
+
+                <li class ="inst_item">
+                    <a target="_blank" href ="<?=$LinkImage[$key]['link' ]?>">
+                        <img  src="<?=$LinkImage[$key]['large' ]?>">
+                    </a>
+                </li>
+
+            <?php
+            }
+            ?>
+
+
+
+
 
         </ul>
 
