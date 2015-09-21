@@ -73,7 +73,7 @@
 
 
         <?php
-        $mysqli = new mysqli("localhost", "root", "edifier", "mydb");
+        $mysqli = new mysqli("localhost", "root", "", "mydb");
 
         /* check connection */
         if ($mysqli->connect_errno) {

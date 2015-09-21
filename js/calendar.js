@@ -399,7 +399,7 @@ app.directive('calendar', [function(){
                     color: 'red'
                 }]
             }, {
-                date: new Date(2015, 1, 2),
+                date: new Date(2015, 9, 2),
                 events: [{
                     name: 'zeus',
                     type: 'bot',

@@ -58,12 +58,9 @@
                 {$filter ="all";}
             elseif ($filter=="Love")
                      {$filter ="Love story";}
-            $mysqli = new mysqli("localhost", "root", "edifier", "mydb");
+            $mysqli = new mysqli("localhost", "root", "", "mydb");
             $mysqli->set_charset("utf8");
 
-            ?>
-            <h1><?=$filter?></h1>
-            <?php
 
 
             /* check connection */
@@ -78,7 +75,8 @@
                 for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
                     $res->data_seek($row_no);
                     $row = $res->fetch_assoc();
-
+                    $Print_date =new dateTime($row['date']) ;
+                    $Print_date=   $Print_date-> format('j F Y');
                     if ($row['tag']== $filter or $filter=='all') {
                     ?>
 
@@ -86,7 +84,7 @@
                         <div class = "header_of_motion">
                             <a href=<?php echo "SingleBlog.php?id=" . $row['id']; ?>>
                                 <h1 class="Blog_name"> <?=$row['name'] ?> </h1></a>
-                            <span> <?=$row['date'] ?> | <a href = <?php echo "FullBlog.php?tag=" . $row['tag']; ?>><?=$row['tag'] ?></a></span>
+                            <span> <?=$Print_date ?> | <a href = <?php echo "FullBlog.php?tag=" . $row['tag']; ?>><?=$row['tag'] ?></a></span>
                         </div>
                         <hr>
                         <br>

@@ -14,28 +14,27 @@
     <!-- share buttons -->
     <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="//vk.com/js/api/openapi.js?117"></script>
+
+    <!-- VK.com reference -->
+    <!--  <script src="http://vk.com/js/api/openapi.js"; type="text/javascript" charset="windows-1251"></script>-->
 
 
-</head>
-<body>
-<div id="fb-root"></div>
+  </head>
+  <body>
+  <div id="fb-root"></div>
+  <!-- VK.com init
+    <script type="text/javascript">
+    VK.init({
+        apiId: 5077240,
+        onlyWidgets: true
+    });
+    </script>
+    -->
 
-<script type="text/javascript">
-    VK.init({apiId: 5058166, onlyWidgets: true});
-</script>
+    <section class = "Full_site_holder">
 
-<div class = "loader-wrapper">
-    <div class="typing-indicator">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
-<section class = "Full_site_holder">
-
-<div class = "Main_Side">
-<!-- header -->
+    <div class = "Main_Side">
+    <!-- header -->
 <nav class ="main_header">
 
     <?php include 'header.php' ?>
@@ -48,7 +47,7 @@
 </div>
 
 <?php
-$mysqli = new mysqli("localhost", "root", "edifier", "mydb");
+$mysqli = new mysqli("localhost", "root", "", "mydb");
 $mysqli->set_charset("utf8");
 /* check connection */
 if ($mysqli->connect_errno) {
@@ -62,14 +61,17 @@ $res = $mysqli->query("SELECT * FROM mydb.Base Where id='".$_GET["id"]."'");
 
 for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
 $res->data_seek($row_no);
-$row = $res->fetch_assoc();}
+$row = $res->fetch_assoc();
+$Print_date =new dateTime($row['date']) ;
+    $Print_date=   $Print_date-> format('j F Y');
+}
 }?>
 
 
 <section class="Main_content">
     <div class = "header_of_motion">
         <h1 class="Blog_name"><?= $row['name']?></h1>
-        <span><?=$row['date'] ?>  | <a href = <?="FullBlog.php?tag=". $row['tag']?> ><?= $row['tag']?>
+        <span><?=  $Print_date?>  | <a href = <?="FullBlog.php?tag=". $row['tag']?> ><?= $row['tag']?>
                               </a></span>
     </div>
     <hr>
@@ -79,7 +81,7 @@ $row = $res->fetch_assoc();}
         <?= $row['descr']?>
     </p>
 <?php
-    $files = glob($row["folder"].'/*.{jpg}', GLOB_BRACE);
+    $files = glob($row["folder"].'/*.{*}', GLOB_BRACE);
 
 
     foreach($files as $file) { ?>
@@ -122,7 +124,7 @@ $row = $res->fetch_assoc();}
                     <td>Share on:</td>
                     <td id = "vk-logo" >
 
-                        <a onclick="Share.vkontakte('Olgavolyanska.com','Share on VK','img/vk32.png','DESC')">
+                        <a onclick="Share.vkontakte('volyanska.com','Share on VK','img/vk32.png','DESC')">
                             <div class="Svg_holder">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +142,7 @@ $row = $res->fetch_assoc();}
                     </td>
                     <td id = "fb-logo">
 
-                        <a onclick="Share.facebook('Olgavolyanska.com','Share on Facebook','img/fb32.png','DESC')">
+                        <a onclick="Share.facebook('volyanska.com','Share on Facebook','img/fb32.png','DESC')">
                             <!-- Created with Inkscape (http://www.inkscape.org/) -->
                             <div class="Svg_holder">
                                 <svg
@@ -173,13 +175,14 @@ $row = $res->fetch_assoc();}
     </section>
 
     <div class  ="comment_wrap">
-        <div class="fb-comments" data-href="http://volyanska.com" data-numposts="5" data-version="v2.3"></div>
+              <div class="fb-comments" data-href="http://volyanska.com" data-numposts="5" data-version="v2.3"></div>
+       <!-- VK.com position
         <div id="vk_comments"></div>
-  <!--      <script type="text/javascript">
-            VK.Widgets.Comments("vk_comments", {limit: 5, width: "1000", attach: false});
-
-        </script> -->
-    </div>
+             <script type="text/javascript">
+                VK.Widgets.Comments('vk_comments');
+            </script>
+        </div>
+    -->
 
 
 
@@ -193,15 +196,10 @@ $row = $res->fetch_assoc();}
 
     <?php
     //increment to one more visit
-    $mysqli2 = new mysqli("localhost", "root", "edifier", "mydb");
+    $mysqli2 = new mysqli("localhost", "root", "", "mydb");
     $res = $mysqli2->query("SELECT visits FROM mydb.Base Where id='".$_GET["id"]."'");
 
-
-
-
     ?>
-
-
 
     <?php
 

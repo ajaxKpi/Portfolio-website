@@ -15,14 +15,7 @@
 
 <body>
 
-<!-- Preloader Block -->
-<div class = "loader-wrapper">
-    <div class="typing-indicator">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
+
 
 <!-- Main+Sidebar+Footer Block Full windows size-->
 
@@ -49,7 +42,8 @@
         <section class="Main_content">
 
                <?php
-            $mysqli = new mysqli("localhost", "root", "edifier", "mydb");
+
+            $mysqli = new mysqli("localhost", "root", "", "mydb");
 
             /* check connection */
             if ($mysqli->connect_errno) {
@@ -74,7 +68,10 @@
                             <a href=<?= "SingleBlog.php?id=" . $row['id']; ?>>
                                 <?php echo $row['name']; ?>
                                 <br>
-                                <?php echo $row['date']; ?>
+                                <?php
+                                    $Print_date =new dateTime($row['date']) ;
+                                    echo  $Print_date-> format('j F Y');
+                                ?>
                                 <br>
                                 <?php echo $row['tag']; ?>
                             </a>

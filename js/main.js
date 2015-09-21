@@ -127,7 +127,6 @@ if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
 
 
 
-
     $('.Blog_photo img').imgPin(
 
         {
@@ -156,33 +155,105 @@ else if($('div').hasClass('read_more'))
     $('.read_more>a').attr('href', 'SingleBlog.php&id='+ CurrentId["1"]);
 */
 }
+
 //convert color on click
 $( "#vk-logo" ).click(function() {
     $( "#vk-logo  path").css("fill","white")
     $( "#vk-logo").css("background-color","silver")
     $( "#count_VK").css("background-color","silver")
     $( "#count_VK ").css("color","white")
-
+    console.log('VK')
 
         $( "#count_VK").text( Number($( "#count_VK").text()) +1)
+
+
+    $("#fb-logo").click(function () {
+        $("#fb-logo  path").css("fill", "white")
+        $("#fb-logo").css("background-color", "silver")
+        $("#count_FB").css("background-color", "silver")
+        $("#count_FB ").css("color", "white")
+
+        $("#count_FB").text(Number($("#count_FB").text()) + 1)
+        console.log(Number($(Number($("#count_FB").text()) + 1)))
+    });
+
+
 
 
 
 jQuery(document).ready(function($) {
     $('.like').socialButton();
     $.scrollToButton('hash', 3000);
-});
 
 });
-$( "#fb-logo" ).click(function() {
-    $( "#fb-logo  path").css("fill","white")
-    $( "#fb-logo").css("background-color","silver")
-    $( "#count_FB").css("background-color","silver")
-    $( "#count_FB ").css("color","white")
 
-    $( "#count_FB").text( Number($( "#count_FB").text()) +1)
-    console.log(Number($( Number($( "#count_FB").text()) +1)))
+
 });
+
+/*  configure access to VK and FB to choose wich comment bar should be used */
+jQuery(document).ready(function($) {
+    if ($(document).find("title").text()==='Volyanska Photography|Blog'){
+
+    window.fbAsyncInit = function() {
+        FB.init({appId: '1492697214384249', status: true, cookie: true, xfbml: true, version: 'v2.4'});
+        FB.getLoginStatus(fbLoginStatus);
+        FB.Event.subscribe('auth.statusChange', fbLoginStatus);
+    };
+
+    /*
+     VK.init({
+     apiId: 5077240,
+     onlyWidgets: true
+     }); */
+
+
+    (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol +
+        '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+    }());
+
+
+var fb_login = false;
+var vk_login = false;
+    function fbLoginStatus(response) {
+    if( response.status === 'connected' ) {
+        //user is logged in, display profile div
+        fb_login=true
+    } else {
+        //user is not logged in, display guest div
+        fb_login =false
+    }
+}
+
+
+/*
+ VK.Auth.getLoginStatus(function(response) {
+ if (response.session) {
+ // User authorized in Open API
+     vk_login = true
+ } else {
+ // User not authorized in Open API
+    vk_login =false
+ }
+ });
+ */
+
+if (fb_login || !vk_login){
+    $(".fb-comments ").css("visibility", "block")
+    $("#vk_comments ").css("visibility", "none")
+}
+else {
+
+    $(".fb-comments ").css("display", "none")
+    $("#vk_comments ").css("visibility", "block")
+    }
+
+    }
+
+});
+
 
 // mark busy days in calendar
 /*
