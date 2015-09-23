@@ -83,7 +83,7 @@
         else{
 
 
-        $res = $mysqli->query("SELECT * FROM mydb.Base order by visits asc LIMIT 4");
+        $res = $mysqli->query("SELECT * FROM mydb.Base order by visits desc LIMIT 4");
 
 
         for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {

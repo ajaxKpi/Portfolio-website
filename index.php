@@ -53,12 +53,16 @@
             else{
 
 
-                $res = $mysqli->query("SELECT * FROM mydb.Base");
+                $res = $mysqli->query("SELECT * FROM mydb.Base order by date desc");
 
              
                 for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
                     $res->data_seek($row_no);
-                    $row = $res->fetch_assoc(); ?>
+                    $row = $res->fetch_assoc();
+                    if($row['tag']!='Advices'){
+
+
+                    ?>
 
                     <div class="Preview_poligon">
                         <div class="Preview_photo">
@@ -80,6 +84,7 @@
                     </div>
 
                     <?php
+                    }
 	
                 }
 
