@@ -78,6 +78,9 @@
                     $Print_date =new dateTime($row['date']) ;
                     $Print_date=   $Print_date-> format('j F Y');
                     if ($row['tag']== $filter or $filter=='all') {
+                        $preview_arr = explode($row['preview'],"/");
+                        $preview_arr[sizeof($preview_arr)]="L_".$preview_arr[sizeof($preview_arr)];
+                        $preview_large = implode("/", $preview_arr);
                     ?>
 
                         <article class="Blog_post">
@@ -97,6 +100,7 @@
                         <div class = "Blog_photo">
                             <a href =<?php echo "SingleBlog.php?id=" . $row['id']; ?>>
                                 <img src=<?=$row['preview']?> alt ="Blog_photo">
+
                             </a>
                         </div>
 
