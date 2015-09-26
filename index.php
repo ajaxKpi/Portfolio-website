@@ -19,6 +19,18 @@
 
 <!-- Main+Sidebar+Footer Block Full windows size-->
 
+<!-- Preloader Block -->
+<body>
+<div class = "loader-wrapper">
+    <div class="typing-indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+
+
 <section class = "Full_site_holder">
 
 
@@ -53,7 +65,7 @@
             else{
 
 
-                $res = $mysqli->query("SELECT * FROM mydb.Base order by date desc");
+                $res = $mysqli->query("SELECT * FROM mydb.Base order by date asc");
 
              
                 for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {

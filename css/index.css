@@ -173,7 +173,6 @@ body {
     text-decoration: none;
 }
 .like_share a:hover{
-
     text-decoration: none;
     color:black;
 
@@ -696,6 +695,7 @@ i.vk,span.vk{ color: #45668e; }
 .Share_container td{
 
 }
+/*
 #fb-logo,#vk-logo {
 
     border-bottom: solid silver thin;
@@ -717,7 +717,7 @@ i.vk,span.vk{ color: #45668e; }
     text-align: center;
 
 }
-
+*/
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 **********************************Full Blog elements************************
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/

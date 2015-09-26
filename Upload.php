@@ -16,16 +16,19 @@ if(isset($_POST['mode']) && $_POST['mode'] == 'create')
     $Data =$_POST['data'];
     $Tag = $_POST['tag'];
     $Desc = $_POST['descr'];
+    $ID =  $_POST['id'];
 
 
-    $clearNamePS = strtolower (str_replace(' ','',substr($NamePS,0,15))).".".$imageFileType;
-    $folder_loc= "img/preview/photo/";
 
         //--------------------------upload small preview--------------------------
 
         $target_file = $target_dir . basename($_FILES["small-preview"]["name"]);
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+    $clearNamePS = $ID.strtolower (str_replace(' ','',substr($NamePS,0,15))).".".$imageFileType;
+
+
+
         // Check if image file is a actual image or fake image
         if (isset($_POST["submit"])) {
             $check = getimagesize($_FILES["small-preview"]["tmp_name"]);
@@ -42,14 +45,15 @@ if(isset($_POST['mode']) && $_POST['mode'] == 'create')
             echo "Sorry, your file was not uploaded.";
             // if everything is ok, try to upload file
         } else {
-            if (move_uploaded_file($_FILES["small-preview"]["tmp_name"], $target_file)) {
-                echo "The file " . basename($_FILES["small-preview"]["name"]) . " has been uploaded.";
+            if (move_uploaded_file($_FILES["small-preview"]["tmp_name"], $target_dir.$clearNamePS)) {
+                echo "The file " . $clearNamePS . " has been uploaded.";
             } else {
                 echo "Sorry, there was an error uploading your file.";
             }
 
     }
     //--------------------------upload large preview--------------------------
+    $folder_loc= "img/photo/";
     $target_file = $target_dir."L_".$clearNamePS;
     $uploadOk = 1;
     //$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -70,7 +74,7 @@ if(isset($_POST['mode']) && $_POST['mode'] == 'create')
         // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["large-preview"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["large-preview"]["name"]). " has been uploaded.";
+            echo "The file ".$clearNamePS. " has been uploaded.";
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
@@ -78,7 +82,7 @@ if(isset($_POST['mode']) && $_POST['mode'] == 'create')
     //--------------------------All files from post upload--------------------------
     // set or create folder to store data
 
-   $filepath = "img/photo/".$_POST['ps_name']. "/";
+   $filepath = "img/photo/".$_POST['ps_name']."/";
 
     if (!file_exists($filepath)){
         mkdir( $filepath, 0777);
@@ -103,7 +107,7 @@ if(isset($_POST['mode']) && $_POST['mode'] == 'create')
 
 
     $query = "INSERT into mydb.Base  (`id`, `name`, `date`, `preview`, `folder`, `tag`, `visits`,  `descr`)
-      VALUES ('11', '" . $NamePS ."',STR_TO_DATE('". $Data. "','%m/%d/%Y'), '".$target_dir.$clearNamePS."', '".$folder_loc.$NamePS."', '".$Tag."',  '0','".$Desc."')";
+      VALUES ('". $ID ."', '" . $NamePS ."',STR_TO_DATE('". $Data. "','%d/%m/%Y'), '".$target_dir.$clearNamePS."', '".$folder_loc.$NamePS."', '".$Tag."',  '0','".$Desc."')";
 
        $res = $mysqli->query($query);
 
@@ -125,4 +129,5 @@ if(isset($_POST['delete']) && $_POST['delete'] == 'delete'){
 
 
 }
+//header("Location: index.php");
 ?>

@@ -6,7 +6,7 @@
 $(document).ready(function() {
     $('#sandbox-container .input-group.date').datepicker(
         {
-            format: "mm/dd/yyyy",
+            format: "dd/mm/yyyy",
             weekStart: 1,
             todayBtn: "linked",
             language: "ru",
@@ -14,4 +14,26 @@ $(document).ready(function() {
             todayHighlight: true
         }
     )
+});
+
+function readURL(input, ImgID) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $(ImgID).attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#inp_small").change(function(){
+    readURL(this,"#smallimg");
+
+});
+$("#inp_large").change(function(){
+    readURL(this, "#largeimg");
+
 });

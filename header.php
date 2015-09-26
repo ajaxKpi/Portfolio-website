@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li >
-                    <a id="Advices" href="FullBlog.php?tag=advices">
+                    <a id="Advices" href="FullBlog.php?tag=Advices">
                         Advices
                     </a>
                 </li >

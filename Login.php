@@ -5,6 +5,20 @@
     <title>Hello, Olya</title>
 </head>
 <body>
+<form action="login.php" method="POST">
+    <div align="center" style="padding: 250px 0 0 0">
+        <table border="0" cellspacing="0" width="200">
+            <caption><b>Enter to the system</b></caption>
+            <tr><td align="right"><b>Login:</b></td>
+                <td><input type="text" name="login"></td></tr>
+            <tr><td align="right"><b>Pass:</b></td>
+                <td><input type="password" name="passw"></td></tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <input type="submit" value="Войти">
+                </td></tr></table>
+        <tr>
+            <td>
 <?php
 
 
@@ -19,25 +33,15 @@ if (isset ($_POST['passw'])) {
     }
 
     else{
-        echo '<span style="color: red"><b> Error</b></span><br>';
+        echo '<span style="color: red"><b> Wrong Login/Pass</b></span><br>';
     }
 }
 
 ?>
 
 
-<form action="login.php" method="POST">
-    <div align="center" style="padding: 250px 0 0 0">
-        <table border="0" cellspacing="0" width="200">
-            <caption><b>Вход в систему</b></caption>
-            <tr><td align="right"><b>Логин:</b></td>
-                <td><input type="text" name="login"></td></tr>
-            <tr><td align="right"><b>Пароль:</b></td>
-                <td><input type="password" name="passw"></td></tr>
-            <tr>
-                <td align="center" colspan="2">
-                    <input type="submit" value="Войти">
-                </td></tr></table>
+                </td>
+            </tr>
 
     </div>
 </form>

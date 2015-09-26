@@ -37,7 +37,7 @@ if ($(document).find("title").text() ==='Volyanska Photography|Blog'){
 }
 
 var logo_width = $(".logo_small").width();
-console.log( $(".Main_content").css("margin-left"))
+
 
 Share = {
     vkontakte: function(purl, ptitle, pimg, text) {
@@ -81,8 +81,24 @@ $("#f197705904").remove();
 
 
 
-//use specific layout on single blog
 
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+
+//use specific layout on single blog
 
 
 
@@ -94,6 +110,10 @@ if ($(document).find("title").text()==='Volyanska Photography|Blog'){
 
 
     });
+
+
+
+
     //$('.main_sidebar').css("padding-top","60px")
 }
 
@@ -120,6 +140,9 @@ if ($(document).find("title").text()==='Volyanska Photography|Blog'){
             default:
                 $('#Portfolio').css("color", "brown");
         }
+
+
+
 //set text in like_share bar
 if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
     $('.read_more>a').text("Return to blog...");
@@ -128,12 +151,9 @@ if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
 
 
     $('.Blog_photo img').imgPin(
-
         {
             pinImg : 'img/social/pinterestOnImg.png', position: 2
-
         }
-
     );
 
     //disable link
@@ -157,27 +177,16 @@ else if($('div').hasClass('read_more'))
 }
 
 //convert color on click
-$( "#vk-logo" ).click(function() {
-    $( "#vk-logo  path").css("fill","white")
-    $( "#vk-logo").css("background-color","silver")
-    $( "#count_VK").css("background-color","silver")
-    $( "#count_VK ").css("color","white")
-    console.log('VK')
+$( ".onshare").click(function() {
+    Pathid ="#"+event.target.id
+    $(Pathid).css("fill","black")
 
-        $( "#count_VK").text( Number($( "#count_VK").text()) +1)
-
-
-    $("#fb-logo").click(function () {
-        $("#fb-logo  path").css("fill", "white")
-        $("#fb-logo").css("background-color", "silver")
-        $("#count_FB").css("background-color", "silver")
-        $("#count_FB ").css("color", "white")
-
-        $("#count_FB").text(Number($("#count_FB").text()) + 1)
-        console.log(Number($(Number($("#count_FB").text()) + 1)))
-    });
+    //$( "#vk-logo").css("background-color","silver")
+    //$( "#count_VK").css("background-color","silver")
+    //$( "#count_VK ").css("color","white")
 
 
+      //  $( "#count_VK").text( Number($( "#count_VK").text()) +1)
 
 
 
@@ -193,6 +202,13 @@ jQuery(document).ready(function($) {
 /*  configure access to VK and FB to choose wich comment bar should be used */
 jQuery(document).ready(function($) {
     if ($(document).find("title").text()==='Volyanska Photography|Blog'){
+
+        var tag = getUrlParameter('tag');
+        if (tag  === "Advices") {
+            $('#Blog').css("color", "black");
+            $('#Advices').css("color", "brown");
+
+        }
 
     window.fbAsyncInit = function() {
         FB.init({appId: '1492697214384249', status: true, cookie: true, xfbml: true, version: 'v2.4'});
