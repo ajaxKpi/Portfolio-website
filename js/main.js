@@ -163,23 +163,23 @@ if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
    //$('.Blog_name').unbind('mouseenter mouseleave')
     //$('.header_of_motion>h1').attr('style','')
     $(".Blog_name").hover(function() {
-        $(this).css("color","black")
+        $(this).css("color","black");
     });
 }
-else if($('div').hasClass('read_more'))
-{
+    else if($('div').hasClass('read_more'))
+        {
 
-  /*  CurrentId  = window.location.search.substr(1).split("&");
+          /*  CurrentId  = window.location.search.substr(1).split("&");
 
-    $('.read_more>a').text("Read more...");
-    $('.read_more>a').attr('href', 'SingleBlog.php&id='+ CurrentId["1"]);
-*/
-}
+            $('.read_more>a').text("Read more...");
+            $('.read_more>a').attr('href', 'SingleBlog.php&id='+ CurrentId["1"]);
+        */
+        }
 
 //convert color on click
 $( ".onshare").click(function() {
-    Pathid ="#"+event.target.id
-    $(Pathid).css("fill","black")
+    Pathid ="#"+event.target.id;
+    $(Pathid).css("fill","black");
 
     //$( "#vk-logo").css("background-color","silver")
     //$( "#count_VK").css("background-color","silver")
@@ -196,7 +196,6 @@ jQuery(document).ready(function($) {
 
 });
 
-
 });
 
 /*  configure access to VK and FB to choose wich comment bar should be used */
@@ -210,20 +209,30 @@ jQuery(document).ready(function($) {
 
         }
 
+
+
     window.fbAsyncInit = function() {
         FB.init({appId: '1492697214384249', status: true, cookie: true, xfbml: true, version: 'v2.4'});
         FB.getLoginStatus(fbLoginStatus);
         FB.Event.subscribe('auth.statusChange', fbLoginStatus);
     };
+        function fbLoginStatus(response) {
+            if( response.status === 'connected' ) {
+                //user is logged in, display profile div
+                fb_login=true
+            } else {
+                //user is not logged in, display guest div
+                fb_login =false
+            }
+        }
 
-    /*
+
      VK.init({
      apiId: 5077240,
      onlyWidgets: true
-     }); */
+     });
 
-
-    (function() {
+        (function() {
         var e = document.createElement('script'); e.async = true;
         e.src = document.location.protocol +
         '//connect.facebook.net/en_US/all.js';
@@ -233,18 +242,10 @@ jQuery(document).ready(function($) {
 
 var fb_login = false;
 var vk_login = false;
-    function fbLoginStatus(response) {
-    if( response.status === 'connected' ) {
-        //user is logged in, display profile div
-        fb_login=true
-    } else {
-        //user is not logged in, display guest div
-        fb_login =false
-    }
-}
 
 
-/*
+
+
  VK.Auth.getLoginStatus(function(response) {
  if (response.session) {
  // User authorized in Open API
@@ -254,16 +255,16 @@ var vk_login = false;
     vk_login =false
  }
  });
- */
+
 
 if (fb_login || !vk_login){
-    $(".fb-comments ").css("visibility", "block")
-    $("#vk_comments ").css("visibility", "none")
+    $(".fb-comments ").css("display", "block")
+    $("#vk_comments ").css("display", "none")
 }
 else {
 
     $(".fb-comments ").css("display", "none")
-    $("#vk_comments ").css("visibility", "block")
+    $("#vk_comments ").css("display", "block")
     }
 
     }

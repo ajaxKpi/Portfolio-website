@@ -16,10 +16,11 @@ session_start();
 if ( $_SESSION['status'])
 
 {
-$mysqli = new mysqli("localhost", "root", "", "mydb");
+require_once 'data.php';
+$mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
 $mysqli->set_charset("utf8");
 
-$last_id = $mysqli->query("Select max(id) id from mydb.Base");
+$last_id = $mysqli->query("Select max(id) id from base");
 $new_id=$last_id->fetch_assoc();
 $new_id =(int)$new_id['id'];
 $new_id++;
@@ -127,7 +128,7 @@ $new_id++;
 }
 
 else {
-    header("Location: login.php");
+    header("Location: Login.php");
 }
 ?>
 </div>

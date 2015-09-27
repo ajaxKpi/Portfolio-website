@@ -102,11 +102,12 @@ if(isset($_POST['mode']) && $_POST['mode'] == 'create')
 
 
     //--------------------------insert new data to DB --------------------------
-    $mysqli = new mysqli("localhost", "root", "", "mydb");
+    require_once 'data.php';
+    $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
     $mysqli->set_charset("utf8");
 
 
-    $query = "INSERT into mydb.Base  (`id`, `name`, `date`, `preview`, `folder`, `tag`, `visits`,  `descr`)
+    $query = "INSERT into base  (`id`, `name`, `date`, `preview`, `folder`, `tag`, `visits`,  `descr`)
       VALUES ('". $ID ."', '" . $NamePS ."',STR_TO_DATE('". $Data. "','%d/%m/%Y'), '".$target_dir.$clearNamePS."', '".$folder_loc.$NamePS."', '".$Tag."',  '0','".$Desc."')";
 
        $res = $mysqli->query($query);

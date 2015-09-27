@@ -5,7 +5,7 @@
     <title>Hello, Olya</title>
 </head>
 <body>
-<form action="login.php" method="POST">
+<form action="Login.php" method="POST">
     <div align="center" style="padding: 250px 0 0 0">
         <table border="0" cellspacing="0" width="200">
             <caption><b>Enter to the system</b></caption>
@@ -23,17 +23,18 @@
 
 
 require_once 'data.php';
-
 if (isset ($_POST['passw'])) {
-    if (md5($_POST['passw'].$Pass_salt) == $Pass_result&&$Login==$_POST['login']) {
+    if (md5($_POST['passw'].$Pass_salt) == $Pass_result&&$LoginAdm==$_POST['login']) {
         session_start();
         $_SESSION['status'] = true;
-        header('Location: admin.php');
+        header('Location: MyAdmin.php');
 
     }
 
     else{
+
         echo '<span style="color: red"><b> Wrong Login/Pass</b></span><br>';
+        ;
     }
 }
 

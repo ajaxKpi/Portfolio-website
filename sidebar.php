@@ -73,7 +73,8 @@
 
 
         <?php
-        $mysqli = new mysqli("localhost", "root", "", "mydb");
+        require_once 'data.php';
+        $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
 
         /* check connection */
         if ($mysqli->connect_errno) {
@@ -83,7 +84,7 @@
         else{
 
 
-        $res = $mysqli->query("SELECT * FROM mydb.Base order by visits desc LIMIT 4");
+        $res = $mysqli->query("SELECT * FROM base order by visits desc LIMIT 4");
 
 
         for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- VK.com reference -->
-    <!--  <script src="http://vk.com/js/api/openapi.js"; type="text/javascript" charset="windows-1251"></script>-->
+     <script src="http://vk.com/js/api/openapi.js"; type="text/javascript" charset="windows-1251"></script>
 
 
   </head>
@@ -32,14 +32,14 @@
   </div>
 
   <div id="fb-root"></div>
-  <!-- VK.com init
+  <!-- VK.com init  -->
     <script type="text/javascript">
     VK.init({
         apiId: 5077240,
         onlyWidgets: true
     });
     </script>
-    -->
+
 
     <section class = "Full_site_holder">
 
@@ -57,7 +57,8 @@
 </div>
 
 <?php
-$mysqli = new mysqli("localhost", "root", "", "mydb");
+require_once 'data.php';
+$mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
 $mysqli->set_charset("utf8");
 /* check connection */
 if ($mysqli->connect_errno) {
@@ -67,7 +68,7 @@ if ($mysqli->connect_errno) {
 else{
 
 
-$res = $mysqli->query("SELECT * FROM mydb.Base Where id='".$_GET["id"]."'");
+$res = $mysqli->query("SELECT * FROM base Where id='".$_GET["id"]."'");
 
 for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
 $res->data_seek($row_no);
@@ -76,8 +77,7 @@ $Print_date =new dateTime($row['date']) ;
     $Print_date=   $Print_date-> format('j F Y');
 
     $share_link  = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $share_link = "'http://volyanska.com'";
-    $share_link1 = "http://volyanska.com/singleblog.php";
+
     $share_name =  "'".$row['name']. "'";
     $share_img = "'".$row['preview']. "'";
 }
@@ -94,6 +94,7 @@ $Print_date =new dateTime($row['date']) ;
     <br>
     <br>
     <p class ="text_overview">
+
         <?= $row['descr']?>
     </p>
 <?php
@@ -126,9 +127,9 @@ $Print_date =new dateTime($row['date']) ;
                     <td>Share on:</td>
                     <td class = "vk-logo"  >
 
-                        <a onclick="Share.vkontakte(<?=$share_link?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
+                        <a onclick="Share.vkontakte(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
                             <div class="Svg_holder">
-                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                <svg version="1.1" id="Capa_1" class ="onshare" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
                                     >
                                                         <path id =<?=$row['id']; ?>  d="M48.875,0C21.883,0,0,21.882,0,48.875S21.883,97.75,48.875,97.75S97.75,75.868,97.75,48.875S75.867,0,48.875,0z
@@ -151,10 +152,10 @@ $Print_date =new dateTime($row['date']) ;
                     </td>
                     <td id = "fb-logo">
 
-                        <a onclick="Share.facebook(<?=$share_link?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
+                        <a onclick="Share.facebook(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
                             <!-- Created with Inkscape (http://www.inkscape.org/) -->
                             <div class="Svg_holder">
-                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                <svg version="1.1" id="Capa_1" class ="onshare" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
                                     >
                                                         <path d="M48.875,0C21.882,0,0,21.882,0,48.875S21.882,97.75,48.875,97.75S97.75,75.868,97.75,48.875S75.868,0,48.875,0z
@@ -179,14 +180,14 @@ $Print_date =new dateTime($row['date']) ;
     </section>
 
     <div class  ="comment_wrap">
-              <div class="fb-comments" data-href="  <?=$share_link1?>" data-numposts="5" data-version="v2.3"></div>
-       <!-- VK.com position
+              <div class="fb-comments" data-href="  <?=$share_link?>" data-numposts="5" data-version="v2.3"></div>
+       <!-- VK.com position-->
         <div id="vk_comments"></div>
              <script type="text/javascript">
                 VK.Widgets.Comments('vk_comments');
             </script>
         </div>
-    -->
+
 
 
 
@@ -200,8 +201,9 @@ $Print_date =new dateTime($row['date']) ;
 
     <?php
     //increment to one more visit
-    $mysqli2 = new mysqli("localhost", "root", "", "mydb");
-    $res = $mysqli2->query("SELECT visits FROM mydb.Base Where id='".$_GET["id"]."'");
+
+    $mysqli2 = new mysqli($myServer, $Login,$Passwd , $dbname);
+    $res = $mysqli2->query("SELECT visits FROM base Where id='".$_GET["id"]."'");
 
     ?>
 
@@ -212,7 +214,7 @@ $Print_date =new dateTime($row['date']) ;
     $visit =(int)$visits['visits'];
 
     $visit++;
-    $mysqli->query("Update mydb.Base Set visits ='" .$visit."' where id='".$_GET["id"]."'");
+    $mysqli->query("Update base Set visits ='" .$visit."' where id='".$_GET["id"]."'");
     ?>
 
 
