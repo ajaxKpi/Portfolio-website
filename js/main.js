@@ -177,7 +177,7 @@ if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
         }
 
 //convert color on click
-$( ".onshare").click(function() {
+$(".onshare").click(function() {
     Pathid ="#"+event.target.id;
     $(Pathid).css("fill","black");
 
