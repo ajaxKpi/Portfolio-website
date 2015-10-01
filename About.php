@@ -65,7 +65,6 @@
      <p>
        <a target="_blank" href="advices.pdf">Рекомендации к подготовке к свадьбе</a>
 
-        <?=$_SERVER['SERVER_NAME'];?>
      </p>
 
 

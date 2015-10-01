@@ -146,7 +146,7 @@ if ($(document).find("title").text()==='Volyanska Photography|Blog'){
 //set text in like_share bar
 if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
     $('.read_more>a').text("Return to blog...");
-    $(".read_more>a").attr('href', 'FullBlog.php')
+    $(".read_more>a").attr('href', 'FullBlog.php');
 
 
 
@@ -186,7 +186,7 @@ $(".onshare").click(function() {
     //$( "#count_VK ").css("color","white")
 
 
-      //  $( "#count_VK").text( Number($( "#count_VK").text()) +1)
+     //  $( "#count_VK").text( Number($( "#count_VK").text()) +1)
 
 
 
@@ -273,10 +273,10 @@ else {
 
 
 // mark busy days in calendar
-/*
 
 
-busydays =["5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "26","27"];
+
+busydays =["1","5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "28"];
 $(document).ready(function() {
     console.log("ready")
     if ($(document).find("title").text() === 'Volyanska Photography|Contacts') {
@@ -286,30 +286,46 @@ $(document).ready(function() {
         $ (".day-number").each(
 
              function(){
-                 console.log( $(this).next(".day-number").text())
+
                 //console.log( $(this).text()+" /"+previus)
 
               $(this).text(previus)
                  //this.$ (".day-number").next($ (".day-number").text())
                  next =  $(this).text()
              }
-        )
-
+        );
 
          for(var i=0; i<busydays.length; i++){
 
+             searchDay = busydays[i];
+             if (busydays[i].length==1){
+                searchDay = "0" + busydays[i];
+             }
 
-         $( ".day-number:contains(" +busydays[i]+")").css({
-             "background-color": "red",
-         "color": "white",
-         "border-radius": "20px",
-         "margin-left": "8px",
-         "margin-right": "8px"})
+         var Selectday =   $( ".day-number:contains(" +searchDay+")");
+
+         if(Selectday.length>1){
+
+             for (n = 0; n < Selectday.length; n++) {
+                 console.log(Selectday[n].parentElement.className )
+                 if (Selectday[n].parentElement.className == 'day'){
+                     Selectday[n].style.backgroundColor = "red";
+                     Selectday[n].style.color = "white";
+                     Selectday[n].style.marginLeft  = "8px";
+                     Selectday[n].style.marginRight  = "8px";
+                     Selectday[n].style.borderRadius  = "20px";
+                 }
+             }
          }
-
-
-
+             else{
+         $( ".day .day-number:contains(" +searchDay+")").css({
+             "background-color": "red",
+             "color": "white",
+             "border-radius": "20px",
+             "margin-left": "8px",
+             "margin-right": "8px"})
+         }
+         }
     }
 });
 
- */

@@ -48,11 +48,13 @@
             var right = createElement('div', 'right');
             right.addEventListener('click', function() {
                 self.nextMonth();
+                self.colorBusy();
             });
 
             var left = createElement('div', 'left');
             left.addEventListener('click', function() {
                 self.prevMonth();
+                self.colorBusy();
             });
 
             var ringLeft = createElement('div', 'ring-left');
@@ -86,7 +88,7 @@
         if (this.month) {
             this.oldMonth = this.month;
             this.oldMonth.className = 'month out ' + (self.next ? 'next' : 'prev');
-            this.oldMonth.addEventListener('webkitAnimationEnd', function() {
+           // this.oldMonth.addEventListener('webkitAnimationEnd', function() {
                 self.oldMonth.parentNode.removeChild(self.oldMonth);
                 self.month = createElement('div', 'month');
                 self.backFill();
@@ -96,7 +98,7 @@
                 window.setTimeout(function() {
                     self.month.className = 'month in ' + (self.next ? 'next' : 'prev');
                 }, 16);
-            });
+            //});
         } else {
             this.month = createElement('div', 'month');
             this.el.appendChild(this.month);
@@ -110,7 +112,7 @@
     Calendar.prototype.backFill = function() {
         var clone = this.current.clone();
         var dayOfWeek = clone.day();
-        console.log(dayOfWeek)
+
         if (!dayOfWeek) {
             dayOfWeek=7;
         }
@@ -362,6 +364,63 @@
         this.current.subtract('months', 1);
         this.next = false;
         this.draw();
+
+    }
+    Calendar.prototype.colorBusy = function(){
+
+        busydays =["1","5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "28"];
+        $(document).ready(function() {
+            console.log("ready")
+            if ($(document).find("title").text() === 'Volyanska Photography|Contacts') {
+
+                //replacement based on week started at monday
+                var previus
+                $ (".day-number").each(
+
+                    function(){
+
+                        //console.log( $(this).text()+" /"+previus)
+
+                        $(this).text(previus)
+                        //this.$ (".day-number").next($ (".day-number").text())
+                        next =  $(this).text()
+                    }
+                );
+
+                for(var i=0; i<busydays.length; i++){
+
+                    searchDay = busydays[i];
+                    if (busydays[i].length==1){
+                        searchDay = "0" + busydays[i];
+                    }
+
+                    var Selectday =   $( ".day-number:contains(" +searchDay+")");
+
+                    if(Selectday.length>1){
+
+                        for (n = 0; n < Selectday.length; n++) {
+
+                            if (Selectday[n].parentElement.className == 'day'){
+                                Selectday[n].style.backgroundColor = "red";
+                                Selectday[n].style.color = "white";
+                                Selectday[n].style.marginLeft  = "8px";
+                                Selectday[n].style.marginRight  = "8px";
+                                Selectday[n].style.borderRadius  = "20px";
+                            }
+                        }
+                    }
+                    else{
+                        $( ".day .day-number:contains(" +searchDay+")").css({
+                            "background-color": "red",
+                            "color": "white",
+                            "border-radius": "20px",
+                            "margin-left": "8px",
+                            "margin-right": "8px"})
+                    }
+                }
+            }
+        });
+
     }
 
 
@@ -381,7 +440,7 @@
 
 var app = angular.module('myApp', []);
 app.controller('AppCtrl', function($scope){
-    //alert("pepe")
+
 });
 app.directive('calendar', [function(){
     return {
@@ -392,96 +451,13 @@ app.directive('calendar', [function(){
         },
         link: function(scope, element, attributes) {
             var data = [{
-                date: new Date(2015, 9,8),
+                date: new Date(2013, 9,8),
                 events: [{
                     name: 'wedding of Nastya and Sergii',
                     type: 'bot',
                     color: 'red'
                 }]
-            }, {
-                date: new Date(2015, 9, 2),
-                events: [{
-                    name: 'zeus',
-                    type: 'bot',
-                    color: 'blue'
-                }]
-            }, {
-                date: new Date(2015, 0, 3),
-                events: [{
-                    name: 'ponyloader',
-                    type: 'bot',
-                    color: 'yellow'
-                }, {
-                    name: 'aldibot',
-                    type: 'bot',
-                    color: 'yellow'
-                }, {
-                    name: 'dirtjumper',
-                    type: 'malware',
-                    color: 'yellow'
-                }]
-            }, {
-                date: new Date(2015, 0, 4),
-                events: [{
-                    name: 'andromeda',
-                    type: 'bot',
-                    color: 'green'
-                }]
-            }, {
-                date: new Date(2015, 0, 5),
-                events: [{
-                    name: 'conficker',
-                    type: 'bot',
-                    color: 'orange'
-                }, {
-                    name: 'umbraloader',
-                    type: 'bot',
-                    color: 'orange'
-                }]
-            }, {
-                date: new Date(2015, 0, 17),
-                events: [{
-                    name: 'aldibot',
-                    type: 'bot',
-                    color: 'pink'
-                }]
-            }, {
-                date: new Date(2015, 0, 2),
-                events: [{
-                    name: 'zeus',
-                    type: 'bot',
-                    color: 'blue'
-                }]
-            }, {
-                date: new Date(2015, 0, 18),
-                events: [{
-                    name: 'ponyloader',
-                    type: 'bot',
-                    color: 'yellow'
-                }, {
-                    name: 'aldibot',
-                    type: 'bot',
-                    color: 'yellow'
-                }, {
-                    name: 'dirtjumper',
-                    type: 'malware',
-                    color: 'yellow'
-                }]
-            }, , {
-                date: new Date(2015, 0, 19),
-                events: [{
-                    name: 'zeus',
-                    type: 'bot',
-                    color: 'blue'
-                }]
-            }, {
-                date: new Date(2015, 0, 19),
-                events: [{
-                    name: 'ponyloader',
-                    type: 'bot',
-                    color: 'yellow'
-                }]
-            }]
+             }]
             var calendar = new Calendar('#calendar', data);
         }
     }
