@@ -37,3 +37,14 @@ $("#inp_large").change(function(){
     readURL(this, "#largeimg");
 
 });
+
+
+$( ".form-control" ).change(function() {
+
+    $.getJSON( "Busy.json", function( data ) {
+        test1 =$(".form-control").val()
+        test2 =data[$( ".form-control").val()]
+        $( "#Event").val(data[$( ".form-control").val()]);
+
+    });
+});

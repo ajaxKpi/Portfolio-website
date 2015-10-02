@@ -16,7 +16,7 @@ input[type=radio], input.radio { float:left; clear:none; margin: 2px 0 0 2px;}
     margin-right: 100px;
 }
 #list{
-    width: 500px;
+    width: 300px;
 
 }
 #ps_name{
@@ -51,6 +51,10 @@ input[type=radio], input.radio { float:left; clear:none; margin: 2px 0 0 2px;}
     border: none;
     color: white;
     transition: all, 0.4s;
+}
+
+#id{
+    display: none;
 }
 
 table img {
