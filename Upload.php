@@ -130,5 +130,19 @@ if(isset($_POST['delete']) && $_POST['delete'] == 'delete'){
 
 
 }
+
+
+
+    if (isset($_POST['busyCr'])) {
+        $Event_descr=  $_POST['ps_name'];
+        $Event_date=  $_POST['Busydata'];
+      if ($Event_descr){
+          $posts[] =array($Event_date=> $Event_descr);
+      }
+        $fp = fopen('Busy.json', 'w');
+        fwrite($fp, json_encode($posts));
+        fclose($fp);
+    }
+
 //header("Location: index.php");
 ?>

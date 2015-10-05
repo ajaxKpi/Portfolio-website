@@ -150,10 +150,13 @@ $new_id++;
 
 
                 </div>
+
                 <!-- Edit Tab  -->
                 <div class="tab-pane" id="profile">Profile Tab.</div>
                 <!-- delete Tab  -->
                 <div class="tab-pane" id="messages">Messages Tab.</div>
+
+
 
                 <!-- Busy Days Tab  -->
 
@@ -163,7 +166,7 @@ $new_id++;
                         <div class="span5 col-md-5" id="sandbox-container">
                             <div class="input-group date">
 
-                                <input type="text" class="form-control" name="data"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                <input type="text" class="form-control" name="Busydata" id="BusyDate"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
                             </div>
                         </div>
                         <br>
@@ -172,7 +175,7 @@ $new_id++;
                               <input type="text" id ="Event" name="ps_name" placeholder="No event for this date">
                         </div>
                         <br>
-                        <input type="submit" value="Create" id="create" />
+                        <input type="submit" value="BusyCreate" id="busyCr" name ="busyCr" />
 
                     </form>
 

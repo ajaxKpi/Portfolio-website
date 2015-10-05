@@ -23,7 +23,7 @@ function readURL(input, ImgID) {
 
         reader.onload = function (e) {
             $(ImgID).attr('src', e.target.result);
-        }
+    }
 
         reader.readAsDataURL(input.files[0]);
     }
@@ -39,12 +39,8 @@ $("#inp_large").change(function(){
 });
 
 
-$( ".form-control" ).change(function() {
-
+$( "#BusyDate" ).change(function() {
     $.getJSON( "Busy.json", function( data ) {
-        test1 =$(".form-control").val()
-        test2 =data[$( ".form-control").val()]
-        $( "#Event").val(data[$( ".form-control").val()]);
-
+            $( "#Event").val(data[$( "#BusyDate").val()]);
     });
 });
