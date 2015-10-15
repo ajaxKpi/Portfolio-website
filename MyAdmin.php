@@ -61,17 +61,7 @@ $new_id++;
 
                     <form  action="Upload.php" method="post" enctype="multipart/form-data">
                         <input type="text" name ="id" id ="id" value =<?=$new_id?>>
-                        <div class="radiob">
 
-                            <input type="radio" name="mode" value="create">
-                            <label for="create">Create</label>
-
-                            <input type="radio" name="mode" value="edit">
-                            <label for="edit">Edit</label>
-                            <input type="radio" name="mode" value="delete">
-                            <label for="delete">Delete</label>
-
-                        </div>
                         <br>
                         <br>
                         <br>
@@ -105,8 +95,8 @@ $new_id++;
                         <textarea class='form-control' id='id_comments' name ='descr' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50"></textarea>
 
                         <br>
-
-                        <table id ="preview">
+                        <div class="tablewrap">
+                            <table id ="preview">
                             <tr>
                                 <td>
                                     <img  id ="smallimg" src="img/no_img.jpg" alt ="no image">
@@ -128,7 +118,7 @@ $new_id++;
                             </tr>
 
                         </table>
-                        <table id="multy">
+                            <table id="multy">
                             <tr>
                                 <td>
                 <span>
@@ -145,20 +135,195 @@ $new_id++;
                             </tr>
 
                         </table>
-
+                        </div>
                     </form>
 
 
                 </div>
 
-                <!-- Edit Tab  -->
-                <div class="tab-pane" id="profile">Profile Tab.</div>
-                <!-- delete Tab  -->
-                <div class="tab-pane" id="messages">Messages Tab.</div>
+                <!--*******************************************************************
+                                            Edit Tab
+
+                  *******************************************************************-->
+
+                <div class="tab-pane" id="profile">
+
+                    <button class ="load"  id="load_edit"> Load </button>
 
 
 
-                <!-- Busy Days Tab  -->
+                    <form  action="Upload.php" method="post" enctype="multipart/form-data">
+
+
+                        <div class="span5 col-md-5" id="sandbox-container">
+                            <div class="input-group date">
+
+                                <input type="text" class="form-control" name="edit_date" id="editDate"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        Edit fields
+                        <br>
+                        <br>
+                            <input type="text" name ="edit_id" id ="edit_id">
+
+
+
+                        <div class="namefield">
+
+                            <input type="text" id ="edit_name" name="edit_ps_name">
+                        </div>
+
+
+
+                        <select class='form-control' id='edit_list' name = 'edit_tag'>
+
+                            <option>Wedding</option>
+                            <option>Inspiration</option>
+                            <option>Love story</option>
+                            <option>Family</option>
+                            <option>Portrait</option>
+                            <option>Advices</option>
+
+                        </select>
+
+
+                        <br>
+                        <textarea class='form-control' id='edit_comments' name ='edit_descr' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50"></textarea>
+
+                        <br>
+
+                        <table id ="preview">
+                            <tr>
+                                <td>
+                                    <img  id ="edit_smallimg" src="img/no_img.jpg" alt ="no image">
+
+                                </td>
+                                <td>
+                                    <span> Portfolio preview</span>
+                                    <input type="file" name="small-preview" id="inp_small" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img id ="edit_largeimg" src="img/no_img.jpg" alt ="no image">
+                                </td>
+                                <td>
+                                    <span> Blog preview</span>
+                                    <input type="file" name="large-preview"  id="inp_large"/>
+                                </td>
+                            </tr>
+
+                        </table>
+                        <table id="multy">
+                            <tr>
+                                <td>
+                <span>
+            Load full photosession
+                    </span>
+                                    <input name="photo_upload[]" type="file" multiple="multiple" />
+                                    <img src="img/no_img.jpg" alt ="no image"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="Edit" id="EditButton" name ="EditButton" />
+                                </td>
+                            </tr>
+
+                        </table>
+
+
+
+                        <br>
+
+
+                    </form>
+
+
+
+
+                </div>
+                <!--*******************************************************************
+                                          Delete Tab
+
+                *******************************************************************-->
+                <div class="tab-pane" id="messages">
+
+                    <button class ="load"  id="load_delete"> Load </button>
+
+                    <form  action="Upload.php" method="post" enctype="multipart/form-data">
+
+
+                        <div class="span5 col-md-5" id="sandbox-container">
+                            <div class="input-group date">
+
+                                <input type="text" class="form-control" name="delete_date" id="deleteDate"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+
+                        <br>
+                        <br>
+                        <input type="text" name ="delete_id" id ="delete_id">
+
+
+
+                        <div class="namefield">
+
+                            <input type="text" id ="delete_name" name="delete_ps_name">
+                        </div>
+
+                        <br>
+                        <textarea class='form-control' id='delete_comments' name ='delete_descr' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50"></textarea>
+
+                        <br>
+
+                        <table id ="preview">
+                            <tr>
+                                <td>
+                                    <img  id ="delete_smallimg" src="img/no_img.jpg" alt ="no image">
+
+                                </td>
+                                <td>
+                                    <span> Portfolio preview</span>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img id ="delete_largeimg" src="img/no_img.jpg" alt ="no image">
+                                </td>
+                                <td>
+                                    <span> Blog preview</span>
+
+
+                                </td>
+                            </tr>
+
+                        </table>
+                        <input type="submit" value="delete" id="deleteButton" name ="deleteButton" />
+
+
+
+                        <br>
+
+
+                    </form>
+
+
+
+                </div>
+
+
+
+
+                <!--*******************************************************************
+                          Busy Tab
+
+                *******************************************************************-->
 
                 <div class="tab-pane" id="settings">
 

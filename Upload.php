@@ -9,7 +9,7 @@
  ****************************Create procedure *********************
 ***************************************************************/
 
-if(isset($_POST['mode']) && $_POST['mode'] == 'create')
+if(isset($_POST['create']))
 {
     $target_dir = "img/preview/";
     $NamePS =$_POST['ps_name'];
@@ -110,38 +110,127 @@ if(isset($_POST['mode']) && $_POST['mode'] == 'create')
     $query = "INSERT into base  (`id`, `name`, `date`, `preview`, `folder`, `tag`, `visits`,  `descr`)
       VALUES ('". $ID ."', '" . $NamePS ."',STR_TO_DATE('". $Data. "','%d/%m/%Y'), '".$target_dir.$clearNamePS."', '".$folder_loc.$NamePS."', '".$Tag."',  '0','".$Desc."')";
 
-       $res = $mysqli->query($query);
+    $res = $mysqli->query($query);
 
 
 }
 /* **************************************************************
  ****************************Edit procedure *********************
 ***************************************************************/
-if(isset($_POST['edit']) && $_POST['edit'] == 'edit'){
+if(isset($_POST['EditButton'] )) {
+
+    $target_dir = "img/preview/";
+
+    $NamePS ="'".$_POST['edit_ps_name']."'";
+    $Date ="'".$_POST['edit_date']."'";
+    $Tag = "'".$_POST['edit_tag']."'";
+    $Desc = "'".$_POST['edit_descr']."'";
+    $ID =  "'".$_POST['edit_id']."'";
 
 
+    require_once 'data.php';
+    $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
+    $mysqli->set_charset("utf8");
+
+
+    $query = "Update base SET   name = ".$NamePS. ", date=".$Date. ", tag=".$Tag.", descr=".$Desc."
+     where id=".$ID;
+    $res = $mysqli->query($query);
+
+
+}
+
+
+
+/* **************************************************************
+ ****************************Load Edit procedure *********************
+***************************************************************/
+
+if(isset($_POST['date'] )){
+
+    $Data =$_POST['date'];
+    $Data =  date_create_from_format('d/m/Y',$Data) ;
+    $Data=   $Data-> format('Y-m-d');
+
+    require_once 'data.php';
+
+    $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
+    $mysqli->set_charset("utf8");
+    $query ="Select * from base where base.date ='".$Data."'";
+    $res = $mysqli->query($query);
+
+    $row= $res->fetch_assoc();
+    $formParams = array(
+        'ajax' => 'Hello world!',
+        'id' => $row['id'],
+        'name' => $row['name'],
+        'preview' => $row['preview'],
+        'folder' => $row['folder'],
+        'tag' => $row['tag'],
+        'descr' => $row['descr']
+    );
+    echo json_encode($formParams);
 
 }
 /* **************************************************************
- ****************************Edit procedure *********************
+ ****************************Delete procedure *********************
 ***************************************************************/
-if(isset($_POST['delete']) && $_POST['delete'] == 'delete'){
+if(isset($_POST['deleteButton'])){
+
+    $target_dir = "img/preview/";
+
+    $NamePS ="'".$_POST['delete_ps_name']."'";
+    $Date ="'".$_POST['delete_date']."'";
+
+    $Desc = "'".$_POST['delete_descr']."'";
+    $ID =  "'".$_POST['delete_id']."'";
+
+
+    require_once 'data.php';
+    $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
+    $mysqli->set_charset("utf8");
+
+
+    $query = "Delete from  base where id=".$ID;
+    $res = $mysqli->query($query);
 
 
 
 }
 
-
+/* **************************************************************
+ ****************************Busy days procedure *********************
+***************************************************************/
 
     if (isset($_POST['busyCr'])) {
         $Event_descr=  $_POST['ps_name'];
         $Event_date=  $_POST['Busydata'];
       if ($Event_descr){
-          $posts[] =array($Event_date=> $Event_descr);
+          //$data[] =array($Event_date=> $Event_descr);
+
+          $file = file_get_contents('Busy1.json');
+          $data = json_decode($file,true);
+
+          unset($file);
+          $data[$Event_date] = $Event_descr;
+          $jsonData = json_encode($data);
+          file_put_contents('Busy1.json', $jsonData);
+          unset($data);
+
       }
-        $fp = fopen('Busy.json', 'w');
-        fwrite($fp, json_encode($posts));
-        fclose($fp);
+        else{
+        //try to delete event
+            $file = file_get_contents('Busy1.json');
+            $data = json_decode($file,true);
+            unset($file);
+            unset( $data[$Event_date]);
+            $jsonData = json_encode($data);
+            file_put_contents('Busy1.json', $jsonData);
+            unset($data);
+        }
+       // $fp = fopen('Busy.json', 'w');
+        //fwrite($fp, json_encode($posts));
+        //fclose($fp);
     }
 
 //header("Location: index.php");

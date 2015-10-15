@@ -74,8 +74,7 @@ var userLang = navigator.language || navigator.userLanguage;
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-//delete facebook vidget addition
-$("#f197705904").remove();
+
 
 // get move of block in calculation of logo size
 
@@ -278,7 +277,7 @@ else {
 
 busydays =["1","5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "28"];
 $(document).ready(function() {
-    console.log("ready")
+
     if ($(document).find("title").text() === 'Volyanska Photography|Contacts') {
 
         //replacement based on week started at monday
