@@ -104,9 +104,9 @@
                         <br>
                         <br>
                         <p class ="text_overview">
-
+                            <pre class="Wrap_pre">
                             <?=$row['descr'] ?>
-
+                            </pre>
                         </p>
                         <div class = "Blog_photo">
                             <a href =<?php echo "SingleBlog.php?id=" . $row['id']; ?>>

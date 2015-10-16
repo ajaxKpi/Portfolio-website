@@ -2,8 +2,9 @@
 .Full_site_holder{
     background-color: #E6E7ED;
     overflow:hidden;
+    height: 100%;
 }
-.radiob { float:left; clear:none; }
+
 label {font-size: 20px; float:left; clear:none; display:block; padding: 2px 1em 0 0; }
 input[type=radio], input.radio { float:left; clear:none; margin: 2px 0 0 2px;}
 
@@ -19,9 +20,10 @@ input[type=radio], input.radio { float:left; clear:none; margin: 2px 0 0 2px;}
     width: 300px;
 
 }
-#ps_name{
+.text_input{
     width:600px;
     height: 30px;
+
 
 }
 #exit{
@@ -30,7 +32,7 @@ input[type=radio], input.radio { float:left; clear:none; margin: 2px 0 0 2px;}
 
 
 
-#log_out, #create {
+.buttons {
     background: #fff;
     color: #105B63;
     text-size: 10px;
@@ -53,8 +55,8 @@ input[type=radio], input.radio { float:left; clear:none; margin: 2px 0 0 2px;}
     transition: all, 0.4s;
 }
 
-#id{
-  /*  display: none; */
+.id{
+    display: none;
 }
 
 table img {
@@ -84,4 +86,20 @@ color: green;
 
     max-width: 40px;
     min-height: 40px;
+}
+.load, #Add_link {
+    position:relative;
+    border:0;
+    margin:20px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:bold;
+    border-radius:.25rem;
+    padding:.6875rem 2rem;
+    color:#fff;
+    background-color:#3e87ec;
+}
+#delete_name, #delete_comments{
+    pointer-events:none;
+    background-color: #E6E7ED;
 }

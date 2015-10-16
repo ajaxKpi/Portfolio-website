@@ -57,6 +57,7 @@
 </div>
 
 <?php
+require_once 'functions.php';
 require_once 'data.php';
 $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
 $mysqli->set_charset("utf8");
@@ -94,8 +95,13 @@ $Print_date =new dateTime($row['date']) ;
     <br>
     <br>
     <p class ="text_overview">
+        <pre class="Wrap_pre">
 
-        <?= $row['descr']?>
+
+            <?= replace_userTags($row['descr'])?>
+
+
+    </pre>
     </p>
 <?php
     $files = glob($row["folder"].'/*.{*}', GLOB_BRACE);

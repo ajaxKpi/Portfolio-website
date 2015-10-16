@@ -88,4 +88,6 @@
  * User: ivan
  * Date: 9/19/15
  * Time: 4:27 PM
- */ 
+ */
+require_once 'functions.php';
+?>

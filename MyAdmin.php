@@ -32,7 +32,7 @@ $new_id++;
         <h1>Hello, Olya!</h1>
 
         <form id="exit" action="exit.php" method="get">
-            <input type="submit" value="Log out" id="log_out">
+            <input type="submit" value="Log out" class="buttons" id="log_out">
         </form>
 
 
@@ -60,7 +60,7 @@ $new_id++;
 
 
                     <form  action="Upload.php" method="post" enctype="multipart/form-data">
-                        <input type="text" name ="id" id ="id" value =<?=$new_id?>>
+                        <input type="text" name ="id" id ="id" class="id" value =<?=$new_id?>>
 
                         <br>
                         <br>
@@ -68,7 +68,7 @@ $new_id++;
 
                         <div class="namefield">
                             <label for="ps_name">PS name</label>
-                            <input type="text" id ="ps_name" name="ps_name" placeholder="ex: Egor and Julia">
+                            <input type="text" id ="ps_name" class ="text_input" name="ps_name" placeholder="ex: Egor and Julia">
                         </div>
                         <br>
                         <div class="span5 col-md-5" id="sandbox-container">
@@ -130,7 +130,7 @@ $new_id++;
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="submit" value="Create" id="create" />
+                                    <input type="submit" value="Create"  class ="buttons" id="create" />
                                 </td>
                             </tr>
 
@@ -148,10 +148,10 @@ $new_id++;
 
                 <div class="tab-pane" id="profile">
 
+
+
+
                     <button class ="load"  id="load_edit"> Load </button>
-
-
-
                     <form  action="Upload.php" method="post" enctype="multipart/form-data">
 
 
@@ -161,18 +161,20 @@ $new_id++;
                                 <input type="text" class="form-control" name="edit_date" id="editDate"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
                             </div>
                         </div>
+
+                        <br>
+
+                        <br>
+
                         <br>
                         <br>
-                        Edit fields
-                        <br>
-                        <br>
-                            <input type="text" name ="edit_id" id ="edit_id">
+                            <input type="text"  class ="id" name ="edit_id" id ="edit_id">
 
 
 
                         <div class="namefield">
 
-                            <input type="text" id ="edit_name" name="edit_ps_name">
+                            <input type="text" id ="edit_name"  class ="text_input" name="edit_ps_name">
                         </div>
 
 
@@ -202,7 +204,7 @@ $new_id++;
                                 </td>
                                 <td>
                                     <span> Portfolio preview</span>
-                                    <input type="file" name="small-preview" id="inp_small" />
+                                    <input type="file" name="small-preview" id="ed_small" />
                                 </td>
                             </tr>
                             <tr>
@@ -211,7 +213,7 @@ $new_id++;
                                 </td>
                                 <td>
                                     <span> Blog preview</span>
-                                    <input type="file" name="large-preview"  id="inp_large"/>
+                                    <input type="file" name="large-preview"  id="ed_large"/>
                                 </td>
                             </tr>
 
@@ -228,7 +230,7 @@ $new_id++;
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="submit" value="Edit" id="EditButton" name ="EditButton" />
+                                    <input type="submit" value="Edit" id="EditButton"  class ="buttons" name ="EditButton" />
                                 </td>
                             </tr>
 
@@ -251,8 +253,8 @@ $new_id++;
                 *******************************************************************-->
                 <div class="tab-pane" id="messages">
 
-                    <button class ="load"  id="load_delete"> Load </button>
 
+                    <button class ="load"  id="load_delete"> Load </button>
                     <form  action="Upload.php" method="post" enctype="multipart/form-data">
 
 
@@ -267,13 +269,13 @@ $new_id++;
 
                         <br>
                         <br>
-                        <input type="text" name ="delete_id" id ="delete_id">
+                        <input type="text"  class ="id" name ="delete_id" id ="delete_id">
 
 
 
                         <div class="namefield">
 
-                            <input type="text" id ="delete_name" name="delete_ps_name">
+                            <input type="text" id ="delete_name"  class ="text_input" name="delete_ps_name">
                         </div>
 
                         <br>
@@ -304,17 +306,11 @@ $new_id++;
                             </tr>
 
                         </table>
-                        <input type="submit" value="delete" id="deleteButton" name ="deleteButton" />
-
-
+                        <input type="submit" value="delete" id="deleteButton" class="buttons" name ="deleteButton" />
 
                         <br>
 
-
                     </form>
-
-
-
                 </div>
 
 
@@ -327,7 +323,11 @@ $new_id++;
 
                 <div class="tab-pane" id="settings">
 
+                    <h1>Add working days</h1>
+                    <hr>
+                    <hr>
                     <form  action="Upload.php" method="post" enctype="multipart/form-data">
+
                         <div class="span5 col-md-5" id="sandbox-container">
                             <div class="input-group date">
 
@@ -337,12 +337,28 @@ $new_id++;
                         <br>
                         <br>
                         <div class="namefield">
-                              <input type="text" id ="Event" name="ps_name" placeholder="No event for this date">
+                              <input type="text" id ="Event" name="ps_name" class = "text_input" placeholder="No event for this date">
                         </div>
                         <br>
-                        <input type="submit" value="BusyCreate" id="busyCr" name ="busyCr" />
+                        <input type="submit" value="BusyCreate" id="busyCr" class="buttons" name ="busyCr" />
 
                     </form>
+
+                    <h1>Add links in text</h1>
+                    <hr>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td>ID of link</td>
+                            <td>full link</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id ="link_id" name="link_id" class = "link_input" placeholder="ID(ex. 1)"></td>
+                            <td><input type="text" id ="link_descr" name="link_descr" class = "link_input" placeholder="No event for this date"></td>
+                            <td><button  id="Add_link"> Add Link </button></td>
+                        </tr>
+
+                    </table>
 
                 </div>
             </div>
