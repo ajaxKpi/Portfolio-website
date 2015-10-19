@@ -130,7 +130,7 @@ $new_id++;
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="submit" value="Create"  class ="buttons" id="create" />
+                                    <input type="submit" value="Create"  class ="buttons" id="create" name="CreateButton" />
                                 </td>
                             </tr>
 
@@ -322,11 +322,11 @@ $new_id++;
                 *******************************************************************-->
 
                 <div class="tab-pane" id="settings">
-
+                    <!-- Busy days -->
                     <h1>Add working days</h1>
                     <hr>
                     <hr>
-                    <form  action="Upload.php" method="post" enctype="multipart/form-data">
+
 
                         <div class="span5 col-md-5" id="sandbox-container">
                             <div class="input-group date">
@@ -340,21 +340,21 @@ $new_id++;
                               <input type="text" id ="Event" name="ps_name" class = "text_input" placeholder="No event for this date">
                         </div>
                         <br>
-                        <input type="submit" value="BusyCreate" id="busyCr" class="buttons" name ="busyCr" />
+                        <button id="busyCr" class="buttons">Reserve</button>
 
-                    </form>
 
+                    <!-- Links  -->
                     <h1>Add links in text</h1>
                     <hr>
                     <hr>
                     <table>
                         <tr>
-                            <td>ID of link</td>
+                            <td  class="col_id">ID of link</td>
                             <td>full link</td>
                         </tr>
                         <tr>
-                            <td><input type="text" id ="link_id" name="link_id" class = "link_input" placeholder="ID(ex. 1)"></td>
-                            <td><input type="text" id ="link_descr" name="link_descr" class = "link_input" placeholder="No event for this date"></td>
+                            <td class="col_id"><input type="text" id ="link_id" name="link_id" class = "link_input" placeholder="ID(ex. 1)"></td>
+                            <td><input type="text" id ="link_descr" name="link_descr" class = "link_input" placeholder="This ID is free"></td>
                             <td><button  id="Add_link"> Add Link </button></td>
                         </tr>
 

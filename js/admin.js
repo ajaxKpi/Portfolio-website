@@ -104,6 +104,25 @@ $(".load").on('click',function() {
     })
 })
 
+//drive of busy dates
+$("#busyCr").on('click',function(){
+
+    $.ajax({
+        url: 'load.php',
+        type: 'POST',
+        data: ({'Event_date': $( "#BusyDate").val(), 'Event':$( "#Event").val()}),
+        success: function (result) {
+            console.log('successfully added');
+                    },
+        error: function() {
+            console.log('error get busy day'); // "Hello world!" alerted
+        }
+    })
+
+
+})
+
+
 // fill form by Ajax request for ADD LINKS
 $("#link_id").change(function() {
 
@@ -127,7 +146,7 @@ $("#link_id").change(function() {
 
 });
 
-// fill form by Ajax request write new link into links table
+// f write new link into links table
 $("#Add_link").on('click',function() {
 
     $.ajax({

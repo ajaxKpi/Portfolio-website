@@ -103,3 +103,13 @@ color: green;
     pointer-events:none;
     background-color: #E6E7ED;
 }
+
+#link_id{
+    width: 58px;
+    margin-right: 10px;
+}
+#link_descr {
+    width:272px;
+    margin-right: 10px;
+
+}

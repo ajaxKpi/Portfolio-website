@@ -94,6 +94,7 @@
                 self.backFill();
                 self.currentMonth();
                 self.fowardFill();
+
                 self.el.appendChild(self.month);
                 window.setTimeout(function() {
                     self.month.className = 'month in ' + (self.next ? 'next' : 'prev');
@@ -367,8 +368,9 @@
 
     }
     Calendar.prototype.colorBusy = function(){
-
-        busydays =["1","5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "28"];
+        //get busy days of month
+        busydays = ReservedDays(this.current.format('YYYY'),this.current.format('MM'));
+        //busydays =["1","5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "28"];
         $(document).ready(function() {
             console.log("ready")
             if ($(document).find("title").text() === 'Volyanska Photography|Contacts') {
@@ -421,7 +423,23 @@
             }
         });
 
-    }
+    };
+
+
+
+    Calendar.prototype.ReservedDays= function(C_year,C_month){
+        // Rise when we change date to fill description
+        $( "#BusyDate" ).change(function() {
+            $.ajaxSetup({ cache: false });
+           jsonObj =  $.getJSON( "Busy1.json", function(data) {
+                $( "#Event").val(data[$( "#BusyDate").val()]);
+                console.log( "success" );
+            });
+            $.ajaxSetup({ cache: true});
+
+        });
+
+    };
 
 
     window.Calendar = Calendar;

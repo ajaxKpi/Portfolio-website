@@ -37,7 +37,7 @@ function deleteDirectory($dir) {
  ****************************Create procedure *********************
 ***************************************************************/
 
-if(isset($_POST['create']))
+if(isset($_POST['CreateButton']))
 {
     $target_dir = "img/preview/";
     $NamePS =$_POST['ps_name'];
@@ -45,7 +45,7 @@ if(isset($_POST['create']))
     $Tag = $_POST['tag'];
     $Desc = $_POST['descr'];
     $ID =  $_POST['id'];
-
+echo "we are";
 
 
         //--------------------------upload small preview--------------------------
@@ -173,8 +173,8 @@ if(isset($_POST['EditButton'] )) {
     $clearNamePS = $_POST['edit_id'].strtolower (str_replace(' ','',substr($_POST['edit_ps_name'],0,15))).".".$imageFileType;
 
 
-
-
+    $preview_loc = $prevPreview;
+    $photo_loc = $prevFolder;
 
     // Check if image file is a actual image or fake image
     if (isset($_POST["EditButton"])&& $_FILES["small-preview"]["tmp_name"]!=="") {
@@ -182,6 +182,7 @@ if(isset($_POST['EditButton'] )) {
         if ($check !== false) {
             unlink($prevPreview);
             $uploadOk = 1;
+            $preview_loc = $target_dir.$clearNamePS;
         } else {
             echo "File is not an image.";
             $uploadOk = 0;
@@ -201,13 +202,14 @@ if(isset($_POST['EditButton'] )) {
     $arrayPath= explode("/",$prevPreview);
     $LPfile =$target_dir. "L_".$arrayPath[sizeof($arrayPath)-1];
 
+
+
     // Check if image file is a actual image or fake image
     if(isset($_POST["EditButton"])&& $_FILES["small-preview"]["tmp_name"]!=="") {
 
         $check = getimagesize($_FILES["large-preview"]["tmp_name"]);
         if($check !== false) {
             unlink($LPfile);
-
             $uploadOk = 1;
         } else {
             echo "File is not an image.";
@@ -234,6 +236,7 @@ if(isset($_POST['EditButton'] )) {
             if ($error == UPLOAD_ERR_OK){
                 if ($firstTime){
                     $firstTime=false;
+                    $photo_loc = $filepath;
                     deleteDirectory($prevFolder);
                     if (!file_exists($filepath)) {
                         mkdir($filepath, 0777);
@@ -250,7 +253,7 @@ if(isset($_POST['EditButton'] )) {
 
 
         $query = "Update base SET   name = ".$NamePS. ", date=STR_TO_DATE(". $Date. ",'%d/%m/%Y'), tag=".$Tag.", descr=".$Desc.", preview ='"
-            .$target_dir.$clearNamePS."', folder = '".$filepath."' where id=".$ID;
+            .$preview_loc."', folder = '".$photo_loc."' where id=".$ID;
         $res = $mysqli->query($query);
 
 
@@ -301,40 +304,6 @@ if(isset($_POST['deleteButton'])){
 
 }
 
-/* **************************************************************
- ****************************Busy days procedure *********************
-***************************************************************/
-
-    if (isset($_POST['busyCr'])) {
-        $Event_descr=  $_POST['ps_name'];
-        $Event_date=  $_POST['Busydata'];
-      if ($Event_descr){
-          //$data[] =array($Event_date=> $Event_descr);
-
-          $file = file_get_contents('Busy1.json');
-          $data = json_decode($file,true);
-
-          unset($file);
-          $data[$Event_date] = $Event_descr;
-          $jsonData = json_encode($data);
-          file_put_contents('Busy1.json', $jsonData);
-          unset($data);
-
-      }
-        else{
-        //try to delete event
-            $file = file_get_contents('Busy1.json');
-            $data = json_decode($file,true);
-            unset($file);
-            unset( $data[$Event_date]);
-            $jsonData = json_encode($data);
-            file_put_contents('Busy1.json', $jsonData);
-            unset($data);
-        }
-       // $fp = fopen('Busy.json', 'w');
-        //fwrite($fp, json_encode($posts));
-        //fclose($fp);
-    }
 
 
 /* **************************************************************

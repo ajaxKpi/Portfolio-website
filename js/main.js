@@ -271,60 +271,8 @@ else {
 });
 
 
-// mark busy days in calendar
 
 
 
-busydays =["1","5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "28"];
-$(document).ready(function() {
 
-    if ($(document).find("title").text() === 'Volyanska Photography|Contacts') {
-
-        //replacement based on week started at monday
-        var previus
-        $ (".day-number").each(
-
-             function(){
-
-                //console.log( $(this).text()+" /"+previus)
-
-              $(this).text(previus)
-                 //this.$ (".day-number").next($ (".day-number").text())
-                 next =  $(this).text()
-             }
-        );
-
-         for(var i=0; i<busydays.length; i++){
-
-             searchDay = busydays[i];
-             if (busydays[i].length==1){
-                searchDay = "0" + busydays[i];
-             }
-
-         var Selectday =   $( ".day-number:contains(" +searchDay+")");
-
-         if(Selectday.length>1){
-
-             for (n = 0; n < Selectday.length; n++) {
-                 console.log(Selectday[n].parentElement.className )
-                 if (Selectday[n].parentElement.className == 'day'){
-                     Selectday[n].style.backgroundColor = "red";
-                     Selectday[n].style.color = "white";
-                     Selectday[n].style.marginLeft  = "8px";
-                     Selectday[n].style.marginRight  = "8px";
-                     Selectday[n].style.borderRadius  = "20px";
-                 }
-             }
-         }
-             else{
-         $( ".day .day-number:contains(" +searchDay+")").css({
-             "background-color": "red",
-             "color": "white",
-             "border-radius": "20px",
-             "margin-left": "8px",
-             "margin-right": "8px"})
-         }
-         }
-    }
-});
 
