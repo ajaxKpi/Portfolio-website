@@ -14,6 +14,7 @@
         }, 0);
         this.current = moment().date(1);
         this.draw();
+
         var current = document.querySelector('.today');
         if (current) {
             var self = this;
@@ -30,6 +31,7 @@
         this.drawMonth();
         // Draw Legend
        // this.drawLegend();
+
     }
 
     Calendar.prototype.drawHeader = function() {
@@ -49,12 +51,14 @@
             right.addEventListener('click', function() {
                 self.nextMonth();
                 self.colorBusy();
-            });
+                })
+
 
             var left = createElement('div', 'left');
             left.addEventListener('click', function() {
                 self.prevMonth();
                 self.colorBusy();
+
             });
 
             var ringLeft = createElement('div', 'ring-left');
@@ -96,6 +100,7 @@
                 self.fowardFill();
 
                 self.el.appendChild(self.month);
+
                 window.setTimeout(function() {
                     self.month.className = 'month in ' + (self.next ? 'next' : 'prev');
                 }, 16);
@@ -107,6 +112,10 @@
             this.currentMonth();
             this.fowardFill();
             this.month.className = 'month new';
+            this.colorBusy();
+
+
+
         }
     }
 
@@ -359,6 +368,9 @@
         this.current.add('months', 1);
         this.next = true;
         this.draw();
+
+
+
     }
 
     Calendar.prototype.prevMonth = function() {
@@ -366,14 +378,38 @@
         this.next = false;
         this.draw();
 
+
+
     }
     Calendar.prototype.colorBusy = function(){
-        //get busy days of month
-        busydays = ReservedDays(this.current.format('YYYY'),this.current.format('MM'));
-        //busydays =["1","5", "7", "9", "10", "11", "12", "13", "14", "18", "19", "20", "22", "24", "25", "28"];
-        $(document).ready(function() {
-            console.log("ready")
-            if ($(document).find("title").text() === 'Volyanska Photography|Contacts') {
+    curr_year = this.current.format('YYYY');
+    curr_month = this.current.format('MM');
+
+// Rise when we change date to fill description
+
+        busydays=[];
+
+
+            $.getJSON( "Busy1.Json", function(data) {
+              $.each ( data, function( key, val ){
+                   Busy_month = key.substr(3,2);
+                   Busy_year = key.substr(6,4);
+                   Busy_day = key.substr(0,2);
+                        if(Busy_month==curr_month&&Busy_year==curr_year){
+                            busydays.push(Busy_day);
+                        }})
+
+                   }
+                )
+
+
+
+
+window.setTimeout(function(){
+
+      //  busydays =["15","18"];
+
+       if (busydays.length!=0){
 
                 //replacement based on week started at monday
                 var previus
@@ -420,26 +456,13 @@
                             "margin-right": "8px"})
                     }
                 }
-            }
-        });
+
 
     };
 
 
-
-    Calendar.prototype.ReservedDays= function(C_year,C_month){
-        // Rise when we change date to fill description
-        $( "#BusyDate" ).change(function() {
-            $.ajaxSetup({ cache: false });
-           jsonObj =  $.getJSON( "Busy1.json", function(data) {
-                $( "#Event").val(data[$( "#BusyDate").val()]);
-                console.log( "success" );
-            });
-            $.ajaxSetup({ cache: true});
-
-        });
-
-    };
+    },50)
+}
 
 
     window.Calendar = Calendar;
@@ -480,3 +503,4 @@ app.directive('calendar', [function(){
         }
     }
 }]);
+window.setTimeout(function(){Calendar.prev},1000)

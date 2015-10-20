@@ -13,7 +13,7 @@ $LoginAdm = "Vol";
 
 //MSQ credirtals
 $Login ="root";
-$Passwd = "edifier1";
+$Passwd = "edifier";
 $dbname ="mydb";
 $myServer = $_SERVER['SERVER_NAME'];
 /*
