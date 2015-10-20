@@ -42,7 +42,7 @@
         </div>
 
         <div class ="contact_info">
-            <h1>Ольга Волянская, свадебный фотограф.<br>
+            <>Ольга Волянская, свадебный фотограф.<br>
                 Нахожусь в Киеве. Принимаю заказы по всему миру<br><br><br><br><br><br>
                 По вопросам сотрудничества обращайтесь любым удобным для вас способом:</h1>
 
@@ -74,6 +74,8 @@
     <?php include 'footer.php' ?>
 </section>
 </body>
+<script src="js/moment.js"></script>
+<script src="js/calendar.js"></script>
 </html>
 
 

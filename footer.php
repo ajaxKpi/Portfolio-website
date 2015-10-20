@@ -9,8 +9,7 @@
     <script src="js/jquery.imgPin.js"></script>
     <script src="js/main.js"></script>
     <script src="js/social.js"></script>
-    <script src="js/moment.js"></script>
-    <script src="js/calendar.js"></script>
+
 
 </footer>
 
