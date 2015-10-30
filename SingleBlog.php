@@ -110,7 +110,8 @@ $Print_date =new dateTime($row['date']) ;
     foreach($files as $file) { ?>
 
          <div class = "Blog_photo">
-            <img src="<?=$file?>" alt ="Blog_photo">
+
+             <img class="lazy" data-original="<?=$file?>" alt ="Blog_photo">
          </div>
 
     <?php

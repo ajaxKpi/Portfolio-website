@@ -1,22 +1,21 @@
 <aside class ="main_sidebar">
+    <h1 class="portfolio_me">me</h1>
     <div class ="about_me">
         <div class = "Avatar">
             <a href = "About.php">
                 <img src="img/Ava.jpg">
             </a>
         </div>
-        <hr>
-        <h2> About me</h2>
-        <hr>
 
-        <p>Привет!<br><br>
+
+        <p>Привет!
             Я занимаюсь фото с раннего возраста это мое вдохновение...<a href="About.php"><span>(read more)>></span></a></p>
 
     </div>
 
     <div class ="Tags">
         <hr class ="TagSeparator">
-        <h2><i>Categories</i></h2>
+        <h2 class="portfolio_me">Categories</h2>
         <hr class ="TagSeparator">
         <ul>
             <li>
@@ -35,9 +34,9 @@
     <hr class ="InstSeparator">
 
     <div class ="sidebar_inst">
-        <h2> Olga's Instagram</h2>
+        <h2 class="portfolio_me"> Instagram</h2>
         <hr class ="Popular_StorySeparator">
-        <ul class = "carusel">
+   <     <ul class = "carusel">
         <?php
             require_once 'libraries/inwidget/IstaGet.php';
 
@@ -59,18 +58,16 @@
             ?>
 
 
-
-
-
         </ul>
 
     </div>
 
     <div class ="Popular_Story">
         <hr class ="Popular_StorySeparator">
-        <h2>Popular Stories</h2>
+        <h2 class="portfolio_me">Popular Stories</h2>
         <hr class ="Popular_StorySeparator">
 
+        <div class = "Popular_Story_img">
 
         <?php
         require_once 'data.php';
@@ -84,31 +81,31 @@
         else{
 
 
-        $res = $mysqli->query("SELECT * FROM base order by visits desc LIMIT 4");
+        $res = $mysqli->query("Select * from base t2 WHERE t2.id in (SELECT * from(SELECT t1.id FROM base t1 order by t1.visits desc LIMIT 4) as t3) Order by t2.visits asc");
 
 
         for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
         $res->data_seek($row_no);
         $row = $res->fetch_assoc(); ?>
 
-        <div class="sidebar_photo">
-            <img class="Preview_2" src=" <?=$row['preview']; ?> " alt="logo_img">
-            <div class="Popular_info">
-                <a href=<?= "SingleBlog.php?id=" . $row['id']; ?>>
+            <div class="sidebar_photo">
+                <img class="Preview_2" src=" <?=$row['preview']; ?> " alt="logo_img">
+                <div class="Popular_info">
+                    <a href=<?= "SingleBlog.php?id=" . $row['id']; ?>>
 
-                    <br>
-                    <?=$row['name']; ?>
-                    <br>
+                        <br>
+                        <?=$row['name']; ?>
+                        <br>
 
-                </a>
+                    </a>
 
+                </div>
             </div>
-        </div>
 
         <?php
                 }
             }
         ?>
-
+        </div>
 
 </aside>

@@ -44,7 +44,7 @@ if (isset($_POST['mode'])){
 ***************************************************************/
 
 if (isset($_POST['Event_date'])) {
-    echo ("now here");
+
     $Event_descr=  $_POST['Event'];
     $Event_date=  $_POST['Event_date'];
     if ($Event_descr){
@@ -70,5 +70,6 @@ if (isset($_POST['Event_date'])) {
         file_put_contents('Busy1.json', $jsonData);
         unset($data);
     }
+
 
 }

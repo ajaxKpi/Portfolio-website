@@ -123,6 +123,9 @@ if ($(document).find("title").text()==='Volyanska Photography|Blog'){
 
             case 'Volyanska Photography|Blog':
                $('#Blog').css("color", "brown");
+                $(function() {
+                    $("img.lazy").lazyload();
+                });
                 break;
             case 'Volyanska Photography|About':
                 $('#About').css("color", "brown");
@@ -269,6 +272,7 @@ else {
     }
 
 });
+
 
 
 

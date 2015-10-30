@@ -63,7 +63,7 @@
 
             if ($filter=="Love")
                      {$filter ="Love story";}
-
+            require_once 'functions.php';
             require_once 'data.php';
             $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
             $mysqli->set_charset("utf8");
@@ -105,12 +105,12 @@
                         <br>
                         <p class ="text_overview">
                             <pre class="Wrap_pre">
-                            <?=$row['descr'] ?>
+                             <?= replace_userTags($row['descr'])?>
                             </pre>
                         </p>
                         <div class = "Blog_photo">
                             <a href =<?php echo "SingleBlog.php?id=" . $row['id']; ?>>
-                                <img src=<?=$preview_large?> alt ="Blog_photo">
+                                <img class="lazy" data-original=<?=$preview_large?> alt ="Blog_photo">
 
                             </a>
                         </div>

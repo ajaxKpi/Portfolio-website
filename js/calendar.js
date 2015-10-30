@@ -91,7 +91,7 @@
 
         if (this.month) {
             this.oldMonth = this.month;
-            this.oldMonth.className = 'month out ' + (self.next ? 'next' : 'prev');
+            this.oldMonth.className = 'month out ' + (self.next ? 'next' : 'previous');
            // this.oldMonth.addEventListener('webkitAnimationEnd', function() {
                 self.oldMonth.parentNode.removeChild(self.oldMonth);
                 self.month = createElement('div', 'month');
@@ -102,7 +102,7 @@
                 self.el.appendChild(self.month);
 
                 window.setTimeout(function() {
-                    self.month.className = 'month in ' + (self.next ? 'next' : 'prev');
+                    self.month.className = 'month in ' + (self.next ? 'next' : 'previous');
                 }, 16);
             //});
         } else {
@@ -388,7 +388,7 @@
 // Rise when we change date to fill description
 
         busydays=[];
-
+             $.ajaxSetup({ cache: false });
 
             $.getJSON( "Busy1.Json", function(data) {
               $.each ( data, function( key, val ){
@@ -401,8 +401,7 @@
 
                    }
                 )
-
-
+        $.ajaxSetup({ cache: true });
 
 
 window.setTimeout(function(){
@@ -461,7 +460,7 @@ window.setTimeout(function(){
     };
 
 
-    },50)
+    },300)
 }
 
 
@@ -504,3 +503,190 @@ app.directive('calendar', [function(){
     }
 }]);
 window.setTimeout(function(){Calendar.prev},1000)
+
+
+
+/*
+   *************  erase errors when fields changed ****************
+*/
+
+$("#CheckedDate").change(function() {
+    $.ajaxSetup({ cache: false });
+    $.getJSON( "Busy1.json", function(data) {
+        if(data[$( "#CheckedDate").val()])
+        {
+            $("#CheckedDate").css("border-color", "red")
+            //$(".calendar").css("display","none")
+            $("#s_CheckedDate").fadeOut(400,function() {
+                // Animation complete
+                $("#s_CheckedDate").css("display","block")
+               // $(".calendar").css("display","block")
+            });
+
+
+        }
+        else{
+            $("#CheckedDate").css("border-color", "#ccc")
+
+            $("#s_CheckedDate").fadeOut(400,function() {
+                // Animation complete
+                $("#s_CheckedDate").css("display","none")});
+
+
+        }
+
+    });
+
+    $.ajaxSetup({ cache: true});
+
+});
+
+
+
+
+
+$("#f_name").change(function() {
+    if( $( "#f_name").val())
+    {
+        $("#f_name").css("border-color", "#ccc")
+        $("#s_name").fadeOut(400,function() {
+        // Animation complete
+        $("#s_name").css("display","none")});
+    }
+    else{
+        $("#f_name").css("border-color", "red")
+
+        $("#s_name").fadeIn(400, function() {
+            // Animation complete
+            $("#s_name").css("display","block")});
+    }
+})
+
+
+
+$("#f_mail").change(function() {
+    if( validateEmail($( "#f_mail").val()))
+    {
+        $("#f_mail").css("border-color", "#ccc")
+        $("#s_mail").fadeOut(400,function() {
+            // Animation complete
+            $("#s_mail").css("display","none")});
+    }
+    else{
+        $("#f_mail").css("border-color", "red")
+
+        $("#s_mail").fadeIn(400, function() {
+            // Animation complete
+            $("#s_mail").css("display","block")});
+    }
+})
+
+$("#f_city").change(function() {
+    if( $("#f_city").val())
+    {
+        $("#f_city").css("border-color", "#ccc")
+        $("#s_city").fadeOut(400,function() {
+            // Animation complete
+            $("#s_city").css("display","none")});
+    }
+    else{
+        $("#f_city").css("border-color", "red")
+
+        $("#s_city").fadeIn(400, function() {
+            // Animation complete
+            $("#s_city").css("display","block")});
+    }
+})
+
+$("#f_social").change(function() {
+    if( $( "#f_social").val())
+    {
+        $("#f_social").css("border-color", "#ccc")
+        $("#s_social").fadeOut(400,function() {
+            // Animation complete
+            $("#s_social").css("display","none")});
+    }
+    else{
+        $("#f_social").css("border-color", "red")
+
+        $("#s_social").fadeIn(400, function() {
+            // Animation complete
+            $("#s_social").css("display","block")});
+    }
+})
+
+$("#f_textarea").change(function() {
+    if( $( "#f_textarea").val())
+    {
+        $("#f_textarea").css("border-color", "#ccc")
+        $("#s_descr").fadeOut(400,function() {
+            // Animation complete
+            $("#s_descr").css("display","none")});
+    }
+    else{
+        $("#f_textarea").css("border-color", "red")
+
+        $("#s_descr").fadeIn(400, function() {
+            // Animation complete
+            $("#s_descr").css("display","block")});
+    }
+})
+
+
+
+function validateEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
+}
+
+// if all fields filled send form
+$( "#send_mail" ).click(function() {
+    FieldsOK = true;
+    if(!$( "#f_name").val()){
+        $("#f_name").css("border-color", "red")
+        $("#s_name").fadeIn(400, function() {
+            // Animation complete
+            $("#s_name").css("display","block")});
+        FieldsOK = false;
+    }
+    if(!validateEmail($( "#f_mail").val())){
+        $("#f_mail").css("border-color", "red")
+        $("#s_mail").fadeIn(400, function() {
+            // Animation complete
+            $("#s_mail").css("display","block")});
+        FieldsOK = false;
+    }
+    if($("#CheckedDate").css("border-color")== "rgb(255, 0, 0)"||!$( "#CheckedDate").val()){
+        $("#CheckedDate").css("border-color", "red")
+        $("#s_CheckedDate").fadeIn(400, function() {
+            // Animation complete
+            $("#s_CheckedDate").css("display","block")});
+        FieldsOK = false;
+    }
+    if(!$("#f_city").val()){
+        $("#f_city").css("border-color", "red")
+        $("#s_city").fadeIn(400, function() {
+            // Animation complete
+            $("#s_city").css("display","block")});
+        FieldsOK = false;
+    }
+    if(!$("#f_social").val()){
+        $("#f_social").css("border-color", "red")
+        $("#s_social").fadeIn(400, function() {
+            // Animation complete
+            $("#s_social").css("display","block")});
+        FieldsOK = false;
+    }
+
+    if(!$( "#f_textarea").val()){
+        $("#f_textarea").css("border-color", "red")
+        $("#s_descr").fadeIn(400, function() {
+            // Animation complete
+            $("#s_descr").css("display","block")});
+        FieldsOK = false;
+    }
+    if (!FieldsOK){
+        return false;
+    }
+})
+
