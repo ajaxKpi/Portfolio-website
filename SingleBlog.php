@@ -17,7 +17,7 @@
 
     <!-- VK.com reference -->
      <script src="http://vk.com/js/api/openapi.js"; type="text/javascript" charset="windows-1251"></script>
-
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
 
   </head>
   <body>

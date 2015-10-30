@@ -89,9 +89,10 @@
                         $preview_arr[count($preview_arr)-1]="L_".$preview_arr[count($preview_arr)-1];
                         $preview_large = implode("/", $preview_arr);
 
-                        $share_link  = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                        $share_link  = "http://".$_SERVER['SERVER_NAME']."/SingleBlog.php?id=" . $row['id'];
                         $share_name =  "'".$row['name']. "'";
                         $share_img = "'".$row['preview']. "'";
+
                     ?>
 
                         <article class="Blog_post">
@@ -161,7 +162,7 @@
                                                         <svg version="1.1" id="Capa_1"  class ="onshare" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                              width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
                                                             >
-                                                        <path d="M48.875,0C21.882,0,0,21.882,0,48.875S21.882,97.75,48.875,97.75S97.75,75.868,97.75,48.875S75.868,0,48.875,0z
+                                                        <path id =<?="f".$row['id']; ?> d="M48.875,0C21.882,0,0,21.882,0,48.875S21.882,97.75,48.875,97.75S97.75,75.868,97.75,48.875S75.868,0,48.875,0z
                                                              M67.521,24.89l-6.76,0.003c-5.301,0-6.326,2.519-6.326,6.215v8.15h12.641L67.07,52.023H54.436v32.758H41.251V52.023H30.229V39.258
                                                             h11.022v-9.414c0-10.925,6.675-16.875,16.42-16.875l9.851,0.015V24.89L67.521,24.89z"/>
                                                     </svg>

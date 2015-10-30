@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/Calendar.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/Admin.css">
-    <link  id="bs-css"  href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-    <link id="bsdp-css" href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
-    <link rel="stylesheet" href="libraries/tabs/bootstrap-vertical-tabs-master/bootstrap.vertical-tabs.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <link rel="icon" type="image/png" href="img/dummylogo.png" />
-
-    <meta charset="utf-8">
+<head>
+    <title>Facebook getLoginStatus Example</title>
 </head>
-
 <body>
-<section >
-    <div class="contact">
-        <span itemprop="telephone"><em>7(495)</em> 668 09 47</span>
-        <a id="sidebar" data-spy="affix" data-offset-top="0" data-offset-bottom="200" href="#" data-toggle="modal" data-target="#myModal" class="affix-top">Заказать обратный звонок</a>
-    </div>
+<p>Check out the console to see if anything appears.</p>
+<p>HERE'S THE CODE:</p>
+  <pre>
+    $(function(){
+      FB.init({ apiKey: '1492697214384249', status: true });
 
-
-    <div class="span5 col-md-5" id="sandbox-container">
-        <div class="input-group date">
-
-            <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-        </div>
-    </div>
-    </section>
+      FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+          console.log(response);
+        } else if (response.status === 'not_authorized') {
+          console.log('not connected to app');
+        } else {
+          console.log('not logged in to fb');
+        }
+      });
+    });
+  </pre>
+<div id='fb-root'></div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+    $(function(){
+        FB.init({ apiKey: '1492697214384249', status: true });
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                console.log(response);
+            } else if (response.status === 'not_authorized') {
+                console.log('not connected to app');
+            } else {
+                console.log('not logged in to fb');
+            }
+        });
+    });
+</script>
 </body>
-<script src="js/jquery/jquery-2.1.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
-<script src="js/admin.js"></script>
 </html>

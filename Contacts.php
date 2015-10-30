@@ -38,7 +38,7 @@
         <hr class ="Fixed_line">
         <!-- Space for logo -->
         <div class="logo_big">
-            <a href="#">
+            <a href="/">
                 <svg
 
                     xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +108,7 @@
 
             <div class="form_space">
 
-                    <form action="http://formspree.io/ajax90@ukr.net" class="main_form" novalidate target="_blank" method="post">
+                    <form action="http://formspree.io/olga.volyanska@gmail.com" class="main_form" novalidate target="_blank" method="post">
                         <label class="form_group">
 
                             <input type="text" name="name" id="f_name" placeholder="ИМЯ" data-validation-required-message="Вы не ввели имя" required />
@@ -133,7 +133,7 @@
                                 <input type="text" name ="date" id = "CheckedDate" class="form-control"placeholder="ДАТА СВАДЬБЫ"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
 
                             </div>
-                            <span id =s_CheckedDate class = "req_message">Дата уже зайнята</span>
+                            <span id =s_CheckedDate class = "req_message">Дата уже занята</span>
                         </div>
                         </label>
 
@@ -160,9 +160,10 @@
 
     <!-- sidebar Block -->
         <?php include 'sidebar.php' ?>
+
 </section>
 
-
+<div class="Thanks"><img src = "img/thanks.jpg"></div>
 
 <!-- footer Block -->
 <?php include 'footer.php' ?>

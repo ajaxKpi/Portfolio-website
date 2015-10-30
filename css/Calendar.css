@@ -154,14 +154,14 @@ body {
     background-color: #efefef;
     border-top: 4px solid #919191;
 }
-.week-days .day {
+.week-days .cday {
     cursor: default;
 }
 .week {
     background-color: #fff;
     /* background: #4A4A4A; */
 }
-.day {
+.cday {
     display: inline-block;
     width: 14%;
 
@@ -172,17 +172,17 @@ body {
     position: relative;
     z-index: 100;
 }
-.day.other {
+.cday.other {
     color: #E9E9E9;
 }
-.day.other .circle {
+.cday.other .circle {
     background-color: #E9E9E9;
 }
-.day.today {
+.cday.today {
     color: #3d40cc;
     font-weight: normal;
 }
-.day .day-events {
+.cday-events {
     list-style: none;
     margin-top: 3px;
     text-align: center;
@@ -190,7 +190,7 @@ body {
     line-height: 6px;
     overflow: hidden;
 }
-.day .day-events span {
+.cday .day-events span {
     vertical-align: top;
     display: inline-block;
     padding: 0;

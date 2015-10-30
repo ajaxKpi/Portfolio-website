@@ -169,7 +169,7 @@
         this.getWeek(day);
 
         var todayEvents = this.events.filter(function(event){
-            return event.date.isSame(day, 'day');
+            return event.date.isSame(day, 'cday');
         })[0];
 
         //Outer Day
@@ -211,7 +211,7 @@
     Calendar.prototype.drawEvents = function(day, element) {
         if (day.month() === this.current.month()) {
             var todaysEvents = this.events.reduce(function(memo, ev) {
-                if (ev.date.isSame(day, 'day')) {
+                if (ev.date.isSame(day, 'cday')) {
                     memo.push(ev);
                 }
                 return memo;
@@ -225,7 +225,7 @@
     }
 
     Calendar.prototype.getDayClass = function(day) {
-        classes = ['day'];
+        classes = ['cday'];
         if (day.month() !== this.current.month()) {
             classes.push('other');
         } else if (today.isSame(day, 'day')) {
@@ -276,7 +276,7 @@
         }
 
         var todaysEvents = this.events.filter(function(event){
-            return event.date.isSame(day, 'day');
+            return event.date.isSame(day, 'cday');
         });
 
         console.log('m: ', todaysEvents)
@@ -341,7 +341,7 @@
         this.weekDays = createElement('div', 'week-days')
         var weekdays = [ 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
         weekdays.forEach(function(weekday){
-            var day = createElement('span', 'day', weekday);
+            var day = createElement('span', 'cday', weekday);
             self.weekDays.appendChild(day);
         })
         this.el.appendChild(this.weekDays);
@@ -437,7 +437,7 @@ window.setTimeout(function(){
 
                         for (n = 0; n < Selectday.length; n++) {
 
-                            if (Selectday[n].parentElement.className == 'day'){
+                            if (Selectday[n].parentElement.className == 'cday'){
                                 Selectday[n].style.backgroundColor = "red";
                                 Selectday[n].style.color = "white";
                                 Selectday[n].style.marginLeft  = "8px";
@@ -447,7 +447,7 @@ window.setTimeout(function(){
                         }
                     }
                     else{
-                        $( ".day .day-number:contains(" +searchDay+")").css({
+                        $( ".cday .day-number:contains(" +searchDay+")").css({
                             "background-color": "red",
                             "color": "white",
                             "border-radius": "20px",

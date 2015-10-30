@@ -213,21 +213,22 @@ jQuery(document).ready(function($) {
 
 
 
-    window.fbAsyncInit = function() {
-        FB.init({appId: '1492697214384249', status: true, cookie: true, xfbml: true, version: 'v2.4'});
-        FB.getLoginStatus(fbLoginStatus);
-        FB.Event.subscribe('auth.statusChange', fbLoginStatus);
-    };
-        function fbLoginStatus(response) {
-            if( response.status === 'connected' ) {
-                //user is logged in, display profile div
-                fb_login=true
-            } else {
-                //user is not logged in, display guest div
-                fb_login =false
-            }
-        }
+        $(function() {
+            FB.init({appId: '1492697214384249', status: true, cookie: true, xfbml: true, version: 'v2.4'});
+            FB.getLoginStatus(fbLoginStatus);
+            FB.Event.subscribe('auth.statusChange', fbLoginStatus);
 
+
+            function fbLoginStatus(response) {
+                if (response.status === 'connected') {
+                    //user is logged in, display profile div
+                    fb_login = true
+                } else {
+                    //user is not logged in, display guest div
+                    fb_login = false
+                }
+            }
+        })
 
      VK.init({
      apiId: 5077240,
@@ -252,9 +253,12 @@ var vk_login = false;
  if (response.session) {
  // User authorized in Open API
      vk_login = true
- } else {
- // User not authorized in Open API
-    vk_login =false
+ }
+  else if (response.status === 'not_authorized') {
+     vk_login =false
+        }
+ else {
+     vk_login =false
  }
  });
 
