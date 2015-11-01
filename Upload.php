@@ -44,8 +44,9 @@ if(isset($_POST['CreateButton']))
     $Data =$_POST['data'];
     $Tag = $_POST['tag'];
     $Desc = $_POST['descr'];
+    $Desc_ru = $_POST['descr_ru'];
     $ID =  $_POST['id'];
-echo "we are";
+
 
 
         //--------------------------upload small preview--------------------------
@@ -53,7 +54,7 @@ echo "we are";
         $target_file = $target_dir . basename($_FILES["small-preview"]["name"]);
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-    $clearNamePS = $ID.strtolower (str_replace(' ','',substr($NamePS,0,15))).".".$imageFileType;
+        $clearNamePS = $ID.strtolower (str_replace(' ','',substr($NamePS,0,15))).".".$imageFileType;
 
 
         // Check if image file is a actual image or fake image
@@ -75,7 +76,7 @@ echo "we are";
             if (move_uploaded_file($_FILES["small-preview"]["tmp_name"], $target_dir.$clearNamePS)) {
                 echo "The file " . $clearNamePS . " has been uploaded.";
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                echo "Sorry, there was an error uploading your file Portfolio preview.";
             }
 
     }
@@ -103,13 +104,43 @@ echo "we are";
         if (move_uploaded_file($_FILES["large-preview"]["tmp_name"], $target_file)) {
             echo "The file ".$clearNamePS. " has been uploaded.";
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "Sorry, there was an error uploading your file Blog Preview.";
         }
     }
+
+    //--------------------------upload large preview--------------------------
+    $folder_loc= "img/photo/";
+    $target_file = $target_dir."S_".$clearNamePS;
+    $uploadOk = 1;
+    //$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["exsmall-preview"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["exsmall-preview"]["tmp_name"], $target_file)) {
+            echo "The file ".$clearNamePS. " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file popular stories";
+        }
+    }
+
+
     //--------------------------All files from post upload--------------------------
     // set or create folder to store data
 
-   $filepath = "img/photo/".$_POST['ps_name']."/";
+   $filepath = "img/photo/". $ID.$_POST['ps_name']."/";
 
     if (!file_exists($filepath)){
         mkdir( $filepath, 0777);
@@ -134,8 +165,8 @@ echo "we are";
     $mysqli->set_charset("utf8");
 
 
-    $query = "INSERT into base  (`id`, `name`, `date`, `preview`, `folder`, `tag`, `visits`,  `descr`)
-      VALUES ('". $ID ."', '" . $NamePS ."',STR_TO_DATE('". $Data. "','%d/%m/%Y'), '".$target_dir.$clearNamePS."', '".$folder_loc.$NamePS."', '".$Tag."',  '0','".$Desc."')";
+    $query = "INSERT into base  (`id`, `name`, `date`, `preview`, `folder`, `tag`, `visits`,  `descr`, `descr_ru`)
+      VALUES ('". $ID ."', '" . $NamePS ."',STR_TO_DATE('". $Data. "','%d/%m/%Y'), '".$target_dir.$clearNamePS."', '".$folder_loc.$ID.$NamePS."', '".$Tag."',  '0','".$Desc."', '".$Desc_ru."')";
 
     $res = $mysqli->query($query);
 
@@ -152,6 +183,7 @@ if(isset($_POST['EditButton'] )) {
     $Date ="'".$_POST['edit_date']."'";
     $Tag = "'".$_POST['edit_tag']."'";
     $Desc = "'".$_POST['edit_descr']."'";
+    $Desc_ru="'".$_POST['edit_descr_ru']."'";
     $ID =  "'".$_POST['edit_id']."'";
 
 
@@ -167,8 +199,9 @@ if(isset($_POST['EditButton'] )) {
 
     //--------------------------re - upload small preview--------------------------
 
-    $target_file = $target_dir . basename($_FILES["small-preview"]["name"]);
     $uploadOk = 1;
+    $target_file = $target_dir . basename($_FILES["small-preview"]["name"]);
+
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
     $clearNamePS = $_POST['edit_id'].strtolower (str_replace(' ','',substr($_POST['edit_ps_name'],0,15))).".".$imageFileType;
 
@@ -194,8 +227,13 @@ if(isset($_POST['EditButton'] )) {
 
     }
 
-//--------------------------upload large preview--------------------------
+//--------------------------re upload large preview--------------------------
     $folder_loc= "img/photo/";
+    $target_file = $target_dir . basename($_FILES["large-preview"]["name"]);
+
+    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+    $clearNamePS = $_POST['edit_id'].strtolower (str_replace(' ','',substr($_POST['edit_ps_name'],0,15))).".".$imageFileType;
+
     $target_file = $target_dir."L_".$clearNamePS;
 
     $uploadOk = 1;
@@ -205,7 +243,7 @@ if(isset($_POST['EditButton'] )) {
 
 
     // Check if image file is a actual image or fake image
-    if(isset($_POST["EditButton"])&& $_FILES["small-preview"]["tmp_name"]!=="") {
+    if(isset($_POST["EditButton"])&& $_FILES["large-preview"]["tmp_name"]!=="") {
 
         $check = getimagesize($_FILES["large-preview"]["tmp_name"]);
         if($check !== false) {
@@ -222,10 +260,48 @@ if(isset($_POST['EditButton'] )) {
 
     }
 
-    //--------------------------All files from post upload--------------------------
+
+
+    //--------------------------re upload small preview--------------------------
+    $folder_loc= "img/photo/";
+
+    $target_file = $target_dir . basename($_FILES["exsmall-preview"]["name"]);
+
+    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+    $clearNamePS = $_POST['edit_id'].strtolower (str_replace(' ','',substr($_POST['edit_ps_name'],0,15))).".".$imageFileType;
+
+    $target_file = $target_dir."S_".$clearNamePS;
+
+    $uploadOk = 1;
+    $arrayPath= explode("/",$prevPreview);
+    $LPfile =$target_dir. "S_".$arrayPath[sizeof($arrayPath)-1];
+
+
+
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["EditButton"])&& $_FILES["exsmall-preview"]["tmp_name"]!=="") {
+
+        $check = getimagesize($_FILES["exsmall-preview"]["tmp_name"]);
+        if($check !== false) {
+            unlink($LPfile);
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 1) {
+        move_uploaded_file($_FILES["exsmall-preview"]["tmp_name"], $target_file);
+
+    }
+
+
+
+    //--------------------------re All files from post upload--------------------------
     // set or create folder to store data
 
-    $filepath = "img/photo/".$_POST['edit_ps_name']."/";
+    $filepath = "img/photo/". $ID.$_POST['edit_ps_name']."/";
     if (!empty($_FILES["photo_upload"])){
 
 
@@ -252,7 +328,7 @@ if(isset($_POST['EditButton'] )) {
 
 
 
-        $query = "Update base SET   name = ".$NamePS. ", date=STR_TO_DATE(". $Date. ",'%d/%m/%Y'), tag=".$Tag.", descr=".$Desc.", preview ='"
+        $query = "Update base SET   name = ".$NamePS. ", date=STR_TO_DATE(". $Date. ",'%d/%m/%Y'), tag=".$Tag.", descr=".$Desc.", descr_ru=".$Desc_ru.", preview ='"
             .$preview_loc."', folder = '".$photo_loc."' where id=".$ID;
         $res = $mysqli->query($query);
 

@@ -155,15 +155,15 @@
 
 
             </div>
-
+            <div class="Thanks"><img src = "img/thanks.jpg"></div>
         </section>
 
     <!-- sidebar Block -->
         <?php include 'sidebar.php' ?>
 
+
 </section>
 
-<div class="Thanks"><img src = "img/thanks.jpg"></div>
 
 <!-- footer Block -->
 <?php include 'footer.php' ?>

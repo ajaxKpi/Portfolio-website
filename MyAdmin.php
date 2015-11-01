@@ -9,6 +9,7 @@
     <link  id="bs-css"  href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <link id="bsdp-css" href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
     <link rel="stylesheet" href="libraries/tabs/bootstrap-vertical-tabs-master/bootstrap.vertical-tabs.css">
+    <script src="libraries/ckeditor2/ckeditor.js"></script>
    </head>
 <body>
 
@@ -73,7 +74,6 @@ $new_id++;
                         <br>
                         <div class="span5 col-md-5" id="sandbox-container">
                             <div class="input-group date">
-
                                 <input type="text" class="form-control" name="data"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
                             </div>
                         </div>
@@ -92,49 +92,60 @@ $new_id++;
 
                         </select>
                         <br>
-                        <textarea class='form-control' id='id_comments' name ='descr' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50"></textarea>
 
+                        <textarea class='form-control' id='id_comments' name ='descr' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
+                                Paste english version here
+                        </textarea>
+                        <textarea class='form-control' id='id_comments_ru' name ='descr_ru' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
+                                Рускую версию сюда
+                        </textarea>
                         <br>
                         <div class="tablewrap">
                             <table id ="preview">
-                            <tr>
-                                <td>
-                                    <img  id ="smallimg" src="img/no_img.jpg" alt ="no image">
+                                <tr>
+                                    <td>
+                                        <img  id ="smallimg" src="img/no_img.jpg" alt ="no image">
 
-                                </td>
-                                <td>
-                                    <span> Portfolio preview</span>
-                                    <input type="file" name="small-preview" id="inp_small" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img id ="largeimg" src="img/no_img.jpg" alt ="no image">
-                                </td>
-                                <td>
-                                    <span> Blog preview</span>
-                                    <input type="file" name="large-preview"  id="inp_large"/>
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>
+                                        <span> Portfolio preview(300x200)</span>
+                                        <input type="file" name="small-preview" id="inp_small" />
+                                    </td>
+                                    <td>
+                                        <img  id ="exsmallimg" src="img/no_img.jpg" alt ="no image">
 
-                        </table>
-                            <table id="multy">
-                            <tr>
-                                <td>
-                <span>
-            Load full photosession
-                    </span>
-                                    <input name="photo_upload[]" type="file" multiple="multiple" />
-                                    <img src="img/no_img.jpg" alt ="no image"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="submit" value="Create"  class ="buttons" id="create" name="CreateButton" />
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>
+                                        <span> Popular stories(96x96)</span>
+                                        <input type="file" name="exsmall-preview" id="inp_exsmall" />
+                                    </td>
 
-                        </table>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img id ="largeimg" src="img/no_img.jpg" alt ="no image">
+                                    </td>
+                                    <td>
+                                        <span> Blog preview(900x400)</span>
+                                        <input type="file" name="large-preview"  id="inp_large"/>
+                                    </td>
+                                    <td>
+                                        <img id ="Multy_img" src="img/no_img.jpg" alt ="no image"/>
+
+                                    </td>
+                                    <td>
+                                <span>
+                                     Load full photosession
+                                 </span>
+                                        <input name="photo_upload[]" type="file" multiple="multiple" id ="Multy_butt" />
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <input type="submit" value="Create"  class ="buttons" id="create" name="CreateButton" />
+
                         </div>
                     </form>
 
@@ -159,6 +170,7 @@ $new_id++;
                             <div class="input-group date">
 
                                 <input type="text" class="form-control" name="edit_date" id="editDate"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+
                             </div>
                         </div>
 
@@ -169,8 +181,6 @@ $new_id++;
                         <br>
                         <br>
                             <input type="text"  class ="id" name ="edit_id" id ="edit_id">
-
-
 
                         <div class="namefield">
 
@@ -193,6 +203,7 @@ $new_id++;
 
                         <br>
                         <textarea class='form-control' id='edit_comments' name ='edit_descr' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50"></textarea>
+                        <textarea class='form-control' id='edit_comments_ru' name ='edit_descr_ru' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50"></textarea>
 
                         <br>
 
@@ -203,38 +214,44 @@ $new_id++;
 
                                 </td>
                                 <td>
-                                    <span> Portfolio preview</span>
+                                    <span> Portfolio preview(300x200)</span>
                                     <input type="file" name="small-preview" id="ed_small" />
                                 </td>
+                                <td>
+                                    <img  id ="edit_exsmallimg" src="img/no_img.jpg" alt ="no image">
+
+                                </td>
+                                <td>
+                                    <span> Popular stories(96x96)</span>
+                                    <input type="file" name="exsmall-preview" id="ed_exsmall" />
+                                </td>
+
+
                             </tr>
                             <tr>
                                 <td>
                                     <img id ="edit_largeimg" src="img/no_img.jpg" alt ="no image">
                                 </td>
                                 <td>
-                                    <span> Blog preview</span>
+                                    <span> Blog preview(900x500)</span>
                                     <input type="file" name="large-preview"  id="ed_large"/>
                                 </td>
+                                <td>
+                                    <img id ="Multy_img" src="img/no_img.jpg" alt ="no image"/>
+
+                                </td>
+                                <td>
+                                <span>
+                                     Load full photosession
+                                 </span>
+                                <input name="photo_upload[]" type="file" multiple="multiple" id="Multy_butt" />
+
+                                </td>
                             </tr>
 
                         </table>
-                        <table id="multy">
-                            <tr>
-                                <td>
-                <span>
-            Load full photosession
-                    </span>
-                                    <input name="photo_upload[]" type="file" multiple="multiple" />
-                                    <img src="img/no_img.jpg" alt ="no image"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
+
                                     <input type="submit" value="Edit" id="EditButton"  class ="buttons" name ="EditButton" />
-                                </td>
-                            </tr>
-
-                        </table>
 
 
 
@@ -374,11 +391,20 @@ else {
 ?>
 </div>
     </section>
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace( 'descr' );
+        CKEDITOR.replace( 'descr_ru' );
+        CKEDITOR.replace( 'edit_descr' );
+        CKEDITOR.replace( 'edit_descr_ru' );
+    </script>
 
     <script src="js/jquery/jquery-2.1.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/admin.js"></script>
+
 
 </body>
 </html>

@@ -101,20 +101,6 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 
 
-if ($(document).find("title").text()==='Volyanska Photography|Blog'){
-
-    $('.Main_content').css({
-        "padding-left": "10px",
-        "padding-right": "100px"
-
-
-    });
-
-
-
-
-    //$('.main_sidebar').css("padding-top","60px")
-}
 
 //get active page
 

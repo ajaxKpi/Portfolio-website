@@ -513,7 +513,7 @@ window.setTimeout(function(){Calendar.prev},1000)
 $("#CheckedDate").change(function() {
     $.ajaxSetup({ cache: false });
     $.getJSON( "Busy1.json", function(data) {
-        if(data[$( "#CheckedDate").val()])
+        if(data[$("#CheckedDate").val()]&&$("#CheckedDate").val()!="")
         {
             $("#CheckedDate").css("border-color", "red")
             //$(".calendar").css("display","none")
@@ -521,15 +521,28 @@ $("#CheckedDate").change(function() {
                 // Animation complete
                 $("#s_CheckedDate").css("display","block")
                // $(".calendar").css("display","block")
-            });
-
-
+                $("#s_CheckedDate").text("Дата уже занята")
+            }) }
+        //empty date
+            else if($("#CheckedDate").val()===""){
+            $("#CheckedDate").css("border-color", "red")
+            //$(".calendar").css("display","none")
+            $("#s_CheckedDate").fadeOut(400,function() {
+                // Animation complete
+                $("#s_CheckedDate").text("Укажите Дату")
+                $("#s_CheckedDate").css("display","block")
+                // $(".calendar").css("display","block")
+            })
         }
+
+
+
         else{
             $("#CheckedDate").css("border-color", "#ccc")
 
             $("#s_CheckedDate").fadeOut(400,function() {
                 // Animation complete
+                $("#s_CheckedDate").text("Дата уже занята")
                 $("#s_CheckedDate").css("display","none")});
 
 

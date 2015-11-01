@@ -36,7 +36,7 @@
     <div class ="sidebar_inst">
         <h2 class="portfolio_me"> Instagram</h2>
         <hr class ="Popular_StorySeparator">
-   <     <ul class = "carusel">
+        <ul class = "carusel">
         <?php
             require_once 'libraries/inwidget/IstaGet.php';
 
@@ -86,10 +86,14 @@
 
         for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
         $res->data_seek($row_no);
-        $row = $res->fetch_assoc(); ?>
+        $row = $res->fetch_assoc();
+            $preview_arr = explode("/", $row['preview']);
+            $preview_arr[count($preview_arr)-1]="S_".$preview_arr[count($preview_arr)-1];
+            $preview_small = implode("/", $preview_arr);
+            ?>
 
             <div class="sidebar_photo">
-                <img class="Preview_2" src=" <?=$row['preview']; ?> " alt="logo_img">
+                <img class="Preview_2" src=" <?=$preview_small; ?> " alt="logo_img">
                 <div class="Popular_info">
                     <a href=<?= "SingleBlog.php?id=" . $row['id']; ?>>
 

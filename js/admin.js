@@ -39,6 +39,10 @@ $("#inp_large").change(function(){
     readURL(this, "#largeimg");
 
 });
+$("#inp_exsmall").change(function(){
+    readURL(this,"#exsmallimg");
+
+});
 $("#ed_small").change(function(){
     readURL(this,"#edit_smallimg");
 
@@ -47,7 +51,15 @@ $("#ed_large").change(function(){
     readURL(this, "#edit_largeimg");
 
 });
+$("#ed_exsmall").change(function(){
+    readURL(this,"#edit_exsmallimg");
 
+});
+
+$("#Multy_butt").change(function(){
+    $("#Multy_img").attr("src","img/success.jpg");
+
+});
 
 
 
@@ -85,16 +97,28 @@ $(".load").on('click',function() {
                 $( "#"+pre_fix+"_id").val(result['id']);
                 $( "#"+pre_fix+"_name").val(result['name']);
                 $( "#"+pre_fix+"_comments").val(result['descr']);
+                $( "#"+pre_fix+"_comments_ru").val(result['descr_ru']);
                 //link to small preview
                 var small_preview = result['preview'];
                 //link to large preview
-                var large_preview = small_preview.split('/');
+                var preview = small_preview.split('/');
+                large_preview = preview.slice();
                 var lastindex =large_preview.length-1;
+                // get file name of large img
+
                 var filename ="L_"+large_preview[lastindex];
                 large_preview[lastindex] = filename;
-                var L_preview = large_preview.join('/')
+                var L_preview = large_preview.join('/');
+                // get file name of small img
+                s_preview = preview.slice();
+                var lastindex =s_preview.length-1;
+                var filename ="S_"+s_preview[lastindex];
+                s_preview[lastindex] = filename;
+                var S_preview = s_preview .join('/');
+
                 $( "#"+pre_fix+"_smallimg").attr('src',small_preview);
                 $( "#"+pre_fix+"_largeimg").attr('src',L_preview);
+                $( "#"+pre_fix+"_exsmallimg").attr('src',S_preview);
 
             }
         },
@@ -118,8 +142,6 @@ $("#busyCr").on('click',function(){
             console.log('error get busy day'); // "Hello world!" alerted
         }
     })
-
-
 })
 
 
