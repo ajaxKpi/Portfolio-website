@@ -10,6 +10,10 @@ $(window).load(function() {
     $(".loader-wrapper").delay(400).fadeOut("slow");
 });
 
+//scroll of fixed header
+$(window).scroll(function(){
+    $('.navigation').css('left',-$(window).scrollLeft());
+});
 
 //instagram slider block
 var currentIndex = 0,items = $('.inst_item'),

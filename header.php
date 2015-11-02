@@ -140,7 +140,7 @@
                 </li>
                 <li>
                     <a target="_blank" href="https://www.pinterest.com/olgavolyanska/">
-                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                              width="612px" height="612px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
 
                                         <path d="M306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306c168.995,0,306-137.005,306-306
