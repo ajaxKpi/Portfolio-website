@@ -92,12 +92,22 @@ $(".load").on('click',function() {
         data: ({'date': $( "#"+pre_fix+"Date").val()}),
         dataType: "json",
             success: function (result) {
-            if(result['ajax']){
-                $( "#"+pre_fix+"_list").val(result['tag']);
-                $( "#"+pre_fix+"_id").val(result['id']);
-                $( "#"+pre_fix+"_name").val(result['name']);
-                $( "#"+pre_fix+"_comments").val(result['descr']);
-                $( "#"+pre_fix+"_comments_ru").val(result['descr_ru']);
+            if(result['ajax']) {
+                $("#" + pre_fix + "_list").val(result['tag']);
+                $("#" + pre_fix + "_id").val(result['id']);
+                $("#" + pre_fix + "_name").val(result['name']);
+                $("#" + pre_fix + "_comments").val(result['descr']);
+                $("#" + pre_fix + "_comments_ru").val(result['descr_ru']);
+                if (pre_fix == "edit") {
+
+                CKEDITOR.instances[pre_fix + '_comments'].setData(result['descr']);
+                CKEDITOR.instances[pre_fix + '_comments_ru'].setData(result['descr_ru']);
+
+                CKEDITOR.instances[pre_fix + '_subcontr'].setData(result['subcontr']);
+                CKEDITOR.instances[pre_fix + '_subcontr_ru'].setData(result['subcontr_ru']);
+                CKEDITOR.instances[pre_fix + '_feedback'].setData(result['feedback']);
+                CKEDITOR.instances[pre_fix + '_feedback_ru'].setData(result['feedback_ru']);
+                                }
                 //link to small preview
                 var small_preview = result['preview'];
                 //link to large preview

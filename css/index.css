@@ -135,7 +135,7 @@ body {
 *****************************Proceses Block*************************************
 ****************************************************************************/
 .navigation-internal a:hover{
-    color: silver;
+    color: #ccc;
     text-decoration: none;
 }
 
@@ -144,7 +144,11 @@ body {
 }
 
  #svg32:hover  #path3349{
-    fill: silver;
+    fill: #ccc;
+
+}
+#svg12:hover  #path4147{
+    fill: black;
 
 }
 
@@ -200,9 +204,14 @@ body {
 
 
 .Blog_name:hover{
-    color:silver;
+    color:#ccc;
 }
+.subbcontract a:hover{
+    text-decoration: none;
+    color: black;
 
+    
+}
 
 
 /* ***************************************************************************
@@ -324,7 +333,7 @@ body {
               width: 32px;
               height: 32px;
             }
-            .navigation-external path{ fill: silver}
+            .navigation-external path{ fill: #ccc}
 
             .navigation-external li a
             {
@@ -333,9 +342,9 @@ body {
             }
 .Fixed_line{
     margin: 0;
-    border-top: 1px solid silver;
+    border-top: 1px solid #ccc;
     position: fixed;
-    color:silver;
+    color:#ccc;
     z-index: 90;
     width:100%;
     left: 0;
@@ -356,7 +365,7 @@ body {
     text-indent: 5px;
     letter-spacing: 0.2em;
     font-weight: 600;
-    color: silver;
+    color: #ccc;
     text-align: right;
     margin-top: -30px;
     margin-right: 34px;
@@ -367,8 +376,10 @@ body {
     text-align: center;
     text-transform: uppercase;
     font-size: 0.9em;
-    color: silver;
+    color: #ccc;
     letter-spacing: 0.1em;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* ***************************************************************************
@@ -452,7 +463,7 @@ body {
     }
     .main_sidebar span
     {
-        color: silver;
+        color: #ccc;
         font-style: italic;
         font-size: 10px;
     }
@@ -493,7 +504,7 @@ body {
         text-align: left;
         margin-left:15px;
         font-size: 14px;
-        color:silver;
+        color:#ccc;
         text-transform: uppercase;
     }
 
@@ -605,6 +616,17 @@ footer h5{
     margin-bottom: 45px;
     margin-top: 15px;
     margin-right: 8px;
+    text-align: justify;
+}
+.wrapArticle{
+
+    margin-right: 8px;
+    text-align: justify;
+    margin-top: 25px;
+}
+.costil1{
+    height: 1px;
+    display: block;
 }
 .header_of_motion {
     margin: auto;
@@ -624,15 +646,15 @@ footer h5{
 
 .header_of_motion span{
 
-    color: silver;
+    color: #ccc;
     font-size: 1em;
     text-decoration: none;
 }
 .header_of_motion a{
 
     text-decoration: none;
-    color: silver;
-    font-size: 12px;
+    color: #ccc;
+    font-size: 1em;
 }
 .header_of_motion+ hr {
 margin-top: 20px;
@@ -651,21 +673,34 @@ border-top: 1px solid #eee;
     position: relative;
     /*  display: inline; */
 
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin-bottom: 8px;
+
 }
 .Blog_photo img[alt="Blog_photo"]{
     width:100%;
 
 
 }
+.subbcontract{
 
+    font-size: 1em;
+    text-decoration: none;
+    color:black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.subbcontract a{
+
+    font-size: 1em;
+    text-decoration: none;
+    color:#ccc;
+}
 
 
 /*********************** like bar **************************/
 .like_share{
-    width: 890px;
-
+ width:100%;
+    margin-top: 17px;
 }
 .like_share a{
     text-decoration: none;
@@ -684,18 +719,26 @@ border-top: 1px solid #eee;
 .Share_container .read_more{
     display: table-cell;
     vertical-align: middle;
-    height: 55px;
+    height: 50px;
     padding-top: 10px;
     float: left;
-    width:50%;
+    width: 64%;
     text-align: right;
-
+    padding-right: 1.5%
 }
 .read_more a{
     font-style: italic;
-    font-size: 20px;
-    color: silver;
+    font-size: 1em;
+    color: #ccc;
+    text-transform: uppercase;
+
 }
+#svg12
+{
+    width: 40%;
+    margin: 0px;
+}
+
 .Share_container svg{
     margin: 5px;
     width: 30px;
@@ -705,7 +748,7 @@ border-top: 1px solid #eee;
 
 }
 .Share_container path {
-    fill: silver;
+    fill: #ccc;
 }
 
 /*     Button styles:
@@ -719,19 +762,23 @@ i.vk,span.vk{ color: #45668e; }
 
 }
 .Share_container td{
-    color: silver;
+    color: #ccc;
     display: table-cell;
     vertical-align: middle;
+    
 
-    font-size: 20px;
 
+}
+.Share_container p{
+    font-size: 1em;
+    margin-bottom: 6px;
 }
 .like_share hr{
     width: inherit;
     margin: 5px;
     clear:both;
 
-    color:silver;
+    color:#ccc;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -739,7 +786,7 @@ i.vk,span.vk{ color: #45668e; }
     width: 100% !important;
 }
 .comment_wrap{
-    width:900px;
+    width:100%;
 
 }
 
@@ -923,6 +970,7 @@ form .form_group {
     border: none;
     font-size: 1em;
     text-align: justify;
+    margin-bottom: 20px;
 }
 
 
@@ -986,7 +1034,7 @@ form .form_group {
 }
 .languageBar label:after {
     content: 'EN';
-    color: silver;
+    color: #ccc;
     padding: 9px;
     position: absolute;
     width: 35px;

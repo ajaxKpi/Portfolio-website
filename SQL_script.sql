@@ -12,6 +12,11 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `mydb` ;
 
+
+use u0097551_oracle-erp-ru;
+CREATE TABLE IF NOT EXISTS `links`
+
+
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------

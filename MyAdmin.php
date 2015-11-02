@@ -97,7 +97,7 @@ $new_id++;
                                 Paste english version here
                         </textarea>
                         <textarea class='form-control' id='id_comments_ru' name ='descr_ru' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
-                                Рускую версию сюда
+                                Русcкую версию сюда
                         </textarea>
                         <br>
                         <div class="tablewrap">
@@ -144,11 +144,29 @@ $new_id++;
                                 </tr>
 
                             </table>
+
+                            <textarea class='form-control' id='subcontr' name ='subcontr' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
+                                Wedding specialists
+                            </textarea>
+                            <textarea class='form-control' id='subcontr_ru' name ='subcontr_ru' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
+                                Свадебные подрядчики
+                            </textarea>
+
+                            <br>
+                            <h1>Feedbacks </h1>
+                             <textarea class='form-control' id='feedback' name ='feedback' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
+                                Feedback engl
+                            </textarea>
+                            <textarea class='form-control' id='feedback_ru' name ='feedback_ru' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
+                                Отзыв рус
+                            </textarea>
                             <input type="submit" value="Create"  class ="buttons" id="create" name="CreateButton" />
 
                         </div>
                     </form>
 
+                    <br>
+                    <br>
 
                 </div>
 
@@ -251,12 +269,26 @@ $new_id++;
 
                         </table>
 
+                         <textarea class='form-control' id='edit_subcontr' name ='edit_subcontr'  spellcheck="true" rows="10" cols="50">
+
+                         </textarea>
+                            <textarea class='form-control' id='edit_subcontr_ru' name ='edit_subcontr_ru'  spellcheck="true" rows="10" cols="50">
+
+                            </textarea>
+                        <br>
+                        <h1>Feedbacks </h1>
+                             <textarea class='form-control' id='edit_feedback' name ='edit_feedback' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
+
+                            </textarea>
+                            <textarea class='form-control' id='edit_feedback_ru' name ='edit_feedback_ru' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
+
+                            </textarea>
                                     <input type="submit" value="Edit" id="EditButton"  class ="buttons" name ="EditButton" />
 
 
 
                         <br>
-
+                        <br>
 
                     </form>
 
@@ -377,6 +409,8 @@ $new_id++;
 
                     </table>
 
+
+
                 </div>
             </div>
         </div>
@@ -398,6 +432,15 @@ else {
         CKEDITOR.replace( 'descr_ru' );
         CKEDITOR.replace( 'edit_descr' );
         CKEDITOR.replace( 'edit_descr_ru' );
+        CKEDITOR.replace( 'subcontr' );
+        CKEDITOR.replace( 'subcontr_ru' );
+        CKEDITOR.replace( 'edit_subcontr' );
+        CKEDITOR.replace( 'edit_subcontr_ru' );
+        CKEDITOR.replace( 'feedback' );
+        CKEDITOR.replace( 'feedback_ru' );
+        CKEDITOR.replace( 'edit_feedback' );
+        CKEDITOR.replace( 'edit_feedback_ru' );
+
     </script>
 
     <script src="js/jquery/jquery-2.1.3.min.js"></script>
