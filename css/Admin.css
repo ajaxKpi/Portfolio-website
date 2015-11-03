@@ -113,4 +113,11 @@ color: green;
     margin-right: 10px;
 
 }
-
+#feedButton{
+    background-color: green;
+    color: #101010;
+}
+#delfeedButton{
+    background-color: #ff4060;
+    color: #101010;
+}

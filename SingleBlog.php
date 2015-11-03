@@ -18,7 +18,12 @@
     <!-- VK.com reference -->
      <script src="http://vk.com/js/api/openapi.js"; type="text/javascript" charset="windows-1251"></script>
     <script src="http://connect.facebook.net/en_US/all.js"></script>
-
+    <script type="text/javascript">
+        VK.init({
+            apiId: 5077240,
+            onlyWidgets: true
+        });
+    </script>
   </head>
   <body>
   <!-- Preloader Block -->
@@ -33,12 +38,7 @@
 
   <div id="fb-root"></div>
   <!-- VK.com init  -->
-    <script type="text/javascript">
-    VK.init({
-        apiId: 5077240,
-        onlyWidgets: true
-    });
-    </script>
+
 
 
     <section class = "Full_site_holder">
@@ -218,7 +218,10 @@ $Print_date =new dateTime($row['date']) ;
     </section>
 
     <div class  ="comment_wrap">
-              <div class="fb-comments" data-href="  <?=$share_link?>" data-numposts="5" data-version="v2.3"></div>
+              <div class="fb-comments" data-href="  <?=$share_link?>"
+                   data-numposts="5" data-version="v2.3">
+
+              </div>
        <!-- VK.com position-->
         <div id="vk_comments"></div>
              <script type="text/javascript">
@@ -242,11 +245,6 @@ $Print_date =new dateTime($row['date']) ;
 
     $mysqli2 = new mysqli($myServer, $Login,$Passwd , $dbname);
     $res = $mysqli2->query("SELECT visits FROM base Where id='".$_GET["id"]."'");
-
-    ?>
-
-    <?php
-
 
     $visits= $res->fetch_assoc();
     $visit =(int)$visits['visits'];

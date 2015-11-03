@@ -245,7 +245,7 @@ body {
         width:1200px;
         height: inherit;
         position: fixed;
-        font-size: 1em;
+        font-size: 14px;
         background-color: #ffffff;
         top: 0;
 
@@ -253,12 +253,13 @@ body {
 
     }
 
+
         .navigation-internal
            {
                width: 75%;
                float: left;
                display: inline-block;
-            margin-left: 3.2%;
+             margin-left: 3.2%;
 
         }
 
@@ -645,6 +646,8 @@ footer h5{
 .separator{
     margin-top: 25px;
     margin-bottom: 25px;
+    border: 0;
+    border-top: 1px solid #eee;
 }
 
 .header_of_motion span{
@@ -1090,4 +1093,11 @@ form .form_group {
     padding: 6px;
     width: 48%;
     float: left;
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**********************************Feedback elements************************
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.collage{
+    margin-bottom: 40px;
+    margin-right: 7px;
 }

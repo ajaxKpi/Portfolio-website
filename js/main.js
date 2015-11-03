@@ -11,8 +11,14 @@ $(window).load(function() {
 });
 
 //scroll of fixed header
+
 $(window).scroll(function(){
-    $('.navigation').css('left',-$(window).scrollLeft());
+    if ($(window).width() < 960){
+        $('.navigation').css('left',-$(window).scrollLeft());
+    }
+    else{
+        $('.navigation').css('left', "");
+    }
 });
 
 //instagram slider block
@@ -129,6 +135,12 @@ var getUrlParameter = function getUrlParameter(sParam) {
             case 'Volyanska Photography|Contacts':
                 $('#Contacts').css("color", "brown");
                 break;
+            case 'Volyanska Photography|Feedbacks':
+                $('#Feedbacks').css("color", "brown");
+                $(".Blog_name").hover(function() {
+                    $(this).css("color","black");
+                });
+                break;
             default:
                 $('#Portfolio').css("color", "brown");
         }
@@ -137,11 +149,8 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 //set text in like_share bar
 if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
-    $('.read_more>a').text("Return to blog...");
+
     $(".read_more>a").attr('href', 'FullBlog.php');
-
-
-
     $('.Blog_photo img').imgPin(
         {
             pinImg : 'img/social/pinterestOnImg.png', position: 2
@@ -158,15 +167,6 @@ if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
         $(this).css("color","black");
     });
 }
-    else if($('div').hasClass('read_more'))
-        {
-
-          /*  CurrentId  = window.location.search.substr(1).split("&");
-
-            $('.read_more>a').text("Read more...");
-            $('.read_more>a').attr('href', 'SingleBlog.php&id='+ CurrentId["1"]);
-        */
-        }
 
 //convert color on click
 $(".onshare").click(function() {

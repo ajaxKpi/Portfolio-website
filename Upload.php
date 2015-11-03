@@ -428,11 +428,90 @@ if(isset($_POST['date'] )){
 }
 
 
+/* **************************************************************
+ ****************************Add feedback procedure *********************
+***************************************************************/
+
+if(isset($_POST['feedButton'] )){
+    //get last ID
+
+    require_once 'data.php';
+    $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
+    $mysqli->set_charset("utf8");
+    $res = $mysqli->query("SELECT MAX(id) as maxID FROM feedback");
+
+    $Last_id= $res->fetch_assoc();
+    $newId =(int)$Last_id['maxID'];
+    echo "val=".$newId;
+
+    $newId++;
+    echo "val1=".$newId;
+    $fbDate=$_POST['feed_data'];
+    $fbName = $_POST['feed_name'];
+    $feedback_en =$_POST['feedback'];
+    $feedback_ru =$_POST['feedback_ru'];
+
+
+    $target_dir = "img/feedback/";
+    $target_file = $target_dir . basename($_FILES["fb-preview"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+    $clearNamePS = "fb_".$newId.strtolower (str_replace(' ','',substr($fbName,0,15))).".".$imageFileType;
+
+
+    $uploadOk =0;
+        if (move_uploaded_file($_FILES["fb-preview"]["tmp_name"], $target_dir.$clearNamePS)) {
+            echo "The file " . $clearNamePS . " has been uploaded.";
+            $uploadOk =1;
+        }
+
+                else{
+        echo "Sorry, your file was not uploaded.";
+             }
 
 
 
+    if (  $uploadOk =1){
+
+    $sql_query = "INSERT INTO `feedback`(`id`, `name`, `date`,`feedback`,`feedback_ru`, `preview`, `rank`) VALUES ('".$newId."','".$fbName."', STR_TO_DATE('". $fbDate. "','%d/%m/%Y'), '".$feedback_en."','"
+    .$feedback_ru."', '".$target_dir.$clearNamePS."','')";
+        $res = $mysqli->query($sql_query);
+    }
 
 
+
+}
+/* **************************************************************
+ ****************************Remove feedback procedure *********************
+***************************************************************/
+
+if(isset($_POST['delfeedButton'] )){
+    //get last ID
+
+
+    $fbDate ="'".$_POST['feed_data']."'";
+
+    require_once 'data.php';
+    $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
+    $mysqli->set_charset("utf8");
+
+
+    $res = $mysqli->query("SELECT id, preview FROM feedback Where `date`=STR_TO_DATE(". $fbDate. ",'%d/%m/%Y')");
+    $row= $res->fetch_assoc();
+
+
+    $target_dir = "img/feedback/";
+    $ID =  "'".$row['id']."'";
+
+    $prevPreview = $row['preview'];
+
+    unlink($prevPreview);
+
+    $query = "Delete from  feedback where id=".$ID;
+    $res = $mysqli->query($query);
+
+
+}
 
 //header("Location: index.php");
 ?>

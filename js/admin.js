@@ -61,6 +61,11 @@ $("#Multy_butt").change(function(){
 
 });
 
+$("#inp_feed").change(function(){
+    readURL(this,"#feed_img");
+
+});
+
 
 
 // Rise when we change date to fill description

@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li id="LI_Feedback">
-                    <a id="Feedback" href="Feedbacks.php">
+                    <a id="Feedbacks" href="Feedbacks.php">
                         Feedbacks
                     </a>
                 </li >

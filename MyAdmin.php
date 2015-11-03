@@ -44,12 +44,9 @@ $new_id++;
                 <li><a href="#profile" data-toggle="tab">Edit</a></li>
                 <li><a href="#messages" data-toggle="tab">Delete</a></li>
                 <li><a href="#settings" data-toggle="tab">Busy days</a></li>
+                <li><a href="#additional" data-toggle="tab">Feedbacks</a></li>
             </ul>
         </div>
-
-
-
-
 
 
         <div class="col-xs-9">
@@ -92,7 +89,7 @@ $new_id++;
 
                         </select>
                         <br>
-
+                        <h3>Add description of article(en/ru)</h3>
                         <textarea class='form-control' id='id_comments' name ='descr' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
                                 Paste english version here
                         </textarea>
@@ -144,22 +141,17 @@ $new_id++;
                                 </tr>
 
                             </table>
+                            <h3>Add wedding specialists(en/ru)</h3>
+                              <textarea class='form-control' id='subcontr' name ='subcontr'  spellcheck="true" rows="10" cols="50">
 
-                            <textarea class='form-control' id='subcontr' name ='subcontr' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
-                                Wedding specialists
+                             </textarea>
+                            <textarea class='form-control' id='subcontr_ru' name ='subcontr_ru'  spellcheck="true" rows="10" cols="50">
+
                             </textarea>
-                            <textarea class='form-control' id='subcontr_ru' name ='subcontr_ru' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
-                                Свадебные подрядчики
-                            </textarea>
+
 
                             <br>
-                            <h1>Feedbacks </h1>
-                             <textarea class='form-control' id='feedback' name ='feedback' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
-                                Feedback engl
-                            </textarea>
-                            <textarea class='form-control' id='feedback_ru' name ='feedback_ru' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
-                                Отзыв рус
-                            </textarea>
+
                             <input type="submit" value="Create"  class ="buttons" id="create" name="CreateButton" />
 
                         </div>
@@ -412,7 +404,63 @@ $new_id++;
 
 
                 </div>
-            </div>
+
+
+                <!--*******************************************************************
+                                       Feedback tab
+
+                             *******************************************************************-->
+
+
+                <div class="tab-pane" id="additional">
+
+                    <h1>Feedbacks </h1>
+                    <form action="Upload.php" method="post" enctype="multipart/form-data">
+                        <h3>Date of review</h3>
+                        <div class="span5 col-md-5" id="sandbox-container">
+                            <div class="input-group date">
+
+                                <input type="text" id = "feed_date" class="form-control" name="feed_data"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                            </div>
+                        </div>
+
+                        <br>
+                        <h3>Name of reviewer</h3>
+                        <div class="namefield">
+
+                                <input type="text" id ="feed_name" class ="text_input" name="feed_name" placeholder="ex: Oksana Fieldman">
+                        </div>
+                            <br>
+
+                                     <textarea class='form-control' id='feedback' name ='feedback' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
+                                        Feedback engl
+                                    </textarea>
+                                     <textarea class='form-control' id='feedback_ru' name ='feedback_ru' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
+                                        Отзыв рус
+                                    </textarea>
+
+                        <div class="tablewrap">
+                            <table id ="preview">
+                                <tr>
+                                    <td>
+                                        <img  id ="feed_img" src="img/no_img.jpg" alt ="no image">
+
+                                    </td>
+                                    <td>
+                                        <span> feedback's collage (900x200)</span>
+                                        <input type="file" name="fb-preview" id="inp_feed" />
+                                    </td>
+                                </tr>
+                            </table>
+
+                        <tr>
+                            <td> <input type="submit"  value="add FB" id="feedButton" class="buttons" name ="feedButton"></td>
+                            <td> <input type="submit"  value="delete FB" id="delfeedButton" class="buttons" name ="delfeedButton"></td>
+                        </tr>
+                        </div>
+
+                    </form>
+                </div>
         </div>
 
 
@@ -424,6 +472,7 @@ else {
 }
 ?>
 </div>
+    </div>
     </section>
     <script>
         // Replace the <textarea id="editor1"> with a CKEditor

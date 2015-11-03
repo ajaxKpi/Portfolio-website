@@ -2,11 +2,12 @@
 <!DOCTYPE html>
 
 <html>
-<head lang="ru">
+<head lang="en">
 
     <title>Volyanska Photography</title>
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+
     <link rel="stylesheet" href="css/media.css">
     <link rel="icon" type="image/png" href="img/dummylogo.png" />
     <meta charset="utf-8">
@@ -38,11 +39,11 @@
     <!-- Main+Sidebar+Footer Block 1000px -->
     <div class = "Main_Side">
         <!-- Header Block -->
-        <nav class ="main_header">
+
 
             <?php include 'header.php' ?>
 
-        </nav>
+
 
         <hr class ="Fixed_line">
         <!-- Space for logo -->

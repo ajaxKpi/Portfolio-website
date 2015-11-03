@@ -3,7 +3,7 @@
 <head lang="en">
 
     <meta charset="UTF-8">
-    <title>Volyanska Photography|Blog</title>
+    <title>Volyanska Photography|Feedbacks</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
 
@@ -55,7 +55,9 @@
             <p>PHOTOGRAPHY</p>
 
         </div>
+        <section class="Main_content">
 
+            <h1 class="portfolio_me">feedbacks</h1>
         <?php
         require_once 'functions.php';
         require_once 'data.php';
@@ -69,7 +71,7 @@
         else{
 
 
-            $res = $mysqli->query("SELECT * FROM base Where );
+            $res = $mysqli->query("SELECT * FROM feedback order by rank DESC");
 
             for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
                 $res->data_seek($row_no);
@@ -77,44 +79,36 @@
                 $Print_date =new dateTime($row['date']) ;
                 $Print_date=   $Print_date-> format('j F Y');
 
-                $share_link  = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-                $share_name =  "'".$row['name']. "'";
-                $share_img = "'".$row['preview']. "'";
-            }
-        }?>
+        ?>
 
 
-        <section class="Main_content">
 
-            <h1 class="portfolio_me">feedbacks</h1>
             <div class="wrapArticle">
                 <div class = "header_of_motion">
                     <h1 class="Blog_name"><?= $row['name']?></h1>
-        <span><?=  $Print_date?>  | <a href = <?="FullBlog.php?tag=". $row['tag']?> ><?= $row['tag']?>
-            </a></span>
+                <span><?=  $Print_date?></span>
                 </div>
-                <hr class="separator">
+                <div class="collage">
+
+                    <hr class="separator">
+                    <img src="<?= $row['preview']?>"
 
                 <p class ="text_overview">
-                <p class="Wrap_pre">
-
-
-                    <?= replace_userTags($row['descr'])?>
-
-
-                </p>
-                </p>
+                        <p class="Wrap_pre">
+                            <?= $row['feedback']?>
+                                        </p>
+                    </p>
                 </div>
+             </div>
+                <?php }}?>
+            <div class="Thanks"><img src = "img/thanks.jpg"></div>
+
             </section>
+        <?php include 'sidebar.php' ?>
+        <!-- footer Block -->
+        <?php include 'footer.php' ?>
         </div>
+    <!-- sidebar Block -->
+
     </section>
 </html>
-
-<?php
-/**
- * Created by PhpStorm.
- * User: zvorskyi
- * Date: 02.11.2015
- * Time: 15:55
- */
