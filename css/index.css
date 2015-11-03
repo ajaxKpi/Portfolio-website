@@ -126,11 +126,12 @@ html {
     height: 100%;
     width: 100%;
 }
+/*
 body {
     display: table-cell;
     vertical-align: middle;
 }
-
+*/
 /* ***************************************************************************
 *****************************Proceses Block*************************************
 ****************************************************************************/
@@ -1100,4 +1101,35 @@ form .form_group {
 .collage{
     margin-bottom: 40px;
     margin-right: 7px;
+}
+/* ***************************************************************************
+*****************************Service Block*************************************
+****************************************************************************/
+.All_serv{
+    position: relative;
+}
+.All_serv h1{
+    font-weight: 700;
+}
+.All_serv h2{
+    font-weight: 400;
+}
+.All_serv ul{
+    list-style-type: cjk-ideographic
+
+}
+
+
+.prices{
+    float:left;
+    width:40%
+}
+.conditions{
+
+    float:left;
+    width:40%
+}
+
+.bottom_P{
+    clear: both;
 }

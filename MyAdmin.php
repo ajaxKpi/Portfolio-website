@@ -268,13 +268,7 @@ $new_id++;
 
                             </textarea>
                         <br>
-                        <h1>Feedbacks </h1>
-                             <textarea class='form-control' id='edit_feedback' name ='edit_feedback' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
 
-                            </textarea>
-                            <textarea class='form-control' id='edit_feedback_ru' name ='edit_feedback_ru' placeholder='Description of photosession...' spellcheck="true" rows="10" cols="50">
-
-                            </textarea>
                                     <input type="submit" value="Edit" id="EditButton"  class ="buttons" name ="EditButton" />
 
 

@@ -5,7 +5,7 @@
         <div class="navigation-internal">
             <ul>
                 <li id="LI_Portfolio">
-                    <a id="Portfolio" href="index.php">
+                    <a id="Portfolio" href="/">
                         Portfolio
                     </a>
                 </li>
@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li id="LI_Services">
-                    <a id="Services" href="#">
+                    <a id="Services" href="Services.php">
                         Services
                     </a>
                 </li>
