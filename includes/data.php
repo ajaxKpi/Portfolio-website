@@ -18,8 +18,8 @@ $Login ="root";
 $Passwd = "edifier1";
 $dbname ="mydb";
 $myServer = $_SERVER['SERVER_NAME'];
-
 /*
+
 $Login ="a6587605_root";
 $Passwd = "fearless1";
 $dbname ="a6587605_mydb";

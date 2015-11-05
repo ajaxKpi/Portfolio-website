@@ -23,7 +23,7 @@ function replace_userTags($subject){
         $linkId= substr($val,2,strlen ($val)-3);
 
 
-        require_once 'data.php';
+        require_once 'includes/data.php';
         $Login ="root";
         $Passwd = "edifier1";
         $dbname ="mydb";

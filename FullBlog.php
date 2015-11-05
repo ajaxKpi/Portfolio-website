@@ -13,7 +13,7 @@
     <!-- share buttons -->
     <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
-
+    <meta name="viewport" content="width=1200, initial-scale=1">
 </head>
 <!-- Preloader Block
 <body>
@@ -55,7 +55,7 @@
 
                     <g
 
-                        id="layer1"
+
                         transform="translate(88.292071,-209.61253)">
                         <path
 
@@ -70,7 +70,7 @@
         </div>
 
         <section class= "Main_content">
-            <h1 class="portfolio_me">blog</h1>
+            <h2 class="portfolio_me">blog</h2>
             <div class = "costil1"></div>
             <!-- extract all records in blog -->
 
@@ -87,7 +87,7 @@
             if ($filter=="Love")
                      {$filter ="Love story";}
             require_once 'functions.php';
-            require_once 'data.php';
+            require_once 'includes/data.php';
             $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
             $mysqli->set_charset("utf8");
 
@@ -121,7 +121,7 @@
                         <article class="Blog_post">
                         <div class = "header_of_motion">
                             <a href=<?php echo "SingleBlog.php?id=" . $row['id']; ?>>
-                                <h1 class="Blog_name"> <?=$row['name'] ?> </h1></a>
+                                <h2 class="Blog_name"> <?=$row['name'] ?> </h2></a>
                             <span> <?=$Print_date ?> | <a href = <?php echo "FullBlog.php?tag=" . $row['tag']; ?>><?=$row['tag'] ?></a></span>
                         </div>
                         <hr class="separator">
@@ -153,7 +153,7 @@
                                                 version="1.1">
 
                                                 <g
-                                                    id="layer1"
+
                                                     transform="translate(-162.38679,-337.72369)">
                                                     <path
 
@@ -172,7 +172,7 @@
 
                                                 <a onclick="Share.vkontakte(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
                                                     <div class="Svg_holder">
-                                                        <svg version="1.1"  class ="onshare" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        <svg version="1.1"  class ="onshare"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                              width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
                                                             >
                                                         <path id =<?=$row['id']; ?>  d="M48.875,0C21.883,0,0,21.882,0,48.875S21.883,97.75,48.875,97.75S97.75,75.868,97.75,48.875S75.867,0,48.875,0z
@@ -191,14 +191,14 @@
                                                     </svg>
                                                     </div>
                                                 </a>
-                                            <td id ="count_VK"></td>
-                                            </td>
-                                            <td id = "fb-logo">
+                                            <td></td>
+
+                                            <td class= "fb-logo">
 
                                                 <a onclick="Share.facebook(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
                                                     <!-- Created with Inkscape (http://www.inkscape.org/) -->
                                                     <div class="Svg_holder">
-                                                        <svg version="1.1" id="Capa_1"  class ="onshare" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        <svg version="1.1"   class ="onshare" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                              width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
                                                             >
                                                         <path id =<?="f".$row['id']; ?> d="M48.875,0C21.882,0,0,21.882,0,48.875S21.882,97.75,48.875,97.75S97.75,75.868,97.75,48.875S75.868,0,48.875,0z
@@ -209,7 +209,7 @@
                                                 </a>
 
                                             </td>
-                                            <td id ="count_FB"></td>
+                                            <td class ="count_FB"></td>
                                         </tr>
 
 

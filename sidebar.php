@@ -1,9 +1,9 @@
 <aside class ="main_sidebar">
-    <h1 class="portfolio_me">me</h1>
+    <h2 class="portfolio_me">me</h2>
     <div class ="about_me">
         <div class = "Avatar">
             <a href = "About.php">
-                <img src="img/Ava.jpg">
+                <img src="img/Ava.jpg" alt="ava">
             </a>
         </div>
 
@@ -49,7 +49,7 @@
 
                 <li class ="inst_item">
                     <a target="_blank" href ="<?=$LinkImage[$key]['link' ]?>">
-                        <img  src="<?=$LinkImage[$key]['large' ]?>">
+                        <img  src="<?=$LinkImage[$key]['large' ]?>" alt = "instIm">
                     </a>
                 </li>
 
@@ -70,7 +70,7 @@
         <div class = "Popular_Story_img">
 
         <?php
-        require_once 'data.php';
+        require_once 'includes/data.php';
         $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
 
         /* check connection */
@@ -111,5 +111,8 @@
             }
         ?>
         </div>
-
+    </div>
 </aside>
+
+
+

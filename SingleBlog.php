@@ -81,7 +81,7 @@
 
 <?php
 require_once 'functions.php';
-require_once 'data.php';
+require_once 'includes/data.php';
 $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
 $mysqli->set_charset("utf8");
 /* check connection */
@@ -113,7 +113,7 @@ $Print_date =new dateTime($row['date']) ;
     <h1 class="portfolio_me">blog</h1>
     <div class="wrapArticle">
     <div class = "header_of_motion">
-        <h1 class="Blog_name"><?= $row['name']?></h1>
+        <h2 class="Blog_name"><?= $row['name']?></h2>
         <span><?=  $Print_date?>  | <a href = <?="FullBlog.php?tag=". $row['tag']?> ><?= $row['tag']?>
                               </a></span>
     </div>

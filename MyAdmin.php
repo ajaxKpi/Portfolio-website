@@ -18,7 +18,7 @@ session_start();
 if ( $_SESSION['status'])
 
 {
-require_once 'data.php';
+require_once 'includes/data.php';
 $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
 $mysqli->set_charset("utf8");
 
@@ -358,7 +358,7 @@ $new_id++;
 
                 <div class="tab-pane" id="settings">
                     <!-- Busy days -->
-                    <h1>Add working days</h1>
+                    <h2>Add working days</h2>
                     <hr>
                     <hr>
 
@@ -379,7 +379,7 @@ $new_id++;
 
 
                     <!-- Links  -->
-                    <h1>Add links in text</h1>
+                    <h2>Add links in text</h2>
                     <hr>
                     <hr>
                     <table>
@@ -408,7 +408,7 @@ $new_id++;
 
                 <div class="tab-pane" id="additional">
 
-                    <h1>Feedbacks </h1>
+                    <h2>Feedbacks </h2>
                     <form action="Upload.php" method="post" enctype="multipart/form-data">
                         <h3>Date of review</h3>
                         <div class="span5 col-md-5" id="sandbox-container">

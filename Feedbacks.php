@@ -60,7 +60,7 @@
             <h1 class="portfolio_me">feedbacks</h1>
         <?php
         require_once 'functions.php';
-        require_once 'data.php';
+        require_once 'includes/includes/data.php';
         $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
         $mysqli->set_charset("utf8");
         /* check connection */
@@ -85,7 +85,7 @@
 
             <div class="wrapArticle">
                 <div class = "header_of_motion">
-                    <h1 class="Blog_name"><?= $row['name']?></h1>
+                    <h2 class="Blog_name"><?= $row['name']?></h2>
                 <span><?=  $Print_date?></span>
                 </div>
                 <div class="collage">

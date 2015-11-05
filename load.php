@@ -9,7 +9,7 @@
 /* **************************************************************
  ****************************Work with links table *********************
 ***************************************************************/
-require_once 'data.php';
+require_once 'includes/data.php';
 $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
 $mysqli->set_charset("utf8");
 

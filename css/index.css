@@ -38,6 +38,7 @@ html * {
 /* ***************************************************************************
 *****************************Preloader Block*************************************
 ****************************************************************************/
+
 .loader-wrapper{
     width: 100%;
     height: 100%;
@@ -54,7 +55,7 @@ html * {
     display: table;
     margin: 20em auto;
     position: relative;
-    -webkit-animation: 2s bulge infinite ease-out;
+
     animation: 2s bulge infinite ease-out;
     z-index: 999;
 }
@@ -86,35 +87,27 @@ html * {
     opacity: 0.4;
 }
 .typing-indicator span:nth-of-type(1) {
-    -webkit-animation: 1s blink infinite 0.3333s;
+
     animation: 1s blink infinite 0.3333s;
 }
 .typing-indicator span:nth-of-type(2) {
-    -webkit-animation: 1s blink infinite 0.6666s;
+
     animation: 1s blink infinite 0.6666s;
 }
 .typing-indicator span:nth-of-type(3) {
-    -webkit-animation: 1s blink infinite 0.9999s;
+
     animation: 1s blink infinite 0.9999s;
 }
 
-@-webkit-keyframes blink {
-    50% {
-        opacity: 1;
-    }
-}
+
 
 @keyframes blink {
     50% {
         opacity: 1;
     }
 }
-@-webkit-keyframes bulge {
-    50% {
-        -webkit-transform: scale(1.05);
-        transform: scale(1.05);
-    }
-}
+
+
 @keyframes bulge {
     50% {
         -webkit-transform: scale(1.05);
@@ -148,8 +141,9 @@ body {
     fill: #ccc;
 
 }
+
 #svg12:hover  #path4147{
-    fill: black;
+   fill: black;
 
 }
 
@@ -432,9 +426,13 @@ body {
     .Preview_info:hover a{
         visibility: visible;}
 
+.Thanks.clear{
+
+    clear: both;
+}
 .Thanks{
     position: relative;
-    clear: both;
+
 }
 .Thanks img{
     display:block;
@@ -598,7 +596,7 @@ footer {
     content: " ";
     clear: both;
     color: rgba(169, 169, 169, 0.5);
-|}
+}
 
 footer h3{
     padding-top: 20px;
@@ -643,7 +641,7 @@ footer h5{
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 15px;
-    margin-top: 0px;}
+    margin-top: 0;}
 .separator{
     margin-top: 25px;
     margin-bottom: 25px;
@@ -743,7 +741,7 @@ border-top: 1px solid #eee;
 #svg12
 {
     width: 40%;
-    margin: 0px;
+    margin: 0;
 }
 
 .Share_container svg{
@@ -987,13 +985,13 @@ form .form_group {
 }
 
 .form-control{
-    border-radius: 0px;
+    border-radius: 0;
 
     line-height: 40px;
     text-indent: 12px;
     font-size: 12px;
     background-color: transparent;
-    padding: 0px;
+    padding: 0;
     height:44px;
 }
 .d_picker{
@@ -1012,7 +1010,7 @@ form .form_group {
     display: inline-block;
 }
 .languageBar:after, .languageBar:before {
-    font-family: FontAwesome;
+    font-family: FontAwesome, PT-Sans, serif;
     -webkit-font-feature-settings: normal;
     -moz-font-feature-settings: normal;
     font-feature-settings: normal;
@@ -1036,7 +1034,7 @@ form .form_group {
     position: relative;
     display: inline-block;
     border-radius: 46px;
-    -webkit-transition: 0.4s;
+
     transition: 0.4s;
 }
 .languageBar label:after {
@@ -1052,7 +1050,7 @@ form .form_group {
     z-index: 2;
     background: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    -webkit-transition: 0.4s;
+
     transition: 0.4s;
 }
 .languageBar input {
@@ -1108,7 +1106,7 @@ form .form_group {
 .All_serv{
     position: relative;
 }
-.All_serv h1{
+.All_serv h2{
     font-weight: 700;
 }
 .All_serv h2{

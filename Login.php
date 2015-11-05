@@ -22,7 +22,7 @@
 <?php
 
 
-require_once 'data.php';
+require_once 'includes/data.php';
 if (isset ($_POST['passw'])) {
     if (md5($_POST['passw'].$Pass_salt) == $Pass_result&&$LoginAdm==$_POST['login']) {
         session_start();

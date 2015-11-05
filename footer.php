@@ -1,6 +1,6 @@
 <footer class="Main_content">
     <h3>
-        OLGA VOLYANSKA PHOTOGRAPHY &#169 2015
+        OLGA VOLYANSKA PHOTOGRAPHY &#169; 2015
     </h3>
     <h5>
         Все тексты и фотографии охраняются законом об авторском праве, использование возможно лишь с согласия автора

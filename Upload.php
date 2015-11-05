@@ -163,7 +163,7 @@ if(isset($_POST['CreateButton']))
 
 
     //--------------------------insert new data to DB --------------------------
-    require_once 'data.php';
+    require_once 'includes/data.php';
     $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
     $mysqli->set_charset("utf8");
 
@@ -195,7 +195,7 @@ if(isset($_POST['EditButton'] )) {
     $feedb_ru = $_POST['edit_feedback_ru'];
 
 
-    require_once 'data.php';
+    require_once 'includes/data.php';
     $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
     $mysqli->set_charset("utf8");
 
@@ -362,7 +362,7 @@ if(isset($_POST['deleteButton'])){
     $ID =  "'".$_POST['delete_id']."'";
 
 
-    require_once 'data.php';
+    require_once 'includes/data.php';
     $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
     $mysqli->set_charset("utf8");
 
@@ -400,7 +400,7 @@ if(isset($_POST['date'] )){
     $Data =  date_create_from_format('d/m/Y',$Data) ;
     $Data=   $Data-> format('Y-m-d');
 
-    require_once 'data.php';
+    require_once 'includes/data.php';
 
     $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
     $mysqli->set_charset("utf8");
@@ -435,7 +435,7 @@ if(isset($_POST['date'] )){
 if(isset($_POST['feedButton'] )){
     //get last ID
 
-    require_once 'data.php';
+    require_once 'includes/data.php';
     $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
     $mysqli->set_charset("utf8");
     $res = $mysqli->query("SELECT MAX(id) as maxID FROM feedback");
@@ -491,7 +491,7 @@ if(isset($_POST['delfeedButton'] )){
 
     $fbDate ="'".$_POST['feed_data']."'";
 
-    require_once 'data.php';
+    require_once 'includes/data.php';
     $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
     $mysqli->set_charset("utf8");
 
