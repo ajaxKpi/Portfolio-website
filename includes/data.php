@@ -38,7 +38,7 @@ $Passwd = "edifier";
 $dbname ="mydb";
 $myServer = $_SERVER['SERVER_NAME'];
 
-
+/*
 $Login ="1982057_root";
 $Passwd = "edifier1";
 $dbname ="1982057_root";

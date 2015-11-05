@@ -274,6 +274,7 @@ body {
                     #LI_About
                     {
                         padding-left: 14px;
+                        width: 12%;
                     }
               .navigation-internal ul li
               {
@@ -647,6 +648,7 @@ footer h5{
     margin-bottom: 25px;
     border: 0;
     border-top: 1px solid #eee;
+    clear: both;
 }
 
 .header_of_motion span{
@@ -876,7 +878,7 @@ i.vk,span.vk{ color: #45668e; }
 /* ---- button  ----- */
 .main_form button {
     border: none;
-    color: #fff;
+    color: rgb(0, 0, 0);
     line-height: 30px;
     padding: 0 25px;
     font-size: 13px;
@@ -1105,6 +1107,9 @@ form .form_group {
 ****************************************************************************/
 .All_serv{
     position: relative;
+    margin-top: 20px;
+    line-height: 20px
+
 }
 .All_serv h2{
     font-weight: 700;
@@ -1112,22 +1117,46 @@ form .form_group {
 .All_serv h2{
     font-weight: 400;
 }
-.All_serv ul{
-    list-style-type: cjk-ideographic
-
+.All_serv h3, .All_serv p{
+    text-align: justify;
 }
 
+.All_serv .package{
+    margin-top: 25px;
+}
 
 .prices{
     float:left;
-    width:40%
+    width:47%;
+    margin-left: 30px;
+    margin-bottom: 25px;
+    padding-right: 30px;
+    border-right: 1px solid #eee;
 }
 .conditions{
 
-    float:left;
-    width:40%
+    float:right;
+    width:43%;
+    margin-right: 23px;
+    margin-bottom: 25px;
 }
 
 .bottom_P{
     clear: both;
+    margin-left: 30px;
+    margin-right: 23px;
+
+}
+.bold{
+    font-weight: bold;
+    color:black;
+}
+#bold_link a{
+    text-decoration: underline;
+    font-weight: bold;
+    color:black;
+
+}
+#bold_link a:hover{
+    color:#ccc;
 }

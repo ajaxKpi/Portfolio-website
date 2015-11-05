@@ -132,6 +132,9 @@ var getUrlParameter = function getUrlParameter(sParam) {
             case 'Volyanska Photography|Follow':
                 $('#Follow').css("color", "brown");
                 break;
+            case 'Volyanska Photography|Services':
+                $('#Services').css("color", "brown");
+                break;
             case 'Volyanska Photography|Contacts':
                 $('#Contacts').css("color", "brown");
                 break;
