@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Volyanska Photography|Blog</title>
+    <title>Volyanska Photography|Article</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/media.css">
@@ -155,8 +155,8 @@ $Print_date =new dateTime($row['date']) ;
         <hr>
 
         <div class="Share_container">
-            <div class="read_more">
-                <a href =<?="SingleBlog.php?id=" . $row['id']; ?>>Read more...</a>
+            <div class="return_blog">
+                <a href =<?="SingleBlog.php?id=" . $row['id']; ?>>Return to Blog</a>
 
             </div>
             <table>

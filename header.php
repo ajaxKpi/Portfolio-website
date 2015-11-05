@@ -31,7 +31,7 @@
                 </li>
                 <li id="LI_Feedback">
                     <a id="Feedbacks" href="Feedbacks.php">
-                        Feedbacks
+                        Feedback
                     </a>
                 </li >
                 <li id="LI_Contacts">

@@ -1,5 +1,5 @@
 <aside class ="main_sidebar">
-    <h2 class="portfolio_me">me</h2>
+    <h3 class="portfolio_me">me</h3>
     <div class ="about_me">
         <div class = "Avatar">
             <a href = "About.php">

@@ -13,19 +13,19 @@ $LoginAdm = "Vol";
 
 
 //MSQ credirtals Windows
-
+/*
 $Login ="root";
 $Passwd = "edifier1";
 $dbname ="mydb";
 $myServer = $_SERVER['SERVER_NAME'];
-/*
 
+*/
 $Login ="a6587605_root";
 $Passwd = "fearless1";
 $dbname ="a6587605_mydb";
 $myServer =  "mysql3.000webhost.com";
 
-
+/*
 //MSQ credirtals
 $Login ="b10_16696103";
 $Passwd = "edifier1";

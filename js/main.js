@@ -123,6 +123,15 @@ var getUrlParameter = function getUrlParameter(sParam) {
                     $("img.lazy").lazyload();
                 });
                 break;
+            case 'Volyanska Photography|Article':
+                $('#Blog').css("color", "brown");
+                $(".Blog_name").hover(function() {
+                    $(this).css("color","black");
+                });
+                $(function() {
+                    $("img.lazy").lazyload();
+                });
+                break;
             case 'Volyanska Photography|About':
                 $('#About').css("color", "brown");
                 break;

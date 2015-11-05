@@ -137,13 +137,13 @@ body {
             fill: black;
 }
 
- #svg32:hover  #path3349{
+#svg32:hover  #path3349{
     fill: #ccc;
 
 }
 
-#svg12:hover  #path4147{
-   fill: black;
+svg:hover  .path4147{
+   fill: black;!important;
 
 }
 
@@ -427,7 +427,7 @@ body {
     .Preview_info:hover a{
         visibility: visible;}
 
-.Thanks.clear{
+.Thanks{
 
     clear: both;
 }
@@ -733,20 +733,34 @@ border-top: 1px solid #eee;
     text-align: right;
     padding-right: 1.5%
 }
-.read_more a{
+
+.return_blog{
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    padding-top: 10px;
+    float: left;
+    width: 56%;
+    text-align: right;
+    padding-right: 1.5%
+
+}
+
+.return_blog a{
     font-style: italic;
     font-size: 1em;
     color: #ccc;
     text-transform: uppercase;
 
 }
-#svg12
+
+.svg12
 {
     width: 40%;
     margin: 0;
 }
 
-.Share_container svg{
+.onshare{
     margin: 5px;
     width: 30px;
     height: 30px;

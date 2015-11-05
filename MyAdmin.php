@@ -375,7 +375,7 @@ $new_id++;
                               <input type="text" id ="Event" name="ps_name" class = "text_input" placeholder="No event for this date">
                         </div>
                         <br>
-                        <button id="busyCr" class="buttons">Reserve</button>
+                        <button id="busyCr" class="buttons">Reserve</button> <span class="status_Add"></span>
 
 
                     <!-- Links  -->

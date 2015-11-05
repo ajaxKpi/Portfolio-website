@@ -110,8 +110,7 @@ $(".load").on('click',function() {
 
                 CKEDITOR.instances[pre_fix + '_subcontr'].setData(result['subcontr']);
                 CKEDITOR.instances[pre_fix + '_subcontr_ru'].setData(result['subcontr_ru']);
-                CKEDITOR.instances[pre_fix + '_feedback'].setData(result['feedback']);
-                CKEDITOR.instances[pre_fix + '_feedback_ru'].setData(result['feedback_ru']);
+
                                 }
                 //link to small preview
                 var small_preview = result['preview'];
@@ -138,7 +137,7 @@ $(".load").on('click',function() {
             }
         },
         error: function() {
-            console.log('error get busy day'); // "Hello world!" alerted
+            console.log('error get article'); // "Hello world!" alerted
         }
     })
 })
@@ -151,13 +150,26 @@ $("#busyCr").on('click',function(){
         type: 'POST',
         data: ({'Event_date': $( "#BusyDate").val(), 'Event':$( "#Event").val()}),
         success: function (result) {
-            console.log('successfully added');
+
+            if ($("#Event").val()) {
+            $(".status_Add").text("successfully ADDED");
+            $(".status_Add").css("color", "green");
+            $(".status_Add").css("display", "inline-block");
+            $(".status_Add").fadeOut("slow");
+                                 }
+            else{
+            $(".status_Add").text("REMOVED");
+            $(".status_Add").css("color","red");
+            $(".status_Add").css("display", "inline-block");
+            $(".status_Add").fadeOut("slow");
+                }
+
                     },
         error: function() {
-            console.log('error get busy day'); // "Hello world!" alerted
+
         }
     })
-})
+});
 
 
 // fill form by Ajax request for ADD LINKS

@@ -48,8 +48,6 @@ if(isset($_POST['CreateButton']))
     $ID =  $_POST['id'];
     $subc = $_POST['subcontr'];
     $subc_ru = $_POST['subcontr_ru'];
-    $feedb = $_POST['feedback'];
-    $feedb_ru = $_POST['feedback_ru'];
 
 
         //--------------------------upload small preview--------------------------
@@ -168,9 +166,9 @@ if(isset($_POST['CreateButton']))
     $mysqli->set_charset("utf8");
 
 
-    $query = "INSERT into base  (`id`, `name`, `date`, `preview`, `folder`, `tag`, `visits`,  `descr`, `descr_ru`,`subcon`,`subcon_ru`, `feedb`,`feedb_ru` )
+    $query = "INSERT into base  (`id`, `name`, `date`, `preview`, `folder`, `tag`, `visits`,  `descr`, `descr_ru`,`subcon`,`subcon_ru` )
       VALUES ('". $ID ."', '" . $NamePS ."',STR_TO_DATE('". $Data. "','%d/%m/%Y'), '".$target_dir.$clearNamePS."', '".$folder_loc.$ID.$NamePS."', '".$Tag."',  '0','".$Desc."',
-      '".$Desc_ru."', '".$subc."', '".$subc_ru."', '".$feedb."', '".$feedb_ru."')";
+      '".$Desc_ru."', '".$subc."', '".$subc_ru."')";
 
     $res = $mysqli->query($query);
 
@@ -191,8 +189,7 @@ if(isset($_POST['EditButton'] )) {
     $ID =  "'".$_POST['edit_id']."'";
     $subc = $_POST['edit_subcontr'];
     $subc_ru = $_POST['edit_subcontr_ru'];
-    $feedb = $_POST['edit_feedback'];
-    $feedb_ru = $_POST['edit_feedback_ru'];
+
 
 
     require_once 'includes/data.php';
@@ -337,7 +334,7 @@ if(isset($_POST['EditButton'] )) {
 
 
         $query = "Update base SET   name = ".$NamePS. ", date=STR_TO_DATE(". $Date. ",'%d/%m/%Y'), tag=".$Tag.", descr=".$Desc.", descr_ru=".$Desc_ru.", preview ='"
-            .$preview_loc."', folder = '".$photo_loc."', subcon = '".$subc."', subcon_ru = '".$subc_ru."', feedb = '".$feedb."', feedb_ru = '".$feedb_ru."' where id=".$ID;
+            .$preview_loc."', folder = '".$photo_loc."', subcon = '".$subc."', subcon_ru = '".$subc_ru."' where id=".$ID;
         $res = $mysqli->query($query);
 
 
