@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Volyanska Photography|Contacts</title>
-
+    <meta name="viewport" content="width=1200, initial-scale=1">
     <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
     <link id="bsdp-css" href="css/datepicker3.css" rel="stylesheet">
 

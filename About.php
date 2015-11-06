@@ -4,10 +4,13 @@
 <head lang="ru">
 
     <title>Volyanska Photography|About</title>
+    <meta name="viewport" content="width=1200, initial-scale=1">
+
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="icon" type="image/png" href="img/dummylogo.png" />
+
     <meta charset="utf-8">
 
 </head>

@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Volyanska Photography|Article</title>
+    <meta name="viewport" content="width=1200, initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/media.css">

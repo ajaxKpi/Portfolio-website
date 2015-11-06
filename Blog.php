@@ -5,6 +5,7 @@
 
     <meta charset="UTF-8">
     <title>Volyanska Photography|Blog</title>
+    <meta name="viewport" content="width=1200, initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/media.css">
@@ -12,7 +13,7 @@
     <meta charset="utf-8">
     <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
 
-    <meta name="viewport" content="width=1200, initial-scale=1">
+
 </head>
 
 <body>

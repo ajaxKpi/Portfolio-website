@@ -42,7 +42,7 @@
 
                     <div class="model-1">
                         <div class="languageBar">
-                            <input  type="checkbox">
+                            <input  type="checkbox" id ="language">
                             <label>
                                 <div class="EN_lab">EN</div>
                                 <div class="RU_lab">RU</div>
@@ -198,4 +198,16 @@
  * User: zvorskyi
  * Date: 10.09.2015
  * Time: 14:34
- */
+*/
+ //                                           language check
+session_start();
+if (!isset( $_COOKIE['language'])){
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    if ($lang=='ru'||$lang=='ua'||$lang=='by'){
+        $_COOKIE['language']='ru';
+    }
+}
+else{
+    $_COOKIE['language']='en';
+}
+echo $_COOKIE['language'];
