@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="css/media.css">
     <link rel="icon" type="image/png" href="img/dummylogo.png" />
     <meta charset="utf-8">
-    <!-- share buttons -->
-    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
 
     <meta name="viewport" content="width=1200, initial-scale=1">
 </head>
@@ -237,7 +236,9 @@
         <?php include 'sidebar.php' ?>
         <!-- footer Block -->
         <?php include 'footer.php' ?>
-
+        <script src="js/jquery.imgPin.min.js"></script>
+        <script src="js/jquery.lazyload.js"></script>
+        <script src="js/social.js"></script>
 
 </section>
 

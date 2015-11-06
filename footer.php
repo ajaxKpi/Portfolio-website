@@ -6,10 +6,8 @@
         Все тексты и фотографии охраняются законом об авторском праве, использование возможно лишь с согласия автора
     </h5>
     <script src="js/jquery/jquery-2.1.3.min.js"></script>
-    <script src="js/jquery.imgPin.js"></script>
-    <script src="js/jquery.lazyload.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/social.js"></script>
+
 
 
 </footer>

@@ -6,7 +6,7 @@
     <title></title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Admin.css">
-    <link  id="bs-css"  href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
     <link id="bsdp-css" href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
     <link rel="stylesheet" href="libraries/tabs/bootstrap-vertical-tabs-master/bootstrap.vertical-tabs.css">
     <script src="libraries/ckeditor2/ckeditor.js"></script>

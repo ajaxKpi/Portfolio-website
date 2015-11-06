@@ -7,9 +7,6 @@
     <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
     <link id="bsdp-css" href="css/datepicker3.css" rel="stylesheet">
 
-
-
-
    <link rel="icon" type="image/png" href="img/dummylogo.png" />
    <meta charset="utf-8">
    <!-- share buttons -->

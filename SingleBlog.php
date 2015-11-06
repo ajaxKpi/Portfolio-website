@@ -12,18 +12,17 @@
     <!-- pinterest hover -->
     <link href="css/imgPin.default.css" rel="stylesheet">
     <!-- share buttons -->
-    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
     <!-- VK.com reference -->
      <script src="http://vk.com/js/api/openapi.js"; type="text/javascript" charset="windows-1251"></script>
-
-    <script type="text/javascript">
+     <script type="text/javascript">
         VK.init({
             apiId: 5077240,
             onlyWidgets: true
         });
     </script>
+
   </head>
   <body>
   <!-- Preloader Block -->
@@ -258,6 +257,9 @@ $Print_date =new dateTime($row['date']) ;
     <?php include 'footer.php' ?>
 
         <script src="http://connect.facebook.net/en_US/all.js"></script>
+        <script src="js/jquery.imgPin.min.js"></script>
+        <script src="js/jquery.lazyload.js"></script>
+        <script src="js/social.js"></script>
 </section>
 
 </body>
