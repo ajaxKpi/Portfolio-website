@@ -162,7 +162,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 //set text in like_share bar
 if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
 
-    $(".read_more>a").attr('href', 'FullBlog.php');
+    $(".read_more>a").attr('href', 'Blog');
     $('.Blog_photo img').imgPin(
         {
             pinImg : 'img/social/pinterestOnImg.png', position: 2

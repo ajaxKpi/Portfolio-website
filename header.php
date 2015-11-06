@@ -10,32 +10,32 @@
                     </a>
                 </li>
                 <li id="LI_About">
-                    <a id="About" href="About.php">
+                    <a id="About" href="About">
                         About me
                     </a>
                 </li>
                 <li id="LI_Blog">
-                    <a  id="Blog" href="FullBlog.php">
+                    <a  id="Blog" href="Blog">
                         Blog
                     </a>
                 </li>
                 <li id="LI_Services">
-                    <a id="Services" href="Services.php">
+                    <a id="Services" href="Services">
                         Services
                     </a>
                 </li>
                 <li id="LI_Advices">
-                    <a id="Advices" href="FullBlog.php?tag=Advices">
+                    <a id="Advices" href="Blog?tag=Advices">
                         Advices
                     </a>
                 </li>
                 <li id="LI_Feedback">
-                    <a id="Feedbacks" href="Feedbacks.php">
+                    <a id="Feedbacks" href="Feedbacks">
                         Feedback
                     </a>
                 </li >
                 <li id="LI_Contacts">
-                    <a id="Contacts" href="Contacts.php">
+                    <a id="Contacts" href="Contacts">
                         Contacts
                     </a>
                 </li>

@@ -107,7 +107,7 @@
                             <img class="Preview_3" src= " <?= $row['preview']; ?> " alt="logo_img">
                         </div>
                         <div class="Preview_info">
-                            <a href=<?= "SingleBlog.php?id=" . $row['id']; ?>>
+                            <a href=<?= "Article?id=" . $row['id']; ?>>
                                 <?php echo $row['name']; ?>
                                 <br>
                                 <?php

@@ -113,7 +113,7 @@ $Print_date =new dateTime($row['date']) ;
     <div class="wrapArticle">
     <div class = "header_of_motion">
         <h2 class="Blog_name"><?= $row['name']?></h2>
-        <span><?=  $Print_date?>  | <a href = <?="FullBlog.php?tag=". $row['tag']?> ><?= $row['tag']?>
+        <span><?=  $Print_date?>  | <a href = <?="Blog?tag=". $row['tag']?> ><?= $row['tag']?>
                               </a></span>
     </div>
     <hr class="separator">
@@ -155,7 +155,7 @@ $Print_date =new dateTime($row['date']) ;
 
         <div class="Share_container">
             <div class="return_blog">
-                <a href =<?="SingleBlog.php?id=" . $row['id']; ?>>Return to Blog</a>
+                <a href =<?="Blog#Article?id=".$row['id']?>>Return to Blog</a>
 
             </div>
             <table>
@@ -256,10 +256,11 @@ $Print_date =new dateTime($row['date']) ;
     <!-- footer -->
     <?php include 'footer.php' ?>
 
-        <script src="http://connect.facebook.net/en_US/all.js"></script>
+
         <script src="js/jquery.imgPin.min.js"></script>
         <script src="js/jquery.lazyload.js"></script>
         <script src="js/social.js"></script>
+        <script src="http://connect.facebook.net/en_US/all.js"></script>
 </section>
 
 </body>

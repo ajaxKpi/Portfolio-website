@@ -111,7 +111,7 @@
                         $preview_arr[count($preview_arr)-1]="L_".$preview_arr[count($preview_arr)-1];
                         $preview_large = implode("/", $preview_arr);
 
-                        $share_link  = "http://".$_SERVER['SERVER_NAME']."/SingleBlog.php?id=" . $row['id'];
+                        $share_link  = "http://".$_SERVER['SERVER_NAME']."/Article?id=" . $row['id'];
                         $share_name =  "'".$row['name']. "'";
                         $share_img = "'".$row['preview']. "'";
 
@@ -119,9 +119,9 @@
 
                         <article class="Blog_post">
                         <div class = "header_of_motion">
-                            <a href=<?php echo "SingleBlog.php?id=" . $row['id']; ?>>
+                            <a name=<?="Article?id=" . $row['id']; ?>  href=<?php echo "Article?id=" . $row['id']; ?>>
                                 <h2 class="Blog_name"> <?=$row['name'] ?> </h2></a>
-                            <span> <?=$Print_date ?> | <a href = <?php echo "FullBlog.php?tag=" . $row['tag']; ?>><?=$row['tag'] ?></a></span>
+                            <span> <?=$Print_date ?> | <a href = <?php echo "Blog?tag=" . $row['tag']; ?>><?=$row['tag'] ?></a></span>
                         </div>
                         <hr class="separator">
 
@@ -131,7 +131,7 @@
                             </p>
                         </p>
                         <div class = "Blog_photo">
-                            <a href =<?php echo "SingleBlog.php?id=" . $row['id']; ?>>
+                            <a href =<?php echo "Article?id=" . $row['id']; ?>>
                                 <img class="lazy" data-original=<?=$preview_large?> alt ="Blog_photo">
 
                             </a>
@@ -143,7 +143,7 @@
 
                                 <div class="Share_container">
                                     <div class="read_more">
-                                        <a href =<?="SingleBlog.php?id=" . $row['id']; ?>>
+                                        <a  href =<?="Article?id=" . $row['id']; ?>  >
                                             <svg
 
                                                 xmlns="http://www.w3.org/2000/svg"

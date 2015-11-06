@@ -19,16 +19,16 @@
         <hr class ="TagSeparator">
         <ul>
             <li>
-                <a href =FullBlog.php?tag=Wedding>Wedding</a>
+                <a href =Blog?tag=Wedding>Wedding</a>
             </li>
             <li>
-                <a href =FullBlog.php?tag=Love>Love story</a>
+                <a href =Blog?tag=Love>Love story</a>
             </li>
             <li>
-                <a href =FullBlog.php?tag=Family>Family</a>
+                <a href =Blog?tag=Family>Family</a>
             </li>
-            <li><a href =FullBlog.php?tag=Inspiration>Inspiration</a></li>
-            <li><a href = FullBlog.php?tag=Portrait>Portrait</a></li>
+            <li><a href =Blog?tag=Inspiration>Inspiration</a></li>
+            <li><a href = Blog?tag=Portrait>Portrait</a></li>
         </ul>
     </div>
     <hr class ="InstSeparator">
@@ -95,7 +95,7 @@
             <div class="sidebar_photo">
                 <img class="Preview_2" src=" <?=$preview_small; ?> " alt="logo_img">
                 <div class="Popular_info">
-                    <a href=<?= "SingleBlog.php?id=" . $row['id']; ?>>
+                    <a href=<?= "Article?id=" . $row['id']; ?>>
 
                         <br>
                         <?=$row['name']; ?>
