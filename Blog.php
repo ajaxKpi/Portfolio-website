@@ -70,7 +70,7 @@
         </div>
 
         <section class= "Main_content">
-            <h2 class="portfolio_me">blog</h2>
+            <h1 class="portfolio_me">blog</h1>
             <div class = "costil1"></div>
             <!-- extract all records in blog -->
 

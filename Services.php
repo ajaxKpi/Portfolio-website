@@ -61,7 +61,7 @@
             <h1 class="portfolio_me">services</h1>
             <div class="All_serv">
             <div class="prices">
-                <h1>СВАДЕБНАЯ ФОТОСЪЕМКА</h1>
+                <h2>СВАДЕБНАЯ ФОТОСЪЕМКА</h2>
                 <article class="package">
                     <h2><span class="bold">ALL DAY</span> – 10 000 грн</h2>
 
@@ -110,7 +110,7 @@
             </div>
 
             <div class="conditions">
-                <h1>УСЛОВИЯ</h1>
+                <h2>УСЛОВИЯ</h2>
                 <article class="package">
                     <p> - я снимаю свадьбы только <span class="bold">европейского формата</span> – с выездной церемонией, единой продуманной стилистикой свадебного торжества и обоснованным таймингом (исходя из погодных и световых условий).
                         <span class="bold">Исключены ЗАГС, выкупы и лимузины</span></p>

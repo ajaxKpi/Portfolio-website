@@ -5,6 +5,7 @@
 <head lang="en">
 
     <title>Volyanska Photography</title>
+    <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
     <meta name="viewport" content="width=1200, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">

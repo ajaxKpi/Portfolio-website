@@ -2,6 +2,24 @@
  * Created by zvorskyi on 12.08.2015.
  */
 
+if($.cookie("language")=="ru"){
+   $("#language").prop('checked', true);
+}
+else
+{
+    $("#language").prop('checked', false);
+}
+
+$('#language').change(function() {
+    if ($(this).is(":checked")) {
+        $.cookie("language","ru")
+           }
+    else{
+        $.cookie("language","en")
+           }
+})
+
+
 //preloader block
 $(window).load(function() {
 
