@@ -1,22 +1,118 @@
 /**
  * Created by zvorskyi on 12.08.2015.
  */
+/**************************
+                *  CONSTANTS    *
+ *                          *****************************/
+            //Sidebar
+aboutme_ru = "Привет! Меня зовут Оля, добро пожаловать на мой сайт! Если Вам близки мои работы, Вы можете связатся со мной любым удобным способом";
+aboutme_en = "Hi and welcome! I'm Olya, wedding photographer. If you find my style close to you contact me please:)";
+            //Contacts
+
+
+
+
+
+
+
+
+
+
 
 if($.cookie("language")=="ru"){
    $("#language").prop('checked', true);
+    contacts_text = 'Если Вам близок мой стиль и Вы разделяете мои взгляды на свадебную фотографию - свяжитесь со мной удобным для Вас способом!<br>Буду рада знакомству и личной встрече!';
+    contacts_ph_name = "ИМЯ";
+    contacts_ph_city = "ГОРОД";
+    contacts_ph_date = "ДАТА СВАДЬБЫ";
+    contacts_ph_link = "ССЫЛКА НА СОЦИАЛЬНУЮ СЕТЬ";
+    contacts_ph_descr = "КРАТКИЙ ПЛАН СВАДЕБНОГО ДНЯ               +ссылки на место проведения";
+    contacts_button = "Давайте знакомится"
 }
 else
 {
     $("#language").prop('checked', false);
+    contacts_text ="If you are close to my style and you share my views on wedding photography - contact me convenient for you! <br>I will be glad to acquaintance and a personal meeting!";
+    contacts_ph_name = "NAME";
+    contacts_ph_city = "CITY";
+    contacts_ph_date = "BOOKING DATE";
+    contacts_ph_link = "LINK TO SOCIAL ACCOUNT";
+    contacts_ph_descr = "SHORT DESCRIPTION OF WEDDING DAY";
+    contacts_button = "SEND";
 }
 
 $('#language').change(function() {
     if ($(this).is(":checked")) {
         $.cookie("language","ru")
+        $(".few_words").text("Привет! Меня зовут Оля, добро пожаловать на мой сайт! Если Вам близки мои работы, Вы можете связатся со мной любым удобным способом")
+
+        contacts_text = "Если Вам близок мой стиль и Вы разделяете мои взгляды на свадебную фотографию - свяжитесь со мной удобным для Вас способом!<br>Буду рада знакомству и личной встрече!";
+        contacts_ph_name = "ИМЯ";
+        contacts_ph_city = "ГОРОД";
+        contacts_ph_date = "ДАТА СВАДЬБЫ";
+        contacts_ph_link = "ССЫЛКА НА СОЦИАЛЬНУЮ СЕТЬ";
+        contacts_ph_descr = "КРАТКИЙ ПЛАН СВАДЕБНОГО ДНЯ              +ссылки на место проведения";
+        contacts_button = "Давайте знакомится"
+
+
            }
     else{
         $.cookie("language","en")
+        $(".few_words").text("Hi and welcome! I'm Olya, wedding photographer. If you find my style close to you contact me please:)")
+
+        contacts_text ="If you are close to my style and you share my views on wedding photography - contact me convenient for you! <br>I will be glad to acquaintance and a personal meeting!";
+        contacts_ph_name = "NAME";
+        contacts_ph_city = "CITY";
+        contacts_ph_date = "BOOKING DATE";
+        contacts_ph_link = "LINK TO SOCIAL ACCOUNT";
+        contacts_ph_descr = "SHORT DESCRIPTION OF WEDDING DAY";
+        contacts_button = "SEND";
            }
+
+    switch($(document).find("title").text())
+    {
+
+        case 'Volyanska Photography|Blog':
+
+            break;
+        case 'Volyanska Photography|Article':
+
+            break;
+        case 'Volyanska Photography|About':
+
+            break;
+        case 'Volyanska Photography|Advices':
+
+            break;
+
+        case 'Volyanska Photography|Services':
+
+            break;
+        case 'Volyanska Photography|Contacts':
+            $('.contactP').html(contacts_text);
+            $("#f_name").attr("placeholder",contacts_ph_name );
+            $("#f_city").attr("placeholder",contacts_ph_city );
+            $("#CheckedDate").attr("placeholder",contacts_ph_date );
+            $("#f_social").attr("placeholder",contacts_ph_link );
+            $("#f_textarea").attr("placeholder",contacts_ph_descr );
+            $("#send_mail span").text(contacts_button );
+
+            break;
+        case 'Volyanska Photography|Feedbacks':
+            $('#Feedbacks').css("color", "brown");
+            $(".Blog_name").hover(function() {
+                $(this).css("color","black");
+            });
+            break;
+        default:
+            $('#Portfolio').css("color", "brown");
+    }
+
+
+
+
+
+
 })
 
 
@@ -156,14 +252,19 @@ var getUrlParameter = function getUrlParameter(sParam) {
             case 'Volyanska Photography|Advices':
                 $('#Advices').css("color", "brown");
                 break;
-            case 'Volyanska Photography|Follow':
-                $('#Follow').css("color", "brown");
-                break;
             case 'Volyanska Photography|Services':
                 $('#Services').css("color", "brown");
                 break;
             case 'Volyanska Photography|Contacts':
                 $('#Contacts').css("color", "brown");
+                $('.contactP').html(contacts_text);
+                $("#f_name").attr("placeholder",contacts_ph_name );
+                $("#f_city").attr("placeholder",contacts_ph_city );
+                $("#CheckedDate").attr("placeholder",contacts_ph_date );
+                $("#f_social").attr("placeholder",contacts_ph_link );
+                $("#f_textarea").attr("placeholder",contacts_ph_descr );
+                $("#send_mail span").text(contacts_button );
+
                 break;
             case 'Volyanska Photography|Feedbacks':
                 $('#Feedbacks').css("color", "brown");

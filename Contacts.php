@@ -147,7 +147,7 @@
 
 
 
-                        <button id="send_mail">Давайте знакомится</button>
+                        <button id="send_mail"><span>Давайте знакомится</span></button>
                     </form>
 
 
@@ -165,7 +165,7 @@
 <!-- footer Block -->
 <?php include 'footer.php' ?>
 </body>
-<
+
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>

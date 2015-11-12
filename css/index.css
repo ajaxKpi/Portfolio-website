@@ -459,6 +459,12 @@ svg:hover  .path4147{
             width: 100%;
             margin-top: 8px;
         }
+
+
+    .few_words{
+        text-align: justify;
+
+    }
     .main_sidebar a
     {
         text-decoration: none;
@@ -897,6 +903,7 @@ i.vk,span.vk{ color: #45668e; }
     padding: 0 25px;
     font-size: 13px;
     text-transform: uppercase;
+    width:51%;
     font-weight: 600;
     margin-top: 8px;
     float: right; }
@@ -1125,7 +1132,7 @@ form .form_group {
     line-height: 20px
 
 }
-.All_serv h2{
+.All_serv h4{
     font-weight: 700;
 }
 .All_serv h2{

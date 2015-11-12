@@ -6,10 +6,14 @@
                 <img src="img/Ava.jpg" alt="ava">
             </a>
         </div>
+        <?php if($_COOKIE['language']=="ru"){$about_lang="Привет! Меня зовут Оля, добро пожаловать на мой сайт! Если Вам близки мои работы, Вы можете связатся со мной любым удобным способом";
 
-
-        <p>Привет!
-            Я занимаюсь фото с раннего возраста это мое вдохновение...<a href="About.php"><span>(read more)>></span></a></p>
+        }
+        else{
+            $about_lang="Hi and welcome! I'm Olya, wedding photographer. If you find my style close to you contact me please:)";
+        }
+        ;?>
+        <p class="few_words"><?=$about_lang?><a href="About"><span>(read more)>></span></a></p>
 
     </div>
 
