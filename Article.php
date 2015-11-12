@@ -120,13 +120,16 @@ $Print_date =new dateTime($row['date']) ;
     <hr class="separator">
 
     <p class ="text_overview">
-    <p class="Wrap_pre">
+    <div class="Wrap_pre">
 
 
-            <?= replace_userTags($row['descr'])?>
+            <?=$row['descr']?>
 
 
-    </p>
+    </div>
+        <div class="Wrap_pre_ru">
+            <?= $row['descr_ru']?>
+        </div>
     </p>
 <?php
     $files = glob($row["folder"].'/*.{*}', GLOB_BRACE);

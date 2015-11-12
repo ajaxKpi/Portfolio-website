@@ -127,9 +127,12 @@
                         <hr class="separator">
 
                         <p class ="text_overview">
-                            <p class="Wrap_pre">
-                             <?= replace_userTags($row['descr'])?>
-                            </p>
+                            <div class="Wrap_pre">
+                             <?= $row['descr']?>
+                            </div>
+                            <div class="Wrap_pre_ru">
+                                <?= $row['descr_ru']?>
+                            </div>
                         </p>
                         <div class = "Blog_photo">
                             <a href =<?php echo "Article?id=" . $row['id']; ?>>
@@ -172,7 +175,7 @@
 
                                                 <a onclick="Share.vkontakte(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
                                                     <div class="Svg_holder">
-                                                        <svg version="1.1"  class ="onshare"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        <svg version="1.1"  class ="onshare"  xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                                                              width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
                                                             >
                                                         <path id =<?=$row['id']; ?>  d="M48.875,0C21.883,0,0,21.882,0,48.875S21.883,97.75,48.875,97.75S97.75,75.868,97.75,48.875S75.867,0,48.875,0z
@@ -198,7 +201,7 @@
                                                 <a onclick="Share.facebook(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
                                                     <!-- Created with Inkscape (http://www.inkscape.org/) -->
                                                     <div class="Svg_holder">
-                                                        <svg version="1.1"   class ="onshare" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        <svg version="1.1"   class ="onshare" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                                                              width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
                                                             >
                                                         <path id =<?="f".$row['id']; ?> d="M48.875,0C21.882,0,0,21.882,0,48.875S21.882,97.75,48.875,97.75S97.75,75.868,97.75,48.875S75.868,0,48.875,0z

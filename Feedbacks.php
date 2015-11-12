@@ -79,6 +79,7 @@
                 $Print_date =new dateTime($row['date']) ;
                 $Print_date=   $Print_date-> format('j F Y');
 
+
         ?>
 
 
@@ -94,9 +95,12 @@
                     <img src="<?= $row['preview']?>"
 
                 <p class ="text_overview">
-                        <p class="Wrap_pre">
+                        <div class="Wrap_pre">
                             <?= $row['feedback']?>
-                                        </p>
+                                        </div>
+                        <div class="Wrap_pre_ru">
+                            <?= $row['feedback_ru']?>
+                        </div>
                     </p>
                 </div>
              </div>

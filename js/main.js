@@ -10,17 +10,23 @@ aboutme_en = "Hi and welcome! I'm Olya, wedding photographer. If you find my sty
             //Contacts
 
 
+function setLang(page_language){
+    if (page_language == "ru"){
+        $(".Wrap_pre_ru").css("display","block")
+        $(".Wrap_pre").css("display","none")
 
+    }
+    else{
+        $(".Wrap_pre").css("display","block")
+        $(".Wrap_pre_ru").css("display","none")
+    }
 
-
-
-
-
-
+}
 
 
 if($.cookie("language")=="ru"){
    $("#language").prop('checked', true);
+    page_version = "ru";
     contacts_text = 'Если Вам близок мой стиль и Вы разделяете мои взгляды на свадебную фотографию - свяжитесь со мной удобным для Вас способом!<br>Буду рада знакомству и личной встрече!';
     contacts_ph_name = "ИМЯ";
     contacts_ph_city = "ГОРОД";
@@ -32,6 +38,7 @@ if($.cookie("language")=="ru"){
 else
 {
     $("#language").prop('checked', false);
+    page_version = "en";
     contacts_text ="If you are close to my style and you share my views on wedding photography - contact me convenient for you! <br>I will be glad to acquaintance and a personal meeting!";
     contacts_ph_name = "NAME";
     contacts_ph_city = "CITY";
@@ -44,6 +51,8 @@ else
 $('#language').change(function() {
     if ($(this).is(":checked")) {
         $.cookie("language","ru")
+        page_version = "ru"
+
         $(".few_words").text("Привет! Меня зовут Оля, добро пожаловать на мой сайт! Если Вам близки мои работы, Вы можете связатся со мной любым удобным способом")
 
         contacts_text = "Если Вам близок мой стиль и Вы разделяете мои взгляды на свадебную фотографию - свяжитесь со мной удобным для Вас способом!<br>Буду рада знакомству и личной встрече!";
@@ -55,9 +64,11 @@ $('#language').change(function() {
         contacts_button = "Давайте знакомится"
 
 
+
            }
     else{
         $.cookie("language","en")
+        page_version = "en"
         $(".few_words").text("Hi and welcome! I'm Olya, wedding photographer. If you find my style close to you contact me please:)")
 
         contacts_text ="If you are close to my style and you share my views on wedding photography - contact me convenient for you! <br>I will be glad to acquaintance and a personal meeting!";
@@ -72,21 +83,15 @@ $('#language').change(function() {
     switch($(document).find("title").text())
     {
 
-        case 'Volyanska Photography|Blog':
 
-            break;
-        case 'Volyanska Photography|Article':
 
-            break;
         case 'Volyanska Photography|About':
-
+            location.reload()
             break;
-        case 'Volyanska Photography|Advices':
 
-            break;
 
         case 'Volyanska Photography|Services':
-
+            location.reload()
             break;
         case 'Volyanska Photography|Contacts':
             $('.contactP').html(contacts_text);
@@ -99,13 +104,18 @@ $('#language').change(function() {
 
             break;
         case 'Volyanska Photography|Feedbacks':
-            $('#Feedbacks').css("color", "brown");
-            $(".Blog_name").hover(function() {
-                $(this).css("color","black");
-            });
+            setLang(page_version);
             break;
-        default:
-            $('#Portfolio').css("color", "brown");
+        case 'Volyanska Photography|Blog':
+            setLang(page_version);
+            break;
+        case 'Volyanska Photography|Article':
+            setLang(page_version);
+            break;
+        case 'Volyanska Photography|Advices':
+            setLang(page_version);
+            break;
+
     }
 
 
@@ -235,6 +245,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
                $('#Blog').css("color", "brown");
                 $(function() {
                     $("img.lazy").lazyload();
+                    setLang(page_version);
                 });
                 break;
             case 'Volyanska Photography|Article':
@@ -242,6 +253,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
                 $(".Blog_name").hover(function() {
                     $(this).css("color","black");
                 });
+                setLang(page_version);
                 $(function() {
                     $("img.lazy").lazyload();
                 });
@@ -251,6 +263,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
                 break;
             case 'Volyanska Photography|Advices':
                 $('#Advices').css("color", "brown");
+                setLang(page_version);
                 break;
             case 'Volyanska Photography|Services':
                 $('#Services').css("color", "brown");
@@ -271,6 +284,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
                 $(".Blog_name").hover(function() {
                     $(this).css("color","black");
                 });
+                setLang(page_version);
                 break;
             default:
                 $('#Portfolio').css("color", "brown");
