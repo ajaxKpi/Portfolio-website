@@ -108,6 +108,7 @@ $('#language').change(function() {
             break;
         case 'Volyanska Photography|Blog':
             setLang(page_version);
+
             break;
         case 'Volyanska Photography|Article':
             setLang(page_version);
@@ -247,6 +248,13 @@ var getUrlParameter = function getUrlParameter(sParam) {
                     $("img.lazy").lazyload();
                     setLang(page_version);
                 });
+                // color Advice if tag is
+                var tag = getUrlParameter('tag');
+                if (tag  === "Advices") {
+                    $('#Blog').css("color", "black");
+                    $('#Advices').css("color", "brown");
+
+                }
                 break;
             case 'Volyanska Photography|Article':
                 $('#Blog').css("color", "brown");
@@ -302,12 +310,7 @@ if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
         }
     );
 
-    //disable link
 
-   // $(".header_of_motion>a").attr('href',"")
-    // $(".header_of_motion>a").removeClass('a');
-   //$('.Blog_name').unbind('mouseenter mouseleave')
-    //$('.header_of_motion>h1').attr('style','')
     $(".Blog_name").hover(function() {
         $(this).css("color","black");
     });
@@ -315,9 +318,9 @@ if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
 
 //convert color on click
 $(".onshare").click(function() {
-    Pathid ="#"+event.target.id;
-    $(Pathid).css("fill","black");
-
+    Pathid = "#" + event.target.id;
+    $(Pathid).css("fill", "black");
+})
     //$( "#vk-logo").css("background-color","silver")
     //$( "#count_VK").css("background-color","silver")
     //$( "#count_VK ").css("color","white")
@@ -331,86 +334,106 @@ jQuery(document).ready(function($) {
     $('.like').socialButton();
     $.scrollToButton('hash', 3000);
 
-});
-
-});
-
-/*  configure access to VK and FB to choose wich comment bar should be used */
-jQuery(document).ready(function($) {
-    if ($(document).find("title").text()==='Volyanska Photography|Blog'){
-
-        var tag = getUrlParameter('tag');
-        if (tag  === "Advices") {
-            $('#Blog').css("color", "black");
-            $('#Advices').css("color", "brown");
-
-        }
 
 
 
-        $(function() {
-            FB.init({appId: '1492697214384249', status: true, cookie: true, xfbml: true, version: 'v2.4'});
-            FB.getLoginStatus(fbLoginStatus);
-            FB.Event.subscribe('auth.statusChange', fbLoginStatus);
+    if ($(document).find("title").text()==='Volyanska Photography|Article') {
+
+        var fb_login = false;
+        var vk_login = false;
+        loginProc = $.Deferred();
+
+        loginProc.done(function () {
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '1492697214384249',
+                    channelURL: 'http://localhost/OlyaSun/test.html', // Channel File
+                    status: true, // check login status
+                    cookie: true, // enable cookies to allow the server to access the session
+                    xfbml: true, // parse XFBML
+                    oauth: true // enables OAuth 2.0
+                });
+                // Additional initialization code here
+                FB.getLoginStatus(function (response) {
+                    if (response.status === 'connected') {
+                        // logged in and connected user, someone you know
+                        fb_login = true;
+                    }
+                    else if (response.status === 'not_authorized') {
+                        fb_login = true;
+                    }
+                    else {
+                        // no user session available, someone you dont know
+                        fb_login = false;
+                    }
+                });
+
+                (function (d) {
+                    var js, id = 'facebook-jssdk';
+                    if (d.getElementById(id)) {
+                        return;
+                    }
+                    js = d.createElement('script');
+                    js.id = id;
+                    js.async = true;
+                    js.src = "//connect.facebook.net/en_US/all.js";
+                    d.getElementsByTagName('head')[0].appendChild(js);
+                }(document));
+//initialization of VK
+            };
+            VK.init({
+                apiId: 5077240,
+                onlyWidgets: true
+            });
 
 
-            function fbLoginStatus(response) {
-                if (response.status === 'connected') {
-                    //user is logged in, display profile div
-                    fb_login = true
-                } else {
-                    //user is not logged in, display guest div
-                    fb_login = false
+// Check VK status
+            VK.Auth.getLoginStatus(function (response) {
+                if (response.session) {
+                    // User authorized in Open API
+                    vk_login = true
                 }
+                else if (response.status === 'not_authorized') {
+                    vk_login = true
+                }
+                else {
+                    vk_login = false
+                }
+            });
+
+
+//than do check
+            if (fb_login || !vk_login) {
+                $(".fb-comments ").css("display", "block")
+                $("#vk_comments ").css("display", "none")
             }
+            else {
+
+                $(".fb-comments ").css("display", "none")
+                $("#vk_comments ").css("display", "block")
+            }
+
         })
+        loginProc.done(function () {
+            if (fb_login || !vk_login) {
+                $(".fb-comments ").css("display", "block")
+                $("#vk_comments ").css("display", "none")
+            }
+            else {
 
-     VK.init({
-     apiId: 5077240,
-     onlyWidgets: true
-     });
+                $(".fb-comments ").css("display", "none")
+                $("#vk_comments ").css("display", "block")
+            }
 
-        (function() {
-        var e = document.createElement('script'); e.async = true;
-        e.src = document.location.protocol +
-        '//connect.facebook.net/en_US/all.js';
-        document.getElementById('fb-root').appendChild(e);
-    }());
-
-
-var fb_login = false;
-var vk_login = false;
-
-
-
-
- VK.Auth.getLoginStatus(function(response) {
- if (response.session) {
- // User authorized in Open API
-     vk_login = true
- }
-  else if (response.status === 'not_authorized') {
-     vk_login =false
-        }
- else {
-     vk_login =false
- }
- });
-
-
-if (fb_login || !vk_login){
-    $(".fb-comments ").css("display", "block")
-    $("#vk_comments ").css("display", "none")
-}
-else {
-
-    $(".fb-comments ").css("display", "none")
-    $("#vk_comments ").css("display", "block")
-    }
+        })
+        setTimeout(function () {
+            // and call `resolve` on the deferred object, once you're done
+            loginProc.resolve();
+        }, 2500)
 
     }
 
-});
+    })
 
 
 

@@ -1,0 +1,40 @@
+<html lang="en" >
+<head><title>Hello Facebook</title></head>
+<body>
+<div id="fb-root"></div>
+<script type="text/javascript">
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '1492697214384249',
+            channelURL: 'http://localhost/OlyaSun', // Channel File
+            status: true, // check login status
+            cookie: true, // enable cookies to allow the server to access the session
+            xfbml: true, // parse XFBML
+            oauth: true // enables OAuth 2.0
+        });
+        // Additional initialization code here
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                // logged in and connected user, someone you know
+                console.log('you know this user!!');
+            }
+            else if (response.status === 'not_authorized') {
+                console.log('Ok somehow');
+            }
+            else {
+                // no user session available, someone you dont know
+                console.log('Howdy Stranger!');
+            }
+        });
+        // END additional initialization
+    };
+    // Load the SDK Asynchronously
+    (function(d){
+        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+</script>
+</body>
+</html>

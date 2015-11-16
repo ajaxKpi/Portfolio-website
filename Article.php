@@ -168,7 +168,7 @@ $Print_date =new dateTime($row['date']) ;
                     <td><p>Share on:</p></td>
                     <td class = "vk-logo"  >
 
-                        <a onclick="Share.vkontakte(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
+                        <a onclick="Share.vkontakte(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,<?=substr($row['descr_ru'],100)?>)">
                             <div class="Svg_holder">
                                 <svg version="1.1" id="Capa_1" class ="onshare" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                      width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
@@ -193,7 +193,7 @@ $Print_date =new dateTime($row['date']) ;
                     </td>
                     <td id = "fb-logo">
 
-                        <a onclick="Share.facebook(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
+                        <a onclick="Share.facebook(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,<?=substr($row['descr_ru'],100)?>)">
                             <!-- Created with Inkscape (http://www.inkscape.org/) -->
                             <div class="Svg_holder">
                                 <svg version="1.1" id="Capa_1" class ="onshare" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"

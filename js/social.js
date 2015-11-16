@@ -344,33 +344,6 @@
 
 
 
-    // костыль для Вконтакте
-    w.socialButtonCountObjects = {};
-
-    function vkShare(index, count) {
-        var button = w.socialButtonCountObjects[index];
-        if(count > 0) {
-            button.setCountValue(count);
-        }
-        delete w.socialButtonCountObjects[index];
-    }
-
-    if(!w.VK) {
-        w.VK = {
-            Share: {
-                count: function(index, count) {
-                    vkShare(index, count);
-                }
-            }
-        }
-    } else {
-        var originalVkCount = w.VK.Share.count;
-
-        w.VK.Share.count = function(index, count) {
-            vkShare(index, count);
-            originalVkCount.call(w.VK.Share, index, count);
-        };
-    }
 
 
     $.fn.socialButton = function(config) {
