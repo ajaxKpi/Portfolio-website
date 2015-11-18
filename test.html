@@ -6,7 +6,7 @@
     window.fbAsyncInit = function() {
         FB.init({
             appId: '1492697214384249',
-            channelURL: 'http://localhost/OlyaSun', // Channel File
+
             status: true, // check login status
             cookie: true, // enable cookies to allow the server to access the session
             xfbml: true, // parse XFBML
@@ -20,10 +20,34 @@
             }
             else if (response.status === 'not_authorized') {
                 console.log('Ok somehow');
+                (function () {
+                    VK.init({
+                        apiId: 5077240,
+                        onlyWidgets: true
+                    });
+                    // Check VK status
+                    VK.Auth.getLoginStatus(function (response) {
+                        if (response.session) {
+                            // User authorized in Open API
+                            $(".fb-comments ").css("display", "none")
+                            $("#vk_comments ").css("display", "block")
+                        }
+                        else if (response.status === 'not_authorized') {
+                            $(".fb-comments ").css("display", "none")
+                            $("#vk_comments ").css("display", "block")
+                        }
+                        else {
+                            $(".fb-comments ").css("display", "block")
+                            $("#vk_comments ").css("display", "none")
+                        }
+                    });
+
+                }())
             }
             else {
                 // no user session available, someone you dont know
                 console.log('Howdy Stranger!');
+
             }
         });
         // END additional initialization

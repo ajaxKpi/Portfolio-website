@@ -34,6 +34,16 @@ if($.cookie("language")=="ru"){
     contacts_ph_link = "ССЫЛКА НА СОЦИАЛЬНУЮ СЕТЬ";
     contacts_ph_descr = "КРАТКИЙ ПЛАН СВАДЕБНОГО ДНЯ               +ссылки на место проведения";
     contacts_button = "Давайте знакомится"
+
+    errors_name = "Вы не ввели имя";
+    errors_email = "Не корректно введен E-mail"
+    errors_city = "Вы не ввели город";
+    errors_date = "Дата уже занята";
+    errors_link = "Укажите профиль в соц. сетях";
+    errors_descr = "Добавте описание свадьбы";
+
+
+
 }
 else
 {
@@ -46,6 +56,14 @@ else
     contacts_ph_link = "LINK TO SOCIAL ACCOUNT";
     contacts_ph_descr = "SHORT DESCRIPTION OF WEDDING DAY";
     contacts_button = "SEND";
+
+    errors_name = "Name required";
+    errors_email = "Improper  E-mail"
+    errors_city = "City Required";
+    errors_date = "Date reserved already";
+    errors_link = "Social account link required";
+    errors_descr = "Wedding description required";
+
 }
 
 $('#language').change(function() {
@@ -101,6 +119,15 @@ $('#language').change(function() {
             $("#f_social").attr("placeholder",contacts_ph_link );
             $("#f_textarea").attr("placeholder",contacts_ph_descr );
             $("#send_mail span").text(contacts_button );
+
+
+            $("#s_name").text(errors_name);
+            $("#s_city").text(errors_city);
+            $("#s_CheckedDate").text(errors_date);
+            $("#s_social").text(errors_city);
+            $("#s_descr").text(errors_descr);
+            $("#s_mail").text(errors_email);
+
 
             break;
         case 'Volyanska Photography|Feedbacks':
@@ -286,6 +313,14 @@ var getUrlParameter = function getUrlParameter(sParam) {
                 $("#f_textarea").attr("placeholder",contacts_ph_descr );
                 $("#send_mail span").text(contacts_button );
 
+
+                $("#s_name").text(errors_name);
+                $("#s_city").text(errors_city);
+                $("#s_CheckedDate").text(errors_date);
+                $("#s_social").text(errors_city);
+                $("#s_descr").text(errors_descr);
+                $("#s_mail").text(errors_email);
+
                 break;
             case 'Volyanska Photography|Feedbacks':
                 $('#Feedbacks').css("color", "brown");
@@ -331,23 +366,21 @@ $(".onshare").click(function() {
 
 
 jQuery(document).ready(function($) {
-    $('.like').socialButton();
-    $.scrollToButton('hash', 3000);
 
 
-
-
-    if ($(document).find("title").text()==='Volyanska Photography|Article') {
+    if ($(document).find("title").text() === 'Volyanska Photography|Article') {
 
         var fb_login = false;
         var vk_login = false;
-        loginProc = $.Deferred();
 
-        loginProc.done(function () {
-            window.fbAsyncInit = function () {
+// show command bar of fb or VK
+
+
+
+           /* window.fbAsyncInit = function () {
                 FB.init({
                     appId: '1492697214384249',
-                    channelURL: 'http://localhost/OlyaSun/test.html', // Channel File
+                    channelURL: 'http://ajaxkpi.site40.net/', // Channel File
                     status: true, // check login status
                     cookie: true, // enable cookies to allow the server to access the session
                     xfbml: true, // parse XFBML
@@ -358,82 +391,68 @@ jQuery(document).ready(function($) {
                     if (response.status === 'connected') {
                         // logged in and connected user, someone you know
                         fb_login = true;
+                        $(".fb-comments ").css("display", "block")
+                        $("#vk_comments ").css("display", "none")
                     }
                     else if (response.status === 'not_authorized') {
                         fb_login = true;
+                        $(".fb-comments ").css("display", "block")
+                        $("#vk_comments ").css("display", "none")
+
                     }
                     else {
                         // no user session available, someone you dont know
+
+                        //initialization of VK
+
                         fb_login = false;
+                        (function () {
+                            VK.init({
+                                apiId: 5077240,
+                                onlyWidgets: true
+                            });
+                                // Check VK status
+                            VK.Auth.getLoginStatus(function (response) {
+                                if (response.session) {
+                                    // User authorized in Open API
+                                    $(".fb-comments ").css("display", "none")
+                                    $("#vk_comments ").css("display", "block")
+                                }
+                                else if (response.status === 'not_authorized') {
+                                    $(".fb-comments ").css("display", "none")
+                                    $("#vk_comments ").css("display", "block")
+                                }
+                                else {
+                                    $(".fb-comments ").css("display", "block")
+                                    $("#vk_comments ").css("display", "none")
+                                }
+                            });
+
+                        }())
                     }
                 });
 
-                (function (d) {
-                    var js, id = 'facebook-jssdk';
-                    if (d.getElementById(id)) {
-                        return;
-                    }
-                    js = d.createElement('script');
-                    js.id = id;
-                    js.async = true;
-                    js.src = "//connect.facebook.net/en_US/all.js";
-                    d.getElementsByTagName('head')[0].appendChild(js);
-                }(document));
-//initialization of VK
             };
-            VK.init({
-                apiId: 5077240,
-                onlyWidgets: true
-            });
 
-
-// Check VK status
-            VK.Auth.getLoginStatus(function (response) {
-                if (response.session) {
-                    // User authorized in Open API
-                    vk_login = true
-                }
-                else if (response.status === 'not_authorized') {
-                    vk_login = true
-                }
-                else {
-                    vk_login = false
-                }
-            });
-
-
-//than do check
-            if (fb_login || !vk_login) {
-                $(".fb-comments ").css("display", "block")
-                $("#vk_comments ").css("display", "none")
+            (function (d) {
+            var js, id = 'facebook-jssdk';
+            if (d.getElementById(id)) {
+            return;
             }
-            else {
+            js = d.createElement('script');
+            js.id = id;
+            js.async = true;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            d.getElementsByTagName('head')[0].appendChild(js);
+            }(document));
 
-                $(".fb-comments ").css("display", "none")
-                $("#vk_comments ").css("display", "block")
-            }
-
-        })
-        loginProc.done(function () {
-            if (fb_login || !vk_login) {
-                $(".fb-comments ").css("display", "block")
-                $("#vk_comments ").css("display", "none")
-            }
-            else {
-
-                $(".fb-comments ").css("display", "none")
-                $("#vk_comments ").css("display", "block")
-            }
-
-        })
-        setTimeout(function () {
-            // and call `resolve` on the deferred object, once you're done
-            loginProc.resolve();
-        }, 2500)
+*/
 
     }
 
-    })
+})
+
+
 
 
 

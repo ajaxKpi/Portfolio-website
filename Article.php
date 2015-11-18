@@ -4,6 +4,50 @@
     <meta charset="UTF-8">
     <title>Volyanska Photography|Article</title>
     <meta name="viewport" content="width=1200, initial-scale=1">
+
+    <?php
+    require_once 'functions.php';
+    require_once 'includes/data.php';
+    $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
+    $mysqli->set_charset("utf8");
+    /* check connection */
+    if ($mysqli->connect_errno) {
+        echo( "Connect failed: %s\n");
+        exit();
+    }
+    else{
+
+
+        $res = $mysqli->query("SELECT * FROM base Where id='".$_GET["id"]."'");
+
+        for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
+            $res->data_seek($row_no);
+            $row = $res->fetch_assoc();
+            $Print_date =new dateTime($row['date']) ;
+            $Print_date=   $Print_date-> format('j F Y');
+
+            $preview_arr = explode("/", $row['preview']);
+            $preview_arr[count($preview_arr)-1]="L_".$preview_arr[count($preview_arr)-1];
+            $share_img = implode("/", $preview_arr);
+
+            $share_link  = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+            $share_name =  $row['name'];
+            $share_desc =  "'".substr($row['descr_ru'],1,100)."'";
+
+        }
+    }?>
+
+    <meta property="og:url"           content="<?=$share_link?>" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="<?=$share_name?>" />
+    <meta property="og:description"   content="<?=strip_tags(substr($share_desc,1,100))?>" />
+    <meta property="og:image"         content="http://<?=$_SERVER[HTTP_HOST].'/'.$share_img?>" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+
+
+
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/media.css">
@@ -79,33 +123,7 @@
 
         </div>
 
-<?php
-require_once 'functions.php';
-require_once 'includes/data.php';
-$mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
-$mysqli->set_charset("utf8");
-/* check connection */
-if ($mysqli->connect_errno) {
-    echo( "Connect failed: %s\n");
-    exit();
-}
-else{
 
-
-$res = $mysqli->query("SELECT * FROM base Where id='".$_GET["id"]."'");
-
-for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
-$res->data_seek($row_no);
-$row = $res->fetch_assoc();
-$Print_date =new dateTime($row['date']) ;
-    $Print_date=   $Print_date-> format('j F Y');
-
-    $share_link  = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-    $share_name =  "'".$row['name']. "'";
-    $share_img = "'".$row['preview']. "'";
-}
-}?>
 
 
 <section class="Main_content">
@@ -168,7 +186,7 @@ $Print_date =new dateTime($row['date']) ;
                     <td><p>Share on:</p></td>
                     <td class = "vk-logo"  >
 
-                        <a onclick="Share.vkontakte(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,<?=substr($row['descr_ru'],100)?>)">
+                        <a src ="http://vk.com/share.php?url=<?=$share_link?>&title=<?=$share_name?>&description=<?=$share_desc?>&image=<?=$share_img?>")>
                             <div class="Svg_holder">
                                 <svg version="1.1" id="Capa_1" class ="onshare" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                      width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
@@ -193,7 +211,7 @@ $Print_date =new dateTime($row['date']) ;
                     </td>
                     <td id = "fb-logo">
 
-                        <a onclick="Share.facebook(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,<?=substr($row['descr_ru'],100)?>)">
+                        <a href="http://www.facebook.com/sharer.php?u=<?=$share_link?>">
                             <!-- Created with Inkscape (http://www.inkscape.org/) -->
                             <div class="Svg_holder">
                                 <svg version="1.1" id="Capa_1" class ="onshare" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
@@ -255,7 +273,61 @@ $Print_date =new dateTime($row['date']) ;
     $visit++;
     $mysqli->query("Update base Set visits ='" .$visit."' where id='".$_GET["id"]."'");
     ?>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '1492697214384249',
 
+            status: true, // check login status
+            cookie: true, // enable cookies to allow the server to access the session
+            xfbml: true, // parse XFBML
+            oauth: true // enables OAuth 2.0
+        });
+        // Additional initialization code here
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected'||response.status === 'not_authorized') {
+                // logged in and connected user, someone you know
+                $(".fb-comments ").css("display", "block")
+                $("#vk_comments ").css("display", "none");
+            }
+
+            else {
+                // no user session available, someone you dont know
+
+                (function () {
+                    VK.init({
+                        apiId: 5077240,
+                        onlyWidgets: true
+                    });
+                    // Check VK status
+                    VK.Auth.getLoginStatus(function (response) {
+                        if (response.session||response.status === 'not_authorized') {
+                            // User authorized in Open API
+                            $(".fb-comments ").css("display", "none")
+                            $("#vk_comments ").css("display", "block")
+                        }
+
+                        else {
+                            $(".fb-comments ").css("display", "block")
+                            $("#vk_comments ").css("display", "none")
+                        }
+                    });
+
+                }())
+
+            }
+        });
+        // END additional initialization
+    };
+    // Load the SDK Asynchronously
+    (function(d){
+        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+
+</script>
 
     <!-- footer -->
     <?php include 'footer.php' ?>
@@ -263,7 +335,7 @@ $Print_date =new dateTime($row['date']) ;
 
         <script src="js/jquery.imgPin.min.js"></script>
         <script src="js/jquery.lazyload.js"></script>
-        <script src="js/social.js"></script>
+
         <script src="http://connect.facebook.net/en_US/all.js"></script>
 </section>
 

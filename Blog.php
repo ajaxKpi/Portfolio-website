@@ -173,7 +173,7 @@
                                             <td><p>Share on:</p></td>
                                             <td class = "vk-logo"  >
 
-                                                <a onclick="Share.vkontakte(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
+                                                <a src ="http://vk.com/share.php?url=<?=$share_link?>&title=<?=$share_name?>&description=<?=$share_desc?>&image=<?=$share_img?>")>
                                                     <div class="Svg_holder">
                                                         <svg version="1.1"  class ="onshare"  xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                                                              width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
@@ -198,7 +198,7 @@
 
                                             <td class= "fb-logo">
 
-                                                <a onclick="Share.facebook(<?="'".$share_link."'"?>,<?=$share_name?>,<?=$share_img?>,'text to share')">
+                                                <a href="http://www.facebook.com/sharer.php?u=<?=$share_link?>">
                                                     <!-- Created with Inkscape (http://www.inkscape.org/) -->
                                                     <div class="Svg_holder">
                                                         <svg version="1.1"   class ="onshare" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
