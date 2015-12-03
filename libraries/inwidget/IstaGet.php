@@ -14,11 +14,12 @@
     public $toolbar = true;
     public $preview = 'small';
     public $imgWidth = 0;
-    public $cacheFile = 'cache/db.txt';
+    public $cacheFile = 'libraries/inwidget/cache/db.txt';
     public $lang = array();
     public $langName = '';
     public $langPath = 'lang/';
     public $answer = '';
+    public $HasErrors = false;
 
 
     public $errors = array(
@@ -76,9 +77,22 @@
                 }
                 else $this->data['images'] = array();
             }
-            else die($this->getError(402));
+            else $this->HasErrors=true;
         }
-        else die($this->getError(401));
+        else $this->HasErrors=true;
+    }
+
+    public function createCache(){
+        $data = json_encode($this->data);
+        file_put_contents($this->cacheFile,$data,LOCK_EX);
+    }
+    public function getCache(){
+
+        $rawData = file_get_contents($this->cacheFile);
+        $cacheData = json_decode($rawData);
+        if(!is_object($cacheData)) return $rawData;
+        unset($rawData);
+
     }
 
     public function send($url){

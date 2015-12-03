@@ -42,11 +42,18 @@
         <hr class ="Popular_StorySeparator">
         <ul class = "carusel">
         <?php
-            require_once 'libraries/inwidget/IstaGet.php';
-
+            include_once 'libraries/inwidget/IstaGet.php';
             $inWidget = new inWidget();
             $inWidget->apiQuery();
+            //******** when some error occurs use cached values ********
+            if (!$inWidget->HasErrors) {
+
+
             $LinkImage = $inWidget->data['images'];
+
+            $inWidget->createCache();
+
+
             for ($key=0;  $key<sizeof($LinkImage); $key++)
             {?>
 
@@ -59,6 +66,34 @@
 
             <?php
             }
+            }
+                else {
+
+                $CachedVal = json_decode(file_get_contents($inWidget->cacheFile));
+                $Ar_CachedVal = (array) $CachedVal;
+                $Insta_ph= $Ar_CachedVal['images'];
+
+                for ($key=0;  $key<sizeof($Insta_ph); $key++)
+                {
+                    $LinkImage= (array)$Insta_ph[$key]
+
+                    ?>
+
+
+                    <li class ="inst_item">
+                        <a target="_blank" href ="<?=$LinkImage['link' ]?>">
+                            <img  src="<?=$LinkImage['large' ]?>" alt = "instIm">
+                        </a>
+                    </li>
+
+                <?php
+                }
+
+
+
+
+            }
+
             ?>
 
 

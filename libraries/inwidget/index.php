@@ -23,11 +23,19 @@ require_once 'IstaGet.php';
 
 $inWidget = new inWidget();
 $inWidget->apiQuery();
-$aa = $inWidget->data['images'];
-for ($key=0;  $key<sizeof($aa)-15; $key++)
-{
-    echo $aa[$key]['links']."\r\n";
+$inWidget->createCache();
+//$aa = $inWidget->data['images'];
 
+
+//print_r($yo);
+$CachedVal = json_decode(file_get_contents($inWidget->cacheFile));
+$Ar_CachedVal = (array) $CachedVal;
+$Insta_ph= $Ar_CachedVal['images'];
+
+for ($key=0;  $key<sizeof($Insta_ph); $key++)
+{
+    $LinkImage= (array)$Insta_ph[$key];
+    echo $LinkImage['link' ];
 }
 
 
