@@ -1,5 +1,3 @@
-
-
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
@@ -14,5 +12,6 @@ SetOutputFilter DEFLATE
 </IfModule>
 
 
+ErrorDocument 404 /404.php
 
 

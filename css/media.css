@@ -8,8 +8,44 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
 
-}
+    aside{
+        display: none;
+    }
+    .Main_content{
+        width:100%;
+    }
 
+    .navigation-external{
+        display:none;
+
+    }
+
+    .main_header, .Main_Side{
+        width:960px;
+    }
+    .navigation-internal{
+        width:100%;
+    }
+
+
+
+
+    .navigation-internal ul li{
+        width: 9%;
+    }
+
+    .model-1 {
+        FLOAT:none;
+        display: inline-block;
+    }
+
+
+    #LI_About {
+        padding-left: 23px;}
+}
+#LI_Blog {
+     padding-left: inherit;
+}
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 

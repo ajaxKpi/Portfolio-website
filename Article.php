@@ -177,7 +177,7 @@
 
         <div class="Share_container">
             <div class="return_blog">
-                <a href =<?="Blog#Article?id=".$row['id']?>>Return to Blog</a>
+               К <a href =<?="Blog#Article?id=".$row['id']?>>Return to Blog</a>
 
             </div>
             <table>
@@ -186,7 +186,7 @@
                     <td><p>Share on:</p></td>
                     <td class = "vk-logo"  >
 
-                        <a src ="http://vk.com/share.php?url=<?=$share_link?>&title=<?=$share_name?>&description=<?=$share_desc?>&image=<?=$share_img?>")>
+                        <a href ="http://vk.com/share.php?url=<?=$share_link?>&title=<?=$share_name?>&description=<?=$share_desc?>&image=<?=$share_img?>"  target="_blank")>
                             <div class="Svg_holder">
                                 <svg version="1.1" id="Capa_1" class ="onshare" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                      width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
@@ -207,11 +207,11 @@
                                                     </svg>
                             </div>
                         </a>
-                    <td id ="count_VK"></td>
+
                     </td>
                     <td id = "fb-logo">
 
-                        <a href="http://www.facebook.com/sharer.php?u=<?=$share_link?>">
+                        <a href="http://www.facebook.com/sharer.php?u=<?=$share_link?>"  target="_blank">
                             <!-- Created with Inkscape (http://www.inkscape.org/) -->
                             <div class="Svg_holder">
                                 <svg version="1.1" id="Capa_1" class ="onshare" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
