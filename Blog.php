@@ -5,13 +5,15 @@
 
     <meta charset="UTF-8">
     <title>Volyanska Photography|Blog</title>
+    <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
     <meta name="viewport" content="width=1200, initial-scale=1">
+    <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="icon" type="image/png" href="img/dummylogo.png" />
     <meta charset="utf-8">
-    <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
+
 
 
 </head>
@@ -173,7 +175,7 @@
                                             <td><p>Share on:</p></td>
                                             <td class = "vk-logo"  >
 
-                                                <a src ="http://vk.com/share.php?url=<?=$share_link?>&title=<?=$share_name?>&description=<?=$share_desc?>&image=<?=$share_img?>")>
+                                                <a href ="http://vk.com/share.php?url=<?=$share_link?>&title=<?=$share_name?>&description=<?=$share_desc?>&image=<?=$share_img?>"  target="_blank")>
                                                     <div class="Svg_holder">
                                                         <svg version="1.1"  class ="onshare"  xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                                                              width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
@@ -194,11 +196,11 @@
                                                     </svg>
                                                     </div>
                                                 </a>
-                                            <td></td>
+                                            </td>
 
                                             <td class= "fb-logo">
 
-                                                <a href="http://www.facebook.com/sharer.php?u=<?=$share_link?>">
+                                                <a href="http://www.facebook.com/sharer.php?u=<?=$share_link?>"  target="_blank">
                                                     <!-- Created with Inkscape (http://www.inkscape.org/) -->
                                                     <div class="Svg_holder">
                                                         <svg version="1.1"   class ="onshare" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
@@ -212,7 +214,7 @@
                                                 </a>
 
                                             </td>
-                                            <td class ="count_FB"></td>
+
                                         </tr>
 
 

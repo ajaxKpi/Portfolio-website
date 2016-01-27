@@ -133,7 +133,7 @@ body {
     text-decoration: none;
 }
 
-.navigation-external li:hover path  {
+.navigation-external li:hover svg  {
             fill: black;
 }
 
@@ -269,13 +269,14 @@ svg:hover  .path4147{
                 }
                     #LI_Blog
                     {
-                        padding-left: 26px;
+                        padding-left: 14px;
                     }
                     #LI_About
                     {
                         padding-left: 14px;
                         width: 13%;
                     }
+
               .navigation-internal ul li
               {
                   display: inline-block;
@@ -329,8 +330,9 @@ svg:hover  .path4147{
             .navigation-external svg {
               width: 32px;
               height: 32px;
+                fill: #ccc
             }
-            .navigation-external path{ fill: #ccc}
+
 
             .navigation-external li a
             {
@@ -1180,4 +1182,24 @@ form .form_group {
 }
 #bold_link a:hover{
     color:#ccc;
+}
+
+/* ***************************************************************************
+*****************************NOT found*************************************
+****************************************************************************/
+
+.not_found{
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 120px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+/* ***************************************************************************
+*****************************SideBar Block************************************
+****************************************************************************/
+
+.belive img{
+    margin-top:8px;
 }

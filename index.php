@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
-
 <html>
 <head lang="en">
 
     <title>Volyanska Photography</title>
+    <meta http-equiv=X-UA-Compatible content="IE=edge" />
     <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
     <meta name="viewport" content="width=1200, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
@@ -41,8 +40,9 @@
     <div class = "Main_Side">
         <!-- Header Block -->
 
-
-            <?php include 'header.php' ?>
+            <nav class ="main_header">
+                <?php include 'header.php' ?>
+            </nav>
 
         <hr class ="Fixed_line">
         <!-- Space for logo -->
@@ -78,7 +78,7 @@
         <!-- Main(list of portfolio photo) -->
 
         <section class="Main_content">
-                <h3 class="portfolio_me">portfolio</h3>
+                <h1 class="portfolio_me">portfolio</h1>
 
                <?php
 
@@ -106,7 +106,7 @@
 
                     <div class="Preview_poligon">
                         <div class="Preview_photo">
-                            <img class="Preview_3" src= " <?= $row['preview']; ?> " alt="logo_img">
+                            <img class="lazy" data-original=" <?= $row['preview']; ?> " alt="logo_img">
                         </div>
                         <div class="Preview_info">
                             <a href=<?= "Article?id=" . $row['id']; ?>>
@@ -145,4 +145,5 @@
 </section>
 
 </body>
+<script src="js/jquery.lazyload.js"></script>
 </html>

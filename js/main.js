@@ -43,6 +43,8 @@ if($.cookie("language")=="ru"){
     errors_descr = "Добавте описание свадьбы";
 
 
+    Not_found_text = "Страница не найдена"
+    Not_found_link = "Вернуться на главную"
 
 }
 else
@@ -64,6 +66,9 @@ else
     errors_link = "Social account link required";
     errors_descr = "Wedding description required";
 
+    Not_found_text = "Page not found"
+    Not_found_link = "Return to portfolio"
+
 }
 
 $('#language').change(function() {
@@ -81,6 +86,8 @@ $('#language').change(function() {
         contacts_ph_descr = "КРАТКИЙ ПЛАН СВАДЕБНОГО ДНЯ              +ссылки на место проведения";
         contacts_button = "Давайте знакомится"
 
+        Not_found_text = "Страница не найдена"
+        Not_found_link = "Вернуться на главную"
 
 
            }
@@ -96,6 +103,8 @@ $('#language').change(function() {
         contacts_ph_link = "LINK TO SOCIAL ACCOUNT";
         contacts_ph_descr = "SHORT DESCRIPTION OF WEDDING DAY";
         contacts_button = "SEND";
+        Not_found_text = "Page not found"
+        Not_found_link = "Return to portfolio"
            }
 
     switch($(document).find("title").text())
@@ -111,6 +120,7 @@ $('#language').change(function() {
         case 'Volyanska Photography|Services':
             location.reload()
             break;
+
         case 'Volyanska Photography|Contacts':
             $('.contactP').html(contacts_text);
             $("#f_name").attr("placeholder",contacts_ph_name );
@@ -143,10 +153,12 @@ $('#language').change(function() {
         case 'Volyanska Photography|Advices':
             setLang(page_version);
             break;
+        case 'Volyanska Photography|Not Found':
+            $(".not_found h4").text(Not_found_text);
+            $("#bold_link a").text(Not_found_link);
+            break;
 
     }
-
-
 
 
 
@@ -165,7 +177,8 @@ $(window).load(function() {
 //scroll of fixed header
 
 $(window).scroll(function(){
-    if ($(window).width() < 960){
+    aa = $(window).innerWidth();
+    if ($(window).innerWidth() < 960){
         $('.navigation').css('left',-$(window).scrollLeft());
     }
     else{
@@ -328,6 +341,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
                     $(this).css("color","black");
                 });
                 setLang(page_version);
+                break;
+            case 'Volyanska Photography|Not Found':
+                $(".not_found h4").text(Not_found_text);
+                $("#bold_link a").text(Not_found_link);
                 break;
             default:
                 $('#Portfolio').css("color", "brown");

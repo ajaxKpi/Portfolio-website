@@ -2,7 +2,7 @@
     <h3 class="portfolio_me">me</h3>
     <div class ="about_me">
         <div class = "Avatar">
-            <a href = "About.php">
+            <a href = "About">
                 <img src="img/Ava.jpg" alt="ava">
             </a>
         </div>

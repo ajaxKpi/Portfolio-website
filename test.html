@@ -1,64 +1,38 @@
 <html lang="en" >
 <head><title>Hello Facebook</title></head>
+
+<link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="libraries/tabs/bootstrap-vertical-tabs-master/bootstrap.vertical-tabs.css">
+
 <body>
-<div id="fb-root"></div>
-<script type="text/javascript">
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId: '1492697214384249',
 
-            status: true, // check login status
-            cookie: true, // enable cookies to allow the server to access the session
-            xfbml: true, // parse XFBML
-            oauth: true // enables OAuth 2.0
-        });
-        // Additional initialization code here
-        FB.getLoginStatus(function(response) {
-            if (response.status === 'connected') {
-                // logged in and connected user, someone you know
-                console.log('you know this user!!');
-            }
-            else if (response.status === 'not_authorized') {
-                console.log('Ok somehow');
-                (function () {
-                    VK.init({
-                        apiId: 5077240,
-                        onlyWidgets: true
-                    });
-                    // Check VK status
-                    VK.Auth.getLoginStatus(function (response) {
-                        if (response.session) {
-                            // User authorized in Open API
-                            $(".fb-comments ").css("display", "none")
-                            $("#vk_comments ").css("display", "block")
-                        }
-                        else if (response.status === 'not_authorized') {
-                            $(".fb-comments ").css("display", "none")
-                            $("#vk_comments ").css("display", "block")
-                        }
-                        else {
-                            $(".fb-comments ").css("display", "block")
-                            $("#vk_comments ").css("display", "none")
-                        }
-                    });
+<div class="col-xs-3"> <!-- required for floating -->
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs tabs-left">
+        <li class="active"><a href="#home" data-toggle="tab">Create</a></li>
+        <li><a href="#messages" data-toggle="tab">Admin</a></li>
+        <li><a href="#settings" data-toggle="tab">User</a></li>
 
-                }())
-            }
-            else {
-                // no user session available, someone you dont know
-                console.log('Howdy Stranger!');
+    </ul>
 
-            }
-        });
-        // END additional initialization
-    };
-    // Load the SDK Asynchronously
-    (function(d){
-        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        d.getElementsByTagName('head')[0].appendChild(js);
-    }(document));
-</script>
+</div>
+
+<div class="col-xs-9">
+    <div class="tab-content">
+
+        <div class="tab-pane active" id="home">
+            <p>Hi</p>
+        </div>
+        <div class="tab-pane" id="messages">
+            <p>Hi1</p>
+        </div>
+        <div class="tab-pane" id="settings">
+            <p>Hi2</p>
+        </div>
+
+    </div>
+</div>
+<script src="js/jquery/jquery-2.1.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

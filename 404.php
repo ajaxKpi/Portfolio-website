@@ -4,7 +4,7 @@
 <html>
 <head lang="en">
 
-    <title>Volyanska Photography</title>
+    <title>Volyanska Photography|Not Found</title>
     <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
     <meta name="viewport" content="width=1200, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
@@ -40,9 +40,10 @@
     <!-- Main+Sidebar+Footer Block 1000px -->
     <div class = "Main_Side">
         <!-- Header Block -->
-
+        <nav class ="main_header">
 
             <?php include 'header.php' ?>
+        </nav>
 
 <hr class ="Fixed_line">
 <!-- Space for logo -->
@@ -81,10 +82,13 @@
 
 
     <div class="not_found">
-        <h2>404</h2>
+
         <h4>Page not found</h4>
-
-
+        <div id="bold_link">
+            <a href="/">
+                Return to portfolio
+            </a>
+        </div>
     </div>
     <div class="Thanks"><img src = "img/thanks.jpg" alt ="thnx"></div>
 
@@ -96,13 +100,3 @@
         <?php include 'footer.php' ?>
 
 
-
-
-
-<?php
-/**
- * Created by PhpStorm.
- * User: ivan
- * Date: 12/17/15
- * Time: 8:17 PM
- */

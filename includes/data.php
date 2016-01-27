@@ -9,7 +9,7 @@
 
 $Pass_salt = "5fcee93e745241858a3217f661f26604";
 $Pass_result = "c63f6a852a70f4e1c7f391f5410c7e16";
-$LoginAdm = "Vol";
+$LoginAdm = "OVolyanska";
 
 
 //MSQ credirtals Windows

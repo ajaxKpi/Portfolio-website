@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -8,7 +7,7 @@
     <link rel="stylesheet" href="css/Admin.css">
     <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
     <link id="bsdp-css" href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
-    <link rel="stylesheet" href="libraries/tabs/bootstrap-vertical-tabs-master/bootstrap.vertical-tabs.css">
+    <link rel="stylesheet" href="css/bootstrap.vertical-tabs.css">
     <script src="libraries/ckeditor2/ckeditor.js"></script>
    </head>
 <body>

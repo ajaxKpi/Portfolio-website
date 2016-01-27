@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Volyanska Photography|Article</title>
+    <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
     <meta name="viewport" content="width=1200, initial-scale=1">
 
     <?php
@@ -46,18 +47,18 @@
     <meta property="og:image:width" content="300" />
     <meta property="og:image:height" content="300" />
 
-
+    <!-- share buttons -->
+    <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/social.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="icon" type="image/png" href="img/dummylogo.png" />
     <meta charset="utf-8">
     <!-- pinterest hover -->
     <link href="css/imgPin.default.css" rel="stylesheet">
-    <!-- share buttons -->
-    <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
+
    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
     <!-- VK.com reference -->
      <script src="http://vk.com/js/api/openapi.js"; type="text/javascript" charset="windows-1251"></script>
@@ -186,7 +187,7 @@
                     <td><p>Share on:</p></td>
                     <td class = "vk-logo"  >
 
-                        <a src ="http://vk.com/share.php?url=<?=$share_link?>&title=<?=$share_name?>&description=<?=$share_desc?>&image=<?=$share_img?>")>
+                        <a href ="http://vk.com/share.php?url=<?=$share_link?>&title=<?=$share_name?>&description=<?=$share_desc?>&image=<?=$share_img?>"  target="_blank")>
                             <div class="Svg_holder">
                                 <svg version="1.1" id="Capa_1" class ="onshare" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                      width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
@@ -207,11 +208,11 @@
                                                     </svg>
                             </div>
                         </a>
-                    <td id ="count_VK"></td>
+
                     </td>
                     <td id = "fb-logo">
 
-                        <a href="http://www.facebook.com/sharer.php?u=<?=$share_link?>">
+                        <a href="http://www.facebook.com/sharer.php?u=<?=$share_link?>"  target="_blank">
                             <!-- Created with Inkscape (http://www.inkscape.org/) -->
                             <div class="Svg_holder">
                                 <svg version="1.1" id="Capa_1" class ="onshare" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
@@ -335,7 +336,6 @@
 
         <script src="js/jquery.imgPin.min.js"></script>
         <script src="js/jquery.lazyload.js"></script>
-
         <script src="http://connect.facebook.net/en_US/all.js"></script>
 </section>
 
