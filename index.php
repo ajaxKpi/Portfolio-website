@@ -3,6 +3,7 @@
 <head lang="en">
 
     <title>Volyanska Photography</title>
+
     <meta http-equiv=X-UA-Compatible content="IE=edge" />
     <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
     <meta name="viewport" content="width=1200, initial-scale=1">
@@ -76,7 +77,7 @@
         </div>
 
         <!-- Main(list of portfolio photo) -->
-
+<div class="pjax-container">
         <section class="Main_content">
                 <h1 class="portfolio_me">portfolio</h1>
 
@@ -136,15 +137,15 @@
         <div class="Thanks"><img src = "img/thanks.jpg" alt ="thnx"></div>
 
         </section>
-
+</div>
         <!-- sidebar Block -->
     <?php include 'sidebar.php' ?>
         <!-- footer Block -->
     <?php include 'footer.php' ?>
 
-</div>
 
-</section>
+
+        </section>
 
 </body>
 

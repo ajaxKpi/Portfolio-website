@@ -995,7 +995,7 @@ form .form_group {
     float: left;
     max-width: 300px;
 }
-.Wrap_pre{
+.Wrap_pre,.Wrap_pre_ru{
     background-color: transparent;
     border: none;
     font-size: 1em;
@@ -1202,4 +1202,10 @@ form .form_group {
 
 .belive img{
     margin-top:8px;
+}
+
+
+
+.imgPinWrap {
+    display: block;!important
 }

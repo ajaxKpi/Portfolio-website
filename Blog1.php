@@ -1,6 +1,6 @@
 <?php
 if (!isset ($_SERVER["HTTP_X_PJAX"])){
-
+print_r($_SERVER);
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,15 +11,13 @@ if (!isset ($_SERVER["HTTP_X_PJAX"])){
     <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
     <meta name="viewport" content="width=1200, initial-scale=1">
     <link id="bs-css" href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="icon" type="image/png" href="img/dummylogo.png"/>
-
     <meta charset="utf-8">
- <!-- pinterest hover -->
-    <link href="css/imgPin.default.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
+
+
 </head>
 
 <body>
@@ -254,7 +252,7 @@ if (!isset ($_SERVER["HTTP_X_PJAX"])){
         <script src="js/jquery.imgPin.min.js"></script>
         <script src="js/jquery.lazyload.js"></script>
         <script src="js/social.js"></script>
-        <script src="js/main.js"></script>
+
 </section>
 
 </body>
@@ -263,3 +261,12 @@ if (!isset ($_SERVER["HTTP_X_PJAX"])){
 <?php
 }
 ?>
+
+
+
+
+
+
+
+
+

@@ -8,7 +8,8 @@
     <script src="js/jquery/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.cookie.min.js"></script>
     <script src="js/jquery.lazyload.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/pjax.js"></script>
+
 
 <!-- GA -->
     <script>

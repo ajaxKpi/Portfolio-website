@@ -1,3 +1,7 @@
+<?php
+if (!isset ($_SERVER["HTTP_X_PJAX"])){
+    ?>
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -7,7 +11,6 @@
     <meta http-equiv=X-UA-Compatible content="IE=edge" />
     <meta name="viewport" content="width=1200, initial-scale=1">
     <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
-
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/media.css">
@@ -77,37 +80,44 @@
 
         </div>
 
+       <?php }?>
+
+
         <!-- Main(list of portfolio photo) -->
 
         <section class="Main_content">
 
 
-                <h3 class="portfolio_me">about me</h3>
-                    <div class="belive">
-                        <img src="img/belive.jpg" alt="belive"/>
+            <h3 class="portfolio_me">about me</h3>
+            <div class="belive">
+                <img src="img/belive.jpg" alt="belive"/>
 
-                            <?php
-                            if ($_COOKIE["language"]=="ru"){
-                                include 'includes/about_ru.php';
-                            }
-                            else {
-                                include 'includes/about_en.php';
-                            }
-                            ?>
-                        </div>
-        <div class="Thanks"><img src = "img/thanks.jpg" alt ="thnx"></div>
+                <?php
+                if ($_COOKIE["language"]=="ru"){
+                    include 'includes/about_ru.php';
+                }
+                else {
+                    include 'includes/about_en.php';
+                }
+                ?>
+            </div>
+            <div class="Thanks"><img src = "img/thanks.jpg" alt ="thnx"></div>
         </section>
 
 
-        <!-- sidebar Block -->
-        <?php include 'sidebar.php' ?>
+<?php  if (!isset ($_SERVER["HTTP_X_PJAX"])){
+           ?>
 
-    </div>
+                <!-- sidebar Block -->
+                <?php include 'sidebar.php' ?>
+
+            </div>
 
 
-</section>
-<!-- footer Block -->
-<?php include 'footer.php' ?>
+        </section>
+        <!-- footer Block -->
+        <?php include 'footer.php' ?>
 
-</body>
-</html>
+        </body>
+        </html>
+<?php  } ?>

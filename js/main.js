@@ -50,24 +50,24 @@ if($.cookie("language")=="ru"){
 else
 {
     $("#language").prop('checked', false);
-    page_version = "en";
-    contacts_text ="If you are close to my style and you share my views on wedding photography - contact me convenient for you! <br>I will be glad to acquaintance and a personal meeting!";
-    contacts_ph_name = "NAME";
-    contacts_ph_city = "CITY";
-    contacts_ph_date = "BOOKING DATE";
-    contacts_ph_link = "LINK TO SOCIAL ACCOUNT";
-    contacts_ph_descr = "SHORT DESCRIPTION OF WEDDING DAY";
-    contacts_button = "SEND";
+        page_version = "en";
+        contacts_text ="If you are close to my style and you share my views on wedding photography - contact me convenient for you! <br>I will be glad to acquaintance and a personal meeting!";
+        contacts_ph_name = "NAME";
+        contacts_ph_city = "CITY";
+        contacts_ph_date = "BOOKING DATE";
+        contacts_ph_link = "LINK TO SOCIAL ACCOUNT";
+        contacts_ph_descr = "SHORT DESCRIPTION OF WEDDING DAY";
+        contacts_button = "SEND";
 
-    errors_name = "Name required";
-    errors_email = "Improper  E-mail"
-    errors_city = "City Required";
-    errors_date = "Date reserved already";
-    errors_link = "Social account link required";
-    errors_descr = "Wedding description required";
+        errors_name = "Name required";
+        errors_email = "Improper  E-mail"
+        errors_city = "City Required";
+        errors_date = "Date reserved already";
+        errors_link = "Social account link required";
+        errors_descr = "Wedding description required";
 
-    Not_found_text = "Page not found"
-    Not_found_link = "Return to portfolio"
+        Not_found_text = "Page not found"
+        Not_found_link = "Return to portfolio"
 
 }
 
@@ -206,8 +206,12 @@ var autoSlide = setInterval(function() {
 
 
 //call pin button on specific location
-if ($(document).find("title").text() ==='Volyanska Photography|Blog'){
-
+if ($(document).find("title").text() ==='Volyanska Photography|Blog'||$(document).find("title").text() ==='Volyanska Photography|Article'){
+    $('.Blog_photo img').imgPin(
+        {
+            pinImg : 'img/social/pinterestOnImg.png', position: 2
+        }
+    );
 
 }
 
@@ -357,11 +361,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
 
     $(".read_more>a").attr('href', 'Blog');
-    $('.Blog_photo img').imgPin(
-        {
-            pinImg : 'img/social/pinterestOnImg.png', position: 2
-        }
-    );
+
 
 
     $(".Blog_name").hover(function() {
@@ -384,7 +384,7 @@ $(".onshare").click(function() {
 
 
 jQuery(document).ready(function($) {
-
+    $(document).pjax('a', '.pjax-container')
 
     if ($(document).find("title").text() === 'Volyanska Photography|Article') {
 

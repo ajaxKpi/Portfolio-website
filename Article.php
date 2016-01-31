@@ -50,7 +50,7 @@
     <!-- share buttons -->
     <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="css/index.css">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/social.css">
     <link rel="stylesheet" href="css/media.css">
@@ -58,7 +58,7 @@
     <meta charset="utf-8">
     <!-- pinterest hover -->
     <link href="css/imgPin.default.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/index.css">
    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
     <!-- VK.com reference -->
      <script src="http://vk.com/js/api/openapi.js"; type="text/javascript" charset="windows-1251"></script>
@@ -337,6 +337,7 @@
         <script src="js/jquery.imgPin.min.js"></script>
         <script src="js/jquery.lazyload.js"></script>
         <script src="http://connect.facebook.net/en_US/all.js"></script>
+        <script src="js/main.js"></script>
 </section>
 
 </body>
