@@ -2,111 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a774af2e-b68a-4330-bc44-3412e4bcc66a" name="Default" comment="resolving merge with Servises">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/feedback/fb_3oksanafieldman.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Anatoli and Olena/4egorandyulia.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3898.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3899.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3900.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3901.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3902.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3906.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3919.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3931.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3932.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3967.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3977.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3980.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3983.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3990.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_3991.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_4008.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Julia/IMG_4034.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3898.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3899.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3900.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3901.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3902.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3906.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3919.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3931.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3932.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3967.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3977.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3980.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3983.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3990.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_3991.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_4008.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Egor and Yulia/IMG_4034.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/photo/Friends party/IMG_8048.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/preview/14egorandyulia.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/preview/17.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/preview/4egorandyulia.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/preview/L_14egorandyulia.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/preview/L_15desicionmaking" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/preview/L_4egorandyulia.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/preview/Безымянный.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/MyIcons.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/facebook29.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/fb32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/fb_bl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/inst.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/inst32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/inst_bl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/likes-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/pin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/pin32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/pin_bl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/preloader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/prev/pinterestOnImg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/vk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/vk32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/vk_bl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap.vertical-tabs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/MyWed.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/fb_bl.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/inst_bl.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/pin_bl.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/social_sprite.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social/vk_bl.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/about_en.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/about_ru.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/1982057_1982057-f13-preview.biz.nf.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ABOUT ME.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DummyLogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Inst GET.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SQL_script.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/social/inst.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/social/myVed.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/social/vk.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/inst_info.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/portfolioDB.mwb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/social_sprite.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/~$TODO.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новый текстовый документ.txt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/robots.txt.txt" afterPath="$PROJECT_DIR$/robots.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.docx" afterPath="$PROJECT_DIR$/TODO.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/404.php" afterPath="$PROJECT_DIR$/404.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/About.php" afterPath="$PROJECT_DIR$/About.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Article.php" afterPath="$PROJECT_DIR$/Article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Blog.php" afterPath="$PROJECT_DIR$/Blog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Contacts.php" afterPath="$PROJECT_DIR$/Contacts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Feedbacks.php" afterPath="$PROJECT_DIR$/Feedbacks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyAdmin.php" afterPath="$PROJECT_DIR$/MyAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Services.php" afterPath="$PROJECT_DIR$/Services.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/media.css" afterPath="$PROJECT_DIR$/css/media.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/data.php" afterPath="$PROJECT_DIR$/includes/data.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.php" afterPath="$PROJECT_DIR$/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/inwidget/cache/db.txt" afterPath="$PROJECT_DIR$/libraries/inwidget/cache/db.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sidebar.php" afterPath="$PROJECT_DIR$/sidebar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
     </list>
     <list id="0f7c9cea-b943-48eb-a135-62d6a66a94c1" name="Rejected commit: Default" comment="Add reset.css to make browsers compability" />
     <list id="dcd18abd-d617-4b6e-b42e-ca9d12b691e0" name="Rejected commit: Default (2)" comment="resolving merge with Servises" />
@@ -134,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+              <caret line="349" column="34" selection-start-line="349" selection-start-column="34" selection-end-line="349" selection-end-column="34" />
               <folding>
                 <element signature="e#3460#4217#0" expanded="false" />
                 <element signature="e#4223#5826#0" expanded="false" />
@@ -143,22 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
-              <folding>
-                <marker date="1447253741654" expanded="true" signature="1049:1059" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="data.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/data.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-2.6153846">
               <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
               <folding />
             </state>
@@ -168,8 +56,8 @@
       <file leaf-file-name="Blog.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Blog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="78" selection-start-line="104" selection-start-column="78" selection-end-line="104" selection-end-column="78" />
+            <state vertical-scroll-proportion="34.048782">
+              <caret line="245" column="7" selection-start-line="245" selection-start-column="7" selection-end-line="245" selection-end-column="53" />
               <folding>
                 <marker date="1452278421567" expanded="true" signature="20529:20565" placeholder="SELECT * FRO... base" />
               </folding>
@@ -177,63 +65,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyAdmin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyAdmin.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.563637">
-              <caret line="449" column="47" selection-start-line="449" selection-start-column="46" selection-end-line="449" selection-end-column="47" />
+            <state vertical-scroll-proportion="21.853659">
+              <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding>
-                <marker date="1452783345246" expanded="true" signature="759:786" placeholder="Select max(i... base" />
+                <marker date="1454247370486" expanded="true" signature="20370:20407" placeholder="SELECT * FRO... base" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/admin.js">
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1008547">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617">
-              <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.vertical-tabs.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.vertical-tabs.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="86" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about_ru.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/about_ru.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about_en.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/about_en.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.27370304">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -268,14 +116,11 @@
         <option value="$PROJECT_DIR$/404.php" />
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/css/media.css" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Blog.php" />
         <option value="$PROJECT_DIR$/Feedbacks.php" />
         <option value="$PROJECT_DIR$/Article.php" />
         <option value="$PROJECT_DIR$/Contacts.php" />
         <option value="$PROJECT_DIR$/sidebar.php" />
-        <option value="$PROJECT_DIR$/footer.php" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/Services.php" />
         <option value="$PROJECT_DIR$/includes/about_en.php" />
         <option value="$PROJECT_DIR$/includes/about_ru.php" />
@@ -283,6 +128,9 @@
         <option value="$PROJECT_DIR$/includes/data.php" />
         <option value="$PROJECT_DIR$/MyAdmin.php" />
         <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/footer.php" />
       </list>
     </option>
   </component>
@@ -300,8 +148,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-18" />
-    <option name="y" value="3" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -333,6 +181,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -407,14 +257,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OlgaSun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OlyaSun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -509,11 +371,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-18" y="3" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885022" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16111952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -525,7 +388,6 @@
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16981132" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -835,20 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3655914">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Article.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.032015067">
@@ -867,7 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -881,28 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/data.php">
+    <entry file="file://$PROJECT_DIR$/js/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Blog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="78" selection-start-line="104" selection-start-column="78" selection-end-line="104" selection-end-column="78" />
-          <folding>
-            <marker date="1452278421567" expanded="true" signature="20529:20565" placeholder="SELECT * FRO... base" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/about_ru.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.10598291">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -915,17 +744,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/includes/about_ru.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60465115">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.vertical-tabs.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.3041145">
           <caret line="10" column="86" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030411448">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.563637">
+        <state vertical-scroll-proportion="0.030411448">
           <caret line="449" column="47" selection-start-line="449" selection-start-column="46" selection-end-line="449" selection-end-column="47" />
           <folding>
             <marker date="1452783345246" expanded="true" signature="759:786" placeholder="Select max(i... base" />
@@ -933,18 +778,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <caret line="349" column="34" selection-start-line="349" selection-start-column="34" selection-end-line="349" selection-end-column="34" />
           <folding>
             <element signature="e#3460#4217#0" expanded="false" />
             <element signature="e#4223#5826#0" expanded="false" />
@@ -952,10 +789,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin.js">
+    <entry file="file://$PROJECT_DIR$/Blog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1008547">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state vertical-scroll-proportion="34.048782">
+          <caret line="245" column="7" selection-start-line="245" selection-start-column="7" selection-end-line="245" selection-end-column="53" />
+          <folding>
+            <marker date="1452278421567" expanded="true" signature="20529:20565" placeholder="SELECT * FRO... base" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="21.853659">
+          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <marker date="1454247370486" expanded="true" signature="20370:20407" placeholder="SELECT * FRO... base" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27370304">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
           <folding />
         </state>
       </provider>

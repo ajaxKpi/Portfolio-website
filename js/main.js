@@ -348,6 +348,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
                 break;
             default:
                 $('#Portfolio').css("color", "brown");
+                $("img.lazy").lazyload();
         }
 
 

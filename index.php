@@ -106,7 +106,8 @@
 
                     <div class="Preview_poligon">
                         <div class="Preview_photo">
-                            <img class="lazy" data-original=" <?= $row['preview']; ?> " alt="logo_img">
+                            <img class="lazy" data-original=<?= $row['preview']?> alt="logo_img">
+
                         </div>
                         <div class="Preview_info">
                             <a href=<?= "Article?id=" . $row['id']; ?>>
@@ -142,8 +143,9 @@
     <?php include 'footer.php' ?>
 
 </div>
+
 </section>
 
 </body>
-<script src="js/jquery.lazyload.js"></script>
+
 </html>
