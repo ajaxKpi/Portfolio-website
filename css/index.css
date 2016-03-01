@@ -139,14 +139,15 @@ body {
 
 #svg32:hover  #path3349{
     fill: #ccc;
-
 }
 
 svg:hover  .path4147{
    fill: black;!important;
 
 }
-
+.read_more svg:hover{
+    fill: black;!important;
+}
 
 .Tags a:hover{
     color: black;
@@ -437,9 +438,10 @@ svg:hover  .path4147{
     position: relative;
 
 }
-.Thanks img{
-    display:block;
-    margin:auto;
+.Thanks svg{
+    display: block;
+    height: 80px;
+    margin: 90px auto 90px auto;
 }
 
 
@@ -735,12 +737,13 @@ border-top: 1px solid #eee;
     display: table-cell;
     vertical-align: middle;
     height: 50px;
-    padding-top: 10px;
+
     float: left;
     width: 64%;
     text-align: right;
     padding-right: 1.5%
 }
+.Share_container{ padding-top: 10px;}
 
 .return_blog{
     display: table-cell;
@@ -762,10 +765,11 @@ border-top: 1px solid #eee;
 
 }
 
-.svg12
+.read_more svg
 {
     width: 40%;
-    margin: 0;
+    height: 37px;
+    fill:#ccc;
 }
 
 .onshare{
@@ -995,7 +999,7 @@ form .form_group {
     float: left;
     max-width: 300px;
 }
-.Wrap_pre,.Wrap_pre_ru{
+.Wrap_pre, .Wrap_pre_ru{
     background-color: transparent;
     border: none;
     font-size: 1em;

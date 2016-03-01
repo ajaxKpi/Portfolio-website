@@ -1,26 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Volyanska Photography|Contacts</title>
-    <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
-    <meta name="viewport" content="width=1200, initial-scale=1">
+<?php
+if (!isset ($_SERVER["HTTP_X_PJAX"])){
 
-    <link  id="bs-css"  href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
-    <link id="bsdp-css" href="css/datepicker3.css" rel="stylesheet">
-   <link rel="icon" type="image/png" href="img/dummylogo.png" />
-   <meta charset="utf-8">
-   <!-- share buttons -->
+?>
+    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/html">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Volyanska Photography|Contacts</title>
+        <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
+        <meta name="viewport" content="width=1200, initial-scale=1">
+
+        <link id="bs-css" href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
+        <link id="bsdp-css" href="css/datepicker3.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="img/dummylogo.png"/>
+        <meta charset="utf-8">
+        <!-- share buttons -->
 
 
-
-    <link rel="stylesheet" href="css/Calendar.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/media.css">
-</head>
-<body>
-<section class = "Full_site_holder">
+        <link rel="stylesheet" href="css/Calendar.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/media.css">
+    </head>
+    <body>
+    <section class="Full_site_holder">
 
 
     <!-- Main+Sidebar+Footer Block 1000px -->
@@ -62,9 +65,13 @@
 
         </div>
 
+        <div class="pjax-container">
         <!-- Main(list of portfolio photo) -->
 
+    <?php
+}
 
+?>
         <section class="Main_content">
             <h1 class="portfolio_me">contacts</h1>
 
@@ -154,7 +161,11 @@
             </div>
             <div class="Thanks"><img src = "img/thanks.jpg"></div>
         </section>
+    <?php
+        if (!isset ($_SERVER["HTTP_X_PJAX"])) {
 
+    ?>
+            </div>
     <!-- sidebar Block -->
         <?php include 'sidebar.php' ?>
 
@@ -169,17 +180,13 @@
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
+<script src ='js/angular.min.js'></script>
 <script src="js/moment.js"></script>
 <script src="js/calendar.js"></script>
 <script src="js/admin.js"></script>
+<script src="js/main.js"></script>
 </html>
 
 
 
-<?php
-/**
- * Created by PhpStorm.
- * User: ivan
- * Date: 9/19/15
- * Time: 5:12 PM
- */ 
+<?php } ?>

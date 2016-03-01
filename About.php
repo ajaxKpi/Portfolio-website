@@ -79,7 +79,7 @@ if (!isset ($_SERVER["HTTP_X_PJAX"])){
             <p>PHOTOGRAPHY</p>
 
         </div>
-
+ <div class="pjax-container">
        <?php }?>
 
 
@@ -107,7 +107,7 @@ if (!isset ($_SERVER["HTTP_X_PJAX"])){
 
 <?php  if (!isset ($_SERVER["HTTP_X_PJAX"])){
            ?>
-
+</div>
                 <!-- sidebar Block -->
                 <?php include 'sidebar.php' ?>
 
@@ -117,7 +117,7 @@ if (!isset ($_SERVER["HTTP_X_PJAX"])){
         </section>
         <!-- footer Block -->
         <?php include 'footer.php' ?>
-
+    <script src="js/main.js"></script>
         </body>
         </html>
 <?php  } ?>

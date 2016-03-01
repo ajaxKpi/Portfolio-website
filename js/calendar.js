@@ -279,7 +279,7 @@
             return event.date.isSame(day, 'cday');
         });
 
-        console.log('m: ', todaysEvents)
+       // console.log('m: ', todaysEvents)
         this.renderEvents(todaysEvents, details);
 
         arrow.style.left = el.offsetLeft - el.parentNode.offsetLeft + (el.offsetWidth / 2) + 'px';
