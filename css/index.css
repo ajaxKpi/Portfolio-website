@@ -208,6 +208,9 @@ svg:hover  .path4147{
 
     
 }
+.logo_big img:hover{
+    fill:#ccc;
+}
 
 
 /* ***************************************************************************
@@ -356,13 +359,16 @@ svg:hover  .path4147{
 *****************************LOGO Block***************************************
 ****************************************************************************/
 .logo_big {
-    margin-right: 23%;
+
     margin-top: 2%;
     margin-bottom: 2%;
+
 }
-.logo_big svg {
-    width: 100%;
-    margin-right: inherit;
+.logo_big img {
+    width: 70%;
+    margin: auto;
+    display: block;
+
 }
 .logo_big p{
     text-indent: 5px;

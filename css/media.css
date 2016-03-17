@@ -8,21 +8,24 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
 
-    aside{
+    aside {
         display: none;
     }
-    .Main_content{
-        width:100%;
+
+    .Main_content {
+        width: 100% !important;
     }
 
-    .navigation-external{
-        display:none;
+    .navigation-external {
+        display: none;
 
     }
 
-    .main_header, .Main_Side{
-        width:960px;
+    .main_header, .Main_Side {
+        width: 960px !important;
     }
+
+    /*
     .navigation-internal{
         width:100%;
     }
@@ -43,8 +46,10 @@
     #LI_About {
         padding-left: 23px;}
 }
-#LI_Blog {
-   /*  padding-left: inherit;*/
+*/
+    #LI_Blog {
+        /*  padding-left: inherit;*/
+    }
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {

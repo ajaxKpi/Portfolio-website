@@ -13,13 +13,13 @@ $LoginAdm = "OVolyanska";
 
 
 //MSQ credirtals Windows
-
+/*
 $Login ="root";
 $Passwd = "edifier1";
 $dbname ="mydb";
 $myServer = $_SERVER['SERVER_NAME'];
 
-/*
+
 $Login ="a6587605_root";
 $Passwd = "fearless1";
 $dbname ="a6587605_mydb";
@@ -31,8 +31,9 @@ $Login ="b10_16696103";
 $Passwd = "edifier1";
 $dbname ="b10_16696103_mydb";
 $myServer = "sql200.byethost10.com";*/
-/*
+
 //MSQ credirtals On Ubuntu
+/*
 $Login ="root";
 $Passwd = "edifier";
 $dbname ="mydb";
@@ -43,3 +44,8 @@ $Login ="1982057_root";
 $Passwd = "edifier1";
 $dbname ="1982057_root";
 $myServer =  "fdb13.biz.nf";*/
+//volyanska.com
+$Login ="volyansk_db";
+$Passwd = "jKF8NSwH";
+$dbname ="volyansk_db";
+$myServer = 'volyansk.mysql.ukraine.com.ua';

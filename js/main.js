@@ -107,7 +107,7 @@ $('#language').change(function() {
         Not_found_link = "Return to portfolio"
            }
 
-    switch($(document).find("title").text())
+    switch(document.title)
     {
 
 
@@ -134,7 +134,7 @@ $('#language').change(function() {
             $("#s_name").text(errors_name);
             $("#s_city").text(errors_city);
             $("#s_CheckedDate").text(errors_date);
-            $("#s_social").text(errors_city);
+            $("#s_social").text(errors_link);
             $("#s_descr").text(errors_descr);
             $("#s_mail").text(errors_email);
 
@@ -283,7 +283,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 //get active page
 
-        switch($(document).find("title").text())
+        switch(document.title)
         {
 
             case 'Volyanska Photography|Blog':
@@ -334,7 +334,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
                 $("#s_name").text(errors_name);
                 $("#s_city").text(errors_city);
                 $("#s_CheckedDate").text(errors_date);
-                $("#s_social").text(errors_city);
+                $("#s_social").text(errors_link);
                 $("#s_descr").text(errors_descr);
                 $("#s_mail").text(errors_email);
 
@@ -381,10 +381,15 @@ $(".onshare").click(function() {
 
      //  $( "#count_VK").text( Number($( "#count_VK").text()) +1)
 
+$('.return_blog').click(function(e){
+
+    document.history.back();
+    e.preventDefault();
+});
 
 
 jQuery(document).ready(function($) {
-    $(document).pjax('a', '.pjax-container')
+    //$(document).pjax('a', '.pjax-container')
 
     if ($(document).find("title").text() === 'Volyanska Photography|Article') {
 

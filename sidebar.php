@@ -52,6 +52,9 @@
             $LinkImage = $inWidget->data['images'];
 
             $inWidget->createCache();
+            $Instr = '<script> instaImg ='.json_encode($LinkImage);
+            $Instr .= '</script>';
+                echo $Instr;
 
 
             for ($key=0;  $key<sizeof($LinkImage); $key++)

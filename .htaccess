@@ -1,7 +1,7 @@
+ErrorDocument 404 /404.php
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
-
 RewriteCond %{HTTP_HOST} ^www\.volyanska\.com$
 RewriteRule ^/?$ "http\:\/\/volyanska\.com\/" [R=301,L]
 Redirect 301 http://www.volyanska.com/index.php http://www.volyanska.com
@@ -10,6 +10,3 @@ Redirect 301 http://www.volyanska.com/index.php http://www.volyanska.com
 SetOutputFilter DEFLATE
 </FilesMatch>
 </IfModule>
-
-ErrorDocument 404 /404.php
-

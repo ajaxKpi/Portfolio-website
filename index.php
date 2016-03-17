@@ -1,3 +1,19 @@
+<?php
+session_start();
+if($_GET['id'] !='dev'&&!$_SESSION['dev']){
+    header('Location: http://www.mywed.ru/photographer/volyanska/');
+   // echo $_SESSION['dev'];
+    exit;
+
+    }
+    elseif($_GET['id'] =='dev')
+    {
+
+        $_SESSION['dev']=1;
+
+    }
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -10,7 +26,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/media.css">
-    <link rel="icon" type="image/png" href="img/dummylogo.png" />
+
+
+    <link rel="icon" type="image/png" href="img/ov.png" />
     <meta charset="utf-8">
 
 </head>
@@ -42,6 +60,7 @@
         <!-- Header Block -->
 
             <nav class ="main_header">
+
                 <?php include 'header.php' ?>
             </nav>
 
@@ -51,7 +70,7 @@
                 <a href="#">
                     <img src="img/logo_main.svg" alt="main_logo">
 
-                    </a>
+                </a>
 
 
 
@@ -115,12 +134,12 @@
             }
             ?>
 
-        <div class="Thanks"><img src = "img/thanks.jpg" alt ="thnx"></div>
+            <div class="Thanks"><svg><use xlink:href="#thankyou"></svg> </use></div>
 
         </section>
 </div>
         <!-- sidebar Block -->
-    <?php include 'sidebar.php' ?>
+    <?php //include 'sidebar.php' ?>
         <!-- footer Block -->
     <?php include 'footer.php' ?>
         <script src="js/main.js"></script>
