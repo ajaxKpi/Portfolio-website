@@ -1,16 +1,15 @@
 <?php
 session_start();
 if($_GET['id'] !='dev'&&!$_SESSION['dev']){
-    header('Location: http://www.mywed.ru/photographer/volyanska/');
+    //header('Location: http://www.mywed.ru/photographer/volyanska/');
    // echo $_SESSION['dev'];
-    exit;
+    //exit;
 
     }
     elseif($_GET['id'] =='dev')
     {
 
         $_SESSION['dev']=1;
-
     }
 
  ?>
@@ -22,10 +21,19 @@ if($_GET['id'] !='dev'&&!$_SESSION['dev']){
 
     <meta http-equiv=X-UA-Compatible content="IE=edge" />
     <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
-    <meta name="viewport" content="width=1200, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/media.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:url"           content="volyanska.com" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Оля Волянская | Свадебный фотограф" />
+    <meta property="og:description"   content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа   " />
+    <meta property="og:image"         content="http://volyanska.com//img/fb.jpg" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+
 
 
     <link rel="icon" type="image/png" href="img/ov.png" />
@@ -54,7 +62,6 @@ if($_GET['id'] !='dev'&&!$_SESSION['dev']){
 <section class = "Full_site_holder">
 
 
-
     <!-- Main+Sidebar+Footer Block 1000px -->
     <div class = "Main_Side">
         <!-- Header Block -->
@@ -77,7 +84,7 @@ if($_GET['id'] !='dev'&&!$_SESSION['dev']){
         </div>
 
         <!-- Main(list of portfolio photo) -->
-<div class="pjax-container">
+
         <section class="Main_content">
                 <h1 class="portfolio_me">portfolio</h1>
 
@@ -112,6 +119,7 @@ if($_GET['id'] !='dev'&&!$_SESSION['dev']){
                         </div>
                         <div class="Preview_info">
                             <a href=<?= "Article?id=" . $row['id']; ?>>
+
                                 <?php echo $row['name']; ?>
                                 <br>
                                 <?php
@@ -123,6 +131,7 @@ if($_GET['id'] !='dev'&&!$_SESSION['dev']){
                             </a>
 
                         </div>
+
                     </div>
 
                     <?php
@@ -137,15 +146,16 @@ if($_GET['id'] !='dev'&&!$_SESSION['dev']){
             <div class="Thanks"><svg><use xlink:href="#thankyou"></svg> </use></div>
 
         </section>
-</div>
+
         <!-- sidebar Block -->
-    <?php //include 'sidebar.php' ?>
+    <?php include 'sidebar.php' ?>
         <!-- footer Block -->
     <?php include 'footer.php' ?>
         <script src="js/main.js"></script>
 
 
-        </section>
+
+</section>
 
 </body>
 

@@ -390,7 +390,7 @@
         busydays=[];
              $.ajaxSetup({ cache: false });
 
-            $.getJSON( "Busy1.Json", function(data) {
+            $.getJSON( "Busy.Json", function(data) {
               $.each ( data, function( key, val ){
                    Busy_month = key.substr(3,2);
                    Busy_year = key.substr(6,4);
@@ -491,7 +491,7 @@ app.directive('calendar', [function(){
         },
         link: function(scope, element, attributes) {
             var data = [{
-                date: new Date(2013, 9,8),
+                date: new Date(2016, 2,20),
                 events: [{
                     name: 'wedding of Nastya and Sergii',
                     type: 'bot',

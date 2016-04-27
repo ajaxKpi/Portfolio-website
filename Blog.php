@@ -9,12 +9,22 @@ if (!isset ($_SERVER["HTTP_X_PJAX"])){
     <meta charset="UTF-8">
     <title>Volyanska Photography|Blog</title>
     <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
-    <meta name="viewport" content="width=1200, initial-scale=1">
+
     <link id="bs-css" href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/media.css">
    <link rel="icon" type="image/png" href="img/ov.png" />
+
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:url"           content="volyanska.com" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Оля Волянская | Свадебный фотограф" />
+    <meta property="og:description"   content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа   " />
+    <meta property="og:image"         content="http://volyanska.com//img/fb.jpg" />
+
+
+
 
     <meta charset="utf-8">
  <!-- pinterest hover -->
@@ -79,7 +89,7 @@ if (!isset ($_SERVER["HTTP_X_PJAX"])){
 
             if ($filter=="Love")
                      {$filter ="Love story";}
-            require_once 'functions.php';
+
             require_once 'includes/data.php';
             $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
             $mysqli->set_charset("utf8");

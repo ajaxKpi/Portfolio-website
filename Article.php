@@ -8,7 +8,7 @@
 
 
     <?php
-    require_once 'functions.php';
+
     require_once 'includes/data.php';
     $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
     $mysqli->set_charset("utf8");
@@ -35,7 +35,7 @@
             $share_link  = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
             $share_name =  $row['name'];
-            $share_desc =  "'".substr($row['descr_ru'],1,100)."'";
+            $share_desc =  "'".substr(strip_tags($row['descr_ru']),0,100)."'";
 
         }
     }?>
@@ -72,7 +72,7 @@
 
   </head>
   <body>
-  <!-- Preloader Block -->
+  <!-- Preloader Block
 
   <div class = "loader-wrapper">
       <div class="typing-indicator">
@@ -81,7 +81,7 @@
           <span></span>
       </div>
   </div>
-
+ -->
   <div id="fb-root"></div>
   <!-- VK.com init  -->
 

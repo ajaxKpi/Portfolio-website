@@ -43,7 +43,7 @@ if (!isset ($_SERVER["HTTP_X_PJAX"])){
 
             <h1 class="portfolio_me">feedbacks</h1>
         <?php
-        require_once 'functions.php';
+
         require_once 'includes/data.php';
         $mysqli = new mysqli($myServer, $Login,$Passwd , $dbname);
         $mysqli->set_charset("utf8");

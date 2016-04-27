@@ -12,13 +12,13 @@ aboutme_en = "Hi and welcome! I'm Olya, wedding photographer. If you find my sty
 
 function setLang(page_language){
     if (page_language == "ru"){
-        $(".Wrap_pre_ru").css("display","block")
-        $(".Wrap_pre").css("display","none")
+        $(".Wrap_pre_ru").css("display","block");
+        $(".Wrap_pre").css("display","none");
 
     }
     else{
-        $(".Wrap_pre").css("display","block")
-        $(".Wrap_pre_ru").css("display","none")
+        $(".Wrap_pre").css("display","block");
+        $(".Wrap_pre_ru").css("display","none");
     }
 
 }
@@ -33,17 +33,17 @@ if($.cookie("language")=="ru"){
     contacts_ph_date = "ДАТА СВАДЬБЫ";
     contacts_ph_link = "ССЫЛКА НА СОЦИАЛЬНУЮ СЕТЬ";
     contacts_ph_descr = "КРАТКИЙ ПЛАН СВАДЕБНОГО ДНЯ               +ссылки на место проведения";
-    contacts_button = "Давайте знакомится"
+    contacts_button = "Давайте знакомится";
 
     errors_name = "Вы не ввели имя";
-    errors_email = "Не корректно введен E-mail"
+    errors_email = "Не корректно введен E-mail";
     errors_city = "Вы не ввели город";
     errors_date = "Дата уже занята";
     errors_link = "Укажите профиль в соц. сетях";
     errors_descr = "Добавте описание свадьбы";
 
 
-    Not_found_text = "Страница не найдена"
+    Not_found_text = "Страница не найдена";
     Not_found_link = "Вернуться на главную"
 
 }
@@ -73,8 +73,8 @@ else
 
 $('#language').change(function() {
     if ($(this).is(":checked")) {
-        $.cookie("language","ru")
-        page_version = "ru"
+        $.cookie("language","ru");
+        page_version = "ru";
 
         $(".few_words").text("Привет! Меня зовут Оля, добро пожаловать на мой сайт! Если Вам близки мои работы, Вы можете связатся со мной любым удобным способом")
 
@@ -113,12 +113,12 @@ $('#language').change(function() {
 
 
         case 'Volyanska Photography|About':
-            location.reload()
+            location.reload();
             break;
 
 
         case 'Volyanska Photography|Services':
-            location.reload()
+            location.reload();
             break;
 
         case 'Volyanska Photography|Contacts':
@@ -163,10 +163,97 @@ $('#language').change(function() {
 
 
 
-})
+});
 
 
-//preloader block
+/*
+
+
+    get active page Specific points
+
+
+ */
+switch(document.title)
+{
+
+    case 'Volyanska Photography|Blog':
+        $('#Blog').css("color", "brown");
+        $(function() {
+            $("img.lazy").lazyload();
+            setLang(page_version);
+        });
+        // color Advice if tag is
+        var tag = getUrlParameter('tag');
+        if (tag  === "Advices") {
+            $('#Blog').css("color", "black");
+            $('#Advices').css("color", "brown");
+
+        }
+        break;
+    case 'Volyanska Photography|Article':
+        $('#Blog').css("color", "brown");
+        $(".Blog_name").hover(function() {
+            $(this).css("color","black");
+        });
+        setLang(page_version);
+        $(function() {
+            $("img.lazy").lazyload();
+        });
+        break;
+    case 'Volyanska Photography|About':
+        $('#About').css("color", "brown");
+        break;
+    case 'Volyanska Photography|Advices':
+        $('#Advices').css("color", "brown");
+        setLang(page_version);
+        break;
+    case 'Volyanska Photography|Services':
+        $('#Services').css("color", "brown");
+        break;
+    case 'Volyanska Photography|Contacts':
+        $('#Contacts').css("color", "brown");
+        $('.contactP').html(contacts_text);
+        $("#f_name").attr("placeholder",contacts_ph_name );
+        $("#f_city").attr("placeholder",contacts_ph_city );
+        $("#CheckedDate").attr("placeholder",contacts_ph_date );
+        $("#f_social").attr("placeholder",contacts_ph_link );
+        $("#f_textarea").attr("placeholder",contacts_ph_descr );
+        $("#send_mail span").text(contacts_button );
+
+
+        $("#s_name").text(errors_name);
+        $("#s_city").text(errors_city);
+        $("#s_CheckedDate").text(errors_date);
+        $("#s_social").text(errors_link);
+        $("#s_descr").text(errors_descr);
+        $("#s_mail").text(errors_email);
+
+        break;
+    case 'Volyanska Photography|Feedbacks':
+        $('#Feedbacks').css("color", "brown");
+        $(".Blog_name").hover(function() {
+            $(this).css("color","black");
+        });
+        setLang(page_version);
+        break;
+    case 'Volyanska Photography|Not Found':
+        $(".not_found h4").text(Not_found_text);
+        $("#bold_link a").text(Not_found_link);
+        break;
+    default:
+        $('#Portfolio').css("color", "brown");
+        $("img.lazy").lazyload();
+}
+
+
+/*
+
+
+ preloader block
+
+
+ */
+
 $(window).load(function() {
 
 
@@ -174,8 +261,14 @@ $(window).load(function() {
     $(".loader-wrapper").delay(400).fadeOut("slow");
 });
 
-//scroll of fixed header
 
+/*
+
+
+        scroll of fixed header
+
+
+ */
 $(window).scroll(function(){
     aa = $(window).innerWidth();
     if ($(window).innerWidth() < 960){
@@ -185,9 +278,15 @@ $(window).scroll(function(){
         $('.navigation').css('left', "");
     }
 });
+/*
 
-//instagram slider block
-var currentIndex = 0,items = $('.inst_item'),
+
+ instagram slider block
+
+
+ */
+
+var currentIndex = 0,items = instaImg,
     itemAmt = items.length, prevIndex =0;
 
 var autoSlide = setInterval(function() {
@@ -199,14 +298,26 @@ var autoSlide = setInterval(function() {
 
    // $(items[prevIndex]).css("opacity", "0")
    // $(items[currentIndex]).css("opacity", "1")
-      $(items[currentIndex]).fadeIn("3000");
-      $(items[prevIndex]).fadeOut("3000");
+    $('.inst_item').fadeOut(2000,function(){
+        $('.inst_item a').attr('href',items[currentIndex].link);
+        $('.inst_item img').attr('src',items[currentIndex].large);
+        $('.inst_item').fadeIn(2000)} );
+
+
+
              prevIndex = currentIndex;
 }, 4000);
 
 
-//call pin button on specific location
-if ($(document).find("title").text() ==='Volyanska Photography|Blog'||$(document).find("title").text() ==='Volyanska Photography|Article'){
+/*
+        ****************SOCIAL BLOCK*****************
+
+ call PIN button on specific location
+
+
+ */
+
+if (document.title ==='Volyanska Photography|Blog'||document.title ==='Volyanska Photography|Article'){
     $('.Blog_photo img').imgPin(
         {
             pinImg : 'img/social/pinterestOnImg.png', position: 2
@@ -258,8 +369,6 @@ var userLang = navigator.language || navigator.userLanguage;
 // get move of block in calculation of logo size
 
 
-
-
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
@@ -276,92 +385,11 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 
-//use specific layout on single blog
-
-
-
-
-//get active page
-
-        switch(document.title)
-        {
-
-            case 'Volyanska Photography|Blog':
-               $('#Blog').css("color", "brown");
-                $(function() {
-                    $("img.lazy").lazyload();
-                    setLang(page_version);
-                });
-                // color Advice if tag is
-                var tag = getUrlParameter('tag');
-                if (tag  === "Advices") {
-                    $('#Blog').css("color", "black");
-                    $('#Advices').css("color", "brown");
-
-                }
-                break;
-            case 'Volyanska Photography|Article':
-                $('#Blog').css("color", "brown");
-                $(".Blog_name").hover(function() {
-                    $(this).css("color","black");
-                });
-                setLang(page_version);
-                $(function() {
-                    $("img.lazy").lazyload();
-                });
-                break;
-            case 'Volyanska Photography|About':
-                $('#About').css("color", "brown");
-                break;
-            case 'Volyanska Photography|Advices':
-                $('#Advices').css("color", "brown");
-                setLang(page_version);
-                break;
-            case 'Volyanska Photography|Services':
-                $('#Services').css("color", "brown");
-                break;
-            case 'Volyanska Photography|Contacts':
-                $('#Contacts').css("color", "brown");
-                $('.contactP').html(contacts_text);
-                $("#f_name").attr("placeholder",contacts_ph_name );
-                $("#f_city").attr("placeholder",contacts_ph_city );
-                $("#CheckedDate").attr("placeholder",contacts_ph_date );
-                $("#f_social").attr("placeholder",contacts_ph_link );
-                $("#f_textarea").attr("placeholder",contacts_ph_descr );
-                $("#send_mail span").text(contacts_button );
-
-
-                $("#s_name").text(errors_name);
-                $("#s_city").text(errors_city);
-                $("#s_CheckedDate").text(errors_date);
-                $("#s_social").text(errors_link);
-                $("#s_descr").text(errors_descr);
-                $("#s_mail").text(errors_email);
-
-                break;
-            case 'Volyanska Photography|Feedbacks':
-                $('#Feedbacks').css("color", "brown");
-                $(".Blog_name").hover(function() {
-                    $(this).css("color","black");
-                });
-                setLang(page_version);
-                break;
-            case 'Volyanska Photography|Not Found':
-                $(".not_found h4").text(Not_found_text);
-                $("#bold_link a").text(Not_found_link);
-                break;
-            default:
-                $('#Portfolio').css("color", "brown");
-                $("img.lazy").lazyload();
-        }
-
-
 
 //set text in like_share bar
 if($('div').hasClass('comment_wrap') && $('div').hasClass('read_more')) {
 
     $(".read_more>a").attr('href', 'Blog');
-
 
 
     $(".Blog_name").hover(function() {
@@ -380,6 +408,11 @@ $(".onshare").click(function() {
 
 
      //  $( "#count_VK").text( Number($( "#count_VK").text()) +1)
+
+
+
+
+
 
 $('.return_blog').click(function(e){
 

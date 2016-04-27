@@ -71,9 +71,9 @@ $("#inp_feed").change(function(){
 // Rise when we change date to fill description
 $( "#BusyDate" ).change(function() {
     $.ajaxSetup({ cache: false });
-    $.getJSON( "Busy1.json", function(data) {
+    $.getJSON( "Busy.Json", function(data) {
             $( "#Event").val(data[$( "#BusyDate").val()]);
-        console.log( "success" );
+       // console.log( "success" );
     });
     $.ajaxSetup({ cache: true});
 
