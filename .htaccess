@@ -1,3 +1,4 @@
+
 ErrorDocument 404 /404.php
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -10,3 +11,16 @@ Redirect 301 http://www.volyanska.com/index.php http://www.volyanska.com
 SetOutputFilter DEFLATE
 </FilesMatch>
 </IfModule>
+
+
+
+# angularjs pushstate (history) support:
+# See http://www.josscrowcroft.com/2012/code/htaccess-for-html5-history-pushstate-url-routing/
+<ifModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !index
+    RewriteCond %{REQUEST_URI} !.*\.(css¦js|html|png) #Add extra extensions needed.
+    RewriteRule (.*) index.html [L]
+</ifModule>
