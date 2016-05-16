@@ -8,22 +8,20 @@
             <h1 class="portfolio_me">blog</h1>
             <div class = "costil1"></div>
             <!-- extract all records in blog -->
-            <article class="Blog_post">
+            <article class="Blog_post"  data-ng-repeat="record in records">
                 <div class = "header_of_motion">
-                    <a name=@id  href=@id>
-                        <h2 class="Blog_name"> @name </h2>
+                    <a name="record.id"  href=@id>
+                        <h2 class="Blog_name"> {{record.name}} </h2>
                     </a>
-                    <span> @date |<a href = @tag>@tag</a></span>
+                    <span> {{record.date | date:'dd-mm-yyyy'}} |<a href = @tag>{{record.tag}}</a></span>
                 </div>
                 <hr class="separator">
 
                 <p class ="text_overview">
                     <div class="Wrap_pre">
-                        @descr_en
+                        {{record.description[local]}}
                     </div>
-                    <div class="Wrap_pre_ru">
-                        @descr_ru
-                    </div>
+
                 </p>
                 <div class = "Blog_photo">
                     <a href =@id>

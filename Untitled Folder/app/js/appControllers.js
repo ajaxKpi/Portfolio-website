@@ -13,6 +13,7 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
         }
 */
         var local="ru";
+        $scope.MainModel={};
         $http({
             method: 'GET',
             url: 'localization/locData.json'
@@ -21,7 +22,7 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
                     $scope.MainModel= result.data[local];
                 },
             function(res){
-                alert(res)
+                throw "can't get file"
             }
             )
 
@@ -37,6 +38,7 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
             }
         }
 
+        $scope.local=local;
 
     }])
 
@@ -51,9 +53,37 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
     $("#About").css("color","brown")
 
 }])
-    .controller("pgBlog",['$scope',function($scope){
+    .controller("pgBlog",['$scope',"blogRecord",function($scope,blogRecord){
     $(".navigation-internal a").css("color","black")
     $("#Blog").css("color","brown")
+
+
+        $scope.records={};
+        blogRecord.query().$promise.then(function (result) {
+
+            for (key in result) {
+                if (result.hasOwnProperty(key) && key != "$promise" && key != "$resolved") {
+                    $scope.records[key] = result[key];
+                    $scope.records[key]["description"]={}
+                    $scope.records[key]["description"]["en"] =result[key]["descr"];
+                    $scope.records[key]["description"]["ru"] =result[key]["descr_ru"];
+                    delete $scope.records[key]["descr"];
+                    delete $scope.records[key]["descr_ru"];
+
+
+                }
+            }
+
+
+
+
+
+
+        })
+
+
+
+
 
 }])
     .controller("pgArticle",['$scope',"$routeParams",function($scope,$routeParams){
@@ -145,8 +175,3 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
     })
 }])
 
-.controller("locData.json",["$http", function($http){
-        var formData =$http()
-
-
-    }])
