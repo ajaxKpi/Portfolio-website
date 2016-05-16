@@ -28,6 +28,19 @@
     font-style: normal;
     font-weight: normal;
 }
+<<<<<<< HEAD
+=======
+@font-face {
+    font-family: 'SocialIco';
+    src: url("../fonts/social/social.woff");
+}
+
+
+
+
+
+
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 html * {
     box-sizing: border-box;
     font-size: 100%; !important;
@@ -35,6 +48,10 @@ html * {
 
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 /* ***************************************************************************
 *****************************Preloader Block*************************************
 ****************************************************************************/
@@ -727,6 +744,7 @@ border-top: 1px solid #eee;
 }
 .like_share a{
     text-decoration: none;
+<<<<<<< HEAD
 }
 
 
@@ -750,6 +768,40 @@ border-top: 1px solid #eee;
     padding-right: 1.5%
 }
 .Share_container{ padding-top: 10px;}
+=======
+    position: relative;
+}
+
+
+.Share_container {
+
+    width: 400px;                       /*Replace by actual*/
+    margin: auto;
+    padding-top: 10px;
+    
+}
+.Share_container div{display: inline-block;}
+.Share_container a{text-decoration: none;}
+
+.social_buttons{
+    position: absolute;
+    margin-left: 21.5%;
+}
+.FBButtonIcon,.VKButtonIcon{
+    color:#ccc;
+}
+.FBButtonIcon:before{
+    font-family: 'SocialIco';
+    content: '\e900';
+    font-size: 18px;
+}
+.VKButtonIcon:before{
+    font-family: 'SocialIco';
+    content: '\e901';
+}
+.FBButtonIcon:hover, .VKButtonIcon:hover{
+    color:black;}
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 
 .return_blog{
     display: table-cell;
@@ -974,10 +1026,14 @@ form .form_group {
 
 }
 
+<<<<<<< HEAD
 .input-group.date{
 
     width:110%
 }
+=======
+
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 .input-group-addon{
 
     visibility: hidden;
@@ -1029,10 +1085,13 @@ form .form_group {
     padding: 0;
     height:44px;
 }
+<<<<<<< HEAD
 .d_picker{
     margin-bottom: 5px;
 
 }
+=======
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 
 
 

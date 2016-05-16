@@ -14,7 +14,11 @@
         <div calendar class="calendar" id="calendar"></div>
     </div>
 </div>
+<<<<<<< HEAD
 <div class="form_space">
+=======
+<div class="form_space" ng-controller = "locData">
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
     <form action="http://formspree.io/olga.volyanska@gmail.com" class="main_form" novalidate target="_blank" method="post">
         <label class="form_group">
             <input type="text" name="name" id="f_name" placeholder="ИМЯ" data-validation-required-message="Вы не ввели имя" required />
@@ -29,6 +33,7 @@
             <span id =s_city class = "req_message">Вы не ввели город</span>
         </label>
         <label class="form_group">
+<<<<<<< HEAD
             <div class="d_picker" >
                 <div class="input-group date">
                     <input type="text" name ="date" id = "datepicker" class="form-control" placeholder="ДАТА СВАДЬБЫ">
@@ -36,6 +41,12 @@
                 <span id =s_CheckedDate class = "req_message">Дата уже занята</span>
             </div>
         </label>
+=======
+              <input type="text" name ="date" id = "datepicker" class="form-control" placeholder="ДАТА СВАДЬБЫ">
+                <span id =s_CheckedDate class = "req_message">Дата уже занята</span>
+        </label>
+
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
         <label class="form_group">
             <input type="text" name="social" placeholder="ССЫЛКА НА СОЦИАЛЬНУЮ СЕТЬ VK или FB" id="f_social" data-validation-required-message="Вы не указали имя" required />
             <span id ="s_social" class = "req_message">Укажите профиль в соц. сетях</span>
@@ -44,9 +55,20 @@
             <textarea id ="f_textarea" name="message" placeholder="КРАТКИЙ ПЛАН СВАДЕБНОГО ДНЯ&#10;&#09;&#09;&#09;&#09;+ ссылки на место проведения" data-validation-required-message="Вы не ввели сообщение" required></textarea>
             <span id ="s_descr" class = "req_message">Добавте описание свадьбы</span>
         </label>
+<<<<<<< HEAD
         <button id="send_mail"><span>Давайте знакомится</span></button>
     </form>
 </div>
 
 
+=======
+        <button id="send_mail" data-ng-click="sendMail()"><span>Давайте знакомится</span></button>
+    </form>
+</div>
+
+<script type="text/javascript"
+        src="https://rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-ru.js">
+</script>
+<script src="js/datapicker-init.js"></script>
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 

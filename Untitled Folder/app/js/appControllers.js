@@ -2,7 +2,51 @@
  * Created by ivan on 30.04.16.
  */
 var appControllers = angular.module('appController',[]);
+<<<<<<< HEAD
 appControllers.controller("pgRoot",['$scope',function($scope){
+=======
+appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
+        /*get current language preferences
+
+        if (!$.cookie("language","ru")){
+            $scope.local ="ru";
+        }
+        else {
+            $scope.local ="en";
+        }
+*/
+        var local="ru";
+        $http({
+            method: 'GET',
+            url: 'localization/locData.json'
+        }).then(
+                function(result){
+                    $scope.MainModel= result.data[local];
+                },
+            function(res){
+                alert(res)
+            }
+            )
+
+        this.setLocal = function(val){
+            if(val){
+                this.local="ru";
+              //  $.cookie("language","ru");
+
+            }
+            else {
+                this.local="en";
+               // $.cookie("language","en");
+            }
+        }
+
+
+    }])
+
+
+
+    .controller("pgRoot",['$scope',function($scope){
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
     $(".navigation-internal a").css("color","black");
     $("#Portfolio").css("color","brown")
 }])
@@ -104,3 +148,12 @@ appControllers.controller("pgRoot",['$scope',function($scope){
 
     })
 }])
+<<<<<<< HEAD
+=======
+
+.controller("locData.json",["$http", function($http){
+        var formData =$http()
+
+
+    }])
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704

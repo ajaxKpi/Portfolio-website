@@ -277,7 +277,11 @@ module.exports = function (grunt) {
     copy: {
       fonts: {
         expand: true,
+<<<<<<< HEAD
         src: 'fonts/*',
+=======
+        src: 'social/*',
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
         dest: 'dist/'
       },
       docs: {
@@ -380,7 +384,11 @@ module.exports = function (grunt) {
         })(),
         replacement: grunt.option('newver'),
         exclude: [
+<<<<<<< HEAD
           'dist/fonts',
+=======
+          'dist/social',
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
           'docs/assets',
           'fonts',
           'js/tests/vendor',

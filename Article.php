@@ -61,14 +61,14 @@
     <link href="css/imgPin.default.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
-    <!-- VK.com reference -->
+
      <script src="http://vk.com/js/api/openapi.js"; type="text/javascript" charset="windows-1251"></script>
      <script type="text/javascript">
         VK.init({
             apiId: 5077240,
             onlyWidgets: true
         });
-    </script>
+    </script> <!-- VK.com reference -->
 
   </head>
   <body>
