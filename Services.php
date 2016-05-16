@@ -52,7 +52,7 @@ if (!isset ($_SERVER["HTTP_X_PJAX"])) {
                 include 'includes/services_ru.php';
                 }
                 else {
-                    include 'includes/services_en.php';
+                    include 'includes/services_en.html';
                 }
                 ?>
             </div>
