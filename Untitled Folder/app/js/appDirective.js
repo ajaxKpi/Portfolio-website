@@ -43,7 +43,7 @@ appDirective.directive('calendar', [function(){
                     type: 'bot',
                     color: 'red'
                 }]
-            }]
+            }];
             var calendar = new Calendar('#calendar', data);
         }
     }

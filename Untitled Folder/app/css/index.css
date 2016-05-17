@@ -966,8 +966,8 @@ form .form_group {
     height: 166px;
 }
 .req_message{
-    display:none;
     font-style: italic;
+    color: brown;
 
 }
 

@@ -6,8 +6,9 @@ angular.module('myApp', [
   'appController',
   'appDirective',
   'appServices',
-  'djds4rce.angular-socialshare'
-
+  'djds4rce.angular-socialshare',
+  'localization',
+  'ngSanitize'
 
 ])
     .config(['$routeProvider', '$locationProvider',function($routeProvider,$locationProvider) {
@@ -62,7 +63,6 @@ angular.module('myApp', [
 }])
     .run( ['$FB',function($FB){
         $FB.init('137710999746808');
-
 
     }]);
 

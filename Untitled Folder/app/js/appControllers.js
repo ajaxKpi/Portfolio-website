@@ -2,7 +2,7 @@
  * Created by ivan on 30.04.16.
  */
 var appControllers = angular.module('appController',[]);
-appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
+appControllers.controller("mainCTRL",["$scope", "locData", "$http", function($scope,  locData, $http){
         /*get current language preferences
 
         if (!$.cookie("language","ru")){
@@ -12,21 +12,15 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
             $scope.local ="en";
         }
 */
-        var local="ru";
-        $scope.MainModel={};
-        $http({
-            method: 'GET',
-            url: 'localization/locData.json'
-        }).then(
-                function(result){
-                    $scope.MainModel= result.data[local];
-                },
-            function(res){
-                throw "can't get file"
-            }
-            )
 
-        this.setLocal = function(val){
+        var local="ru";
+        $scope.mainModel=locData[local];
+        //$scope.mainModel.contacts_text=$sce.trustAsHtml($scope.mainModel.contacts_text);
+
+
+        $scope.setLocal =function(val){
+           var that =val.target.checked;
+            console.log("chBox:", that)
             if(val){
                 this.local="ru";
               //  $.cookie("language","ru");
@@ -36,7 +30,7 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
                 this.local="en";
                // $.cookie("language","en");
             }
-        }
+        };
 
         $scope.local=local;
 
@@ -73,10 +67,6 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
 
                 }
             }
-
-
-
-
 
 
         })
@@ -168,9 +158,6 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
             }
         }
         $scope.stories = stories;
-
-
-
 
     })
 }])
