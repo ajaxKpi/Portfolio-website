@@ -2,6 +2,9 @@
  * Created by ivan on 30.04.16.
  */
 var appControllers = angular.module('appController',[]);
+<<<<<<< HEAD
+appControllers.controller("pgRoot",['$scope',function($scope){
+=======
 appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
         /*get current language preferences
 
@@ -43,6 +46,7 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
 
 
     .controller("pgRoot",['$scope',function($scope){
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
     $(".navigation-internal a").css("color","black");
     $("#Portfolio").css("color","brown")
 }])
@@ -144,9 +148,12 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
 
     })
 }])
+<<<<<<< HEAD
+=======
 
 .controller("locData.json",["$http", function($http){
         var formData =$http()
 
 
     }])
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704

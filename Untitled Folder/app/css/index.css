@@ -28,6 +28,8 @@
     font-style: normal;
     font-weight: normal;
 }
+<<<<<<< HEAD
+=======
 @font-face {
     font-family: 'SocialIco';
     src: url("../fonts/social/social.woff");
@@ -38,6 +40,7 @@
 
 
 
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 html * {
     box-sizing: border-box;
     font-size: 100%; !important;
@@ -45,7 +48,10 @@ html * {
 
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 /* ***************************************************************************
 *****************************Preloader Block*************************************
 ****************************************************************************/
@@ -738,6 +744,31 @@ border-top: 1px solid #eee;
 }
 .like_share a{
     text-decoration: none;
+<<<<<<< HEAD
+}
+
+
+.Svg_holder {
+    display: inline;
+    position: relative;
+
+}
+.Share_container{
+    display: inline;
+}
+
+.Share_container .read_more{
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+
+    float: left;
+    width: 64%;
+    text-align: right;
+    padding-right: 1.5%
+}
+.Share_container{ padding-top: 10px;}
+=======
     position: relative;
 }
 
@@ -770,6 +801,7 @@ border-top: 1px solid #eee;
 }
 .FBButtonIcon:hover, .VKButtonIcon:hover{
     color:black;}
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 
 .return_blog{
     display: table-cell;
@@ -994,7 +1026,14 @@ form .form_group {
 
 }
 
+<<<<<<< HEAD
+.input-group.date{
 
+    width:110%
+}
+=======
+
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 .input-group-addon{
 
     visibility: hidden;
@@ -1046,6 +1085,13 @@ form .form_group {
     padding: 0;
     height:44px;
 }
+<<<<<<< HEAD
+.d_picker{
+    margin-bottom: 5px;
+
+}
+=======
+>>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 
 
 
