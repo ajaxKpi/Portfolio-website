@@ -2,37 +2,59 @@
  * Created by ivan on 30.04.16.
  */
 var appControllers = angular.module('appController',[]);
-appControllers.controller("mainCTRL",["$scope", "locData", "$http", function($scope,  locData, $http){
-        /*get current language preferences
+appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', function($scope,  locData, $cookies){
+        //get current language preferences
+    var navigatorLang = navigator.language || navigator.userLanguage,
+        userLang = $cookies.get('IZVlanguage'),
+        local = "";
 
-        if (!$.cookie("language","ru")){
-            $scope.local ="ru";
+        navigatorLang = navigatorLang.substr(0,2);
+
+        if (userLang){
+            //already have prefered language in cookie
+            local =userLang;
+
         }
         else {
-            $scope.local ="en";
+            // not have language in cookie
+            if (navigatorLang=="ru"||navigatorLang=="ua"){
+                local ="ru";
+                          }
+            else{
+                local ="en";
+                           }
+            $cookies.put('IZVlanguage', local);
+
         }
-*/
 
-        var local="ru";
+
+        //TODO Local is critical should be an value
+        $scope.local=local;
         $scope.mainModel=locData[local];
-        //$scope.mainModel.contacts_text=$sce.trustAsHtml($scope.mainModel.contacts_text);
 
 
+        //triggered by language togglebutton(checkbox)
         $scope.setLocal =function(val){
-           var that =val.target.checked;
-            console.log("chBox:", that)
-            if(val){
+           //on toggleButton value checked: true = ru language, false = en
+           var ruLang =val.target.checked;
+
+            if(ruLang){
                 this.local="ru";
-              //  $.cookie("language","ru");
+                $("#language").prop('checked', true);
+
 
             }
             else {
                 this.local="en";
-               // $.cookie("language","en");
+
+
             }
+            $cookies.put('IZVlanguage', this.local);
+            $scope.mainModel=locData[this.local];
+            $scope.local=this.local;
         };
 
-        $scope.local=local;
+
 
     }])
 

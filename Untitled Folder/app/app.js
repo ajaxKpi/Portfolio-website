@@ -8,7 +8,8 @@ angular.module('myApp', [
   'appServices',
   'djds4rce.angular-socialshare',
   'localization',
-  'ngSanitize'
+  'ngSanitize',
+   'ngCookies'
 
 ])
     .config(['$routeProvider', '$locationProvider',function($routeProvider,$locationProvider) {
