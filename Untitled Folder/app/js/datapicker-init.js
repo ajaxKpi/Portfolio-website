@@ -8,14 +8,14 @@ $(document).ready(function() {
 =======
 
 //TODO: remove harcoded busy by real + regional
-var busyDays = [];
+var busyDays = ["12-05-2016"];
 $(document).ready(function() {
 
         $( "#datepicker" ).datepicker({
             dateFormat: "dd-MM-yy",
             firstDay: 1,
             beforeShowDay: function(date){
-                var string = jQuery.datepicker.formatDate('dd-MM-yy', date);
+                var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
                 return [ busyDays.indexOf(string) == -1 ]
             }
 

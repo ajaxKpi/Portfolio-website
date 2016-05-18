@@ -5,13 +5,11 @@ angular.module('myApp', [
   'ngRoute',
   'appController',
   'appDirective',
-<<<<<<< HEAD
-  'appServices'
-=======
   'appServices',
-  'djds4rce.angular-socialshare'
->>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
-
+  'djds4rce.angular-socialshare',
+  'localization',
+  'ngSanitize',
+   'ngCookies'
 
 ])
     .config(['$routeProvider', '$locationProvider',function($routeProvider,$locationProvider) {
@@ -63,16 +61,12 @@ angular.module('myApp', [
       .otherwise({redirectTo: '/404'});
   $locationProvider.html5Mode(true);
 
-<<<<<<< HEAD
-}]);
-=======
 }])
     .run( ['$FB',function($FB){
         $FB.init('137710999746808');
 
-
     }]);
->>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
+
 
 
 

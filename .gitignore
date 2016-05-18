@@ -2,3 +2,5 @@
 *.jpg
 *.JPG
 *.png
+node_modules/
+bower_components/

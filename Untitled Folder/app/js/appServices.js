@@ -12,12 +12,14 @@ appServices.factory('slider', ['$resource',
             });
     }])
 
-.factory('blogRecord', [
-    function(){
-
+.factory('blogRecord', ['$resource',
+    function($resource){
+        var url = 'http://localhost/angular-seed/backend/api.php?action=get_ALL';
+        return $resource(url, {}, {
+            query: {method: 'get'}
+        });
 
     }])
-
 .factory('popularRecord', ['$resource',
     function($resource){
         var url = 'http://localhost/angular-seed/backend/api.php?action=get_popular';

@@ -2,43 +2,58 @@
  * Created by ivan on 30.04.16.
  */
 var appControllers = angular.module('appController',[]);
-<<<<<<< HEAD
-appControllers.controller("pgRoot",['$scope',function($scope){
-=======
-appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
-        /*get current language preferences
 
-        if (!$.cookie("language","ru")){
-            $scope.local ="ru";
+appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', function($scope,  locData, $cookies){
+        //get current language preferences
+    var navigatorLang = navigator.language || navigator.userLanguage,
+        userLang = $cookies.get('IZVlanguage'),
+        local = "";
+
+        navigatorLang = navigatorLang.substr(0,2);
+
+        if (userLang){
+            //already have prefered language in cookie
+            local =userLang;
         }
         else {
-            $scope.local ="en";
-        }
-*/
-        var local="ru";
-        $http({
-            method: 'GET',
-            url: 'localization/locData.json'
-        }).then(
-                function(result){
-                    $scope.MainModel= result.data[local];
-                },
-            function(res){
-                alert(res)
-            }
-            )
+            // not have language in cookie
+            if (navigatorLang=="ru"||navigatorLang=="ua"){
+                local ="ru";
+                          }
+            else{
+                local ="en";
+                           }
+            $cookies.put('IZVlanguage', local);
 
-        this.setLocal = function(val){
-            if(val){
+        }
+
+
+        //TODO Local is critical should be an value
+        $scope.local=local;
+        $scope.mainModel=locData[local];
+
+
+        //triggered by language togglebutton(checkbox)
+        $scope.setLocal =function(val){
+           //on toggleButton value checked: true = ru language, false = en
+           var ruLang =val.target.checked;
+
+            if(ruLang){
                 this.local="ru";
-              //  $.cookie("language","ru");
+                $("#language").prop('checked', true);
+
 
             }
             else {
                 this.local="en";
-               // $.cookie("language","en");
+
+
             }
-        }
+            $cookies.put('IZVlanguage', this.local);
+            $scope.mainModel=locData[this.local];
+            $scope.local=this.local;
+        };
+
 
 
     }])
@@ -46,7 +61,7 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
 
 
     .controller("pgRoot",['$scope',function($scope){
->>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
+
     $(".navigation-internal a").css("color","black");
     $("#Portfolio").css("color","brown")
 }])
@@ -55,9 +70,30 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
     $("#About").css("color","brown")
 
 }])
-    .controller("pgBlog",['$scope',function($scope){
+    .controller("pgBlog",['$scope',"blogRecord",function($scope,blogRecord){
     $(".navigation-internal a").css("color","black")
     $("#Blog").css("color","brown")
+
+
+        $scope.records={};
+        blogRecord.query().$promise.then(function (result) {
+
+            for (key in result) {
+                if (result.hasOwnProperty(key) && key != "$promise" && key != "$resolved") {
+                    $scope.records[key] = result[key];
+                    $scope.records[key]["description"]={}
+                    $scope.records[key]["description"]["en"] =result[key]["descr"];
+                    $scope.records[key]["description"]["ru"] =result[key]["descr_ru"];
+                    delete $scope.records[key]["descr"];
+                    delete $scope.records[key]["descr_ru"];
+
+
+                }
+            }
+
+
+        })
+
 
 }])
     .controller("pgArticle",['$scope',"$routeParams",function($scope,$routeParams){
@@ -143,17 +179,6 @@ appControllers.controller("mainCTRL",["$scope", "$http",function($scope, $http){
         }
         $scope.stories = stories;
 
-
-
-
     })
-}])
-<<<<<<< HEAD
-=======
+}]);
 
-.controller("locData.json",["$http", function($http){
-        var formData =$http()
-
-
-    }])
->>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
