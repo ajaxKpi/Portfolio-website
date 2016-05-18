@@ -1,14 +1,10 @@
 /**
  * Created by ivan on 30.04.16.
  */
-<<<<<<< HEAD
-$(document).ready(function() {
 
-        $( "#datepicker" ).datepicker();
-=======
 
 //TODO: remove harcoded busy by real + regional
-var busyDays = ["12-05-2016"];
+
 $(document).ready(function() {
 
         $( "#datepicker" ).datepicker({
@@ -21,6 +17,4 @@ $(document).ready(function() {
 
         },
     $.datepicker.regional['ru']);
-
->>>>>>> 9180d4912c1e75c7e83534f6f907b8fdadcda704
 });
