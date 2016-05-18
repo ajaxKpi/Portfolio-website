@@ -4,7 +4,7 @@
 
 
 //TODO: remove harcoded busy by real + regional
-
+var busyDays=[];
 $(document).ready(function() {
 
         $( "#datepicker" ).datepicker({

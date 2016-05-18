@@ -1,5 +1,5 @@
 <h1 class="portfolio_me">contacts</h1>
-<p class="contactP" ng-bind-html="mainModel.contacts_text"></p>
+<p class="contactP" ng-bind-html="mainModel.contacts_text">yp</p>
 <div class="left_col">
     <div class="ContactInfo">
         <b>e-mail:</b> olga.volyanska@gmail.com<br>
@@ -14,9 +14,7 @@
         <div calendar class="calendar" id="calendar"></div>
     </div>
 </div>
-
 <div class="form_space">
-
     <form action="http://formspree.io/olga.volyanska@gmail.com" class="main_form" novalidate target="_blank" method="post">
         <label class="form_group">
             <input type="text" name="name" id="f_name" placeholder={{mainModel.form.name.placeholder}} data-validation-required-message="Вы не ввели имя" required />
@@ -30,13 +28,10 @@
             <input type="text" name="city" placeholder={{mainModel.form.city.placeholder}} id="f_city" data-validation-required-message="Вы не указали имя" required />
             <span id =s_city class = "req_message"  ng-if="mainModel.form.city.isError">{{mainModel.form.city.errDescription}}</span>
         </label>
-
         <label class="form_group">
-
-            <input type="text" name ="date" id = "datepicker" class="form-control" placeholder="ДАТА СВАДЬБЫ">
-            <span id =s_CheckedDate class = "req_message">Дата уже занята</span>
+            <input type="text" name ="date" id = "datepicker" class="form-control" placeholder={{mainModel.form.date.placeholder}}>
+            <span id =s_CheckedDate class = "req_message" ng-if="mainModel.form.date.isError">{{mainModel.form.date.errDescription}}</span>
         </label>
-
 
         <label class="form_group">
             <input type="text" name="social" placeholder={{mainModel.form.link.placeholder}} id="f_social" data-validation-required-message="Вы не указали имя" required />
@@ -46,7 +41,6 @@
             <textarea id ="f_textarea" name="message" placeholder={{mainModel.form.description.placeholder}}  required></textarea>
             <span id ="s_descr" class = "req_message" ng-if="mainModel.form.description.isError">{{mainForm.form.description.errDescription}}</span>
         </label>
-
         <button id="send_mail" data-ng-click="sendMail()"><span>Давайте знакомится</span></button>
     </form>
 </div>
@@ -55,5 +49,4 @@
         src="https://rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-ru.js">
 </script>
 <script src="js/datapicker-init.js"></script>
-
 
