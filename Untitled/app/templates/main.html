@@ -1,17 +1,20 @@
 <h1 class="portfolio_me">portfolio</h1>
-<div class="Preview_poligon">
-    <div class="Preview_photo">
-        <img class="lazy" data-original="@preview" alt="logo_img">
 
-    </div>
-    <div class="Preview_info">
-        <a href= "Blog/11">
+<a href=Blog/{{record.id}} ng-repeat="record in records">
+    <div class="Preview_poligon">
 
-            "@name"
-            <br>
-            "@date"
-            <br>
-            "@tag"
-        </a>
+        <div class="Preview_photo">
+            <div afkl-lazy-image="{{record.preview['480']}} 480w, {{record.preview['768']}} 768w, copy.jpg 960w" class="afkl-lazy-wrapper  own-classname"></div>
+
+        </div>
+        <div class="Preview_info">
+
+                {{record.name}}
+                <br>
+                {{record.date}}
+                <br>
+                {{record.tag}}
+
     </div>
 </div>
+</a>

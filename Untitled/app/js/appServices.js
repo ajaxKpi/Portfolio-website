@@ -27,4 +27,12 @@ appServices.factory('slider', ['$resource',
             query: {method: 'get'}
         });
 
+    }])
+.factory('feedBacks', ['$resource',
+    function($resource){
+        var url = 'http://localhost/angular-seed/backend/api.php?action=get_popular';
+        return $resource(url, {}, {
+            query: {method: 'get'}
+        });
+
     }]);

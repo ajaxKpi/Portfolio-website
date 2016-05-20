@@ -4,10 +4,23 @@
 
 
 //TODO: remove harcoded busy by real + regional
-var busyDays=[];
+
+
 $(document).ready(function() {
 
-        $( "#datepicker" ).datepicker({
+    var busyDays=[],
+        IZVlocal;
+
+    if ($('#language').prop('checked')){
+        IZVlocal = 'ru';
+    }
+    else{
+        IZVlocal='';
+    }
+
+
+
+    $( "#datepicker" ).datepicker({
             dateFormat: "dd-MM-yy",
             firstDay: 1,
             beforeShowDay: function(date){
@@ -16,5 +29,5 @@ $(document).ready(function() {
             }
 
         },
-    $.datepicker.regional['ru']);
+    $.datepicker.regional[IZVlocal]);
 });

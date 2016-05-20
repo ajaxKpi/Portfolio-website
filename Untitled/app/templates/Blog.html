@@ -1,5 +1,41 @@
-
+<style>
+    .afkl-lazy-wrapper img{
+        width:1000px
+    }
+</style>
     <link href="css/imgPin.default.css" rel="stylesheet">
+
+
+<div></div>
+    <a href =Blog/11>
+        <div  afkl-lazy-image="1 480w, //placehold.it/768x768 768w, 1.jpg 960w" class="afkl-lazy-wrapper afkl-img-ratio-1-1 own-classname"></div>
+
+    </a>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div>
+<a href =Blog/11>
+        <div  afkl-lazy-image-options="{'offset': 200}" afkl-lazy-image="1 480w, //placehold.it/768x768 768w, 2.jpg 960w" class="afkl-lazy-wrapper afkl-img-ratio-1-1 own-classname"></div>
+
+    </a>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div>
+<a href =Blog/11>
+        <div  afkl-lazy-image="1 480w, //placehold.it/768x768 768w, Copy1.jpg 960w" class="afkl-lazy-wrapper afkl-img-ratio-1-1 own-classname"></div>
+
+    </a>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <a href =Blog/11>
+        <div  afkl-lazy-image="1 480w, //placehold.it/768x768 768w, Copy1.jpg 960w" class="afkl-lazy-wrapper afkl-img-ratio-1-1 own-classname"></div>
+
+    </a>
+    <a href =Blog/11>
+        <div  afkl-lazy-image="1 480w, //placehold.it/768x768 768w, Copy1 960w" class="afkl-lazy-wrapper afkl-img-ratio-1-1 own-classname"></div>
+
+    </a>
+
 
 
 
@@ -25,6 +61,7 @@
                 </p>
                 <div class = "Blog_photo">
                     <a href =Blog/{{record.id}}>
+                        <div afkl-lazy-image="{{record.preview['480']}} 480w, {{record.preview['768']}} 768w, {{record.preview['960']}} 960w" class="afkl-lazy-wrapper  own-classname" afkl-lazy-image-options = '{alt:"Blog_photo"}'></div>
                         <img class="lazy" data-original={{record.preview}} alt ="Blog_photo">
                     </a>
                 </div>

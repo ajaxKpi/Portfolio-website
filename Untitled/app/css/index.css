@@ -46,7 +46,9 @@ html * {
     font-family: PT-Sans, serif !important;
 
 }
-
+a{
+    text-decoration: none !important;
+}
 
 /* ***************************************************************************
 *****************************Preloader Block*************************************
@@ -142,22 +144,14 @@ body {
 *****************************Proceses Block*************************************
 ****************************************************************************/
 .navigation-internal a:hover{
-    color: #ccc;
-    text-decoration: none;
+    color: #ccc !important;
 }
 
 .navigation-external li:hover svg  {
             fill: black;
 }
 
-#svg32:hover  #path3349{
-    fill: #ccc;
-}
 
-svg:hover  .path4147{
-   fill: black;!important;
-
-}
 .read_more svg:hover{
     fill: black;!important;
 }
@@ -219,9 +213,10 @@ svg:hover  .path4147{
     text-decoration: none;
     color: black;
 
-    
 }
-.logo_big img:hover{
+
+
+.logo_big svg:hover{
     fill:#ccc;
 }
 
@@ -321,9 +316,7 @@ svg:hover  .path4147{
 
 
                 }
-                #Contacts{
-                 
-                }
+
 
         .navigation-external
         {
@@ -377,23 +370,13 @@ svg:hover  .path4147{
     margin-bottom: 2%;
 
 }
-.logo_big img {
-    width: 70%;
+.logo_big svg {
     margin: auto;
+    width: 50%;
     display: block;
 
 }
-.logo_big p{
-    text-indent: 5px;
-    letter-spacing: 0.2em;
-    font-weight: 600;
-    color: #ccc;
-    text-align: right;
-    margin-top: -30px;
-    margin-right: 34px;
 
-
-}
 .portfolio_me {
     text-align: center;
     text-transform: uppercase;
@@ -430,12 +413,11 @@ svg:hover  .path4147{
 
             }
 
-.Preview_info a{
+.Preview_info{
     text-decoration: none;
     width: inherit;
     height: inherit;
     padding: 10px;
-
     vertical-align: middle;
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
@@ -446,7 +428,7 @@ svg:hover  .path4147{
     display: table-cell;
     visibility: hidden;
 }
-    .Preview_info:hover a{
+    .Preview_poligon:hover .Preview_info{
         visibility: visible;}
 
 .Thanks{
@@ -1174,13 +1156,13 @@ form .form_group {
     font-weight: bold;
     color:black;
 }
-#bold_link a{
+.bold_link a{
     text-decoration: underline;
     font-weight: bold;
     color:black;
 
 }
-#bold_link a:hover{
+.bold_link a:hover{
     color:#ccc;
 }
 

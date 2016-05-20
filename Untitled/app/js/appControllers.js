@@ -2,8 +2,45 @@
  * Created by ivan on 30.04.16.
  */
 var appControllers = angular.module('appController',[]);
-
 appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', function($scope,  locData, $cookies){
+
+    $scope.records = [
+         {
+            "id": 11,
+            "name": "Ivan",
+            "preview": "Copy1.jpg",
+            "tag": "wedding",
+            "date": "12-02-2016 00:00:00",
+            "subcontractors":"<a>masha</a>, <b>Petya</b>",
+             "photos":[
+                    {'480': "Сopy1.jpg",
+                    '768': "Сopy1.jpg",
+                    '960': "Сopy1.jpg"},
+                    {'480': "Сopy1.jpg",
+                     '768': "Сopy1.jpg",
+                     '960': "Сopy1.jpg"},
+                    {'480': "Сopy1.jpg",
+                     '768': "Сopy1.jpg",
+                     '960': "Сopy1.jpg"}
+    ]
+        },
+    {
+        "id": 12,
+            "name": "Vanko",
+            "preview": "Copy1.jpg",
+            "tag": "family",
+            "date": "13-02-2016 00:00:00",
+            "subcontractors":"<a>masha</a>, <b>Petya</b>",
+            "photos":{
+                '480': ["Сopy1.jpg", "Сopy1.jpg","Сopy1.jpg"],
+                '748': ["Сopy1.jpg", "Сopy1.jpg","Сopy1.jpg"],
+                '960': ["Сopy1.jpg", "Сopy1.jpg","Сopy1.jpg"]
+            }
+    }
+    ];
+
+
+
         //get current language preferences
     var navigatorLang = navigator.language || navigator.userLanguage,
         userLang = $cookies.get('IZVlanguage'),
@@ -53,6 +90,10 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', function($
             $scope.mainModel=locData[this.local];
             $scope.local=this.local;
         };
+    //todo function that make date in normal format
+        $scope.IZVdateFormat= function(date){
+            return (new Date(date))
+        }
 
 
 
@@ -81,12 +122,11 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', function($
             for (key in result) {
                 if (result.hasOwnProperty(key) && key != "$promise" && key != "$resolved") {
                     $scope.records[key] = result[key];
-                    $scope.records[key]["description"]={}
+                    $scope.records[key]["description"]={};
                     $scope.records[key]["description"]["en"] =result[key]["descr"];
                     $scope.records[key]["description"]["ru"] =result[key]["descr_ru"];
                     delete $scope.records[key]["descr"];
                     delete $scope.records[key]["descr_ru"];
-
 
                 }
             }
@@ -99,13 +139,31 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', function($
     .controller("pgArticle",['$scope',"$routeParams",function($scope,$routeParams){
         $(".navigation-internal a").css("color","black");
         $("#Blog").css("color","brown");
-        console.log($routeParams.id)
+        id= $routeParams.id;
+
+         var record=(function(id){
+                for(record in $scope.records){
+
+                    if ($scope.records[record]['id']==id){return $scope.records[record]}
+                }
+        })(id);
+
+        $scope.record=record;
+
+
     }])
     .controller("pgAdvices",['$scope',function($scope){
     $(".navigation-internal a").css("color","black")
     $("#Blog").css("color","brown")
 
 }])
+    .controller("pgTag",['$routeParams',
+    function($routeParams){
+        $(".navigation-internal a").css("color","black");
+        ($routeParams.filterName.toLowerCase() ==='advices')?$("#Advices").css("color","brown"):$("#Blog").css("color","brown")
+        console.log($routeParams.filterName)
+    }])
+
 .controller("pgServices",['$scope',function($scope){
     $(".navigation-internal a").css("color","black")
     $("#Services").css("color","brown")

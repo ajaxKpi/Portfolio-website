@@ -9,10 +9,11 @@ angular.module('myApp', [
   'djds4rce.angular-socialshare',
   'localization',
   'ngSanitize',
-   'ngCookies'
+   'ngCookies',
+   'afkl.lazyImage'
 
 ])
-    .config(['$routeProvider', '$locationProvider',function($routeProvider,$locationProvider) {
+    .config(['$routeProvider', '$locationProvider',function($routeProvider, $locationProvider) {
   $routeProvider
       .when('/index.html', {
         templateUrl: 'templates/main.html',
@@ -20,7 +21,7 @@ angular.module('myApp', [
       })
       .when('/',{redirectTo: '/index.html'})
       .when ('/About',{
-          templateUrl: 'templates/about_en.html',
+          templateUrl: 'templates/About.html',
           controller: 'pgAbout'
 
       })
@@ -34,9 +35,9 @@ angular.module('myApp', [
           controller: 'pgArticle'
 
       })
-      .when ('/Advices',{
+      .when ('/tag/:filterName',{
           templateUrl: 'templates/Blog.html',
-          controller: 'pgAdvices'
+          controller: 'pgTag'
 
       })
       .when ('/Feedbacks',{
@@ -45,7 +46,7 @@ angular.module('myApp', [
 
       })
       .when ('/Services',{
-          templateUrl: 'templates/services_en.html',
+          templateUrl: 'templates/Services.html',
           controller: 'pgServices'
 
       })
