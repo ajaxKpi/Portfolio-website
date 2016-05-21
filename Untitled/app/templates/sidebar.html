@@ -1,0 +1,74 @@
+<aside class ="main_sidebar" ng-controller="set_slider">
+    <h3 class="portfolio_me">me</h3>
+    <div class ="about_me">
+        <div class = "Avatar">
+            <a href = "/About">
+                <img src="img/Ava.jpg" alt="ava">
+            </a>
+        </div>
+
+        <p class="few_words">{{mainModel.sidebarGreetings}}<a href="/About"><span>(read more)>></span></a></p>
+
+    </div>
+
+    <div class ="Tags">
+        <hr class ="TagSeparator">
+        <h2 class="portfolio_me">Categories</h2>
+        <hr class ="TagSeparator">
+        <ul>
+            <li>
+                <a href =tag\wedding>Wedding</a>
+            </li>
+            <li>
+                <a href =tag\love>Love story</a>
+            </li>
+            <li>
+                <a href =tag\family>Family</a>
+            </li>
+            <li><a href =tag\inspiration>Inspiration</a></li>
+            <li><a href = tag\portrait>Portrait</a></li>
+        </ul>
+    </div>
+    <hr class ="InstSeparator">
+
+    <div class ="sidebar_inst">
+        <h2 class="portfolio_me"> Instagram</h2>
+        <hr class ="Popular_StorySeparator">
+        <ul class = "carusel">
+            <li class ="inst_item">
+                <a target="_blank" href ="#">
+                    <img  src="img/blank.jpg" alt = "instIm">
+                </a>
+            </li>
+
+
+        </ul>
+
+    </div>
+
+    <div class ="Popular_Story" ng-controller="popular_stories">
+        <hr class ="Popular_StorySeparator">
+        <h2 class="portfolio_me">Popular Stories</h2>
+        <hr class ="Popular_StorySeparator">
+
+        <div class = "Popular_Story_img">
+            <div class="sidebar_photo" data-ng-repeat="story in stories">
+                <img class="Preview_2" src="{{story.preview}}" alt="logo_img">
+                <div class="Popular_info">
+                    <a href="Article?id= @id" >
+
+                        <br>
+                        {{story.name}}
+                        <br>
+
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</aside>
+
+
+

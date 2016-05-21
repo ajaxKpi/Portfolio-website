@@ -1,0 +1,72 @@
+    <!-- pinterest hover -->
+    <link href="css/imgPin.default.css" rel="stylesheet">
+
+
+
+    <h1 class="portfolio_me">blog</h1>
+
+  <div class="wrapArticle" ng-controller="pgArticle">
+    <div class = "header_of_motion">
+        <h2 class="Blog_name">{{record.name}}</h2>
+        <span> {{record.date}}  | <a href = "tag/{{record.tag}}">{{record.tag}}
+                              </a></span>
+    </div>
+    <hr class="separator">
+
+    <p class ="text_overview">
+                {{record.description[local]}}
+    </p>
+
+    <div class = "Blog_photo" ng-repeat="photo in record.photos">
+
+            <div afkl-lazy-image="{{photo['480']}} 480w, {{photo['768']}} 768w, {{photo['960']}} 960w" class="afkl-lazy-wrapper  own-classname"></div>
+    </div>
+
+
+    <!-- Subcontactors -->
+    <div class="subbcontract">
+        <p ng-bind-html="record.subcontractors">
+
+        </p>
+
+    </div>
+
+
+    <!-- Social bar -->
+      <section class ="like_share">
+          <hr>
+
+          <div class="Share_container">
+              <div class="return_blog">
+                  <a href ="Blog">
+                      Return to blog
+                  </a>
+
+              </div>
+              <div class="social_buttons">
+                  <div class="text_share">Share on:</div>
+                  <a facebook-feed-share data-url='http://google.com' data-shares='shares' data-caption='example caption' data-picture='http://plnkr.co/img/plunker.png' data-description="Example text" data-callback='callback'></a>
+                  <a class="VKButtonIcon" href ="http://vk.com/share.php?url={{share_link}}&title={{share_name}}&description={{share_description}}&image={{share_img}}"  target="_blank"></a>
+              </div>
+          </div>
+
+
+
+          <hr>
+      </section>
+
+   </div>
+
+  <div class  ="comment_wrap">
+        <div class="fb-comments" data-href="@shared_link"
+             data-numposts="5" data-version="v2.3">
+        </div>
+       <!-- VK.com position-->
+        <div id="vk_comments"></div>
+    </div>
+
+
+
+
+        <script src="http://connect.facebook.net/en_US/all.js"></script>
+
