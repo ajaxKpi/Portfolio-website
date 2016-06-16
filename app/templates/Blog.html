@@ -1,0 +1,57 @@
+   <h1 class="portfolio_me">blog</h1>
+            <div class = "costil1"></div>
+            <!-- extract all records in blog -->
+            <article class="Blog_post"  data-ng-repeat="record in records">
+                <div class = "header_of_motion">
+                    <a name="record.id"  href=Blog/{{record.id}}>
+                        <h2 class="Blog_name"> {{record.name}} </h2>
+                    </a>
+                    <span> {{record.date | date:'dd-mm-yyyy'}} | <a href = tag/{{record.tag}}>{{record.tag}}</a></span>
+                </div>
+                <hr class="separator">
+
+                <p class ="text_overview">
+                    <div class="Wrap_pre" ng-bind-html="record.description[local]">
+
+                    </div>
+
+                </p>
+                <div class = "Blog_photo">
+                    <a href =Blog/{{record.id}}>
+                        <div afkl-lazy-image="{{record.preview['480']}} 480w, {{record.preview['768']}} 768w, {{record.preview['960']}} 960w" class="afkl-lazy-wrapper  own-classname" afkl-lazy-image-options = '{alt:"Blog_photo"}'></div>
+                        <img class="lazy" data-original={{record.preview}} alt ="Blog_photo">
+                    </a>
+                </div>
+
+                        <!--TODO Social bar -->
+                <section class ="like_share">
+                    <hr>
+
+                    <div class="Share_container">
+                        <div class="read_more">
+                            <a href ="Blog/{{record.id}}">
+                                <svg>
+                                    <use xlink:href="#readmore"></use>
+                                </svg>
+                            </a>
+
+                        </div>
+                        <div class="social_buttons">
+                            <div class="text_share">Share on:</div>
+                            <a facebook-feed-share data-url='http://google.com' data-shares='shares' data-caption='example caption' data-picture='http://plnkr.co/img/plunker.png' data-description="Example text" data-callback='callback'></a>
+                            <a class="VKButtonIcon" href ="http://vk.com/share.php?url={{share_link}}&title={{record.name}}&description={{share_description}}&image={{record.preview['768']}}"  target="_blank"></a>
+                        </div>
+                    </div>
+
+
+
+                    <hr>
+                </section>
+
+            </article>
+
+
+        <script src="js/jquery.imgPin.min.js"></script>
+
+
+

@@ -1,0 +1,18 @@
+<h1 class="portfolio_me">feedbacks</h1>
+<div class="wrapArticle" data-ng-repeat="feedB in feedbacks">
+    <div class = "header_of_motion">
+        <h2 class="Blog_name"> {{feedB["name"]}}</h2>
+        <span>{{feedB["date"]}}</span>
+    </div>
+    <div class="collage">
+
+        <hr class="separator">
+        <img src={{feedB["preview"]}}alt="feedback">
+        <p class ="text_overview">
+            <div class="Wrap_pre" ng-bind-html="feedB['description'][local]">
+
+            </div>
+
+        </p>
+    </div>
+ </div>

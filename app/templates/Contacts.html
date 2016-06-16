@@ -1,0 +1,72 @@
+
+<h1 class="portfolio_me">contacts</h1>
+<p class="contactP" ng-bind-html="mainModel.contacts_text">yp</p>
+<div class="left_col">
+    <div class="ContactInfo">
+        <b>e-mail:</b> olga.volyanska@gmail.com<br>
+        <b>tel:</b> +38 (097) 893 38 00<br>
+        <b>skype:</b> pollosata<br>
+        <a href="https://instagram.com/olgavolyanska">instagram</a> |
+        <a href="https://www.facebook.com/olga.volyanska">facebook</a> |
+        <a href="http://vk.com/olgavolyanska"> vkontakte</a>
+    </div>
+    <!-- calendar -->
+    <div  class="calendar">
+        <div calendar class="calendar" id="calendar"></div>
+    </div>
+</div>
+<div class="form_space" ng-controller ="pgContacts">
+    <form class="main_form"  novalidate name="submitForm" >
+
+        <div class="form_group" >
+            <input type="text" name="name" id="f_name" ng-minlength ="2" ng-maxlength="20" ng-class="{'form-error': (submitForm.$submitted || submitForm.name.$touched)&&submitForm.name.$invalid}" placeholder={{mainModel.form.name.placeholder}} data-ng-model="mail.name" required />
+
+            <span id ="s_name"  class = "req_message" ng-show="(submitForm.$submitted || submitForm.name.$touched)&&submitForm.name.$invalid">{{mainModel.form.name.errDescription}}</span>
+        </div>
+
+
+
+
+
+        <div class="form_group">
+            <input type="email" ng-class="{'form-error': (submitForm.$submitted || submitForm.email.$touched)&&submitForm.email.$invalid}" data-ng-model="mail.email"  name="email" placeholder={{mainModel.form.email.placeholder}}  id="f_mail" required="" />
+            <span id =s_mail class = "req_message"  ng-show="(submitForm.$submitted || submitForm.email.$touched)&&submitForm.email.$invalid">{{mainModel.form.email.errDescription}}</span>
+        </div>
+
+
+        <div class="form_group">
+            <input type="text" name="city" ng-model="mail.city" ng-minlength ="2" ng-maxlength="20" ng-class="{'form-error': (submitForm.$submitted || submitForm.city.$touched)&&submitForm.city.$invalid}"  placeholder={{mainModel.form.city.placeholder}}   id="f_city" required />
+            <span id =s_city class = "req_message"  ng-show="(submitForm.$submitted || submitForm.city.$touched)&&submitForm.city.$invalid">{{mainModel.form.city.errDescription}}</span>
+        </div>
+
+
+        <div class="form_group" >
+            <input type="text" name="dates" id="datepicker"  ng-class="{'form-error': (submitForm.$submitted || submitForm.dates.$touched)&&submitForm.dates.$invalid}" placeholder={{mainModel.form.date.placeholder}} data-ng-model="mail.date" required />
+
+            <span id ="s_CheckedDate"  class = "req_message" ng-show="(submitForm.$submitted || submitForm.dates.$touched)&&submitForm.dates.$invalid">{{mainModel.form.date.errDescription}}</span>
+        </div>
+
+
+
+        <div class="form_group" >
+            <input id="f_social" type="text" name="social"  ng-minlength ="3" ng-class="{'form-error': (submitForm.$submitted || submitForm.social.$touched)&&submitForm.social.$invalid}" placeholder={{mainModel.form.link.placeholder}} data-ng-model="mail.social" required />
+            <span id ="s_social"  class = "req_message" ng-show="(submitForm.$submitted || submitForm.social.$touched)&&submitForm.social.$invalid">{{mainModel.form.link.errDescription}}</span>
+        </div>
+
+
+
+        <div class="form_group" >
+            <textarea id ="f_textarea" ng-minlength ="6"   name="msg"  ng-minlength ="3" ng-class="{'form-error': (submitForm.$submitted || submitForm.msg.$touched)&&submitForm.msg.$invalid}" placeholder={{mainModel.form.link.placeholder}} data-ng-model="mail.msg" required ></textarea>
+            <span id ="message"  class = "req_message" ng-show="(submitForm.$submitted || submitForm.msg.$touched)&&submitForm.msg.$invalid">{{mainModel.form.description.errDescription}}</span>
+        </div>
+
+
+
+        <button id="send_mail" data-ng-click="sendMail(mail)">{{mainModel.form.contacts_button}}</button>
+    </form>
+</div>
+
+<script type="text/javascript" src="https://rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-ru.js">
+</script>
+<script src="js/datapicker-init.js"></script>
+
