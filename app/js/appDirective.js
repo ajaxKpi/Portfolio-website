@@ -5,14 +5,14 @@ var appDirective = angular.module("appDirective",[]);
 appDirective.directive('navHeader', function() {
     return {
         restrict:'E',
-        templateUrl: 'templates/header.html'
+        templateUrl: 'app/templates/header.html'
     };
 });
 appDirective.directive(
         'seFooter', function() {
             return {
                 restrict:'E',
-                templateUrl: 'templates/footer.html'
+                templateUrl: 'app/templates/footer.html'
             };
         }
     );
@@ -20,7 +20,7 @@ appDirective.directive(
         'seSidebar', function() {
             return {
                 restrict:'E',
-                templateUrl: 'templates/sidebar.html',
+                templateUrl: 'app/templates/sidebar.html',
                 link:{
 
                 }

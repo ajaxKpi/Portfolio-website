@@ -18,17 +18,17 @@
   <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="app/css/reset.css">
 
-  <link id="bs-css" href='bower_components/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
-    <link id="bsdp-css" href="css/datepicker3.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/Calendar.css">
+  <link id="bs-css" href='app/bower_components/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="app/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+    <link id="bsdp-css" href="app/css/datepicker3.css" rel="stylesheet">
+    <link rel="stylesheet" href="app/css/Calendar.css">
+  <link rel="stylesheet" href="app/css/imgPin.default.css">
 
 
-
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="app/css/index.css">
+  <link rel="stylesheet" href="app/css/media.css">
 
 
 
@@ -41,61 +41,66 @@
   <meta property="og:image:width" content="300" />
   <meta property="og:image:height" content="300" />
 
-  <link rel="icon" type="image/png" href="img/OZ.png" />
+  <link rel="icon" type="image/png" href="img/ov.png" />
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/normalize.css">
 
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-
-
-
-
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/main.css">
 
 
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+  <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
+
+
+    <script src="app/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="app/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="app/js/jquery.imgPin.min.js"></script>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
+
+  <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
+
+
+
+
+  <script src="app/bower_components/angular/angular.js"></script>
+    <script src="app/bower_components/angular-route/angular-route.js"></script>
+    <script src="app/bower_components/angular-resource/angular-resource.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/ng-directive-lazy-image/release/lazy-image.min.js" ></script>
-    <script src="components/version/version.js"></script>
-    <script src="components/version/version-directive.js"></script>
-    <script src="components/version/interpolate-filter.js"></script>
-    <script src="bower_components/jquery_lazyload/jquery.lazyload.js"></script>
-    <script src="bower_components/angular-socialshare/angular-socialshare.js"></script>
+    <script src="app/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="app/bower_components/ng-directive-lazy-image/release/lazy-image.min.js" ></script>
+    <script src="app/components/version/version.js"></script>
+    <script src="app/components/version/version-directive.js"></script>
+    <script src="app/components/version/interpolate-filter.js"></script>
+    <script src="app/bower_components/jquery_lazyload/jquery.lazyload.js"></script>
+    <script src="app/js/socialshareDirectives.js"></script>
 
 
 
-    <script src="js/moment.js"></script>
-    <script src="js/calendar.js"></script>
+    <script src="app/js/moment.js"></script>
+    <script src="app/js/calendar.js"></script>
 
 
-    <script src="js/localizationServices.js"></script>
-    <script src="js/appServices.js"></script>
-    <script src="js/appDirective.js"></script>
-    <script src="js/appControllers.js"></script>
+    <script src="app/js/localizationServices.js"></script>
+    <script src="app/js/appServices.js"></script>
+    <script src="app/js/appDirective.js"></script>
+    <script src="app/js/appControllers.js"></script>
 
 
-    <script src="app.js"></script>
+    <script src="app/app.js"></script>
+
+
+    <script src="app/js/datapicker-init.js"></script>
+
+
 
 
 </head>
 <body ng-controller ="mainCTRL">
-
-
-
-
-
 
 
 <!-- Main+Sidebar+Footer Block Full windows size-->
@@ -125,7 +130,7 @@
     <hr class ="Fixed_line">
     <!-- Space for logo -->
     <div class="logo_big">
-      <a href="index.html">
+      <a href="#/">
 
           <svg><use xlink:href="#Zvorska"></use></svg>
 
@@ -237,30 +242,8 @@
   -->
 
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="components/version/version.js"></script>
-    <script src="components/version/version-directive.js"></script>
-    <script src="components/version/interpolate-filter.js"></script>
-    <script src="bower_components/jquery_lazyload/jquery.lazyload.js"></script>
 
 
-    <script src="js/appServices.js"></script>
-    <script src="js/appDirective.js"></script>
-    <script src="js/appControllers.js"></script>
-    <script src="app.js"></script>
-
-<script src="js/moment.js"></script>
-<script src="js/datapicker-init.js"></script>
-
-
-<script src="js/calendar.js"></script>
 
 
 

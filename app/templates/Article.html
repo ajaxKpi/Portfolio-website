@@ -5,10 +5,10 @@
 
     <h1 class="portfolio_me">blog</h1>
 
-  <div class="wrapArticle" ng-controller="pgArticle">
+  <div class="wrapArticle">
     <div class = "header_of_motion">
         <h2 class="Blog_name">{{record.name}}</h2>
-        <span> {{record.date}}  | <a href = "tag/{{record.tag}}">{{record.tag}}
+        <span> {{record.date  | date:'dd-mm-yyyy'}}  | <a href = "tag/{{record.tag}}">{{record.tag}}
                               </a></span>
     </div>
     <hr class="separator">
@@ -38,7 +38,7 @@
 
           <div class="Share_container">
               <div class="return_blog">
-                  <a href ="Blog">
+                  <a href ="#/Blog">
                       Return to blog
                   </a>
 

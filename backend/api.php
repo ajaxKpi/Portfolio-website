@@ -210,10 +210,11 @@ class api
      * Method to increment visit count of page
      *
      */
-    public  function visit_page($recordId){
+    public function visit_page($recordId){
         $mysqli = self::connect_DB();
         $mysqli->query("update base set visits =visits +1 where id =".$recordId);
 
+        echo "done";
     }
 
 
@@ -252,6 +253,7 @@ class api
 
 }
 //header('Content-Type: application/json');
+
 if (isset($_GET['action'])){
     switch ($_GET['action']){
 
@@ -280,12 +282,7 @@ if (isset($_GET['action'])){
             $api = new api();
             echo $api->get_ALL();
             break;
-        case 'visit_page':
-            $api = new api();
-            //TODO extract ID from hash
-            $id =1;
-            $api->visit_page($id);
-            break;
+
 
 
         default:
@@ -299,13 +296,19 @@ elseif(($postdata = file_get_contents("php://input"))!==NULL){
     switch ($request->action){
         case 'send_mail':
                     //
-                    if ($_SERVER['REMOTE_ADDR']===MY_DOMAIN){
+
                         api::send_mail($request->mail);
-                    }
-                    else {echo $_SERVER['REMOTE_ADDR']. 'you have no permission to send an email';}
+
                 break;
+
+        case 'add_visit':
+
+            $api = new api();
+            $api->visit_page($request->id);
+            break;
+
         default:
-            echo $_SERVER['REMOTE_ADDR'];
+            echo $postdata;
     }
 }
 
@@ -313,3 +316,10 @@ else{
     var_dump($_POST);
 
 }
+/*
+
+if ($_SERVER['REMOTE_ADDR']===MY_DOMAIN){
+}
+
+else {echo $_SERVER['REMOTE_ADDR']. 'you have no permission to send an email';}
+*/

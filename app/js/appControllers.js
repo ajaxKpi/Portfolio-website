@@ -2,56 +2,37 @@
  * Created by ivan on 30.04.16.
  */
 var appControllers = angular.module('appController',[]);
-appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecord', function($scope,  locData, $cookies, blogRecord){
+appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecord', function($scope,   locData, $cookies, blogRecord){
 
-    // check if we already have filled object
-    if($scope.records){
-       return
-    }
-
-        $scope.records={};
-        blogRecord.query().$promise.then(function (result) {
-
-            prepareQueryResults(result,$scope.records);
-
-        });
+    $scope.filterTag = "";
 
 
-/*
-*
-*
-* work with cookies to set - get language properties
-*
-*
-*/
 
         //get current language preferences
     var navigatorLang = navigator.language || navigator.userLanguage,
-        userLang = $cookies.get('IZVlanguage'),
         local = "";
-
+        // set 2 letter languge en-us -> en
         navigatorLang = navigatorLang.substr(0,2);
 
-        if (userLang){
-            //already have prefered language in cookie
-            local =userLang;
-        }
-        else {
-            // not have language in cookie
-            if (navigatorLang=="ru"||navigatorLang=="ua"){
-                local ="ru";
-                          }
-            else{
-                local ="en";
-                           }
-            $cookies.put('IZVlanguage', local);
 
-        }
+            if ($cookies.get('IZVlanguage')){
+                //already have prefered language in cookie
+                this.local =$cookies.get('IZVlanguage');
+            }
+            else {
+                // not have language in cookie
+                if (navigatorLang=="ru"||navigatorLang=="ua"){
+                    this.local ="ru";
+                }
+                else{
+                    this.local ="en";
+                }
+                $cookies.put('IZVlanguage', this.local);
 
-
-        //TODO Local is critical should be an value
-        $scope.local=local;
-        $scope.mainModel=locData[local];
+            }
+            //TODO Local is critical should be an value
+            $scope.local=this.local||"ru";
+            $scope.mainModel=locData[this.local];
 
 
         //triggered by language togglebutton(checkbox)
@@ -60,20 +41,56 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
            var ruLang =val.target.checked;
 
             if(ruLang){
-                this.local="ru";
+                local="ru";
                 $("#language").prop('checked', true);
 
 
             }
             else {
-                this.local="en";
-
+                local="en";
 
             }
-            $cookies.put('IZVlanguage', this.local);
-            $scope.mainModel=locData[this.local];
-            $scope.local=this.local;
+            $cookies.put('IZVlanguage', local);
+
+            console.log($cookies.get('IZVlanguage')); // on CHROME NOT SET SOMETIMES
+            $scope.mainModel=locData[local];
+            $scope.local=local;
         };
+
+        $scope.resetFilterTag=function(){
+
+            $scope.filterTag = "";
+            angular.element('.Tags .active').removeClass('active');
+
+        };
+
+        $scope.setFilterTag =function(tag){
+
+            $scope.filterTag = angular.element(tag.currentTarget).text().toLowerCase();
+            angular.element('.Tags .active').removeClass('active');
+            angular.element(tag.currentTarget).addClass('active');
+            };
+
+    //  make header element scrolable
+    angular.element(document).ready(function () {
+        makeHeaderScrolable(".navigation ");
+    });
+
+
+
+    // check if we already have filled object
+        if($scope.records){
+            return
+        }
+
+        $scope.records=[]; // Be accurate with this. Broke filter when {}
+        blogRecord.query().$promise.then(function (result) {
+
+            prepareQueryResults(result,$scope.records);
+
+        });
+
+
 
 
     }])
@@ -92,26 +109,33 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
 }])
     .controller("pgBlog",['$scope',"blogRecord",function($scope,blogRecord){
     $(".navigation-internal a").css("color","black")
-    $("#Blog").css("color","brown")
+    $("#Blog").css("color","brown");
+
+    setImgPin('.Blog_photo img');
+
+        if ($scope.filterTag==="advices"){$scope.resetFilterTag();}
+
 
         if($scope.records){
             return
         }
 
-        $scope.records={};
+        $scope.records=[];
         blogRecord.query().$promise.then(function (result) {
 
             prepareQueryResults(result, $scope.records)
 
 
-        })
+        });
 
 
 }])
-    .controller("pgArticle",['$scope',"$routeParams",function($scope,$routeParams){
+    .controller("pgArticle",['$scope',"$routeParams", 'addVisitPage', function($scope,$routeParams, addVisitPage){
         $(".navigation-internal a").css("color","black");
         $("#Blog").css("color","brown");
-        id= $routeParams.id;
+        var id= $routeParams.id;
+
+        //
 
          var record=(function(id){
                 for(record in $scope.records){
@@ -122,13 +146,27 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
 
         $scope.record=record;
 
+        //  increment visits in DB
+        var visitPageContainer={
+            recordId:id,
+            action:"add_visit"
+        };
+        addVisitPage.increment(visitPageContainer);
+
+
 
     }])
     .controller("pgAdvices",['$scope',function($scope){
-    $(".navigation-internal a").css("color","black")
-    $("#Blog").css("color","brown")
+        $(".navigation-internal a").css("color","black");
+        $("#Advices").css("color","brown");
+        $scope.resetFilterTag();
+        //for advice we should set filter block
+        $scope.filterTag="advices";
+
 
 }])
+    /*
+    Replaces by
     .controller("pgTag",['$routeParams',
     function($routeParams){
         $(".navigation-internal a").css("color","black");
@@ -138,11 +176,11 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
         //create filter based on tag
 
 
-    }])
+    }])*/
 
-.controller("pgServices",['$scope',function($scope){
-    $(".navigation-internal a").css("color","black")
-    $("#Services").css("color","brown")
+    .controller("pgServices",['$scope',function($scope){
+        $(".navigation-internal a").css("color","black")
+        $("#Services").css("color","brown")
 
 }])
     .controller("pgContacts",['$scope',"sendMail", function($scope, sendMail){
@@ -256,7 +294,7 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
 
 
 /*
-        Block for reusable functions in controller
+        Block for reusable functions to perform database extract in usable JS object
  */
 function prepareQueryResults(result, glob) {
 
@@ -284,6 +322,37 @@ function prepareQueryResults(result, glob) {
         }
     }
 
-
-
 }
+
+/*
+
+
+ scroll of fixed header
+
+
+ */
+function  makeHeaderScrolable(cssClass){
+$(window).scroll(function(){
+    if ($(window).innerWidth() < 960){
+        $(cssClass).css('left',-$(window).scrollLeft());
+    }
+    else{
+        $(cssClass).css('left', "");
+    }
+});
+}
+/*  set Custom logo of pinterest on img load on top right corneer(pos :2)
+    use @ cssSelector for image selection
+    @ pinLogoUrl - url to img that will appeared on hover
+    @ use Jquery and jquery.imgPin
+ */
+function setImgPin(cssSelector){
+    var pinLogoUrl = "img/pinterestOnImg.png";
+    
+    $(cssSelector).imgPin(
+        {
+            pinImg : pinLogoUrl, position: 2
+        }
+    );
+}
+

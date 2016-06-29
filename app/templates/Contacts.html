@@ -18,7 +18,7 @@
 <div class="form_space" ng-controller ="pgContacts">
     <form class="main_form"  novalidate name="submitForm" >
 
-        <div class="form_group" >
+        <div class="form_group">
             <input type="text" name="name" id="f_name" ng-minlength ="2" ng-maxlength="20" ng-class="{'form-error': (submitForm.$submitted || submitForm.name.$touched)&&submitForm.name.$invalid}" placeholder={{mainModel.form.name.placeholder}} data-ng-model="mail.name" required />
 
             <span id ="s_name"  class = "req_message" ng-show="(submitForm.$submitted || submitForm.name.$touched)&&submitForm.name.$invalid">{{mainModel.form.name.errDescription}}</span>
@@ -66,7 +66,6 @@
     </form>
 </div>
 
-<script type="text/javascript" src="https://rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-ru.js">
-</script>
-<script src="js/datapicker-init.js"></script>
+
+<script src="app/js/datapicker-init.js"></script>
 

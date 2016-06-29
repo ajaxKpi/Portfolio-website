@@ -58,4 +58,24 @@ appServices.factory('slider', ['$resource',
 
     }
 
-    ]);
+    ])
+    .factory('addVisitPage',['$http', function($http){
+        return{
+            increment: function(recordContainer){
+                return (
+                    $http({
+                        method:'post',
+                        url: 'http://zvorska.com/backend/api.php',
+                        data: recordContainer,
+                        dataType: "json"
+                        }).then(
+                        function successCallback(response){
+
+                        }
+
+                    )
+                )
+            }
+        }
+
+}])

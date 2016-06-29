@@ -15,56 +15,73 @@ angular.module('myApp', [
     .config(['$routeProvider', '$locationProvider',function($routeProvider, $locationProvider) {
   $routeProvider
       .when('/index.html', {
-        templateUrl: 'templates/main.html',
+        templateUrl: 'app/templates/main.html',
         controller: 'pgRoot'
       })
-      .when('/',{ templateUrl: 'templates/main.html',
-          controller: 'pgRoot'})
+      .when('/',{
+          templateUrl: 'app/templates/main.html',
+          controller: 'pgRoot'
+      })
+      .
+      when('#',{
+          redirectTo:"/"
+      })
+
+
       .when ('/About',{
-          templateUrl: 'templates/About.html',
+          templateUrl: 'app/templates/About.html',
           controller: 'pgAbout'
 
       })
       .when ('/Blog',{
-          templateUrl: 'templates/Blog.html',
+          templateUrl: 'app/templates/Blog.html',
           controller: 'pgBlog'
 
       })
       .when ('/Blog/:id',{
-          templateUrl: 'templates/Article.html',
+          templateUrl: 'app/templates/Article.html',
           controller: 'pgArticle'
 
       })
-      .when ('/tag/:filterName',{
-          templateUrl: 'templates/Blog.html',
-          controller: 'pgTag'
+      .when ('/Advices',{
+          templateUrl: 'app/templates/Blog.html',
+          controller: 'pgAdvices'
 
       })
+      /*
+      .when ('/tag/:filterName',{
+          templateUrl: 'app/templates/Blog.html',
+          controller: 'pgTag'
+
+      })*/
       .when ('/Feedbacks',{
-          templateUrl: 'templates/Feedbacks.html',
+          templateUrl: 'app/templates/Feedbacks.html',
           controller: 'pgFeedbacks'
 
       })
       .when ('/Services',{
-          templateUrl: 'templates/Services.html',
+          templateUrl: 'app/templates/Services.html',
           controller: 'pgServices'
 
       })
       .when ('/Contacts',{
-          templateUrl: 'templates/Contacts.html',
+          templateUrl: 'app/templates/Contacts.html',
           controller: 'pgContacts'
 
       })
       .when ('/404',{
-        templateUrl: 'templates/404.html'
+        templateUrl: 'app/templates/404.html'
 
+      })
+      .otherwise({
+          redirectTo: "/"
       });
 
         //$locationProvider.html5Mode(true);
 
 }])
     .run( ['$FB',function($FB){
-        $FB.init('137710999746808');
+        $FB.init('1492697214384249');
 
     }]);
 

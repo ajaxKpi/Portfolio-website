@@ -96,11 +96,10 @@ angular.module('djds4rce.angular-socialshare', [])
 		return {
 			scope: {
 				callback: '=',
-				shares: '=',
-				fbArticle: '='
+				shares: '='
 			},
 			transclude: true,
-			template: '<a href="javascript:void(0)" class="FBButtonIcon"></div>',
+			template: '<a href="javascript:void(0)" class="FBButtonIcon"></a>',
 			link: function(scope, element, attr) {
 				attr.$observe('url', function() {
 					if (attr.shares && attr.url) {
@@ -125,13 +124,14 @@ angular.module('djds4rce.angular-socialshare', [])
 							scope.shares = 0;
 						});
 					}
+
 					element.unbind();
 					element.bind('click', function(e) {
 						FB.ui({
 							method: 'feed',
 							link: attr.url,
 							picture: attr.picture,
-							name: scope.fbArticle.name,
+							name: attr.name,
 							caption: attr.caption,
 							description: attr.description
 						}, function(response){
@@ -147,6 +147,7 @@ angular.module('djds4rce.angular-socialshare', [])
 	}]).directive('pintrest', ['$window', '$timeout', function($window, $timeout) {
 		return {
 			template: '<a href="{{href}}" data-pin-do="{{pinDo}}" data-pin-config="{{pinConfig}}"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>',
+			restrict:'E',
 			link: function(scope, element, attr) {
 				var pintrestButtonRenderer = debounce(function() {
 					var pin_button = document.createElement("a");
@@ -165,7 +166,46 @@ angular.module('djds4rce.angular-socialshare', [])
 				attr.$observe('description', pintrestButtonRenderer);
 			}
 		}
-	}]);
+	}])
+	.directive('vkontacte',[function(){
+		return{
+			"template":"<div compile=\"vk_return\" class=\"VKButtonIcon\"></div>",
+
+			link:function(scope,element,attr){
+
+				scope.vk_return=VK.Share.button({
+					url: attr.url,
+					title: attr.name,
+					description: attr.caption,
+					image: attr.picture,
+					noparse: true
+			},{type: 'text', text: ' '})
+
+			}
+		}
+
+}]).directive('compile', ['$compile', function ($compile) {
+	return function(scope, element, attrs) {
+		scope.$watch(
+			function(scope) {
+				// watch the 'compile' expression for changes
+				return scope.$eval(attrs.compile);
+			},
+			function(value) {
+				// when the 'compile' expression changes
+				// assign it into the current DOM
+				element.html(value);
+
+				// compile the new DOM and link it to the current
+				// scope.
+				// NOTE: we only compile .childNodes so that
+				// we don't get into infinite loop compiling ourselves
+				$compile(element.contents())(scope);
+			}
+		);
+	};
+}])
+;
 //Simple Debounce Implementation
 //http://davidwalsh.name/javascript-debounce-function
 function debounce(func, wait, immediate) {

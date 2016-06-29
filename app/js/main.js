@@ -290,7 +290,7 @@ $(window).scroll(function(){
 if (document.title ==='Volyanska Photography|Blog'||document.title ==='Volyanska Photography|Article'){
     $('.Blog_photo img').imgPin(
         {
-            pinImg : 'img/social/pinterestOnImg.png', position: 2
+            pinImg : 'img/pinterestOnImg.png', position: 2
         }
     );
 

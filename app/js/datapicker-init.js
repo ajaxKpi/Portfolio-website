@@ -15,7 +15,7 @@ $(document).ready(function() {
         IZVlocal = 'ru';
     }
     else{
-        IZVlocal='';
+        IZVlocal='en';
     }
 
 
@@ -29,5 +29,5 @@ $(document).ready(function() {
             }
 
         },
-    $.datepicker.regional[IZVlocal]);
+    $.datepicker.regional[""]);
 });
