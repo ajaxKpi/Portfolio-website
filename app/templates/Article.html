@@ -45,8 +45,8 @@
               </div>
               <div class="social_buttons">
                   <div class="text_share">Share on:</div>
-                  <a facebook-feed-share data-url='http://google.com' data-shares='shares' data-caption='example caption' data-picture='http://plnkr.co/img/plunker.png' data-description="Example text" data-callback='callback'></a>
-                  <a class="VKButtonIcon" href ="http://vk.com/share.php?url={{share_link}}&title={{share_name}}&description={{share_description}}&image={{share_img}}"  target="_blank"></a>
+                  <a facebook-feed-share data-url='http://zvorska.com/#/Blog/{{record.id}}' data-shares='shares' data-name='{{record.name}}' data-caption="zvorska.com" data-picture='http://zvorska.com/Ava.jpg' data-description="{{record.description[local]}}" data-callback='callback'></a>
+                  <div vkontacte data-url='http://zvorska.com/#/Blog/{{record.id}}'  data-name='{{record.name}}' data-caption='zvorska.com' data-picture='http://zvorska.com/app/img/Ava.jpg' data-description="{{record.description[local]}}"></div>
               </div>
           </div>
 
@@ -58,15 +58,22 @@
    </div>
 
   <div class  ="comment_wrap">
-        <div class="fb-comments" data-href="@shared_link"
-             data-numposts="5" data-version="v2.3">
-        </div>
+
+      <div id="fb-comment-box" facebook-comment ng-if="SocialFB"
+           page-href="http://zvorska.com/#/Blog/{{record.id}}"
+           numposts="5"
+           colorscheme="light">
+      </div>
+
+
        <!-- VK.com position-->
-        <div id="vk_comments"></div>
+
+
+      <div vk-comments data-url="http://zvorska.com/#/Blog/{{record.id}}" data-id="{{record.id}}" ng-if="SocialVK"></div>
+
     </div>
 
 
 
 
-        <script src="http://connect.facebook.net/en_US/all.js"></script>
 

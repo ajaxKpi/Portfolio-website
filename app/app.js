@@ -8,7 +8,6 @@ angular.module('myApp', [
   'djds4rce.angular-socialshare',
   'localization',
   'ngSanitize',
-  'ngCookies',
   'afkl.lazyImage'
 
 ])
@@ -77,11 +76,13 @@ angular.module('myApp', [
           redirectTo: "/"
       });
 
-        //$locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(true);
 
 }])
-    .run( ['$FB',function($FB){
+    .run( ['$FB','$rootScope',function($FB,$rootScope){
         $FB.init('1492697214384249');
+        VK.init({apiId: 5077240});
+        $rootScope.SocialFB=true;
 
     }]);
 

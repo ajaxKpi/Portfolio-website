@@ -1,4 +1,7 @@
 <?php
+phpinfo();
+echo (__DIR__);
+die();
 header('Location: http://www.mywed.ru/photographer/volyanska/');
 session_start();
 if($_GET['id'] !='dev'&&!$_SESSION['dev']){

@@ -734,7 +734,8 @@ border-top: 1px solid #eee;
 
     width: 400px;                       /*Replace by actual*/
     margin: auto;
-    padding-top: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     
 }
 .Share_container div{display: inline-block;}
@@ -742,9 +743,10 @@ border-top: 1px solid #eee;
 
 .social_buttons{
     position: absolute;
-    margin-left: 21.5%;
+    margin-left: 215px;
+    padding-top:9px;
 }
-.FBButtonIcon,.VKButtonIcon{
+.FBButtonIcon,.VKButtonIcon a{
     color:#ccc;
 }
 .FBButtonIcon:before{
@@ -755,6 +757,7 @@ border-top: 1px solid #eee;
 .VKButtonIcon a:before{
     font-family: 'SocialIco';
     content: '\e901';
+    font-size: 18px;
 }
 .FBButtonIcon:hover, .VKButtonIcon:hover{
     color:black;}
@@ -778,6 +781,9 @@ border-top: 1px solid #eee;
     color: #ccc;
     text-transform: uppercase;
 
+}
+.read_more{
+    margin-left:40px;
 }
 
 .read_more svg

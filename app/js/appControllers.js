@@ -2,7 +2,7 @@
  * Created by ivan on 30.04.16.
  */
 var appControllers = angular.module('appController',[]);
-appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecord', function($scope,   locData, $cookies, blogRecord){
+appControllers.controller("mainCTRL",["$scope", '$location', "locData", 'blogRecord', function($scope, $location,  locData, blogRecord){
 
     $scope.filterTag = "";
 
@@ -15,9 +15,9 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
         navigatorLang = navigatorLang.substr(0,2);
 
 
-            if ($cookies.get('IZVlanguage')){
+            if (Cookies.get('IZVlanguage')){
                 //already have prefered language in cookie
-                this.local =$cookies.get('IZVlanguage');
+                this.local =Cookies.get('IZVlanguage');
             }
             else {
                 // not have language in cookie
@@ -27,7 +27,7 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
                 else{
                     this.local ="en";
                 }
-                $cookies.put('IZVlanguage', this.local);
+                Cookies.set('IZVlanguage', this.local, { expires: 365 });
 
             }
             //TODO Local is critical should be an value
@@ -50,9 +50,9 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
                 local="en";
 
             }
-            $cookies.put('IZVlanguage', local);
+            Cookies.set('IZVlanguage', local, { expires: 365 });
 
-            console.log($cookies.get('IZVlanguage')); // on CHROME NOT SET SOMETIMES
+            //console.log($cookies.get('IZVlanguage')); // on CHROME NOT SET SOMETIMES
             $scope.mainModel=locData[local];
             $scope.local=local;
         };
@@ -69,7 +69,15 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
             $scope.filterTag = angular.element(tag.currentTarget).text().toLowerCase();
             angular.element('.Tags .active').removeClass('active');
             angular.element(tag.currentTarget).addClass('active');
-            };
+
+            //  if not on main and Blog page should relocate to it
+
+            if($location.path()!=='/Blog'&& $location.path()!=='/'){
+                $location.path('/Blog')
+            }
+
+
+        };
 
     //  make header element scrolable
     angular.element(document).ready(function () {
@@ -100,13 +108,17 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
     .controller("pgRoot",['$scope',function($scope){
 
     $(".navigation-internal a").css("color","black");
-    $("#Portfolio").css("color","brown")
-}])
-    .controller("pgAbout",['$scope',function($scope){
-    $(".navigation-internal a").css("color","black")
-    $("#About").css("color","brown")
+    $("#Portfolio").css("color","brown");
 
-}])
+    }])
+
+    .controller("pgAbout",['$scope',function($scope){
+
+    $(".navigation-internal a").css("color","black");
+    $("#About").css("color","brown");
+
+    }])
+
     .controller("pgBlog",['$scope',"blogRecord",function($scope,blogRecord){
     $(".navigation-internal a").css("color","black")
     $("#Blog").css("color","brown");
@@ -129,22 +141,39 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
         });
 
 
-}])
-    .controller("pgArticle",['$scope',"$routeParams", 'addVisitPage', function($scope,$routeParams, addVisitPage){
+    }])
+
+    .controller("pgArticle",['$scope',"$routeParams", 'addVisitPage', 'blogRecord', function($scope,$routeParams, addVisitPage, blogRecord){
         $(".navigation-internal a").css("color","black");
         $("#Blog").css("color","brown");
+
+
+
+
+
         var id= $routeParams.id;
 
         //
+        $scope.record={};
 
-         var record=(function(id){
-                for(record in $scope.records){
+        if ($scope.records.length!==0){
 
-                    if ($scope.records[record]['id']==id){return $scope.records[record]}
-                }
-        })(id);
+            for(record in $scope.records){
+                if ($scope.records[record]['id']==id){$scope.record= $scope.records[record]}
+            }
 
-        $scope.record=record;
+        }
+        else {
+                blogRecord.query().$promise.then(function (result) {
+
+                    prepareQueryResults(result,$scope.records),(function(){  for(record in $scope.records){
+                        if ($scope.records[record]['id']==id){return $scope.record=$scope.records[record]}
+                    }})()
+
+
+                });}
+
+
 
         //  increment visits in DB
         var visitPageContainer={
@@ -164,7 +193,7 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
         $scope.filterTag="advices";
 
 
-}])
+    }])
     /*
     Replaces by
     .controller("pgTag",['$routeParams',
@@ -182,7 +211,7 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
         $(".navigation-internal a").css("color","black")
         $("#Services").css("color","brown")
 
-}])
+    }])
     .controller("pgContacts",['$scope',"sendMail", function($scope, sendMail){
     $(".navigation-internal a").css("color","black");
     $("#Contacts").css("color","brown");
@@ -205,11 +234,12 @@ appControllers.controller("mainCTRL",["$scope", "locData",'$cookies', 'blogRecor
 
 
 
-}])
-.controller("set_slider",["slider",function(slider) {
-    var instaImg = [];
+    }])
 
-    slider.getInstagram().$promise.then(function (result) {
+    .controller("set_slider",["slider",function(slider) {
+        var instaImg = [];
+
+        slider.getInstagram().$promise.then(function (result) {
         for (key in result) {
             if (result.hasOwnProperty(key) && key != "$promise" && key != "$resolved") {
 
