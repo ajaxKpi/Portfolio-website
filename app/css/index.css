@@ -33,7 +33,11 @@
     font-family: 'SocialIco';
     src: url("../fonts/social/social.woff");
 }
-
+@font-face {
+    font-family: 'zvorskaIco';
+    src: url("../fonts/icon/icomoon.woff") format("woff"),
+    url("../fonts/icon/icomoon.ttf") format("truetype");
+}
 
 
 
@@ -370,6 +374,7 @@ body {
     margin-bottom: 2%;
 
 }
+
 .logo_big svg {
     margin: auto;
     width: 50%;

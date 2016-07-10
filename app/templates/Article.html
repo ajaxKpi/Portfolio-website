@@ -38,15 +38,15 @@
 
           <div class="Share_container">
               <div class="return_blog">
-                  <a href ="#/Blog">
+                  <a href ="Blog">
                       Return to blog
                   </a>
 
               </div>
               <div class="social_buttons">
                   <div class="text_share">Share on:</div>
-                  <a facebook-feed-share data-url='http://zvorska.com/#/Blog/{{record.id}}' data-shares='shares' data-name='{{record.name}}' data-caption="zvorska.com" data-picture='http://zvorska.com/Ava.jpg' data-description="{{record.description[local]}}" data-callback='callback'></a>
-                  <div vkontacte data-url='http://zvorska.com/#/Blog/{{record.id}}'  data-name='{{record.name}}' data-caption='zvorska.com' data-picture='http://zvorska.com/app/img/Ava.jpg' data-description="{{record.description[local]}}"></div>
+                  <a facebook-feed-share data-url='http://zvorska.com/Blog/{{record.id}}' data-shares='shares' data-name='{{record.name}}' data-caption="zvorska.com" data-picture='http://zvorska.com/Ava.jpg' data-description="{{record.description[local]}}" data-callback='callback'></a>
+                  <div vkontacte data-url='http://zvorska.com/Blog/{{record.id}}'  data-name='{{record.name}}' data-caption='zvorska.com' data-picture='http://zvorska.com/app/img/Ava.jpg' data-description="{{record.description[local]}}"></div>
               </div>
           </div>
 
@@ -60,7 +60,7 @@
   <div class  ="comment_wrap">
 
       <div id="fb-comment-box" facebook-comment ng-if="SocialFB"
-           page-href="http://zvorska.com/#/Blog/{{record.id}}"
+           page-href="http://zvorska.com/Blog/{{record.id}}"
            numposts="5"
            colorscheme="light">
       </div>
@@ -69,7 +69,7 @@
        <!-- VK.com position-->
 
 
-      <div vk-comments data-url="http://zvorska.com/#/Blog/{{record.id}}" data-id="{{record.id}}" ng-if="SocialVK"></div>
+      <div vk-comments data-url="http://zvorska.com/Blog/{{record.id}}" data-id="{{record.id}}" ng-if="SocialVK"></div>
 
     </div>
 

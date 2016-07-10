@@ -1,6 +1,6 @@
 <h1 class="portfolio_me">portfolio</h1>
 <div data-ng-click="resetFilterTag()" ng-if="filterTag!==''&&filterTag!=='advices'" class="filterTag">{{filterTag}} <sup >x</sup></div>
-<a href=#/Blog/{{record.id}} ng-repeat="record in records | filter: {tag:filterTag}">
+<a href=Blog/{{record.id}} ng-repeat="record in records | filter: {tag:filterTag}">
     <div class="Preview_poligon">
 
         <div class="Preview_photo">
