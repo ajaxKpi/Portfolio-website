@@ -187,7 +187,7 @@ class api
 
         $mysqli = self::connect_DB();
 
-        $res = $mysqli->query("Select t2.name, t2.preview from base t2 WHERE t2.id in (SELECT * from(SELECT t1.id FROM base t1 order by t1.visits desc LIMIT 4) as t3) Order by t2.visits asc");
+        $res = $mysqli->query("Select t2.name, t2.preview, t2.id from base t2 WHERE t2.id in (SELECT * from(SELECT t1.id FROM base t1 order by t1.visits desc LIMIT 4) as t3) Order by t2.visits asc");
         //array
         $pop_story=[];
 

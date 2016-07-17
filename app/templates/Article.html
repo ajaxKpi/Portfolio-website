@@ -8,13 +8,13 @@
   <div class="wrapArticle">
     <div class = "header_of_motion">
         <h2 class="Blog_name">{{record.name}}</h2>
-        <span> {{record.date  | date:'dd-mm-yyyy'}}  | <a href = "tag/{{record.tag}}">{{record.tag}}
+        <span> {{record.date  | date:'dd-MM-yyyy'}}  | <a href = "" data-ng-click="setFilterTag($event)">{{record.tag}}
                               </a></span>
     </div>
     <hr class="separator">
 
-    <p class ="text_overview">
-                {{record.description[local]}}
+    <p class ="text_overview" ng-bind-html="record.description[local]" >
+
     </p>
 
     <div class = "Blog_photo" ng-repeat="photo in record.photos">
@@ -46,7 +46,7 @@
               <div class="social_buttons">
                   <div class="text_share">Share on:</div>
                   <a facebook-feed-share data-url='http://zvorska.com/Blog/{{record.id}}' data-shares='shares' data-name='{{record.name}}' data-caption="zvorska.com" data-picture='http://zvorska.com/Ava.jpg' data-description="{{record.description[local]}}" data-callback='callback'></a>
-                  <div vkontacte data-url='http://zvorska.com/Blog/{{record.id}}'  data-name='{{record.name}}' data-caption='zvorska.com' data-picture='http://zvorska.com/app/img/Ava.jpg' data-description="{{record.description[local]}}"></div>
+                  <div vkontacte data-url='http://zvorska.com/Blog/{{record.id}}'  data-name='{{record.name}}' data-caption='zvorska.com' data-picture='http://zvorska.com/img/Ava.jpg' data-description="{{record.description[local]}}"></div>
               </div>
           </div>
 

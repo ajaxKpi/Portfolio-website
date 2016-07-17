@@ -123,7 +123,7 @@ appControllers.controller("mainCTRL",["$scope", '$location', "locData", 'blogRec
     $(".navigation-internal a").css("color","black")
     $("#Blog").css("color","brown");
 
-    setImgPin('.Blog_photo img');
+
 
         if ($scope.filterTag==="advices"){$scope.resetFilterTag();}
 
@@ -139,6 +139,7 @@ appControllers.controller("mainCTRL",["$scope", '$location', "locData", 'blogRec
 
 
         });
+
 
 
     }])
@@ -333,10 +334,24 @@ function prepareQueryResults(result, glob) {
         if (result.hasOwnProperty(key) && key != "$promise" && key != "$resolved") {
             glob[key] = result[key];
             glob[key]["description"]={};
+
             glob[key]["description"]["en"] =result[key]["descr"];
             glob[key]["description"]["ru"] =result[key]["descr_ru"];
+            /*
+                For social share shold reduce text to 100 symbols and remove html
+             */
+            glob[key]["share_text"]={};
+            glob[key]["share_text"]['en']=glob[key]["description"]["en"].replace(/(<([^>]+)>)/ig,"").substr(0,300);
+            glob[key]["share_text"]['ru']=glob[key]["description"]["ru"].replace(/(<([^>]+)>)/ig,"").substr(0,300);
+
+
             delete glob[key]["descr"];
             delete glob[key]["descr_ru"];
+
+            // should be fixed at server to save only foldername and file name (this need to past resolution 960 or 480)
+
+            glob[key]["previews"]={};
+            glob[key]["previews"]["960"] ="img/preview/960/" +result[key]["preview"].split("/")[2];
 
             //replace string of date to date format
             glob[key]["date"] = (function(str){
@@ -371,18 +386,9 @@ $(window).scroll(function(){
     }
 });
 }
-/*  set Custom logo of pinterest on img load on top right corneer(pos :2)
-    use @ cssSelector for image selection
-    @ pinLogoUrl - url to img that will appeared on hover
-    @ use Jquery and jquery.imgPin
- */
-function setImgPin(cssSelector){
-    var pinLogoUrl = "img/pinterestOnImg.png";
-    
-    $(cssSelector).imgPin(
-        {
-            pinImg : pinLogoUrl, position: 2
-        }
-    );
-}
 
+function removeHTMLtags(text) {
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = text;
+    return tmp.textContent || tmp.innerText;
+}

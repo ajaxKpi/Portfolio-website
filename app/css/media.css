@@ -9,7 +9,7 @@
 @media only screen and (max-width : 992px) {
 
     aside {
-        display: none;
+        display: none !important;;
     }
 
     .Main_content {
@@ -17,7 +17,7 @@
     }
 
     .navigation-external {
-        display: none;
+        display: none !important;
 
     }
 

@@ -469,6 +469,7 @@ else {
 </div>
     </div>
     </section>
+
     <script>
         // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.
@@ -490,7 +491,7 @@ else {
     <script src="../app/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
-        <script src="js/admin.js"></script>
+    <script src="js/admin.js"></script>
 
 
 </body>
