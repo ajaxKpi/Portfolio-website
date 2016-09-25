@@ -254,7 +254,7 @@ body {
 }
     .navigation {
         width:1200px;
-        height: inherit;
+        height: 50px;
         position: fixed;
         font-size: 14px;
         background-color: #ffffff;
@@ -761,11 +761,11 @@ border-top: 1px solid #eee;
 
 .Share_container {
 
-    width: 400px;                       /*Replace by actual*/
+    width: 250px;                       /*Replace by actual*/
     margin: auto;
     padding-top: 2px;
     padding-bottom: 2px;
-    
+
 }
 .Share_container div{display: inline-block;}
 .Share_container a{text-decoration: none;}
@@ -781,12 +781,12 @@ border-top: 1px solid #eee;
 .FBButtonIcon:before{
     font-family: 'zvorskaIco' !important;;
     content: '\e904';
-    font-size: 18px;
+    font-size: 30px;
 }
 .VKButtonIcon a:before{
     font-family: 'zvorskaIco' !important;
     content: '\e903';
-    font-size: 18px;
+    font-size: 30px;
 }
 .FBButtonIcon:hover, .VKButtonIcon:hover{
     color:black;}
@@ -1039,6 +1039,7 @@ form .form_group {
     font-size: 1em;
     text-align: justify;
     margin-bottom: 20px;
+
 }
 
 
@@ -1097,7 +1098,7 @@ form .form_group {
 .languageBar label:after {
     content: 'EN';
     color: #ccc;
-    padding: 9px;
+    padding: 11px 9px 9px 9px;
     position: absolute;
     width: 35px;
     height: 35px;
@@ -1138,7 +1139,7 @@ form .form_group {
 .RU_lab{
 
     color: white;
-    padding: 6px;
+    padding: 8px;
     width: 48%;
     float: left;
 }
@@ -1146,7 +1147,7 @@ form .form_group {
 .EN_lab{
 
     color: white;
-    padding: 6px;
+    padding: 8px;
     width: 48%;
     float: left;
 }

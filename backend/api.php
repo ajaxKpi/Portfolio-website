@@ -8,6 +8,7 @@
  */
 include_once "protected/CONFIG.php";
 class api
+
 {
     protected $POR_host=SERVER;
     protected $POR_user=LOGIN;

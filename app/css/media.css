@@ -25,6 +25,9 @@
         width: 960px !important;
     }
 
+    .Wrap_pre, .Wrap_pre_ru{
+        padding: 0 10px 0 10px;
+    }
     /*
     .navigation-internal{
         width:100%;
