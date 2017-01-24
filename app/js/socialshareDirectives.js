@@ -104,24 +104,9 @@ angular.module('djds4rce.angular-socialshare', [])
 				attr.$observe('url', function() {
 					if (attr.shares && attr.url) {
 						$http.get('https://api.facebook.com/method/links.getStats?urls=' + attr.url + '&format=json').success(function(res) {
-							var count = res[0] ? res[0].total_count.toString() : 0;
-							var decimal = '';
-							if (count.length > 6) {
-								if (count.slice(-6, -5) != "0") {
-									decimal = '.' + count.slice(-6, -5);
-								}
-								count = count.slice(0, -6);
-								count = count + decimal + 'M';
-							} else if (count.length > 3) {
-								if (count.slice(-3, -2) != "0") {
-									decimal = '.' + count.slice(-3, -2);
-								}
-								count = count.slice(0, -3);
-								count = count + decimal + 'k';
-							}
-							scope.shares = count;
+
 						}).error(function() {
-							scope.shares = 0;
+
 						});
 					}
 
@@ -144,7 +129,35 @@ angular.module('djds4rce.angular-socialshare', [])
 				});
 			}
 		};
-	}]).directive('pintrest', ['$window', '$timeout', function($window, $timeout) {
+	}])
+	.directive('facebookComment',function(){
+
+		function createHTML(href, numposts, colorscheme) {
+			return '<div class="fb-comments" ' +
+				'data-href="' + href + '" ' +
+				'data-numposts="' + numposts + '" ' +
+				'data-colorsheme="' + colorscheme + '">' +
+				'</div>';
+		}
+
+		return {
+			restrict: 'A',
+			scope: {},
+			link: function postLink(scope, elem, attrs) {
+				attrs.$observe('pageHref', function (newValue) {
+					var href = newValue;
+					var numposts = attrs.numposts || 5;
+					var colorscheme = attrs.colorscheme || 'light';
+
+					elem.html(createHTML(href, numposts, colorscheme));
+					FB.XFBML.parse(elem[0]);
+				});
+			}
+		}
+
+	})
+
+	.directive('pintrest', ['$window', '$timeout', function($window, $timeout) {
 		return {
 			template: '<a href="{{href}}" data-pin-do="{{pinDo}}" data-pin-config="{{pinConfig}}"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>',
 			restrict:'E',
@@ -184,7 +197,30 @@ angular.module('djds4rce.angular-socialshare', [])
 			}
 		}
 
-}]).directive('compile', ['$compile', function ($compile) {
+}])
+	.directive( 'vkComments', [
+		'$window',
+		'$timeout',
+		function( $window, $timeout ){
+			return {
+				restrict: 'A',
+				template: '<div id="vk_comments" ng-transclude post-url="{{url}}"></div>',
+				scope: {
+					readyToBind: '@'
+				},
+				replace: !0,
+				transclude: !0,
+				link: function( $scope, $element, $attr ){
+					$scope.$watch( 'readyToBind', function(){
+						$timeout( function(){
+							$window.vkComment = VK.Widgets.Comments( 'vk_comments', { limit: 10, attach: '*', autoPublish: 1, mini: 1 }, $attr.id );
+						}, 100 );
+					} );
+				}
+			}
+		}
+	] )
+	.directive('compile', ['$compile', function ($compile) {
 	return function(scope, element, attrs) {
 		scope.$watch(
 			function(scope) {

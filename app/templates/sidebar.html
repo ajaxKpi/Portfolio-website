@@ -2,12 +2,12 @@
     <h3 class="portfolio_me">me</h3>
     <div class ="about_me">
         <div class = "Avatar">
-            <a href = "#/About">
-                <img src="app/img/Ava.jpg" alt="ava" />
+            <a href = "/About">
+                <img src="img/Ava.jpg" alt="ava">
             </a>
         </div>
 
-        <p class="few_words">{{mainModel.sidebarGreetings}}<a href="#/About"><span>(read more)>></span></a></p>
+        <p class="few_words">{{mainModel.sidebarGreetings}}<a href="/About"><span>(read more)>></span></a></p>
 
     </div>
 
@@ -55,7 +55,7 @@
             <div class="sidebar_photo" data-ng-repeat="story in stories">
                 <img class="Preview_2" src="{{story.preview}}" alt="logo_img"/>
                 <div class="Popular_info">
-                    <a href="Blog/"{{story.id}}>
+                    <a href="Blog/{{story.id}}">
 
                         <br>
                         {{story.name}}

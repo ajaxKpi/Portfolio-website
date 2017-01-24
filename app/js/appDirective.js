@@ -47,4 +47,21 @@ appDirective.directive('calendar', [function(){
             var calendar = new Calendar('#calendar', data);
         }
     }
-}]);
+}])
+appDirective.directive("setPinterest",function(){
+    return {
+        restrict:'A',
+        link:function(scope, element, attr){
+            return attr.$observe("afklLazyImageLoaded",function(value){
+                var pinLogoUrl ="img/pinterestOnImg.png";
+                if (value){
+                   $(element).imgPin(
+                        {
+                            pinImg : pinLogoUrl, position: 2
+                        }
+                    );
+                }
+            });
+        }
+    }
+})

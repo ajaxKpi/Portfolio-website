@@ -7,5 +7,22 @@ var gulp = require("gulp"),
 gulp.task("html-prod",function(){
     console.log("hi!");
 });
+gulp.task("minify-css",function (){
+
+});
+gulp.task("minify-js", function(){
+
+});
+gulp.task("minify-html",function(){
+
+});
+
+
+gulp.task("concat-css", function(){
+
+});
+gulp.task("concat-js", function(){
+
+})
 
 gulp.task("default",["html-prod"]);

@@ -1,1 +1,685 @@
-.arrow,.month{transition:all .7s ease}.cday,.event,.event-category{vertical-align:top}.calendar{-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);transform:translate3d(0,0,0);width:300px;margin:0 auto 0 3.2%;display:block;float:left;overflow:hidden}.calendar .circle,.cday,.cday .day-events span,.entry,.event span,.event-category{display:inline-block}.calendar .circle{width:16px;height:16px;background-color:#428bca;border-radius:50%}.calendar .header{width:97%;background-color:silver;color:#fff;text-align:center;position:relative;border-top-left-radius:6px;border-top-right-radius:6px;padding-top:0;height:84px}.calendar .header .month{opacity:1;text-align:center;padding:0 40px;font-size:2.5em;margin-bottom:0;font-weight:400}.calendar .header .year{text-align:center;padding:0 40px;font-size:1.5em}.calendar .header h1{margin:0;padding:0;font-size:20px;line-height:50px;font-weight:100;letter-spacing:1px}.ring-left,.ring-right{margin-top:-11px;position:absolute}.calendar .legend{position:absolute;bottom:0;width:100%;background:#fff;border:1px solid #E9E9E9;line-height:30px}.ring-left{left:2em}.ring-right{right:2em}.ring-left:after,.ring-left:before,.ring-right:after,.ring-right:before{background:#fff;border-radius:4px;box-shadow:0 2px 1px rgba(0,0,0,.25),0 -1px 1px rgba(0,0,0,.2);content:"";display:inline-block;margin:8px;height:32px;width:8px}.left,.right{position:absolute;width:0;height:0;border-style:solid;top:50%;margin-top:-7.5px;cursor:pointer}.cday,.details{position:relative}.left{border-width:7.5px 10px 7.5px 0;border-color:transparent #FFF transparent transparent;left:20px}.right{border-width:7.5px 0 7.5px 10px;border-color:transparent transparent transparent #FFF;right:20px}.month{opacity:0;margin-bottom:40px}.month.new{-webkit-animation:fadeIn 1s ease-out;opacity:1}.month.in.next{-webkit-animation:moveFromLeftFadeMonth .4s ease-out;-moz-animation:moveFromLeftFadeMonth .4s ease-out;animation:moveFromLeftFadeMonth .4s ease-out;opacity:1}.month.in.previous{-webkit-animation:moveFromRightFadeMonth .4s ease-out;-moz-animation:moveFromRightFadeMonth .4s ease-out;animation:moveFromRightFadeMonth .4s ease-out;opacity:1}.month.out.next{-webkit-animation:moveToRightFadeMonth .4s ease-in;-moz-animation:moveToRightFadeMonth .4s ease-in;animation:moveToRightFadeMonth .4s ease-in;opacity:1}.month.out.previous{-webkit-animation:moveToLeftFadeMonth .4s ease-in;-moz-animation:moveToLeftFadeMonth .4s ease-in;animation:moveToLeftFadeMonth .4s ease-in;opacity:1}.week-days{padding:8px 0;background-color:#efefef;border-top:4px solid #919191}.week-days .cday{cursor:default}.week{background-color:#fff}.cday{width:14%;text-align:center;cursor:pointer;z-index:100}.cday.other{color:#E9E9E9}.cday.other .circle{background-color:#E9E9E9}.cday.today{color:#3d40cc;font-weight:400}.cday-events{list-style:none;margin-top:3px;text-align:center;height:12px;line-height:6px;overflow:hidden}.cday .day-events span{vertical-align:top;padding:0;width:5px;height:5px;line-height:5px;margin:0 1px}.day-name{font-size:9px;text-transform:uppercase;margin-bottom:5px;color:rgba(255,255,255,.5);letter-spacing:.7px}.day-number{font-size:1em;letter-spacing:1px}.blue{background:#9ccaeb}.orange{background:#f7a700}.green{background:#99c66d}.yellow{background:#f9e900}.pink{background:#FF009B}.details{border:1px solid #e9e9e9;margin-top:5px;border-radius:2px}.arrow,.arrow:before{position:absolute;left:50%;margin-left:-5px;width:0;height:0;border-style:solid;border-width:0 5px 5px}.details.in{-webkit-animation:moveFromTopFade .5s ease both;-moz-animation:moveFromTopFade .5s ease both;animation:moveFromTopFade .5s ease both}.details.out{-webkit-animation:moveToTopFade .5s ease both;-moz-animation:moveToTopFade .5s ease both;animation:moveToTopFade .5s ease both}.arrow{top:-5px;border-color:transparent transparent #e9e9e9}.arrow:before{content:"";top:2px;border-color:transparent transparent #fff}.events{padding:7px 0;overflow-y:auto;overflow-x:hidden}.events.in{-webkit-animation:fadeIn .3s ease both;-moz-animation:fadeIn .3s ease both;animation:fadeIn .3s ease both;-webkit-animation-delay:.3s;-moz-animation-delay:.3s;animation-delay:.3s}.details.out .events{-webkit-animation:fadeOutShrink .4s ease both;-moz-animation:fadeOutShink .4s ease both;animation:fadeOutShink .4s ease both}.events.out{-webkit-animation:fadeOut .3s ease both;-moz-animation:fadeOut .3s ease both;animation:fadeOut .3s ease both}.event{font-size:16px;line-height:22px;letter-spacing:.5px;padding:2px 16px}.entry,.legend{line-height:30px}.event.empty{color:#eee}.event span{padding:0 0 0 7px}.event-category{height:10px;width:10px;margin:8px 0 0}.legend{bottom:0;width:100%;background:#fff;border:1px solid #E9E9E9}.entry{position:relative;padding:0 0 0 25px;font-size:13px;background:0 0}.entry:after{position:absolute;content:'';height:5px;width:5px;top:12px;left:14px}.entry.blue:after{background:#9ccaeb}.entry.orange:after{background:#f7a700}.entry.green:after{background:#99c66d}.entry.yellow:after{background:#f9e900}@keyframes slideOutLeft{to{transform:translateX(-200%)}}@-moz-keyframes slideOutLeft{to{-moz-transform:translateX(-200%)}}@-webkit-keyframes slideOutLeft{to{-webkit-transform:translateX(-200%)}}@keyframes slideInRight{from{transform:translateX(200%)}to{transform:translateX(0)}}@-moz-keyframes slideInRight{from{-moz-transform:translateX(200%)}to{-moz-transform:translateX(0)}}@-webkit-keyframes slideInRight{from{-webkit-transform:translateX(200%)}to{-webkit-transform:translateX(0)}}@-webkit-keyframes moveFromTopFade{from{opacity:.3;height:0;margin-top:0;-webkit-transform:translateY(-100%)}}@-moz-keyframes moveFromTopFade{from{height:0;margin-top:0;-moz-transform:translateY(-100%)}}@keyframes moveFromTopFade{from{height:0;margin-top:0;transform:translateY(-100%)}}@-webkit-keyframes moveToTopFade{to{height:0;margin-top:0;opacity:.3;-webkit-transform:translateY(-100%)}}@-moz-keyframes moveToTopFade{to{height:0;-moz-transform:translateY(-100%)}}@keyframes moveToTopFade{to{height:0;transform:translateY(-100%)}}@-webkit-keyframes moveToTopFadeMonth{to{opacity:0;-webkit-transform:translateY(-30%) scale(.95)}}@-moz-keyframes moveToTopFadeMonth{to{opacity:0;-moz-transform:translateY(-30%)}}@keyframes moveToTopFadeMonth{to{opacity:0;-moz-transform:translateY(-30%)}}@-webkit-keyframes moveFromTopFadeMonth{from{opacity:0;-webkit-transform:translateY(30%) scale(.95)}}@-moz-keyframes moveFromTopFadeMonth{from{opacity:0;-moz-transform:translateY(30%)}}@keyframes moveFromTopFadeMonth{from{opacity:0;-moz-transform:translateY(30%)}}@-webkit-keyframes moveToBottomFadeMonth{to{opacity:0;-webkit-transform:translateY(30%) scale(.95)}}@-moz-keyframes moveToBottomFadeMonth{to{opacity:0;-webkit-transform:translateY(30%)}}@keyframes moveToBottomFadeMonth{to{opacity:0;-webkit-transform:translateY(30%)}}@-webkit-keyframes moveToLeftFadeMonth{to{opacity:0;-webkit-transform:translateX(-200%) scale(.95)}}@-moz-keyframes moveToLeftFadeMonth{to{opacity:0;-webkit-transform:translateX(-200%)}}@keyframes moveToLeftFadeMonth{to{opacity:0;-webkit-transform:translateX(-200%)}}@-webkit-keyframes moveToRightFadeMonth{to{opacity:0;-webkit-transform:translateX(200%) scale(.95)}}@-moz-keyframes moveToRightFadeMonth{to{opacity:0;-webkit-transform:translateX(200%)}}@keyframes moveToRightFadeMonth{to{opacity:0;-webkit-transform:translateX(200%)}}@-webkit-keyframes moveFromBottomFadeMonth{from{opacity:0;-webkit-transform:translateY(-30%) scale(.95)}}@-moz-keyframes moveFromBottomFadeMonth{from{opacity:0;-webkit-transform:translateY(-30%)}}@keyframes moveFromBottomFadeMonth{from{opacity:0;-webkit-transform:translateY(-30%)}}@-webkit-keyframes moveFromLeftFadeMonth{from{opacity:0;-webkit-transform:translateX(-200%) scale(.95)}}@-webkit-keyframes moveFromRightFadeMonth{from{opacity:0;-webkit-transform:translateX(200%)}to{opacity:1;-webkit-transform:translateX(0)}}@-webkit-keyframes moveToRightFadeMonth{to{opacity:1;-webkit-transform:translateX(200%)}}@-webkit-keyframes fadeIn{from{opacity:0}}@-moz-keyframes fadeIn{from{opacity:0}}@keyframes fadeIn{from{opacity:0}}@-webkit-keyframes fadeOut{to{opacity:0}}@-moz-keyframes fadeOut{to{opacity:0}}@keyframes fadeOut{to{opacity:0}}@-webkit-keyframes fadeOutShink{to{opacity:0;padding:0;height:0}}@-moz-keyframes fadeOutShink{to{opacity:0;padding:0;height:0}}@keyframes fadeOutShink{to{opacity:0;padding:0;height:0}}
+.calendar .arrow, .calendar .month {
+    transition: all .7s ease;
+}
+
+.calendar .cday, .calendar .event, .calendar .event-category {
+    vertical-align: top;
+}
+
+.calendar .calendar {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    width: 300px;
+    margin: 0 auto 0 3.2%;
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+
+.calendar .calendar .circle, .calendar .cday, .calendar .cday .day-events span, .calendar .entry, .calendar .event span, .calendar .event-category {
+    display: inline-block;
+}
+
+.calendar .calendar .circle {
+    width: 16px;
+    height: 16px;
+    background-color: #428bca;
+    border-radius: 50%;
+}
+
+.calendar .calendar .header {
+    width: 100%;
+    background-color: silver;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding-top: 0;
+    height: 84px;
+}
+
+.calendar .calendar .header .month {
+    opacity: 1;
+    text-align: center;
+    padding: 0 40px;
+    font-size: 2.5em;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.calendar .calendar .header .year {
+    text-align: center;
+    padding: 0 40px;
+    font-size: 1.5em;
+}
+
+.calendar .calendar .header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 50px;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.calendar .ring-left, .calendar .ring-right {
+    margin-top: -11px;
+    position: absolute;
+}
+
+.calendar .calendar .legend {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #E9E9E9;
+    line-height: 30px;
+}
+
+.calendar .ring-left {
+    left: 2em;
+}
+
+.calendar .ring-right {
+    right: 2em;
+}
+
+.calendar .ring-left:after, .calendar .ring-left:before, .calendar .ring-right:after, .calendar .ring-right:before {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.25), 0 -1px 1px rgba(0, 0, 0, 0.2);
+    content: "";
+    display: inline-block;
+    margin: 8px;
+    height: 32px;
+    width: 8px;
+}
+
+.calendar .left, .calendar .right {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    top: 50%;
+    margin-top: -7.5px;
+    cursor: pointer;
+}
+
+.calendar .cday, .calendar .details {
+    position: relative;
+}
+
+.calendar .left {
+    border-width: 7.5px 10px 7.5px 0;
+    border-color: transparent #FFF transparent transparent;
+    left: 20px;
+}
+
+.calendar .right {
+    border-width: 7.5px 0 7.5px 10px;
+    border-color: transparent transparent transparent #FFF;
+    right: 20px;
+}
+
+.calendar .month {
+    opacity: 0;
+    margin-bottom: 40px;
+}
+
+.calendar .month.new {
+    -webkit-animation: fadeIn 1s ease-out;
+    opacity: 1;
+}
+
+.calendar .month.in.next {
+    -webkit-animation: moveFromLeftFadeMonth .4s ease-out;
+    -moz-animation: moveFromLeftFadeMonth .4s ease-out;
+    animation: moveFromLeftFadeMonth .4s ease-out;
+    opacity: 1;
+}
+
+.calendar .month.in.previous {
+    -webkit-animation: moveFromRightFadeMonth .4s ease-out;
+    -moz-animation: moveFromRightFadeMonth .4s ease-out;
+    animation: moveFromRightFadeMonth .4s ease-out;
+    opacity: 1;
+}
+
+.calendar .month.out.next {
+    -webkit-animation: moveToRightFadeMonth .4s ease-in;
+    -moz-animation: moveToRightFadeMonth .4s ease-in;
+    animation: moveToRightFadeMonth .4s ease-in;
+    opacity: 1;
+}
+
+.calendar .month.out.previous {
+    -webkit-animation: moveToLeftFadeMonth .4s ease-in;
+    -moz-animation: moveToLeftFadeMonth .4s ease-in;
+    animation: moveToLeftFadeMonth .4s ease-in;
+    opacity: 1;
+}
+
+.calendar .week-days {
+    padding: 8px 0;
+    background-color: #efefef;
+    border-top: 4px solid #919191;
+}
+
+.calendar .week-days .cday {
+    cursor: default;
+}
+
+.calendar .week {
+    background-color: #fff;
+}
+
+.calendar .cday {
+    width: 14%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.calendar .cday.other {
+    color: #E9E9E9;
+}
+
+.calendar .cday.other .circle {
+    background-color: #E9E9E9;
+}
+
+.calendar .cday.today {
+    color: #3d40cc;
+    font-weight: 400;
+}
+
+.calendar .cday-events {
+    list-style: none;
+    margin-top: 3px;
+    text-align: center;
+    height: 12px;
+    line-height: 6px;
+    overflow: hidden;
+}
+
+.calendar .cday .day-events span {
+    vertical-align: top;
+    padding: 0;
+    width: 5px;
+    height: 5px;
+    line-height: 5px;
+    margin: 0 1px;
+}
+
+.calendar .day-name {
+    font-size: 9px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: .7px;
+}
+
+.calendar .day-number {
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+.calendar .blue {
+    background: #9ccaeb;
+}
+
+.calendar .orange {
+    background: #f7a700;
+}
+
+.calendar .green {
+    background: #99c66d;
+}
+
+.calendar .yellow {
+    background: #f9e900;
+}
+
+.calendar .pink {
+    background: #FF009B;
+}
+
+.calendar .details {
+    border: 1px solid #e9e9e9;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.calendar .arrow, .calendar .arrow:before {
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 5px;
+}
+
+.calendar .details.in {
+    -webkit-animation: moveFromTopFade .5s ease both;
+    -moz-animation: moveFromTopFade .5s ease both;
+    animation: moveFromTopFade .5s ease both;
+}
+
+.calendar .details.out {
+    -webkit-animation: moveToTopFade .5s ease both;
+    -moz-animation: moveToTopFade .5s ease both;
+    animation: moveToTopFade .5s ease both;
+}
+
+.calendar .arrow {
+    top: -5px;
+    border-color: transparent transparent #e9e9e9;
+}
+
+.calendar .arrow:before {
+    content: "";
+    top: 2px;
+    border-color: transparent transparent #fff;
+}
+
+.calendar .events {
+    padding: 7px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.calendar .events.in {
+    -webkit-animation: fadeIn .3s ease both;
+    -moz-animation: fadeIn .3s ease both;
+    animation: fadeIn .3s ease both;
+    -webkit-animation-delay: .3s;
+    -moz-animation-delay: .3s;
+    animation-delay: .3s;
+}
+
+.calendar .details.out .events {
+    -webkit-animation: fadeOutShrink .4s ease both;
+    -moz-animation: fadeOutShink .4s ease both;
+    animation: fadeOutShink .4s ease both;
+}
+
+.calendar .events.out {
+    -webkit-animation: fadeOut .3s ease both;
+    -moz-animation: fadeOut .3s ease both;
+    animation: fadeOut .3s ease both;
+}
+
+.calendar .event {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: .5px;
+    padding: 2px 16px;
+}
+
+.calendar .entry, .calendar .legend {
+    line-height: 30px;
+}
+
+.calendar .event.empty {
+    color: #eee;
+}
+
+.calendar .event span {
+    padding: 0 0 0 7px;
+}
+
+.calendar .event-category {
+    height: 10px;
+    width: 10px;
+    margin: 8px 0 0;
+}
+
+.calendar .legend {
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #E9E9E9;
+}
+
+.calendar .entry {
+    position: relative;
+    padding: 0 0 0 25px;
+    font-size: 13px;
+    background: 0 0;
+}
+
+.calendar .entry:after {
+    position: absolute;
+    content: '';
+    height: 5px;
+    width: 5px;
+    top: 12px;
+    left: 14px;
+}
+
+.calendar .entry.blue:after {
+    background: #9ccaeb;
+}
+
+.calendar .entry.orange:after {
+    background: #f7a700;
+}
+
+.calendar .entry.green:after {
+    background: #99c66d;
+}
+
+.calendar .entry.yellow:after {
+    background: #f9e900;
+}
+
+@keyframes slideOutLeft {
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+@-moz-keyframes slideOutLeft {
+    to {
+        -moz-transform: translateX(-200%);
+    }
+}
+
+@-webkit-keyframes slideOutLeft {
+    to {
+        -webkit-transform: translateX(-200%);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@-moz-keyframes slideInRight {
+    from {
+        -moz-transform: translateX(200%);
+    }
+
+    to {
+        -moz-transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes slideInRight {
+    from {
+        -webkit-transform: translateX(200%);
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes moveFromTopFade {
+    from {
+        opacity: .3;
+        height: 0;
+        margin-top: 0;
+        -webkit-transform: translateY(-100%);
+    }
+}
+
+@-moz-keyframes moveFromTopFade {
+    from {
+        height: 0;
+        margin-top: 0;
+        -moz-transform: translateY(-100%);
+    }
+}
+
+@keyframes moveFromTopFade {
+    from {
+        height: 0;
+        margin-top: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@-webkit-keyframes moveToTopFade {
+    to {
+        height: 0;
+        margin-top: 0;
+        opacity: .3;
+        -webkit-transform: translateY(-100%);
+    }
+}
+
+@-moz-keyframes moveToTopFade {
+    to {
+        height: 0;
+        -moz-transform: translateY(-100%);
+    }
+}
+
+@keyframes moveToTopFade {
+    to {
+        height: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@-webkit-keyframes moveToTopFadeMonth {
+    to {
+        opacity: 0;
+        -webkit-transform: translateY(-30%) scale(0.95);
+    }
+}
+
+@-moz-keyframes moveToTopFadeMonth {
+    to {
+        opacity: 0;
+        -moz-transform: translateY(-30%);
+    }
+}
+
+@keyframes moveToTopFadeMonth {
+    to {
+        opacity: 0;
+        -moz-transform: translateY(-30%);
+    }
+}
+
+@-webkit-keyframes moveFromTopFadeMonth {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(30%) scale(0.95);
+    }
+}
+
+@-moz-keyframes moveFromTopFadeMonth {
+    from {
+        opacity: 0;
+        -moz-transform: translateY(30%);
+    }
+}
+
+@keyframes moveFromTopFadeMonth {
+    from {
+        opacity: 0;
+        -moz-transform: translateY(30%);
+    }
+}
+
+@-webkit-keyframes moveToBottomFadeMonth {
+    to {
+        opacity: 0;
+        -webkit-transform: translateY(30%) scale(0.95);
+    }
+}
+
+@-moz-keyframes moveToBottomFadeMonth {
+    to {
+        opacity: 0;
+        -webkit-transform: translateY(30%);
+    }
+}
+
+@keyframes moveToBottomFadeMonth {
+    to {
+        opacity: 0;
+        -webkit-transform: translateY(30%);
+    }
+}
+
+@-webkit-keyframes moveToLeftFadeMonth {
+    to {
+        opacity: 0;
+        -webkit-transform: translateX(-200%) scale(0.95);
+    }
+}
+
+@-moz-keyframes moveToLeftFadeMonth {
+    to {
+        opacity: 0;
+        -webkit-transform: translateX(-200%);
+    }
+}
+
+@keyframes moveToLeftFadeMonth {
+    to {
+        opacity: 0;
+        -webkit-transform: translateX(-200%);
+    }
+}
+
+@-webkit-keyframes moveToRightFadeMonth {
+    to {
+        opacity: 0;
+        -webkit-transform: translateX(200%) scale(0.95);
+    }
+}
+
+@-moz-keyframes moveToRightFadeMonth {
+    to {
+        opacity: 0;
+        -webkit-transform: translateX(200%);
+    }
+}
+
+@keyframes moveToRightFadeMonth {
+    to {
+        opacity: 0;
+        -webkit-transform: translateX(200%);
+    }
+}
+
+@-webkit-keyframes moveFromBottomFadeMonth {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(-30%) scale(0.95);
+    }
+}
+
+@-moz-keyframes moveFromBottomFadeMonth {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(-30%);
+    }
+}
+
+@keyframes moveFromBottomFadeMonth {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(-30%);
+    }
+}
+
+@-webkit-keyframes moveFromLeftFadeMonth {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX(-200%) scale(0.95);
+    }
+}
+
+@-webkit-keyframes moveFromRightFadeMonth {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX(200%);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes moveToRightFadeMonth {
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(200%);
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeOutShink {
+    to {
+        opacity: 0;
+        padding: 0;
+        height: 0;
+    }
+}
+
+@-moz-keyframes fadeOutShink {
+    to {
+        opacity: 0;
+        padding: 0;
+        height: 0;
+    }
+}
+
+@keyframes fadeOutShink {
+    to {
+        opacity: 0;
+        padding: 0;
+        height: 0;
+    }
+}

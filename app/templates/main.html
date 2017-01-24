@@ -1,10 +1,10 @@
-<h1 class="portfolio_me">portfolio</h1>
-<div data-ng-click="resetFilterTag()" ng-if="filterTag!==''&&filterTag!=='advices'" class="filterTag">{{filterTag}} <sup >x</sup></div>
-<a href=#/Blog/{{record.id}} ng-repeat="record in records | filter: {tag:filterTag}">
+<h1 class="portfolio_me">portfolio<span data-ng-click="resetFilterTag()" ng-if="filterTag!==''&&filterTag!=='advices'" class="filterTag"> | {{filterTag}} <sup >x</sup></span></h1>
+
+<a href=Blog/{{record.id}} ng-repeat="record in records | filter: {tag:filterTag}">
     <div class="Preview_poligon">
 
         <div class="Preview_photo">
-            <div afkl-lazy-image="{{record.preview['480']}} 480w, {{record.preview['768']}} 768w, {{record.preview['960']}}960w" class="afkl-lazy-wrapper  own-classname"></div>
+            <div afkl-lazy-image="{{record.previews['480']}} 480w, img/preview/{{record.previews['768']}} 768w,{{record.previews['960']}} 960w" class="afkl-lazy-wrapper  own-classname"></div>
 
         </div>
         <div class="Preview_info">
