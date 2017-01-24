@@ -5,7 +5,12 @@
  * Date: 24.09.2015
  * Time: 12:21
  */
-function deleteDirectory($dir) {
+CONST RAW_DIR = "../img/raw/";
+
+
+
+function deleteDirectory($dir)
+{
     if (!file_exists($dir)) {
         return true;
     }
@@ -28,147 +33,109 @@ function deleteDirectory($dir) {
     return rmdir($dir);
 }
 
+function saveRawImage($file, $name, $imageFileType)
+{
+    $uploadOk = 0;
+        $check = getimagesize($file);
+        $name=$name.".".$imageFileType;
+        if ($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($file, RAW_DIR . $name)) {
+            return (RAW_DIR . $name);
+        } else {
+            echo "Sorry, there was an error uploading your file Portfolio preview.";
+        }
+
+    }
+    return $uploadOk;
+
+}
+
+function compressAndResizeImg($file,$NamePS){
+    global $file_path;
+    global $tinyPNG;
+    $raw_img_location=saveRawImage($file, $NamePS, 'jpg');
+    return $raw_img_location&&$tinyPNG->compressAndResize($raw_img_location,$file_path.$NamePS);
+}
+function getFileType($dir,$name){
+    $target_file=$dir . basename($name);
+   return pathinfo($target_file, PATHINFO_EXTENSION);
+}
+
+
+
+require_once "services/ImageMinification/tinyPNG.php";
+$tinyPNG = new tinyPNG();
 
 require_once '../backend/protected/CONFIG.php';
-$mysqli = new mysqli(SERVER, LOGIN,PASSWORD , DBNAME);
+$mysqli = new mysqli(SERVER, LOGIN, PASSWORD, DBNAME);
 $mysqli->set_charset("utf8");
-
-
 
 
 /* **************************************************************
  ****************************Create procedure *********************
 ***************************************************************/
-
-if(isset($_POST['CreateButton']))
-{
+if (isset($_POST['CreateButton'])) {
     $target_dir = "img/preview/";
-    $NamePS =$_POST['ps_name'];
-    $Data =$_POST['data'];
+    $NamePS = $_POST['ps_name'];
+    $Data = $_POST['data'];
     $Tag = $_POST['tag'];
     $Desc = $_POST['descr'];
     $Desc_ru = $_POST['descr_ru'];
-    $ID =  $_POST['id'];
+    $ID = $_POST['id'];
     $subc = $_POST['subcontr'];
     $subc_ru = $_POST['subcontr_ru'];
 
+    $file_path = "../img/photo/" . $ID . $_POST['ps_name'] . "/";
 
-        //--------------------------upload small preview--------------------------
-
-        $target_file = $target_dir . basename($_FILES["small-preview"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-        $clearNamePS = $ID.strtolower (str_replace(' ','',substr($NamePS,0,15))).".".$imageFileType;
-
-
-        // Check if image file is a actual image or fake image
-        if (isset($_POST["submit"])) {
-            $check = getimagesize($_FILES["small-preview"]["tmp_name"]);
-            if ($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
-                $uploadOk = 1;
-            } else {
-                echo "File is not an image.";
-                $uploadOk = 0;
-            }
-        }
-        // Check if $uploadOk is set to 0 by an error
-        if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
-            // if everything is ok, try to upload file
-        } else {
-            if (move_uploaded_file($_FILES["small-preview"]["tmp_name"], $target_dir.$clearNamePS)) {
-                echo "The file " . $clearNamePS . " has been uploaded.";
-            } else {
-                echo "Sorry, there was an error uploading your file Portfolio preview.";
-            }
-
+    if (!file_exists($file_path)) {
+        mkdir($file_path, 0777);
     }
+    if (!file_exists(RAW_DIR)) {
+        mkdir(RAW_DIR, 0777);
+    }
+
+
+
+    //--------------------------upload  preview--------------------------
+
+    $clearNamePS = $ID . strtolower(str_replace(' ', '', substr($NamePS, 0, 15)));
+    compressAndResizeImg($_FILES["small-preview"]["tmp_name"],$clearNamePS);
     //--------------------------upload large preview--------------------------
-    $folder_loc= "img/photo/";
-    $target_file = $target_dir."L_".$clearNamePS;
-    $uploadOk = 1;
-    //$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-    // Check if image file is a actual image or fake image
-    if(isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["large-preview"]["tmp_name"]);
-        if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
-            $uploadOk = 1;
-        } else {
-            echo "File is not an image.";
-            $uploadOk = 0;
-        }
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-        // if everything is ok, try to upload file
-    } else {
-        if (move_uploaded_file($_FILES["large-preview"]["tmp_name"], $target_file)) {
-            echo "The file ".$clearNamePS. " has been uploaded.";
-        } else {
-            echo "Sorry, there was an error uploading your file Blog Preview.";
-        }
-    }
+    compressAndResizeImg($_FILES["large-preview"]["tmp_name"],"L_" . $clearNamePS);
 
-    //--------------------------upload large preview--------------------------
-    $folder_loc= "img/photo/";
-    $target_file = $target_dir."S_".$clearNamePS;
-    $uploadOk = 1;
-    //$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-    // Check if image file is a actual image or fake image
-    if(isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["exsmall-preview"]["tmp_name"]);
-        if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
-            $uploadOk = 1;
-        } else {
-            echo "File is not an image.";
-            $uploadOk = 0;
-        }
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-        // if everything is ok, try to upload file
-    } else {
-        if (move_uploaded_file($_FILES["exsmall-preview"]["tmp_name"], $target_file)) {
-            echo "The file ".$clearNamePS. " has been uploaded.";
-        } else {
-            echo "Sorry, there was an error uploading your file popular stories";
-        }
-    }
+    //--------------------------upload small preview--------------------------
+    compressAndResizeImg($_FILES["exsmall-preview"]["tmp_name"],"S_" . $clearNamePS);
+
 
 
     //--------------------------All files from post upload--------------------------
-    // set or create folder to store data
 
-   $filepath = "img/photo/". $ID.$_POST['ps_name']."/";
+    //download and each photo to the server
+    foreach ($_FILES["photo_upload"]["error"] as $key => $error) {
 
-    if (!file_exists($filepath)){
-        mkdir( $filepath, 0777);
-    }
-//download and each photo to the server
-    foreach ($_FILES["photo_upload"]["error"] as $key => $error){
-
-        if ($error == UPLOAD_ERR_OK){
-
-            $tmp_name = $_FILES["photo_upload"]["tmp_name"][$key];
-            $name = $_FILES["photo_upload"]["name"][$key];
-            move_uploaded_file($tmp_name, $filepath.$name);
+        if ($error == UPLOAD_ERR_OK) {
+            compressAndResizeImg($_FILES["photo_upload"]["tmp_name"][$key],$key);
         }
-
-
     }
-
 
     //--------------------------insert new data to DB --------------------------
 
 
     $query = "INSERT into base  (`id`, `name`, `date`, `preview`, `folder`, `tag`, `visits`,  `descr`, `descr_ru`,`subcon`,`subcon_ru` )
-      VALUES ('". $ID ."', '" . $NamePS ."',STR_TO_DATE('". $Data. "','%d/%m/%Y'), '".$target_dir.$clearNamePS."', '".$folder_loc.$ID.$NamePS."', '".$Tag."',  '0','".$Desc."',
-      '".$Desc_ru."', '".$subc."', '".$subc_ru."')";
+      VALUES ('" . $ID . "', '" . $NamePS . "',STR_TO_DATE('" . $Data . "','%d/%m/%Y'), '" . $target_dir . $clearNamePS . "', '" . $folder_loc . $ID . $NamePS . "', '" . $Tag . "',  '0','" . $Desc . "',
+      '" . $Desc_ru . "', '" . $subc . "', '" . $subc_ru . "')";
 
     $res = $mysqli->query($query);
 
@@ -177,24 +144,22 @@ if(isset($_POST['CreateButton']))
 /* **************************************************************
  ****************************Edit procedure *********************
 ***************************************************************/
-if(isset($_POST['EditButton'] )) {
+if (isset($_POST['EditButton'])) {
 
     $target_dir = "img/preview/";
 
-    $NamePS ="'".$_POST['edit_ps_name']."'";
-    $Date ="'".$_POST['edit_date']."'";
-    $Tag = "'".$_POST['edit_tag']."'";
-    $Desc = "'".$_POST['edit_descr']."'";
-    $Desc_ru="'".$_POST['edit_descr_ru']."'";
-    $ID =  "'".$_POST['edit_id']."'";
+    $NamePS = "'" . $_POST['edit_ps_name'] . "'";
+    $Date = "'" . $_POST['edit_date'] . "'";
+    $Tag = "'" . $_POST['edit_tag'] . "'";
+    $Desc = "'" . $_POST['edit_descr'] . "'";
+    $Desc_ru = "'" . $_POST['edit_descr_ru'] . "'";
+    $ID = "'" . $_POST['edit_id'] . "'";
     $subc = $_POST['edit_subcontr'];
     $subc_ru = $_POST['edit_subcontr_ru'];
 
 
-
-
-    $res = $mysqli->query("SELECT folder, preview FROM base Where id=".$ID);
-    $row= $res->fetch_assoc();
+    $res = $mysqli->query("SELECT folder, preview FROM base Where id=" . $ID);
+    $row = $res->fetch_assoc();
     $prevFolder = $row['folder'];
     $prevPreview = $row['preview'];
 
@@ -205,19 +170,19 @@ if(isset($_POST['EditButton'] )) {
     $target_file = $target_dir . basename($_FILES["small-preview"]["name"]);
 
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-    $clearNamePS = $_POST['edit_id'].strtolower (str_replace(' ','',substr($_POST['edit_ps_name'],0,15))).".".$imageFileType;
+    $clearNamePS = $_POST['edit_id'] . strtolower(str_replace(' ', '', substr($_POST['edit_ps_name'], 0, 15))) . "." . $imageFileType;
 
 
     $preview_loc = $prevPreview;
     $photo_loc = $prevFolder;
 
     // Check if image file is a actual image or fake image
-    if (isset($_POST["EditButton"])&& $_FILES["small-preview"]["tmp_name"]!=="") {
+    if (isset($_POST["EditButton"]) && $_FILES["small-preview"]["tmp_name"] !== "") {
         $check = getimagesize($_FILES["small-preview"]["tmp_name"]);
         if ($check !== false) {
             unlink($prevPreview);
             $uploadOk = 1;
-            $preview_loc = $target_dir.$clearNamePS;
+            $preview_loc = $target_dir . $clearNamePS;
         } else {
             echo "File is not an image.";
             $uploadOk = 0;
@@ -225,30 +190,29 @@ if(isset($_POST['EditButton'] )) {
     }
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 1) {
-        move_uploaded_file($_FILES["small-preview"]["tmp_name"], $target_dir.$clearNamePS);
+        move_uploaded_file($_FILES["small-preview"]["tmp_name"], $target_dir . $clearNamePS);
 
     }
 
 //--------------------------re upload large preview--------------------------
-    $folder_loc= "img/photo/";
+    $folder_loc = "img/photo/";
     $target_file = $target_dir . basename($_FILES["large-preview"]["name"]);
 
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-    $clearNamePS = $_POST['edit_id'].strtolower (str_replace(' ','',substr($_POST['edit_ps_name'],0,15))).".".$imageFileType;
+    $clearNamePS = $_POST['edit_id'] . strtolower(str_replace(' ', '', substr($_POST['edit_ps_name'], 0, 15))) . "." . $imageFileType;
 
-    $target_file = $target_dir."L_".$clearNamePS;
+    $target_file = $target_dir . "L_" . $clearNamePS;
 
     $uploadOk = 1;
-    $arrayPath= explode("/",$prevPreview);
-    $LPfile =$target_dir. "L_".$arrayPath[sizeof($arrayPath)-1];
-
+    $arrayPath = explode("/", $prevPreview);
+    $LPfile = $target_dir . "L_" . $arrayPath[sizeof($arrayPath) - 1];
 
 
     // Check if image file is a actual image or fake image
-    if(isset($_POST["EditButton"])&& $_FILES["large-preview"]["tmp_name"]!=="") {
+    if (isset($_POST["EditButton"]) && $_FILES["large-preview"]["tmp_name"] !== "") {
 
         $check = getimagesize($_FILES["large-preview"]["tmp_name"]);
-        if($check !== false) {
+        if ($check !== false) {
             unlink($LPfile);
             $uploadOk = 1;
         } else {
@@ -263,28 +227,26 @@ if(isset($_POST['EditButton'] )) {
     }
 
 
-
     //--------------------------re upload small preview--------------------------
-    $folder_loc= "img/photo/";
+    $folder_loc = "img/photo/";
 
     $target_file = $target_dir . basename($_FILES["exsmall-preview"]["name"]);
 
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-    $clearNamePS = $_POST['edit_id'].strtolower (str_replace(' ','',substr($_POST['edit_ps_name'],0,15))).".".$imageFileType;
+    $clearNamePS = $_POST['edit_id'] . strtolower(str_replace(' ', '', substr($_POST['edit_ps_name'], 0, 15))) . "." . $imageFileType;
 
-    $target_file = $target_dir."S_".$clearNamePS;
+    $target_file = $target_dir . "S_" . $clearNamePS;
 
     $uploadOk = 1;
-    $arrayPath= explode("/",$prevPreview);
-    $LPfile =$target_dir. "S_".$arrayPath[sizeof($arrayPath)-1];
-
+    $arrayPath = explode("/", $prevPreview);
+    $LPfile = $target_dir . "S_" . $arrayPath[sizeof($arrayPath) - 1];
 
 
     // Check if image file is a actual image or fake image
-    if(isset($_POST["EditButton"])&& $_FILES["exsmall-preview"]["tmp_name"]!=="") {
+    if (isset($_POST["EditButton"]) && $_FILES["exsmall-preview"]["tmp_name"] !== "") {
 
         $check = getimagesize($_FILES["exsmall-preview"]["tmp_name"]);
-        if($check !== false) {
+        if ($check !== false) {
             unlink($LPfile);
             $uploadOk = 1;
         } else {
@@ -299,21 +261,20 @@ if(isset($_POST['EditButton'] )) {
     }
 
 
-
     //--------------------------re All files from post upload--------------------------
     // set or create folder to store data
 
-    $filepath = "img/photo/". $ID.$_POST['edit_ps_name']."/";
-    if (!empty($_FILES["photo_upload"])){
+    $filepath = "img/photo/" . $ID . $_POST['edit_ps_name'] . "/";
+    if (!empty($_FILES["photo_upload"])) {
 
 
 //download and each photo to the server
-        $firstTime =true;
-        foreach ($_FILES["photo_upload"]["error"] as $key => $error){
+        $firstTime = true;
+        foreach ($_FILES["photo_upload"]["error"] as $key => $error) {
 
-            if ($error == UPLOAD_ERR_OK){
-                if ($firstTime){
-                    $firstTime=false;
+            if ($error == UPLOAD_ERR_OK) {
+                if ($firstTime) {
+                    $firstTime = false;
                     $photo_loc = $filepath;
                     deleteDirectory($prevFolder);
                     if (!file_exists($filepath)) {
@@ -324,49 +285,40 @@ if(isset($_POST['EditButton'] )) {
 
                 $tmp_name = $_FILES["photo_upload"]["tmp_name"][$key];
                 $name = $_FILES["photo_upload"]["name"][$key];
-                move_uploaded_file($tmp_name, $filepath.$name);
+                move_uploaded_file($tmp_name, $filepath . $name);
             }
         }
 
 
-
-        $query = "Update base SET   name = ".$NamePS. ", date=STR_TO_DATE(". $Date. ",'%d/%m/%Y'), tag=".$Tag.", descr=".$Desc.", descr_ru=".$Desc_ru.", preview ='"
-            .$preview_loc."', folder = '".$photo_loc."', subcon = '".$subc."', subcon_ru = '".$subc_ru."' where id=".$ID;
+        $query = "Update base SET   name = " . $NamePS . ", date=STR_TO_DATE(" . $Date . ",'%d/%m/%Y'), tag=" . $Tag . ", descr=" . $Desc . ", descr_ru=" . $Desc_ru . ", preview ='"
+            . $preview_loc . "', folder = '" . $photo_loc . "', subcon = '" . $subc . "', subcon_ru = '" . $subc_ru . "' where id=" . $ID;
         $res = $mysqli->query($query);
 
 
-
-
-
     }
-    }
+}
 
 
 /* **************************************************************
  ****************************Delete procedure *********************
 ***************************************************************/
-if(isset($_POST['deleteButton'])){
+if (isset($_POST['deleteButton'])) {
 
     $target_dir = "img/preview/";
 
-    $NamePS ="'".$_POST['delete_ps_name']."'";
-    $Date ="'".$_POST['delete_date']."'";
+    $NamePS = "'" . $_POST['delete_ps_name'] . "'";
+    $Date = "'" . $_POST['delete_date'] . "'";
 
-    $Desc = "'".$_POST['delete_descr']."'";
-    $ID =  "'".$_POST['delete_id']."'";
-
-
+    $Desc = "'" . $_POST['delete_descr'] . "'";
+    $ID = "'" . $_POST['delete_id'] . "'";
 
 
-
-    $res = $mysqli->query("SELECT folder, preview FROM base Where id=".$ID);
-    $row= $res->fetch_assoc();
+    $res = $mysqli->query("SELECT folder, preview FROM base Where id=" . $ID);
+    $row = $res->fetch_assoc();
     $prevFolder = $row['folder'];
     $prevPreview = $row['preview'];
-    $arrayPath= explode("/",$prevPreview);
-    $LPfile =$target_dir. "L_".$arrayPath[sizeof($arrayPath)-1];
-
-
+    $arrayPath = explode("/", $prevPreview);
+    $LPfile = $target_dir . "L_" . $arrayPath[sizeof($arrayPath) - 1];
 
 
     unlink($prevPreview);
@@ -374,30 +326,28 @@ if(isset($_POST['deleteButton'])){
     deleteDirectory($prevFolder);
 
 
-    $query = "Delete from  base where id=".$ID;
+    $query = "Delete from  base where id=" . $ID;
     $res = $mysqli->query($query);
 
 
-
 }
-
 
 
 /* **************************************************************
  ****************************Load Edit procedure *********************
 ***************************************************************/
 
-if(isset($_POST['date'] )){
+if (isset($_POST['date'])) {
 
-    $Data =$_POST['date'];
-    $Data =  date_create_from_format('d/m/Y',$Data) ;
-    $Data=   $Data-> format('Y-m-d');
+    $Data = $_POST['date'];
+    $Data = date_create_from_format('d/m/Y', $Data);
+    $Data = $Data->format('Y-m-d');
 
 
-    $query ="Select * from base where base.date ='".$Data."'";
+    $query = "Select * from base where base.date ='" . $Data . "'";
     $res = $mysqli->query($query);
 
-    $row= $res->fetch_assoc();
+    $row = $res->fetch_assoc();
     $formParams = array(
         'ajax' => 'Hello world!',
         'id' => $row['id'],
@@ -422,50 +372,46 @@ if(isset($_POST['date'] )){
  ****************************Add feedback procedure *********************
 ***************************************************************/
 
-if(isset($_POST['feedButton'] )){
+if (isset($_POST['feedButton'])) {
     //get last ID
 
 
     $res = $mysqli->query("SELECT MAX(id) as maxID FROM feedback");
 
-    $Last_id= $res->fetch_assoc();
-    $newId =(int)$Last_id['maxID'];
-    echo "val=".$newId;
+    $Last_id = $res->fetch_assoc();
+    $newId = (int)$Last_id['maxID'];
+    echo "val=" . $newId;
 
     $newId++;
-    echo "val1=".$newId;
-    $fbDate=$_POST['feed_data'];
+    echo "val1=" . $newId;
+    $fbDate = $_POST['feed_data'];
     $fbName = $_POST['feed_name'];
-    $feedback_en =$_POST['feedback'];
-    $feedback_ru =$_POST['feedback_ru'];
+    $feedback_en = $_POST['feedback'];
+    $feedback_ru = $_POST['feedback_ru'];
 
 
     $target_dir = "img/feedback/";
     $target_file = $target_dir . basename($_FILES["fb-preview"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-    $clearNamePS = "fb_".$newId.strtolower (str_replace(' ','',substr($fbName,0,15))).".".$imageFileType;
+    $clearNamePS = "fb_" . $newId . strtolower(str_replace(' ', '', substr($fbName, 0, 15))) . "." . $imageFileType;
 
 
-    $uploadOk =0;
-        if (move_uploaded_file($_FILES["fb-preview"]["tmp_name"], $target_dir.$clearNamePS)) {
-            echo "The file " . $clearNamePS . " has been uploaded.";
-            $uploadOk =1;
-        }
-
-                else{
+    $uploadOk = 0;
+    if (move_uploaded_file($_FILES["fb-preview"]["tmp_name"], $target_dir . $clearNamePS)) {
+        echo "The file " . $clearNamePS . " has been uploaded.";
+        $uploadOk = 1;
+    } else {
         echo "Sorry, your file was not uploaded.";
-             }
-
-
-
-    if (  $uploadOk =1){
-
-    $sql_query = "INSERT INTO `feedback`(`id`, `name`, `date`,`feedback`,`feedback_ru`, `preview`, `rank`) VALUES ('".$newId."','".$fbName."', STR_TO_DATE('". $fbDate. "','%d/%m/%Y'), '".$feedback_en."','"
-    .$feedback_ru."', '".$target_dir.$clearNamePS."','')";
-        $res = $mysqli->query($sql_query);
     }
 
+
+    if ($uploadOk = 1) {
+
+        $sql_query = "INSERT INTO `feedback`(`id`, `name`, `date`,`feedback`,`feedback_ru`, `preview`, `rank`) VALUES ('" . $newId . "','" . $fbName . "', STR_TO_DATE('" . $fbDate . "','%d/%m/%Y'), '" . $feedback_en . "','"
+            . $feedback_ru . "', '" . $target_dir . $clearNamePS . "','')";
+        $res = $mysqli->query($sql_query);
+    }
 
 
 }
@@ -473,31 +419,29 @@ if(isset($_POST['feedButton'] )){
  ****************************Remove feedback procedure *********************
 ***************************************************************/
 
-if(isset($_POST['delfeedButton'] )){
+if (isset($_POST['delfeedButton'])) {
     //get last ID
 
 
-    $fbDate ="'".$_POST['feed_data']."'";
+    $fbDate = "'" . $_POST['feed_data'] . "'";
 
 
-
-
-    $res = $mysqli->query("SELECT id, preview FROM feedback Where `date`=STR_TO_DATE(". $fbDate. ",'%d/%m/%Y')");
-    $row= $res->fetch_assoc();
+    $res = $mysqli->query("SELECT id, preview FROM feedback Where `date`=STR_TO_DATE(" . $fbDate . ",'%d/%m/%Y')");
+    $row = $res->fetch_assoc();
 
 
     $target_dir = "img/feedback/";
-    $ID =  "'".$row['id']."'";
+    $ID = "'" . $row['id'] . "'";
 
     $prevPreview = $row['preview'];
 
     unlink($prevPreview);
 
-    $query = "Delete from  feedback where id=".$ID;
+    $query = "Delete from  feedback where id=" . $ID;
     $res = $mysqli->query($query);
 
 
 }
 //if uncomment Load button will not work in admin
-//header("Location: MyAdmin.php");
+//header("Location: index.php");
 ?>

@@ -61,14 +61,12 @@
 
             });
 
-            var ringLeft = createElement('div', 'ring-left');
-            var ringRight = createElement('div', 'ring-right');
+
             //Append the Elements
             //this.header.appendChild(this.title);
             this.header.appendChild(this.title.month);
             this.header.appendChild(this.title.year);
-            this.header.appendChild(ringLeft);
-            this.header.appendChild(ringRight);
+
 
             this.header.appendChild(right);
             this.header.appendChild(left);
@@ -77,7 +75,7 @@
         }
 
         //this.title.innerHTML = this.current.format('MMMM YYYY');
-        this.title.month.innerHTML = this.current.format('MMMM');
+        this.title.month.innerHTML = this.current.format('MMMM').toLowerCase();
         this.title.year.innerHTML = this.current.format('YYYY');
     }
 

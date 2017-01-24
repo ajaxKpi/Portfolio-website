@@ -148,7 +148,7 @@ body {
 *****************************Proceses Block*************************************
 ****************************************************************************/
 .navigation-internal a:hover{
-    color: #ccc !important;
+    color: #ccc;
 }
 
 .navigation-external li:hover a{
@@ -230,10 +230,7 @@ body {
 ****************************************************************************/
 
 
-.Full_site_holder{
 
-
-}
 .Main_Side{
     width: 1200px;
     position: relative;

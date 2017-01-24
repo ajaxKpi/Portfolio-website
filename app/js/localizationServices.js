@@ -48,7 +48,9 @@ localApp.factory("locData",[function(){
             },
 
             "Not_found_text" : "Страница не найдена",
-            "Not_found_link" : "Вернуться на главную"
+            "Not_found_link" : "Вернуться на главную",
+            "emailSuccess":"Спасибо! Письмо было успешно отправлено",
+            "emailError":"Возникла ошибка при отправке письма"
         },
 
 
@@ -95,7 +97,10 @@ localApp.factory("locData",[function(){
             },
 
             "Not_found_text" : "Page not found",
-            "Not_found_link" : "Return to portfolio"
+            "Not_found_link" : "Return to portfolio",
+
+            "emailSuccess":"Your mail was successfully sent",
+            "emailError":"Message delivery failed. Please use other contacts"
         }
     }
 

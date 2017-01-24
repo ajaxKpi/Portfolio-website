@@ -28,7 +28,7 @@ if (isset ($_POST['passw'])) {
     if (md5($_POST['passw'].$Pass_salt) == $Pass_result&&$LoginAdm==$_POST['login']) {
         session_start();
         $_SESSION['status'] = true;
-        header('Location: admin/MyAdmin.php');
+        header('Location: admin/index.php');
 
     }
 

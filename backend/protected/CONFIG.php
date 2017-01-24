@@ -10,13 +10,18 @@ $Pass_result = "c63f6a852a70f4e1c7f391f5410c7e16";
 $LoginAdm = "OVolyanska";
 //clv1tzh
 
+
+
+//CONST LOGIN ="volyansk_db";
+//CONST PASSWORD = "jKF8NSwH";
+//CONST DBNAME ="volyansk_db";
+//CONST SERVER = "volyansk.mysql.ukraine.com.ua";
+
 //MSQ credirtals On Ubuntu
-
-CONST LOGIN ="volyansk_db";
-CONST PASSWORD = "jKF8NSwH";
-CONST DBNAME ="volyansk_db";
-CONST SERVER = "volyansk.mysql.ukraine.com.ua";
-
+CONST LOGIN ="root";
+CONST PASSWORD = "edifier";
+CONST DBNAME ="mydb";
+CONST SERVER = "localhost";
 
 CONST ROOTDIR ='/home/volyansk/zvorska.com/www/app/';
 CONST MAILTO = 'olga.volyanska@gmail.com';
