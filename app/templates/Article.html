@@ -8,13 +8,13 @@
   <div class="wrapArticle">
     <div class = "header_of_motion">
         <h2 class="Blog_name">{{record.name}}</h2>
-        <span> {{record.date  | date:'dd-mm-yyyy'}}  | <a href = "tag/{{record.tag}}">{{record.tag}}
+        <span> {{record.date  | date:'dd-MMMM-yyyy'}}  | <a href = "tag/{{record.tag}}">{{record.tag}}
                               </a></span>
     </div>
     <hr class="separator">
 
-    <p class ="text_overview">
-                {{record.description[local]}}
+    <p class ="text_overview" ng-bind-html= "record.description[local]">
+
     </p>
 
     <div class = "Blog_photo" ng-repeat="photo in record.photos">

@@ -305,6 +305,10 @@ function prepareQueryResults(result, glob) {
             glob[key]["description"]={};
             glob[key]["description"]["en"] =result[key]["descr"];
             glob[key]["description"]["ru"] =result[key]["descr_ru"];
+            glob[key]["shareDesc"]={};  //  text for sharing
+            glob[key]["shareDesc"]["en"]=strip(result[key]["descr"]).substr(0,100);
+            glob[key]["shareDesc"]["ru"]=strip(result[key]["descr_ru"]).substr(0,100);
+
             delete glob[key]["descr"];
             delete glob[key]["descr_ru"];
 
@@ -326,9 +330,7 @@ function prepareQueryResults(result, glob) {
 
 /*
 
-
  scroll of fixed header
-
 
  */
 function  makeHeaderScrolable(cssClass){
@@ -354,5 +356,12 @@ function setImgPin(cssSelector){
             pinImg : pinLogoUrl, position: 2
         }
     );
+}
+
+function strip(html)
+{
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
 }
 
