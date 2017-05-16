@@ -5,7 +5,7 @@
       <webServer id="c5f66a7b-0080-4223-b829-ef06059f6a40" name="Olya" url="http://volyansk.ftp.ukraine.com.ua">
         <fileTransfer host="volyansk.ftp.ukraine.com.ua" port="21" password="dfc4dfdadfc9dfc0dfdadff8df9fdfd8" username="volyansk_ftp">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>

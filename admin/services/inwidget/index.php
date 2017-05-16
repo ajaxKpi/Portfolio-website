@@ -1,7 +1,7 @@
 <?php 
 /**
  * Project:     inWidget: show pictures from instagram.com on your site!
- * File:        index1.php
+ * File:        index.php
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of MIT license

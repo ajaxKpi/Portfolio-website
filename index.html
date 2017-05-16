@@ -9,22 +9,21 @@
 <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
 
+    <script>document.write('<base href=' + document.location + ' />');</script>
 
     <meta charset="utf-8">
-    <base href="/">
-    <title>Zvorska Photography</title>
 
+    <title>Zvorska Photography</title>
 
     <meta http-equiv=X-UA-Compatible content="IE=edge"/>
     <meta name="description" content="Добрая западная свадебная фотография Оли Волянской | Киев, Украина, Европа">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <link rel="stylesheet" href="app/css/reset.css">
+
     <link rel="stylesheet" href="app/css/Calendar.css">
     <link rel="stylesheet" href="app/css/imgPin.default.css">
+
     <link rel="stylesheet" href="app/css/index.css">
     <link rel="stylesheet" href="app/css/media.css">
-
 
     <meta property="og:url" content="volyanska.com"/>
     <meta property="og:type" content="website"/>
@@ -33,27 +32,26 @@
           content="Добрая западная свадебная фотография Оли Зворской | Киев, Украина, Европа   "/>
     <meta property="og:image" content="http://zvorska.com//img/fb.jpg"/>
     <meta property="og:image:width" content="300"/>
-    <meta property="og:image:height" content="300">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <meta property="og:image:height" content="300"/>
+
+    <link rel="icon" type="image/png" href="img/ov.png"/>
     <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
-    <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/normalize.css">
-
-    <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/main.css">
 
 
     <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?122"></script>
 
 
-
-
-
-
 </head>
 <body ng-controller="mainCTRL">
+
+
+<!-- Main+Sidebar+Footer Block Full windows size-->
 
 
 <div class="loader-wrapper" ng-if="PageReady">
@@ -65,7 +63,7 @@
 </div>
 
 
-<section ng-show="!PageReady">
+<section class="Full_site_holdng" ng-show="!PageReady">
 
 
     <!-- Main+Sidebar+Footer Block 1000px -->
@@ -141,10 +139,8 @@
         <se-sidebar></se-sidebar>
         <!-- footer Block -->
         <se-footer></se-footer>
-
-
+        <img src="#" class="warmup-img hidden" alt="warmup">
     </div>
-
 
 </section>
 
@@ -154,30 +150,18 @@
 <![endif]-->
 
 
-<!-- In production use:
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
--->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/js-cookie/src/js.cookie.js"></script>
 
-<script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-
-
-<script src="app/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="app/bower_components/js-cookie/src/js.cookie.js"></script>
-<script src="app/bower_components/jquery-ui/jquery-ui.min.js"></script>
-<script src="app/js/jquery.imgPin.min.js"></script>
-<script src="app/js/notify.min.js"></script>
-<script src="app/bower_components/angular/angular.js"></script>
-<script src="app/bower_components/angular-route/angular-route.js"></script>
-<script src="app/bower_components/angular-resource/angular-resource.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.js"></script>
-
-<script src="app/bower_components/ng-directive-lazy-image/release/lazy-image.min.js"></script>
-<script src="app/components/version/version.js"></script>
-<script src="app/components/version/version-directive.js"></script>
-<script src="app/components/version/interpolate-filter.js"></script>
-<script src="app/bower_components/jquery_lazyload/jquery.lazyload.js"></script>
+<script src="bower_components/ng-directive-lazy-image/release/lazy-image.min.js"></script>
+<script src="bower_components/jquery_lazyload/jquery.lazyload.js"></script>
 <script src="app/js/socialshareDirectives.js"></script>
-
+<script src="app/js/jquery.imgPin.min.js"></script>
 
 <script src="app/js/moment.js"></script>
 <script src="app/js/calendar.js"></script>
@@ -191,10 +175,13 @@
 
 <script src="app/app.js"></script>
 
+
 <script src="app/js/datapicker-init.js"></script>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
 
 
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
 
 </body>
 <!-- GA -->

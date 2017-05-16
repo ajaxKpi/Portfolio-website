@@ -29,7 +29,7 @@ appControllers.controller("mainCTRL", ["$scope", '$location', "locData", 'blogRe
             Cookies.set('IZVlanguage', this.local, {expires: 365});
 
         }
-        //TODO Local is critical should be an value
+        // Local is critical should be an value
         $scope.local = this.local || "ru";
         $scope.mainModel = locData[this.local];
 
@@ -52,6 +52,9 @@ appControllers.controller("mainCTRL", ["$scope", '$location', "locData", 'blogRe
             Cookies.set('IZVlanguage', local, {expires: 365});
 
             //console.log($cookies.get('IZVlanguage')); // on CHROME NOT SET SOMETIMES
+            $scope.mainModel = locData[local];
+            $scope.local = local;
+            Cookies.set('IZVlanguage', local, {expires: 365});
             $scope.mainModel = locData[local];
             $scope.local = local;
         };
@@ -146,7 +149,7 @@ appControllers.controller("mainCTRL", ["$scope", '$location', "locData", 'blogRe
 
         var id = $routeParams.id;
 
-        //
+        // TODO: what a hell?
         $scope.record = {};
 
         if ($scope.records.length !== 0) {
@@ -217,7 +220,6 @@ appControllers.controller("mainCTRL", ["$scope", '$location', "locData", 'blogRe
         $scope.sendMail = function (mail) {
 
             if ($scope.submitForm.$valid) {
-                //TODO: server mail
                 var mailContainer = {};
                 mailContainer ["action"] = "send_mail";
                 mailContainer ["mail"] = mail;
@@ -270,7 +272,7 @@ appControllers.controller("mainCTRL", ["$scope", '$location', "locData", 'blogRe
                     currentIndex = 0;
                     prevIndex = itemAmt - 1;
                 }
-
+                    $('.warmup-img').attr('src', items[currentIndex+1].large);
                 // $(items[prevIndex]).css("opacity", "0")
                 // $(items[currentIndex]).css("opacity", "1")
                 $('.inst_item').fadeOut(2000, function () {
@@ -332,7 +334,6 @@ appControllers.controller("mainCTRL", ["$scope", '$location', "locData", 'blogRe
         })
     }]);
 
-
 /*
  Block for reusable functions to perform database extract in usable JS object
  */
@@ -377,9 +378,7 @@ function prepareQueryResults(result, glob) {
 }
 
 /*
-
  scroll of fixed header
-
  */
 function makeHeaderScrolable(cssClass) {
     $(window).scroll(function () {
@@ -397,3 +396,18 @@ function removeHTMLtags(text) {
     tmp.innerHTML = text;
     return tmp.textContent || tmp.innerText;
 }
+/*  set Custom logo of pinterest on img load on top right corneer(pos :2)
+ use @ cssSelector for image selection
+ @ pinLogoUrl - url to img that will appeared on hover
+ @ use Jquery and jquery.imgPin
+ */
+function setImgPin(cssSelector) {
+    var pinLogoUrl = "img/pinterestOnImg.png";
+
+    $(cssSelector).imgPin(
+        {
+            pinImg: pinLogoUrl, position: 2
+        }
+    );
+}
+
