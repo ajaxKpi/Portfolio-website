@@ -27,7 +27,9 @@ ErrorDocument 404 /404.php
 
 <ifModule mod_rewrite.c>
         RewriteEngine on
-
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule . index.html [L]
         # Don't rewrite files or directories
         RewriteCond %{REQUEST_FILENAME} -f [OR]
         RewriteCond %{REQUEST_FILENAME} -d

@@ -180,46 +180,47 @@ angular.module('djds4rce.angular-socialshare', [])
 			}
 		}
 	}])
-	.directive('vkontacte',[function(){
-		return{
-			"template":"<div compile=\"vk_return\" class=\"VKButtonIcon\"></div>",
+//	.directive('vkontacte',[function(){
+//		return{
+//			"template":"<div compile=\"vk_return\" class=\"VKButtonIcon\"></div>",
+//
+//			link:function(scope,element,attr){
+//
+//				scope.vk_return=VK.Share.button({
+//					url: attr.url,
+//					title: attr.name,
+//					description: attr.caption,
+//					image: attr.picture,
+//					noparse: true
+//			},{type: 'text', text: ' '})
+//
+//			}
+//		}
+//
+//}])
+//	.directive( 'vkComments', [
+//		'$window',
+//		'$timeout',
+//		function( $window, $timeout ){
+//			return {
+//				restrict: 'A',
+//				template: '<div id="vk_comments" ng-transclude post-url="{{url}}"></div>',
+//				scope: {
+//					readyToBind: '@'
+//				},
+//				replace: !0,
+//				transclude: !0,
+//				link: function( $scope, $element, $attr ){
+//					$scope.$watch( 'readyToBind', function(){
+//						$timeout( function(){
+//							$window.vkComment = VK.Widgets.Comments( 'vk_comments', { limit: 10, attach: '*', autoPublish: 1, mini: 1 }, $attr.id );
+//						}, 100 );
+//					} );
+//				}
+//			}
+//		}
+//	] )
 
-			link:function(scope,element,attr){
-
-				scope.vk_return=VK.Share.button({
-					url: attr.url,
-					title: attr.name,
-					description: attr.caption,
-					image: attr.picture,
-					noparse: true
-			},{type: 'text', text: ' '})
-
-			}
-		}
-
-}])
-	.directive( 'vkComments', [
-		'$window',
-		'$timeout',
-		function( $window, $timeout ){
-			return {
-				restrict: 'A',
-				template: '<div id="vk_comments" ng-transclude post-url="{{url}}"></div>',
-				scope: {
-					readyToBind: '@'
-				},
-				replace: !0,
-				transclude: !0,
-				link: function( $scope, $element, $attr ){
-					$scope.$watch( 'readyToBind', function(){
-						$timeout( function(){
-							$window.vkComment = VK.Widgets.Comments( 'vk_comments', { limit: 10, attach: '*', autoPublish: 1, mini: 1 }, $attr.id );
-						}, 100 );
-					} );
-				}
-			}
-		}
-	] )
 	.directive('compile', ['$compile', function ($compile) {
 	return function(scope, element, attrs) {
 		scope.$watch(

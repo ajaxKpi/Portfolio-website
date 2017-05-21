@@ -36,7 +36,7 @@ class api
     }
 
 
-    static function send_mail($mailData)
+    function send_mail($mailData)
     {
 
         $subject = "Новая Заявка с Zvorska.com";
@@ -70,7 +70,7 @@ class api
     /*
      * Method to connect to MySQL DB
      */
-    public function connect_DB()
+    private function connect_DB()
     {
         $host = $this->POR_host; // хост
         $user = $this->POR_user; // имя пользователя БД
@@ -218,7 +218,7 @@ class api
     }
 
 
-    public static function get_instagram()
+    public function get_instagram()
     {
         include_once 'inwidget/IstaGet.php';
 
@@ -243,68 +243,3 @@ class api
 
 
 }
-
-if (isset($_GET['action'])) {
-    switch ($_GET['action']) {
-
-        case 'get_instagram':
-
-            echo api::get_instagram();
-            break;
-        case 'send_email':
-            echo 'TODO';
-            break;
-        case 'create_session':
-            api::create_session();
-            break;
-
-        case 'get_popular':
-            $api = new api();
-            echo $api->get_popular();
-            break;
-
-        case 'get_feedback':
-            $api = new api();
-            echo $api->get_feedbacks();
-            break;
-
-        case 'get_ALL':
-            $api = new api();
-            echo $api->get_ALL();
-            break;
-
-        default:
-            echo 'wrong action' . $_GET['action'];
-    }
-
-} elseif (($postdata = file_get_contents("php://input")) !== NULL) {
-
-    $request = json_decode($postdata);
-    switch ($request->action) {
-        case 'send_mail':
-            //
-
-            api::send_mail($request->mail);
-
-            break;
-
-        case 'add_visit':
-
-            $api = new api();
-            $api->visit_page($request->id);
-            break;
-
-        default:
-            echo $postdata;
-    }
-} else {
-    var_dump($_POST);
-
-}
-/*
-
-if ($_SERVER['REMOTE_ADDR']===MY_DOMAIN){
-}
-
-else {echo $_SERVER['REMOTE_ADDR']. 'you have no permission to send an email';}
-*/

@@ -82,7 +82,8 @@ angular.module('myApp', [
 }])
     .run( ['$FB','$rootScope',function($FB,$rootScope){
         $FB.init('1492697214384249');
-        VK.init({apiId: 5077240});
+
+        // VK.init({apiId: 5077240}); should be uncommented when vk.com will resume work
         $rootScope.SocialFB=true;
 
     }]);

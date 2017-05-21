@@ -6,7 +6,7 @@ var appServices = angular.module('appServices',['ngResource']);
 
 appServices.factory('slider', ['$resource',
     function($resource){
-        var url = 'http://zvorska.com/backend/api.php?action=get_instagram';
+        var url = '/backend/get_instagram';
             return $resource(url, {}, {
                 getInstagram: {method: 'get'}
             });
@@ -14,7 +14,7 @@ appServices.factory('slider', ['$resource',
 
 .factory('blogRecord', ['$resource',
     function($resource){
-        var url = 'http://zvorska.com/backend/api.php?action=get_ALL';
+        var url = '/backend/get_ALL';
         return $resource(url, {}, {
             query: {method: 'get'}
         });
@@ -22,7 +22,7 @@ appServices.factory('slider', ['$resource',
 
 .factory('popularRecord', ['$resource',
     function($resource){
-        var url = 'http://zvorska.com/backend/api.php?action=get_popular';
+        var url = '/backend/get_popular';
         return $resource(url, {}, {
             query: {method: 'get'}
         });
@@ -30,7 +30,7 @@ appServices.factory('slider', ['$resource',
     }])
 .factory('feedBacks', ['$resource',
     function($resource){
-        var url = 'http://zvorska.com/backend/api.php?action=get_feedback';
+        var url = '/backend/get_feedbacks';
         return $resource(url, {}, {
             query: {method: 'get'}
         });
@@ -42,7 +42,7 @@ appServices.factory('slider', ['$resource',
             send: function (mail){return(
                 $http({
                     method: 'post',
-                    url: 'http://zvorska.com/backend/api.php',
+                    url: '/backend/send_mail',
                     data: mail,
                     dataType: "json"
                 }).then(function successCallback(response) {
@@ -65,7 +65,7 @@ appServices.factory('slider', ['$resource',
                 return (
                     $http({
                         method:'post',
-                        url: 'http://zvorska.com/backend/api.php',
+                        url: 'backend/visit_page/'+recordContainer['recordId'],
                         data: recordContainer,
                         dataType: "json"
                         }).then(

@@ -4,3 +4,4 @@
 *.png
 node_modules/
 bower_components/
+backend/vendor/*
