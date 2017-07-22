@@ -8,7 +8,7 @@
     <link id="bs-css" href='css/bootstrapMin.css' rel='stylesheet' type='text/css'>
     <link id="bsdp-css" href="css/datepicker3.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.vertical-tabs.css">
-    <script src="services/ckeditor2/ckeditor.js"></script>
+
 </head>
 <body>
 
@@ -58,7 +58,7 @@ $new_id++;
                 <div class="tab-pane active" id="home">
 
 
-                    <form action="Upload.php" method="post" enctype="multipart/form-data">
+                    <form>
                         <input type="text" name="id" id="id" class="id" value=<?= $new_id ?>>
 
                         <br>
@@ -110,7 +110,7 @@ $new_id++;
                                     </td>
                                     <td>
                                         <span> Portfolio preview(300x200)</span>
-                                        <input type="file" name="small-preview" id="inp_small"/>
+                                        <input type="file" name="small-preview" id="portfolioPreviewImg"/>
                                     </td>
                                     <td>
                                         <img id="exsmallimg" src="../../img/no_img.jpg" alt="no image">
@@ -118,7 +118,7 @@ $new_id++;
                                     </td>
                                     <td>
                                         <span> Popular stories(96x96)</span>
-                                        <input type="file" name="exsmall-preview" id="inp_exsmall"/>
+                                        <input type="file" name="exsmall-preview" id="popularStoriesImg"/>
                                     </td>
 
 
@@ -129,7 +129,7 @@ $new_id++;
                                     </td>
                                     <td>
                                         <span> Blog preview(900x400)</span>
-                                        <input type="file" name="large-preview" id="inp_large"/>
+                                        <input type="file" name="large-preview" id="blogPreviewImg"/>
                                     </td>
                                     <td>
                                         <img id="Multy_img" src="../../img/no_img.jpg" alt="no image"/>
@@ -139,7 +139,7 @@ $new_id++;
                                 <span>
                                      Load full photosession
                                  </span>
-                                        <input name="photo_upload[]" type="file" multiple="multiple" id="Multy_butt"/>
+                                        <input name="photo_upload[]" type="file" multiple="multiple" id="storyPhotos"/>
 
                                     </td>
                                 </tr>
@@ -158,7 +158,7 @@ $new_id++;
 
                             <br>
 
-                            <input type="submit" value="Create" class="buttons" id="create" name="CreateButton"/>
+                            <button class="buttons" id="create">Create</button>
 
                         </div>
                     </form>
@@ -177,7 +177,7 @@ $new_id++;
 
 
                     <button class="load" id="load_edit"> Load</button>
-                    <form action="Upload.php" method="post" enctype="multipart/form-data">
+                    <form action="Upload_1.php" method="post" enctype="multipart/form-data">
 
 
                         <div class="span5 col-md-5" id="sandbox-container">
@@ -297,7 +297,7 @@ $new_id++;
 
 
                     <button class="load" id="load_delete"> Load</button>
-                    <form action="Upload.php" method="post" enctype="multipart/form-data">
+                    <form action="Upload_1.php" method="post" enctype="multipart/form-data">
 
 
                         <div class="span5 col-md-5" id="sandbox-container">
@@ -422,7 +422,7 @@ $new_id++;
                 <div class="tab-pane" id="additional">
 
                     <h2>Feedbacks </h2>
-                    <form action="Upload.php" method="post" enctype="multipart/form-data">
+                    <form action="Upload_1.php" method="post" enctype="multipart/form-data">
                         <h3>Date of review</h3>
                         <div class="span5 col-md-5" id="sandbox-container">
                             <div class="input-group date">
@@ -508,11 +508,11 @@ $new_id++;
 
 </script>
 
-<script src="../app/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="../app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
 <script src="js/admin.js"></script>
-
+<script src="services/ckeditor2/ckeditor.js"></script>
 
 </body>
 </html>

@@ -16,7 +16,7 @@ $(document).ready(function() {
     )
 });
 //---------------------------
-// to set preview photo
+// to set preview stories
 //---------------------------
 function readURL(input, ImgID) {
 
@@ -79,6 +79,38 @@ $( "#BusyDate" ).change(function() {
 
 });
 
+$('#create').on('click' ,function(e){
+    e.preventDefault();
+    var formData=$(this.parentElement.parentElement).serializeArray();
+    var imgData = new FormData(this.parentElement.parentElement);
+   debugger
+    //$('#portfolioPreviewImg')[0].files[0]
+    //    ?  imgData.append("portfolioPreview", $('#portfolioPreviewImg')[0].files[0])
+    //    : console.error('required');
+    //$('#popularStoriesImg')[0].files[0]
+    //    ? imgData.append("popularStories", $('#popularStories')[0].files[0])
+    //    : console.error('required');
+    //$('#blogPreviewImg')[0].files[0]
+    //    ? imgData.append("blogPreview", $('#blogPreview')[0].files[0])
+    //    : console.error('required');
+    //imgData.append('storyPhotos',$('#storyPhotos')[0].files);
+
+    $.ajax({
+        url:'Upload.php',
+        type:'POST',
+        data:imgData,
+        contentType: false,       // The content type used when sending data to the server.
+        cache: false,             // To unable request pages to be cached
+        processData:false,
+        success: function(res){
+            console.log(res)
+        },
+        error: function (err) {
+            console.error(err)
+        }
+    })
+});
+
 
 // fill form by Ajax request for Edit tab
 $(".load").on('click',function() {
@@ -93,8 +125,8 @@ $(".load").on('click',function() {
 
     $.ajax({
         url: 'Upload.php',
-        type: 'POST',
-        data: ({'date': $( "#"+pre_fix+"Date").val()}),
+        type: 'GET',
+        data: ({'date': $( "#"+pre_fix+"Date").val(), action:'loadStory'}),
         dataType: "json",
             success: function (result) {
             if(result['ajax']) {

@@ -268,7 +268,7 @@ appControllers.controller("mainCTRL", ["$scope", '$location', "locData", 'blogRe
 
             var autoSlide = setInterval(function () {
                 currentIndex += 1;
-                if (currentIndex > itemAmt - 1) {
+                if (currentIndex >= itemAmt - 1) {
                     currentIndex = 0;
                     prevIndex = itemAmt - 1;
                 }

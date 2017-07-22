@@ -79,7 +79,7 @@ class inWidget {
 		}
 		else die($this->getError(401));
 		// -------------------------------------------------
-		// Query #3. Try to get photo
+		// Query #3. Try to get stories
 		// -------------------------------------------------
 		if(!empty($this->config['HASHTAG'])){
 			$this->answer = $this->send('https://api.instagram.com/v1/tags/'.urlencode($this->config['HASHTAG']).'/media/recent/?client_id='.$this->config['CLIENT_ID'].'&count='.$this->config['imgCount']);
